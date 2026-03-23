@@ -1,0 +1,154 @@
+[
+    {
+        "analyticalDashboard": {
+            "meta": {
+                "summary": "",
+                "title": "Dashboard WITH KPIs and filters",
+                "updated": "2024-12-12 14:59:29",
+                "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "tags": "",
+                "category": "analyticalDashboard",
+                "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "isProduction": 1,
+                "created": "2024-06-04 13:11:36",
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2574",
+                "identifier": "ad9S6VyaWer3",
+                "deprecated": "0"
+            },
+            "content": {
+                "layout": {
+                    "fluidLayout": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2571"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "xl": {
+                                                "height": 11,
+                                                "width": 2
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "size": {
+                                            "xl": {
+                                                "height": 11,
+                                                "width": 2
+                                            }
+                                        },
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2573"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2575"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "xl": {
+                                                "width": 2,
+                                                "height": 11
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2576"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "xl": {
+                                                "height": 11,
+                                                "width": 2
+                                            }
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "header": {
+                                    "title": "TEST KPI widgets migration"
+                                },
+                                "columns": [
+                                    {
+                                        "size": {
+                                            "xl": {
+                                                "width": 2,
+                                                "height": 11
+                                            }
+                                        },
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3537"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3539"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "xl": {
+                                                "height": 11,
+                                                "width": 2
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3538"
+                                                }
+                                            }
+                                        },
+                                        "size": {
+                                            "xl": {
+                                                "height": 11,
+                                                "width": 2
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "widgets": [
+                    "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2571",
+                    "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2573",
+                    "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2575",
+                    "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2576",
+                    "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3537",
+                    "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3539",
+                    "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3538"
+                ],
+                "filterContext": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2572"
+            }
+        }
+    }
+]

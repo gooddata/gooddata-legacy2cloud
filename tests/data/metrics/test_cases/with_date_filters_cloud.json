@@ -1,0 +1,17 @@
+[
+    {
+        "data": {
+            "id": "with_date_filters_abtwNWm6eofd",
+            "type": "metric",
+            "attributes": {
+                "title": "WITH date filters",
+                "tags": [],
+                "description": "",
+                "content": {
+                    "format": "#,##0.00",
+                    "maql": "SELECT {metric/_sales_aaXlbflxeioq} WHERE {label/dt_target.day} <> NULL AND  {label/dt_order.monthOfYear} in (\"03\", \"04\")"
+                }
+            }
+        }
+    }
+]

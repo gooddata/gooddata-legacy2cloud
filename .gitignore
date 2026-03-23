@@ -1,0 +1,27 @@
+logs/
+.env
+*.sql
+*.json
+*__pycache__*
+*.csv
+*.log
+.idea/
+.vscode/
+*venv/
+**.env
+.dev/
+
+
+
+# ------- Keep -------
+!.mcp.json
+
+## Env sample
+!.env.default
+
+## Test data
+!utils/metrics/tests/data/*.json
+!utils/reports/tests/input/*.json
+!utils/reports/tests/baseline/*.json
+!utils/scheduled_exports/recur_to_cron/test_data.csv
+!tests/data/**

@@ -1,0 +1,42 @@
+[
+  {
+    "scheduledMail": {
+      "content": {
+        "lastSuccessfull": "2025-08-19 00:02:10",
+        "body": "Hello,\n\nYour scheduled email is ready. You can download the dashboard in attachments.",
+        "attachments": [
+          {
+            "visualizationWidgetAttachment": {
+              "formats": ["csv"],
+              "dashboardUri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4844"
+            }
+          }
+        ],
+        "subject": "simple_csv",
+        "to": ["example.user@gooddata.com"],
+        "when": {
+          "startDate": "2025-08-18",
+          "timeZone": "Europe/Amsterdam",
+          "recurrency": "0:0:0:1*0:0:0"
+        }
+      },
+      "meta": {
+        "updated": "2025-08-19 00:02:10",
+        "title": "simple_csv",
+        "tags": "",
+        "unlisted": 1,
+        "category": "scheduledMail",
+        "sharedWithSomeone": 0,
+        "isProduction": 1,
+        "summary": "Daily at 12:00 AM",
+        "identifier": "adNnizaFsQEb",
+        "created": "2025-08-18 11:18:33",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4947",
+        "deprecated": "0"
+      }
+    }
+  }
+]

@@ -1,0 +1,1699 @@
+/* (C) 2026 GoodData Corporation */
+:root {
+    --primary-blue: #14b2e2;
+    --text-color: #333;
+    --border-color: #e6e6e6;
+    --hover-bg: #f5f8fa;
+    --success-color: #00c18d;
+    --warning-color: #ffab00;
+    --error-color: #ff4f4f;
+    --skipped-color: #6c757d;
+    --api-error-color: #C71D42;
+    --inherited-color: #a0522d;
+    --sidebar-bg: #303442; /* Updated sidebar background */
+    --sidebar-selected-bg: #131C28; /* Updated selected background */
+    --sidebar-text: #93A1AD; /* Updated text color for unselected */
+    --sidebar-text-hover: #FFFFFF; /* White text on hover */
+    --sidebar-text-selected: #FFFFFF; /* White text for selected */
+    --sidebar-border-hover: #979AA0; /* Updated gray border on hover */
+    --sidebar-border-selected: #13B1E2; /* Updated blue border for selected */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Avenir, "Helvetica Neue", arial, sans-serif;
+    color: var(--text-color);
+    background-color: #f5f8fa;
+    line-height: 1.5;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.timestamp {
+    font-size: 12px;
+    color: #999;
+    white-space: nowrap;
+    text-align: center;
+    margin: 0;
+    flex: 0 0 auto;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sidebar {
+    width: 220px;
+    background-color: var(--sidebar-bg);
+    color: white;
+    padding-top: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden; /* Hide overflowing content when collapsed */
+    --edge-color: transparent;
+    --edge-opacity: 1; /* Changed from 0 to 1 to remove transparency */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Use full viewport height */
+}
+
+.sidebar.collapsed {
+    width: 16px; /* Reduced from 20px to 16px */
+}
+
+/* Edge handle for expanding sidebar */
+.sidebar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 12px; /* Width of the clickable area */
+    height: 100%;
+    background-color: transparent; /* Base background is transparent */
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+/* Add a second pseudo-element for the visual highlight only */
+.sidebar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6px; /* Changed from 4px to 6px for thicker visual highlight */
+    height: 100%;
+    background-color: var(--edge-color);
+    opacity: var(--edge-opacity);
+    z-index: 11; /* Above the clickable area */
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    pointer-events: none; /* Pass events through to the ::after element */
+}
+
+/* Add a stronger hover effect for collapsed sidebar edge */
+.sidebar.collapsed::after {
+    width: 16px; /* Increased width for easier access when collapsed */
+}
+
+/* Hide sidebar content when collapsed */
+.sidebar-inner {
+    width: 220px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sidebar.collapsed .sidebar-inner {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Sidebar toggle button */
+.sidebar-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    color: #212330;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    font-size: 14px;
+    transition: transform 0.3s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Hover state for toggle button */
+.sidebar-toggle:hover, .sidebar-toggle.toggle-hovered {
+    background-color: var(--sidebar-border-selected);
+    color: white;
+    box-shadow: 0 2px 6px rgba(19, 177, 226, 0.4);
+}
+
+.sidebar.collapsed .sidebar-toggle {
+    right: -2px; /* Position closer to the edge when collapsed */
+    transform: rotate(180deg);
+}
+
+.main-content {
+    flex: 1;
+    padding: 8px 20px 20px 20px; /* Reduced from 30px to 20px on left and right */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    transition: all 0.3s ease-in-out, margin-top 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.header-left, .header-right {
+    display: flex;
+}
+
+.header-left {
+    justify-content: flex-start;
+    flex: 3; /* Increased from 1 to 3 to make it wider */
+    margin-right: 20px; /* Add margin to separate from search */
+    overflow: hidden; /* Prevent overflow */
+    white-space: nowrap; /* Keep all on one line */
+    display: flex;
+    align-items: center;
+}
+
+.header-left h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.header-right {
+    justify-content: flex-end;
+    flex: 1;
+    min-width: 280px; /* Ensure search bar has minimum width */
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    transition: all 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+
+.search-container {
+    position: relative;
+    transition: width 0.3s ease-in-out, border-radius 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: white;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #eee;
+    font-size: 14px;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 10;
+    opacity: 0.25;
+    transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.search-clear {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: none;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 10;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 16px;
+}
+
+.search-clear:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.search-clear.visible {
+    display: block;
+}
+
+.search-input {
+    padding: 8px 12px 8px 36px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    width: 260px;
+    font-size: 14px;
+    transition: width 0.3s ease-in-out;
+    background: transparent;
+}
+
+/* Adjust padding for the search input to make room for the clear button */
+.search-input.with-clear {
+    padding-right: 30px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.card h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.summary-cards {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    margin-top: 10px; /* Add space above to allow for hover elevation */
+    padding-top: 2px; /* Additional padding for hover movement */
+}
+
+.summary-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    padding: 16px;
+    flex: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.summary-card:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Selected state for summary card - no more border */
+.summary-card.selected {
+    background-color: white; /* Keep it white when selected */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); /* Slightly enhanced shadow for selected state */
+}
+
+/* Status indicator at the bottom of selected card */
+.summary-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px; /* Thicker underline */
+    background-color: transparent;
+    transition: all 0.2s ease;
+}
+
+.summary-card.selected::after {
+    background-color: var(--primary-blue);
+}
+
+/* Special case for "Total" card - no underline */
+#totalCard.selected::after {
+    background-color: transparent;
+}
+
+/* Status-specific indicator colors */
+.summary-card.selected-success::after {
+    background-color: var(--success-color);
+}
+
+.summary-card.selected-warning::after {
+    background-color: var(--warning-color);
+}
+
+.summary-card.selected-error::after {
+    background-color: var(--error-color);
+}
+
+.summary-card.selected-skipped::after {
+    background-color: var(--skipped-color);
+}
+
+.summary-card.selected-api-error::after {
+    background-color: var(--api-error-color);
+}
+
+.summary-card.selected-inherited::after {
+    background-color: var(--inherited-color);
+}
+
+/* Override for total card - even with success class */
+#totalCard.selected-success::after {
+    background-color: transparent;
+}
+
+.summary-card h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.summary-card .value {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+}
+
+.value.inherited {
+    color: #333;
+}
+
+/* Ensure table layout is fixed to prevent column width changes during filtering */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    table-layout: fixed;
+}
+
+th {
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 500;
+    color: #666;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #fafafa;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+}
+
+th::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    margin-left: 8px;
+}
+
+th.sort-asc::after {
+    content: "▲";
+    font-size: 12px;
+    color: #888;
+}
+
+th.sort-desc::after {
+    content: "▼";
+    font-size: 12px;
+    color: #888;
+}
+
+td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+tr:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Set specific widths for each column to maintain stability */
+#migrationTable th:first-child,
+#migrationTable td:first-child {  /* Ordinal number column */
+    width: 55px !important; /* Increased by 30% from 30px */
+    min-width: 55px !important; /* Increased by 30% from 30px */
+    max-width: 55px !important; /* Increased by 30% from 30px */
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    text-align: center !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#migrationTable th:nth-child(2),
+#migrationTable td:nth-child(2) {  /* Status column */
+    width: 50px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    text-align: center !important;
+}
+
+#migrationTable th:nth-child(3),
+#migrationTable td:nth-child(3) {  /* Title column */
+    width: 40% !important;
+    min-width: 200px !important;
+}
+
+#migrationTable th:nth-child(4),
+#migrationTable td:nth-child(4),
+#migrationTable th:nth-child(5),
+#migrationTable td:nth-child(5) {  /* ID columns */
+    width: 20% !important;
+    min-width: 150px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#migrationTable th:nth-child(6),
+#migrationTable td:nth-child(6) {  /* Compare button column */
+    width: auto !important;
+    min-width: 100px !important;
+    max-width: 140px !important;
+    text-align: center;
+    padding: 8px !important;
+}
+
+.status {
+    width: 90px;
+    text-align: center;
+}
+
+/* Status icons using Unicode characters that better match the design */
+.status-icon {
+    display: inline-block;
+    text-align: center;
+    width: 22px;
+    height: 22px;
+}
+
+.status-success .status-icon {
+    color: var(--success-color);
+    font-size: 20px;
+}
+
+.status-warning .status-icon {
+    color: var(--warning-color);
+    font-size: 20px;
+}
+
+.status-error .status-icon {
+    color: var(--error-color);
+    font-size: 20px;
+}
+
+.status-skipped .status-icon {
+    color: var(--skipped-color);
+    font-size: 20px;
+}
+
+.status-api-error .status-icon {
+    color: var(--api-error-color);
+    font-size: 20px;
+}
+
+.status-inherited .status-icon {
+    color: var(--inherited-color);
+    font-size: 20px;
+}
+
+/* Strikethrough for skipped items */
+.title-strikethrough {
+    text-decoration: line-through;
+}
+
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: white;
+    color: #333;
+    border: 1px solid var(--border-color);
+}
+
+.expandable-title {
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;  /* Space for the indicator */
+}
+
+.expandable-title:hover {
+    color: var(--primary-blue);
+}
+
+.description-row {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.description-content {
+    padding: 0 16px 0 40px;
+    margin-top: 8px;
+    white-space: pre-line;
+}
+
+.expanded .description-row {
+    display: table-row;
+}
+
+.expandable-title::after {
+    content: "▼";
+    font-size: 10px;
+    color: #999;
+    margin-left: 8px;
+    display: inline-block;
+    transition: transform 0.2s;
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.expanded .expandable-title::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* Info icon and modal styles */
+.info-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8px;
+    color: var(--primary-blue);
+    cursor: pointer;
+    font-size: 16px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(20, 178, 226, 0.1);
+}
+
+.info-icon:hover {
+    background-color: rgba(20, 178, 226, 0.2);
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 80%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-right: 30px;
+}
+
+.modal-description {
+    white-space: pre-line;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-close:hover {
+    color: var(--error-color);
+}
+
+/* Side-by-side comparison styles */
+.compare-btn {
+    background-color: var(--primary-blue);
+    color: white;
+    border: 1px solid var(--primary-blue);
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    max-width: 100%;
+    height: 32px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.compare-btn:hover {
+    background-color: rgb(19, 156, 198);
+    border-color: rgb(19, 156, 198);
+    color: white;
+}
+
+/* Ensure the button column adapts well to narrow viewports */
+@media (max-width: 768px) {
+    .compare-btn {
+        min-width: 60px;
+        padding: 4px 6px;
+    }
+}
+
+.main-content {
+    flex: 1;
+    padding: 8px 20px 20px 20px; /* Reduced from 30px to 20px on left and right */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.table-container {
+    flex: 1;
+    overflow: auto;
+    transition: height 0.3s ease-in-out;
+}
+
+.comparison-container {
+    display: none;
+    height: 0;
+    flex-direction: column;
+    border-top: 2px solid var(--border-color);
+    transition: height 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    padding: 0; /* Add 0 padding explicitly */
+}
+
+.comparison-container.active {
+    display: flex;
+    height: 80%;
+}
+
+.frames-container {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    margin: 0; /* Add 0 margin explicitly */
+    padding: 0; /* Add 0 padding explicitly */
+}
+
+.comparison-header {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid var(--border-color);
+    width: 100%;
+    position: relative;
+    z-index: 15;
+    flex-shrink: 0;
+}
+
+.comparison-header.active {
+    display: flex;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+    align-items: center;
+    position: relative; /* Ensure proper positioning */
+    z-index: 1; /* Keep it above other elements */
+}
+
+/* Modified comparison title to be responsive */
+.comparison-title {
+    font-weight: 500;
+    font-size: 14px;
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 15px;
+    padding: 0 15px;
+    max-width: 50%;
+    position: relative; /* Ensure it's positioned relative to the flow */
+    z-index: 1; /* Keep it above other elements */
+}
+
+/* New classes for the left and right buttons */
+.open-ui-button.left-button {
+    margin-left: 5px; /* Minimal margin for Platform button */
+    position: relative;
+    z-index: 2; /* Keep it above other elements */
+}
+
+.open-ui-button.right-button {
+    position: absolute; /* Position it absolutely */
+    left: 50%; /* Start at the center divider */
+    transform: translateX(16px); /* Shift it slightly right of the divider */
+    z-index: 2; /* Keep it above other elements */
+}
+
+/* Spacer for visual separation between button groups */
+.button-spacer {
+    width: 20px;
+    flex-shrink: 0;
+}
+
+.button-spacer-large {
+    width: 30px;
+    flex-shrink: 0;
+}
+
+.button-spacer-small {
+    width: 12px;
+    flex-shrink: 0;
+}
+
+/* Navigation button styles */
+.nav-button {
+    background-color: white;
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;  /* Fixed width to prevent resizing */
+    height: 32px;  /* Fixed height to prevent row jumping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.comparison-divider {
+    width: 6px;
+    background-color: var(--border-color);
+    cursor: col-resize;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 10;
+    transition: none !important; /* Disable all transitions */
+}
+
+.comparison-divider:hover,
+.comparison-divider.resizing {
+    background-color: var(--primary-blue);
+}
+
+.comparison-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -15px;
+    right: -15px;
+    bottom: 0;
+    opacity: 0;
+    z-index: 5;
+    cursor: col-resize;
+}
+
+.divider-controls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 20;
+    overflow: hidden;
+}
+
+.divider-button {
+    cursor: pointer;
+    padding: 4px;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-bottom: 1px solid #eee;
+}
+
+.divider-button:last-child {
+    border-bottom: none;
+}
+
+.divider-button:hover {
+    background-color: #f5f5f5;
+    color: var(--primary-blue);
+}
+
+.close-comparison {
+    cursor: pointer;
+    font-size: 22px;
+    color: #ff4f4f;
+    background-color: rgba(255, 79, 79, 0.1);
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-comparison:hover {
+    background-color: rgba(255, 79, 79, 0.2);
+}
+
+.frame-label {
+    padding: 5px 10px;
+    background: rgba(0,0,0,0.05);
+    position: absolute;
+    top: 5px;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.platform-label {
+    left: 5px;
+}
+
+.cloud-label {
+    right: 5px;
+}
+
+.frame-container {
+    flex: 1;
+    position: relative;
+    display: flex;
+    min-width: 10px; /* Ensure the container doesn't completely collapse */
+    overflow: hidden;
+    transition: none !important; /* Disable all transitions */
+    padding: 0; /* Add 0 padding explicitly */
+    margin: 0; /* Add 0 margin explicitly */
+}
+
+.highlight-row {
+    background-color: rgba(20, 178, 226, 0.1);
+}
+
+/* Fixed header styles */
+.table-responsive {
+    position: relative;
+}
+
+.migrationTable-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #fafafa;
+}
+
+/* Much more aggressive header height reduction */
+#migrationTable thead tr {
+    height: 32px !important;
+    max-height: 32px !important;
+    line-height: 1 !important;
+    min-height: 0 !important;
+    box-sizing: border-box !important;
+}
+
+#migrationTable th {
+    height: 32px !important;
+    max-height: 32px !important;
+    line-height: 1 !important;
+    min-height: 0 !important;
+    padding: 2px 16px !important;
+    box-sizing: border-box !important;
+    vertical-align: middle !important;
+    font-size: 12px !important;
+}
+
+/* Reset any padding that might be adding to the height */
+#migrationTable thead tr th {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Compact table header - modify existing rule */
+.migrationTable-header th {
+    padding: 0 16px !important;
+    font-size: 12px !important;
+    height: 32px !important;
+    max-height: 32px !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+/* Hide statistics in comparison mode */
+.summary-cards {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, margin 0.3s ease-in-out, padding 0.3s ease-in-out;
+    max-height: 150px;
+    opacity: 1;
+    overflow: hidden;
+    padding-top: 2px;
+    margin-bottom: 24px;
+    margin-top: 10px;
+}
+
+.summary-cards.hidden {
+    max-height: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+/* Compact header in comparison mode */
+.header.compact {
+    padding: 3px 0;
+    margin: 0;
+    position: relative;
+    border-bottom: none;
+}
+
+.header.compact h1 {
+    font-size: 16px;
+    transition: font-size 0.3s ease-in-out;
+}
+
+.header.compact .timestamp {
+    font-size: 11px;
+    /* Still keep it centered in compact mode */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Simplified search styles for comparison mode - no collapsing */
+.header.compact .search-container {
+    width: 260px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+    margin-top: 3px;
+}
+
+.header.compact .search-input {
+    width: 260px;
+    height: 28px;
+    background-color: transparent;
+    border: none;
+    padding: 4px 12px 4px 36px;
+    font-size: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Adjust workspace ID width in compact mode */
+.header.compact .workspace-id {
+    max-width: 270px;
+}
+
+/* Improve focus styling */
+.search-input:focus {
+    outline: none;
+}
+
+.search-container:focus-within {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 1px var(--primary-blue);
+}
+
+h1 {
+    transition: font-size 0.3s ease-in-out;
+}
+
+/* Adjust comparison view height */
+.table-container.with-comparison {
+    height: 18%; /* Increased from 16% to 18% */
+    min-height: 100px; /* Ensure minimum height for usability */
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-container.active {
+    height: 82%; /* Reduced from 84% to 82% */
+}
+
+/* No heading in migration details */
+.card h2 {
+    display: none;
+}
+
+/* Vertical resize handle between table and comparison */
+.vertical-resize-handle {
+    height: 6px;
+    width: 100%;
+    background-color: var(--border-color);
+    cursor: row-resize;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 15;
+}
+
+.vertical-resize-handle:hover,
+.vertical-resize-handle.resizing {
+    background-color: var(--primary-blue);
+}
+
+.comparison-frame {
+    flex: 1;
+    border: none;
+    height: 100%;
+    width: 100%;
+    margin: 0; /* Add 0 margin explicitly */
+    padding: 0; /* Add 0 padding explicitly */
+}
+
+/* Global dragging style applied to body when resizing */
+body.resizing {
+    cursor: col-resize !important;
+    user-select: none !important;
+}
+
+body.resizing-vertical {
+    cursor: row-resize !important;
+    user-select: none !important;
+}
+
+/* Drag overlay to ensure continuous dragging */
+.drag-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    display: none;
+    z-index: 1000;
+}
+
+.drag-overlay.active {
+    display: block;
+}
+
+/* Table container with no transitions during dragging */
+.table-container {
+    flex: 1;
+    overflow: auto;
+    transition: height 0.3s ease-in-out;
+}
+
+.table-container.dragging {
+    transition: none !important;
+}
+
+.comparison-container.dragging {
+    transition: none !important;
+}
+
+/* Open in UI buttons */
+.open-ui-button {
+    background-color: white;
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;  /* Match the size of nav buttons */
+    height: 32px;  /* Match the size of nav buttons */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.open-ui-button:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.open-ui-button.hidden {
+    display: none;
+}
+
+.sidebar-header {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h3 {
+    color: var(--sidebar-text);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 15px 0;
+}
+
+.sidebar-subheader {
+    padding: 5px 20px;
+    color: var(--sidebar-text);
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.prefix-label {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.prefix-navigation {
+    padding: 0;
+    position: relative;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.prefix-navigation:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--sidebar-border-hover);
+}
+
+.back-to-master {
+    color: var(--sidebar-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    padding: 8px 20px;
+    transition: color 0.2s ease;
+    width: 100%;
+}
+
+.back-to-master:hover {
+    color: var(--sidebar-text-hover);
+}
+
+.back-arrow {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.prefix-list {
+    max-height: calc(100vh - 220px); /* Use available viewport height minus space for header and main nav */
+    overflow-y: auto;
+    padding-bottom: 20px; /* Add padding at the bottom */
+    flex: 1; /* Allow the list to grow and fill available space */
+}
+
+.prefix-item {
+    padding: 0;
+    position: relative;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.prefix-item:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--sidebar-border-hover);
+}
+
+.prefix-item a {
+    color: var(--sidebar-text);
+    text-decoration: none;
+    display: block;
+    padding: 6px 20px;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    transition: color 0.2s ease;
+}
+
+.prefix-item a:hover {
+    color: var(--sidebar-text-hover);
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.menu-item {
+    padding: 0;
+    color: var(--sidebar-text);
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    position: relative;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.menu-item:hover {
+    color: var(--sidebar-text-hover);
+    background-color: var(--sidebar-bg);
+}
+
+.menu-item:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--sidebar-border-hover);
+}
+
+.menu-item.active {
+    background-color: var(--sidebar-selected-bg);
+    color: var(--sidebar-text-selected);
+    font-weight: bold;
+}
+
+.menu-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--sidebar-border-selected);
+}
+
+.menu-item.active:hover::before {
+    background-color: var(--sidebar-border-hover);
+}
+
+.menu-item a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.menu-item.active a {
+    color: var(--sidebar-text-selected);
+    font-weight: bold;
+}
+
+/* For menu items without links (like the currently active one) */
+.menu-item:not(:has(a)) {
+    padding: 10px 20px;
+}
+
+/* Disabled button styles */
+.nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f0f0f0;
+    color: #999;
+    border-color: #ddd;
+}
+
+.nav-button:disabled:hover {
+    background-color: #f0f0f0;
+    color: #999;
+}
+
+.sidebar-submenu {
+    padding: 0; /* Remove padding to align with sidebar edge */
+}
+
+.menu-item.disabled {
+    color: var(--sidebar-text);
+    opacity: 0.5;
+    cursor: not-allowed;
+    padding: 10px 20px;
+}
+
+.menu-item a:hover {
+    color: inherit; /* Inherit from parent hover */
+}
+
+.menu-item.active a {
+    color: var(--sidebar-text-selected);
+    font-weight: bold;
+}
+
+/* For menu items without links (like the currently active one) */
+.menu-item:not(:has(a)) {
+    padding: 10px 20px;
+}
+
+/* Add this to the end of the CSS file */
+.edge-hovered {
+    /* No longer needed as we're using custom properties */
+}
+
+/* For the client list section, ensure it can grow to fill space */
+.prefix-list-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0; /* Important for Firefox */
+    overflow: hidden; /* Contain overflow within container */
+}
+
+/* Style for inherited status - remove opacity from row */
+.status-inherited {
+    /* Remove opacity from here */
+}
+
+/* Apply opacity to cells from the third column onward (except the last one) */
+.status-inherited td:not(:nth-child(1)):not(:nth-child(2)):not(:last-child) {
+    opacity: 0.7;
+    color: #555;
+}
+
+/* Ensure first two columns and the compare button cell have full opacity */
+.status-inherited td:nth-child(1),
+.status-inherited td:nth-child(2),
+.status-inherited td:last-child {
+    opacity: 1 !important;
+}
+
+/* Consistent row height regardless of content */
+#migrationTable tr {
+    height: 52px !important;
+}
+
+/* Ensure cell content is properly vertically aligned */
+#migrationTable td {
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+    line-height: 1.3;
+}
+
+/* Styles for workspace IDs in the header */
+.workspace-id {
+    font-size: 0.8em;
+    font-family: monospace;
+    color: #555;
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    display: inline-block;
+    max-width: 390px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: max-width 0.3s ease;
+    flex: 1; /* Allow flex sizing */
+    min-width: 0; /* Allow shrinking below content size */
+}
+
+.workspace-warning {
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 5px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-color: rgba(255, 171, 0, 0.1);
+    color: #d9730d;
+    padding: 5px 16px;
+    display: flex;
+    align-items: center;
+}
+
+/* Special handling for the second workspace ID (cloud) */
+.workspace-id + .arrow + .workspace-id {
+    text-align: left;
+}
+
+.arrow {
+    font-size: 1em;
+    margin: 0 8px;
+    color: var(--primary-blue);
+    font-weight: bold;
+    flex: 0 0 auto; /* Don't allow the arrow to shrink */
+}
+
+.prefix {
+    font-weight: 500;
+    color: #555;
+    margin-right: 10px;
+    flex: 0 0 auto; /* Don't allow the prefix to shrink */
+    font-size: 80%; /* Reduce the font size to 80% */
+    vertical-align: bottom; /* Align to bottom */
+    position: relative; /* Enable positioning */
+    top: 3px; /* Shift down by 3px */
+    display: inline-block; /* Ensure positioning works */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .workspace-id {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .workspace-id {
+        max-width: 150px;
+    }
+
+    .arrow {
+        margin: 0 4px;
+    }
+
+    .prefix {
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .workspace-id {
+        max-width: 120px;
+    }
+
+    .header-left {
+        flex: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .workspace-id {
+        max-width: 80px;
+    }
+
+    .header-left {
+        flex: 1.5;
+        margin-right: 10px;
+    }
+
+    .header-right {
+        min-width: 200px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+}
+
+/* Timestamp footer */
+.timestamp-footer {
+    margin-top: 20px;
+    padding: 12px 16px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #666;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end; /* Right align the content */
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.timestamp-footer div {
+    margin-left: 20px; /* Space between timestamps */
+}
+
+.warning-badge {
+    background-color: rgba(255, 171, 0, 0.1);
+    color: #d9730d;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+/* Warning banner above the table */
+.migration-warning-banner {
+    background-color: rgba(255, 171, 0, 0.1);
+    color: #d9730d;
+    padding: 10px 16px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+/* Adjust main content padding in compact mode */
+.main-content.compact {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Ensure table has no extra margins in compact mode */
+.table-container.with-comparison .card {
+    margin-bottom: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+/* Status icon images */
+.status-img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/* Summary card status icon */
+.summary-card .status-icon-large {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Prevent icon from interfering with clicks */
+    z-index: 2;
+}
+
+/* Show icon on hover */
+.summary-card:hover .status-icon-large {
+    opacity: 0.5;
+}
+
+/* Keep icon visible when selected */
+.summary-card.selected .status-icon-large,
+.summary-card.selected-success .status-icon-large,
+.summary-card.selected-warning .status-icon-large,
+.summary-card.selected-error .status-icon-large,
+.summary-card.selected-skipped .status-icon-large,
+.summary-card.selected-api-error .status-icon-large,
+.summary-card.selected-inherited .status-icon-large {
+    opacity: 1;
+}

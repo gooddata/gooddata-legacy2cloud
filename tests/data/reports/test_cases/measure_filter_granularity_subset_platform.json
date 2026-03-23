@@ -1,0 +1,120 @@
+[
+  {
+    "reportDefinition": {
+      "meta": {
+        "category": "report",
+        "title": "measure filter granularity subset",
+        "identifier": "abDimGranTest1",
+        "summary": ""
+      },
+      "content": {
+        "format": "grid",
+        "filters": [
+          {
+            "expression": "(SELECT [/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838] BY [/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754], [/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4766], ALL OTHER) >= 30",
+            "tree": {
+              "type": ">=",
+              "content": [
+                {
+                  "type": "metric",
+                  "content": [
+                    {
+                      "type": "expression",
+                      "content": [
+                        {
+                          "type": "metric object",
+                          "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "by",
+                      "content": [
+                        {
+                          "type": "attribute object",
+                          "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754"
+                        },
+                        {
+                          "type": "attribute object",
+                          "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4766"
+                        },
+                        {
+                          "type": "all other",
+                          "content": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "number",
+                  "value": "30"
+                }
+              ]
+            }
+          },
+          {
+            "expression": "(SELECT [/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838]) >= 50",
+            "tree": {
+              "type": ">=",
+              "content": [
+                {
+                  "type": "metric",
+                  "content": [
+                    {
+                      "type": "expression",
+                      "content": [
+                        {
+                          "type": "metric object",
+                          "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "number",
+                  "value": "50"
+                }
+              ]
+            }
+          }
+        ],
+        "grid": {
+          "rows": [
+            {
+              "attribute": {
+                "alias": "",
+                "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754",
+                "totals": [[]]
+              }
+            },
+            {
+              "attribute": {
+                "alias": "",
+                "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4766",
+                "totals": [[]]
+              }
+            }
+          ],
+          "columns": [
+            {
+              "attribute": {
+                "alias": "",
+                "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+                "totals": [[]]
+              }
+            },
+            "metricGroup"
+          ],
+          "metrics": [
+            {
+              "alias": "",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838"
+            }
+          ]
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,223 @@
+{
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796": {
+    "metric": {
+      "meta": {
+        "title": "$ Sales",
+        "identifier": "aaXlbflxeioq",
+        "category": "metric"
+      },
+      "content": {
+        "expression": ""
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2572": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "acMTetT0PV6j"
+      },
+      "content": {
+        "filters": []
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990020": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.convertcurrency.currencycode",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990022"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990022": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.convertcurrency.currencycode",
+        "category": "attribute"
+      },
+      "content": {}
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990021": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.customer.customerid",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990023"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990023": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.customer.customerid",
+        "category": "attribute"
+      },
+      "content": {}
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "order"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990002": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "ship"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2571": {
+    "kpi": {
+      "meta": {
+        "identifier": "aeLS3zEyG7L8",
+        "title": "Different Name",
+        "summary": "custom description goes here"
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2573": {
+    "kpi": {
+      "meta": {
+        "identifier": "aciTef44TqqL",
+        "title": "# Sold Products",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2575": {
+    "kpi": {
+      "meta": {
+        "identifier": "acqTemLtL8Tv",
+        "title": "# Sold Products",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2576": {
+    "kpi": {
+      "meta": {
+        "identifier": "ackTeeNEUCWm",
+        "title": "DIFFERTENT NAME2",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990002"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3537": {
+    "kpi": {
+      "meta": {
+        "identifier": "aboUItFkF6Yf",
+        "title": "KPI with no date range",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [
+          {
+            "attributeFilterReference": {
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990020"
+            }
+          },
+          {
+            "attributeFilterReference": {
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990021"
+            }
+          }
+        ],
+        "comparisonType": "none",
+        "comparisonDirection": "none"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3539": {
+    "kpi": {
+      "meta": {
+        "identifier": "aaCUItBwF5Oc",
+        "title": "KPI w date filter with comparison",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [
+          {
+            "attributeFilterReference": {
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990020"
+            }
+          }
+        ],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3538": {
+    "kpi": {
+      "meta": {
+        "identifier": "afoUAJGPU54d",
+        "title": "KPI w date filter wo comparison",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [
+          {
+            "attributeFilterReference": {
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990020"
+            }
+          },
+          {
+            "attributeFilterReference": {
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990021"
+            }
+          }
+        ],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  }
+}

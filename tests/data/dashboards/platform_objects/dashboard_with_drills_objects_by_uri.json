@@ -1,0 +1,336 @@
+{
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796": {
+    "metric": {
+      "meta": {
+        "title": "$ Sales",
+        "identifier": "aaXlbflxeioq",
+        "category": "metric"
+      },
+      "content": {
+        "expression": ""
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4485": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "afQQ39B8sjFV"
+      },
+      "content": {
+        "filters": []
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "order"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990002": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "ship"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800000": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aabD81raCNNE",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4687": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "acky4MoMC9IX",
+        "title": "drill to insight ahoj 123",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800000",
+        "ignoreDashboardFilters": [],
+        "drills": [
+          {
+            "drillToVisualization": {
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "13249210475f4766ad57290286b16c6b"
+                }
+              },
+              "toVisualization": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800101"
+              }
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800101": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aado12ITy5Y7",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4689": {
+    "kpi": {
+      "meta": {
+        "identifier": "aaozyaSgYe6w",
+        "title": "# Sold Products",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990002"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800002": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aamTZt6I6Shp",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4525": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "acsTRJbSFV5U",
+        "title": "drill to URL",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800002",
+        "ignoreDashboardFilters": [],
+        "configuration": {
+          "hideTitle": false
+        },
+        "drills": [
+          {
+            "drillToAttributeUrl": {
+              "from": {
+                "drillFromAttribute": {
+                  "localIdentifier": "dcc44bc0f6d144088c3da219d338026b"
+                }
+              },
+              "drillToAttributeDisplayForm": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990030"
+              },
+              "insightAttributeDisplayForm": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990031"
+              }
+            }
+          },
+          {
+            "drillToCustomUrl": {
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "fedcf8b1ea6641739fad62aef1fe82ee"
+                }
+              },
+              "customUrl": "https://google.com?q={attribute_title(label.product.productid.producturl)}+{dash_attribute_filter_selection(attr.customer.country)}+{workspace_id}"
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990030": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.product.productid.producturl",
+        "category": "attributeDisplayForm"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990031": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.product.productid.product",
+        "category": "attributeDisplayForm"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800003": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aabD81raCNNE",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4492": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "aapTRqEn3vGo",
+        "title": "test",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800003",
+        "ignoreDashboardFilters": [],
+        "drills": [
+          {
+            "drillToCustomUrl": {
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "13249210475f4766ad57290286b16c6b"
+                }
+              },
+              "customUrl": "https://google.com?q={attribute_filter_selection(attr.customer.country)}+{dash_attribute_filter_selection(attr.customer.country)}"
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800004": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aaqLka7tnKTs",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4486": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "acRRbCNSvHIC",
+        "title": "drill to dashboard and insight",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800004",
+        "ignoreDashboardFilters": [],
+        "drills": [
+          {
+            "drillToDashboard": {
+              "target": "in-place",
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "d6bde0e48a664ba58b95a4dc7a854128"
+                }
+              },
+              "toDashboard": "abJgxnGba7zp"
+            }
+          },
+          {
+            "drillToVisualization": {
+              "from": {
+                "drillFromAttribute": {
+                  "localIdentifier": "3d7ad08b7e774a87856d868eafc95a09"
+                }
+              },
+              "toVisualization": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800301"
+              }
+            }
+          },
+          {
+            "drillToDashboard": {
+              "target": "in-place",
+              "from": {
+                "drillFromAttribute": {
+                  "localIdentifier": "0759c57684d646599d260cd80cddb169"
+                }
+              },
+              "toDashboard": "acXRfpleIgFv"
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800300": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aado12ITy5Y7",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800301": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "abP55MJbmGbc",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800005": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aboyXq7GHSbz",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4488": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "abURjLseyFyS",
+        "title": "testing runsum",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800005",
+        "ignoreDashboardFilters": [],
+        "properties": "{\"controls\": {\"zoomInsight\": true}}",
+        "drills": [
+          {
+            "drillToCustomUrl": {
+              "from": {
+                "drillFromAttribute": {
+                  "localIdentifier": "f575ecd3020e45e1a188895c42879d43"
+                }
+              },
+              "customUrl": "https://google.com?q={insight_id}++{dashboard_id}+{workspace_id}+{attribute_title(order.act81lMifn6q)}"
+            }
+          },
+          {
+            "drillToVisualization": {
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "838713b1e4f647029781d639b3635c04"
+                }
+              },
+              "toVisualization": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800200"
+              }
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800200": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "adeLbCcriKNm",
+        "category": "visualizationObject"
+      }
+    }
+  }
+}

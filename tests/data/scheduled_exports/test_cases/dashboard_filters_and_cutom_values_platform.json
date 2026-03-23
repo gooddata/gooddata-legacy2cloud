@@ -1,0 +1,65 @@
+[
+  {
+    "scheduledMail": {
+      "meta": {
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4982",
+        "deprecated": "0",
+        "isProduction": 1,
+        "sharedWithSomeone": 0,
+        "summary": "Daily at 9:30 AM",
+        "updated": "2025-08-22 09:19:11",
+        "identifier": "ab7Kdx9mprtR",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "scheduledMail",
+        "unlisted": 1,
+        "created": "2025-08-22 09:19:11",
+        "title": "dashboard filters with values and custom filters",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "tags": ""
+      },
+      "content": {
+        "attachments": [
+          {
+            "kpiDashboardAttachment": {
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4978",
+              "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4981",
+              "format": "pdf"
+            }
+          },
+          {
+            "visualizationWidgetAttachment": {
+              "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4981",
+              "formats": ["xlsx"],
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4976",
+              "dashboardUri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4978",
+              "exportOptions": {
+                "mergeHeaders": "yes",
+                "includeFilterContext": "yes"
+              }
+            }
+          },
+          {
+            "visualizationWidgetAttachment": {
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4975",
+              "dashboardUri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4978",
+              "formats": ["xlsx"],
+              "exportOptions": {
+                "mergeHeaders": "yes",
+                "includeFilterContext": "yes"
+              },
+              "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4981"
+            }
+          }
+        ],
+        "subject": "dashboard filters with values and custom filters",
+        "to": ["example.user@gooddata.com"],
+        "when": {
+          "timeZone": "Europe/Amsterdam",
+          "startDate": "2025-08-22",
+          "recurrency": "0:0:0:1*9:30:0"
+        },
+        "body": "dashboard has filters with values selected\ndate: last year\n\ncustom filters:\ncategory: office supplies\nname: notebook, water bottle (data only for notebook)"
+      }
+    }
+  }
+]

@@ -1,0 +1,1040 @@
+{
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4985": {
+    "filterContext": {
+      "content": {
+        "filters": []
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "filterContext",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-09-09 08:50:59",
+        "deprecated": "0",
+        "identifier": "acBrpELxXJPQ",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "filterContext",
+        "updated": "2025-09-09 08:50:59",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4985"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4984": {
+    "visualizationWidget": {
+      "content": {
+        "dateDataSet": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4453",
+        "ignoreDashboardFilters": [],
+        "visualization": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4839"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "visualizationWidget",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-09-09 08:51:00",
+        "deprecated": "0",
+        "identifier": "abJrpUa4bktT",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Avg item price per category",
+        "updated": "2025-09-09 08:51:00",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4984"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4839": {
+    "visualizationObject": {
+      "content": {
+        "buckets": [
+          {
+            "items": [
+              {
+                "measure": {
+                  "definition": {
+                    "measureDefinition": {
+                      "aggregation": "avg",
+                      "item": {
+                        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769"
+                      }
+                    }
+                  },
+                  "format": "#,##0.00",
+                  "localIdentifier": "97b94dad34c84bc39dd59342a448a9cb",
+                  "title": "Avg Item Price"
+                }
+              }
+            ],
+            "localIdentifier": "measures"
+          },
+          {
+            "items": [
+              {
+                "visualizationAttribute": {
+                  "displayForm": {
+                    "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755"
+                  },
+                  "localIdentifier": "d6f211db045248f08cc861b88eecfe12"
+                }
+              }
+            ],
+            "localIdentifier": "view"
+          }
+        ],
+        "visualizationClass": {
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/14"
+        }
+      },
+      "links": {
+        "explain": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4839/explain"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "visualizationObject",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-10 09:25:16",
+        "deprecated": "0",
+        "identifier": "abb6SWS81yFv",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Avg item price per category",
+        "updated": "2025-04-10 09:25:16",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4839"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4453": {
+    "dataSet": {
+      "content": {
+        "attributes": [],
+        "dataLoadingColumns": [],
+        "facts": [],
+        "identifierPrefix": "orderdate",
+        "mode": "",
+        "titleSuffix": "Order Date",
+        "urn": "urn:custom_v2:date"
+      },
+      "links": {
+        "dataUploads": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/data/uploads/4453"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "dataSet",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2010-08-02 08:13:42",
+        "deprecated": "0",
+        "identifier": "orderdate.dataset.dt",
+        "isProduction": 1,
+        "summary": "DataSet Date",
+        "tags": "",
+        "title": "Date (Order Date)",
+        "updated": "2019-06-03 12:02:36",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4453"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4003": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "aa6LcrTCksyT"
+      },
+      "content": {
+        "filters": [
+          {
+            "attributeFilter": {
+              "localIdentifier": "e05e218f570b4004a5888a755a1130e2",
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990010",
+              "attributeElements": [],
+              "negativeSelection": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990010": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.product.productid.product",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990011"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990011": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.product.productid",
+        "category": "attribute"
+      },
+      "content": {}
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "order"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990002": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "ship"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800000": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aaqLka7tnKTs",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4002": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "aavLkgndn8D2",
+        "title": "visualization with attribute filter with multiple labels 2",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800000",
+        "ignoreDashboardFilters": [],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800001": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "abjLcJdtJ0d5",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4004": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "abZLcDMSkhzN",
+        "title": "visualization with attribute filter with multiple labels 1",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800001",
+        "ignoreDashboardFilters": [],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796": {
+    "metric": {
+      "meta": {
+        "title": "$ Sales",
+        "identifier": "aaXlbflxeioq",
+        "category": "metric"
+      },
+      "content": {
+        "expression": ""
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4485": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "afQQ39B8sjFV"
+      },
+      "content": {
+        "filters": []
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9900000": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aabD81raCNNE",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4687": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "acky4MoMC9IX",
+        "title": "drill to insight ahoj 123",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9900000",
+        "ignoreDashboardFilters": [],
+        "drills": [
+          {
+            "drillToVisualization": {
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "13249210475f4766ad57290286b16c6b"
+                }
+              },
+              "toVisualization": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800101"
+              }
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800101": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aado12ITy5Y7",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4689": {
+    "kpi": {
+      "meta": {
+        "identifier": "aaozyaSgYe6w",
+        "title": "# Sold Products",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990002"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800002": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aamTZt6I6Shp",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4525": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "acsTRJbSFV5U",
+        "title": "drill to URL",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800002",
+        "ignoreDashboardFilters": [],
+        "configuration": {
+          "hideTitle": false
+        },
+        "drills": [
+          {
+            "drillToAttributeUrl": {
+              "from": {
+                "drillFromAttribute": {
+                  "localIdentifier": "dcc44bc0f6d144088c3da219d338026b"
+                }
+              },
+              "drillToAttributeDisplayForm": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990030"
+              },
+              "insightAttributeDisplayForm": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990031"
+              }
+            }
+          },
+          {
+            "drillToCustomUrl": {
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "fedcf8b1ea6641739fad62aef1fe82ee"
+                }
+              },
+              "customUrl": "https://google.com?q={attribute_title(label.product.productid.producturl)}+{dash_attribute_filter_selection(attr.customer.country)}+{workspace_id}"
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990030": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.product.productid.producturl",
+        "category": "attributeDisplayForm"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990031": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.product.productid.product",
+        "category": "attributeDisplayForm"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800003": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aabD81raCNNE",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4492": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "aapTRqEn3vGo",
+        "title": "test",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800003",
+        "ignoreDashboardFilters": [],
+        "drills": [
+          {
+            "drillToCustomUrl": {
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "13249210475f4766ad57290286b16c6b"
+                }
+              },
+              "customUrl": "https://google.com?q={attribute_filter_selection(attr.customer.country)}+{dash_attribute_filter_selection(attr.customer.country)}"
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800004": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aaqLka7tnKTs",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4486": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "acRRbCNSvHIC",
+        "title": "drill to dashboard and insight",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800004",
+        "ignoreDashboardFilters": [],
+        "drills": [
+          {
+            "drillToDashboard": {
+              "target": "in-place",
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "d6bde0e48a664ba58b95a4dc7a854128"
+                }
+              },
+              "toDashboard": "abJgxnGba7zp"
+            }
+          },
+          {
+            "drillToVisualization": {
+              "from": {
+                "drillFromAttribute": {
+                  "localIdentifier": "3d7ad08b7e774a87856d868eafc95a09"
+                }
+              },
+              "toVisualization": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800301"
+              }
+            }
+          },
+          {
+            "drillToDashboard": {
+              "target": "in-place",
+              "from": {
+                "drillFromAttribute": {
+                  "localIdentifier": "0759c57684d646599d260cd80cddb169"
+                }
+              },
+              "toDashboard": "acXRfpleIgFv"
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800300": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aado12ITy5Y7",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800301": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "abP55MJbmGbc",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800005": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aboyXq7GHSbz",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4488": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "abURjLseyFyS",
+        "title": "testing runsum",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800005",
+        "ignoreDashboardFilters": [],
+        "properties": "{\"controls\": {\"zoomInsight\": true}}",
+        "drills": [
+          {
+            "drillToCustomUrl": {
+              "from": {
+                "drillFromAttribute": {
+                  "localIdentifier": "f575ecd3020e45e1a188895c42879d43"
+                }
+              },
+              "customUrl": "https://google.com?q={insight_id}++{dashboard_id}+{workspace_id}+{attribute_title(order.act81lMifn6q)}"
+            }
+          },
+          {
+            "drillToVisualization": {
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "838713b1e4f647029781d639b3635c04"
+                }
+              },
+              "toVisualization": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800200"
+              }
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800200": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "adeLbCcriKNm",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2572": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "acMTetT0PV6j"
+      },
+      "content": {
+        "filters": []
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990020": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.convertcurrency.currencycode",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990022"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990022": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.convertcurrency.currencycode",
+        "category": "attribute"
+      },
+      "content": {}
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990021": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.customer.customerid",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990023"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990023": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.customer.customerid",
+        "category": "attribute"
+      },
+      "content": {}
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2571": {
+    "kpi": {
+      "meta": {
+        "identifier": "aeLS3zEyG7L8",
+        "title": "Different Name",
+        "summary": "custom description goes here"
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2573": {
+    "kpi": {
+      "meta": {
+        "identifier": "aciTef44TqqL",
+        "title": "# Sold Products",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2575": {
+    "kpi": {
+      "meta": {
+        "identifier": "acqTemLtL8Tv",
+        "title": "# Sold Products",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2576": {
+    "kpi": {
+      "meta": {
+        "identifier": "ackTeeNEUCWm",
+        "title": "DIFFERTENT NAME2",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990002"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3537": {
+    "kpi": {
+      "meta": {
+        "identifier": "aboUItFkF6Yf",
+        "title": "KPI with no date range",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [
+          {
+            "attributeFilterReference": {
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990020"
+            }
+          },
+          {
+            "attributeFilterReference": {
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990021"
+            }
+          }
+        ],
+        "comparisonType": "none",
+        "comparisonDirection": "none"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3539": {
+    "kpi": {
+      "meta": {
+        "identifier": "aaCUItBwF5Oc",
+        "title": "KPI w date filter with comparison",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [
+          {
+            "attributeFilterReference": {
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990020"
+            }
+          }
+        ],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3538": {
+    "kpi": {
+      "meta": {
+        "identifier": "afoUAJGPU54d",
+        "title": "KPI w date filter wo comparison",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "ignoreDashboardFilters": [
+          {
+            "attributeFilterReference": {
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990020"
+            }
+          },
+          {
+            "attributeFilterReference": {
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990021"
+            }
+          }
+        ],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4580": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "aaHJ73pKGnOS"
+      },
+      "content": {
+        "filters": [
+          {
+            "attributeFilter": {
+              "localIdentifier": "some_filter",
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2918",
+              "attributeElements": [
+                "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2538",
+                "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2540",
+                "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2542",
+                "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2530"
+              ],
+              "negativeSelection": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2918": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.datasetwithformerpk.anotherattribute",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.datasetwithformerpk.anotherattribute",
+        "category": "attribute"
+      },
+      "content": {
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "attr.datasetwithformerpk.anotherattribute"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2538": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2540": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2542": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2530": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4579": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "aayJ7P3yg8BY",
+        "title": "Insight with missing elements lookup",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9900001",
+        "ignoreDashboardFilters": []
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9900001": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "adlJS6GygmL3",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/999999": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "unused_placeholder",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1869": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "aaGo5QELlseN"
+      },
+      "content": {
+        "filters": []
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/20000": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "order"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1871": {
+    "visualizationWidget": {
+      "meta": {
+        "title": "h1",
+        "summary": "",
+        "identifier": "aaSoZyirhFX9"
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1867",
+        "ignoreDashboardFilters": [],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/20000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1870": {
+    "visualizationWidget": {
+      "meta": {
+        "title": "h2",
+        "summary": "",
+        "identifier": "aaSo4WRwptAU"
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1868",
+        "ignoreDashboardFilters": [],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/20000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1867": {
+    "visualizationObject": {
+      "links": {
+        "explain": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1867/explain"
+      },
+      "meta": {
+        "summary": "",
+        "isProduction": 1,
+        "title": "h1",
+        "tags": "",
+        "created": "2022-05-29 18:49:24",
+        "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "updated": "2022-05-29 18:49:24",
+        "category": "visualizationObject",
+        "identifier": "aaGo3uEVoct8",
+        "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "deprecated": "0",
+        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1867"
+      },
+      "content": {
+        "visualizationClass": {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/5"
+        },
+        "buckets": [
+          {
+            "items": [
+              {
+                "measure": {
+                  "definition": {
+                    "measureDefinition": {
+                      "aggregation": "sum",
+                      "item": {
+                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/658"
+                      }
+                    }
+                  },
+                  "title": "Sum of Conversion Ratio from USD",
+                  "format": "#,##0.00",
+                  "localIdentifier": "59e612f9234d47a4bc10dac3c4b1b227"
+                }
+              }
+            ],
+            "localIdentifier": "measures"
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1868": {
+    "visualizationObject": {
+      "links": {
+        "explain": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1868/explain"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "identifier": "aato1E4KZlRV",
+        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1868",
+        "deprecated": "0",
+        "created": "2022-05-29 18:49:53",
+        "title": "h2",
+        "isProduction": 1,
+        "tags": "",
+        "summary": "",
+        "updated": "2022-05-29 18:49:53",
+        "category": "visualizationObject",
+        "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f"
+      },
+      "content": {
+        "buckets": [
+          {
+            "items": [
+              {
+                "measure": {
+                  "title": "Count of Product ID",
+                  "definition": {
+                    "measureDefinition": {
+                      "aggregation": "count",
+                      "item": {
+                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/643"
+                      }
+                    }
+                  },
+                  "localIdentifier": "a836d1be4bf6441283076f7ad6714e45",
+                  "format": "#,##0"
+                }
+              }
+            ],
+            "localIdentifier": "measures"
+          }
+        ],
+        "visualizationClass": {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/5"
+        }
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4707": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "ab2YwMvOUjQM"
+      },
+      "content": {
+        "filters": []
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9900002": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "abfzi1Leji8x",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4708": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "abNYwAPSzak1",
+        "title": "test",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9900002",
+        "ignoreDashboardFilters": [],
+        "drills": [
+          {
+            "drillToDashboard": {
+              "target": "in-place",
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "77cb2f534f354c7d9b70e459538ccd2a"
+                }
+              },
+              "toDashboard": "aaxYwakgT0M9"
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990002"
+      }
+    }
+  }
+}

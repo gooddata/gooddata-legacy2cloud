@@ -1,0 +1,82 @@
+[
+    {
+        "data": {
+            "id": "dashboard_with_missing_element_lookup_aaoJ715R1Bt2",
+            "type": "analyticalDashboard",
+            "attributes": {
+                "title": "[WARN] Dashboard with missing element lookup",
+                "description": "",
+                "content": {
+                    "attributeFilterConfigs": [],
+                    "filterContextRef": {
+                        "identifier": {
+                            "id": "filtercontext_aaHJ73pKGnOS",
+                            "type": "filterContext"
+                        }
+                    },
+                    "layout": {
+                        "type": "IDashboardLayout",
+                        "sections": [
+                            {
+                                "type": "IDashboardLayoutSection",
+                                "header": {
+                                    "title": "Migration errors"
+                                },
+                                "items": [
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 4,
+                                                "gridWidth": 12
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "richText",
+                                            "content": "Missing values in filter context: \n\nfilter context - datasetwithformerpk.anotherattribute: /gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2538, /gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2540, /gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2542, /gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2530",
+                                            "description": "",
+                                            "drills": [],
+                                            "ignoreDashboardFilters": []
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "IDashboardLayoutSection",
+                                "header": {
+                                    "description": "elements should be \"another_value_2, another_value_6, another_value_7, another_value_8\""
+                                },
+                                "items": [
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 22,
+                                                "gridWidth": 12
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "insight_with_missing_elements_lookup_adlJS6GygmL3",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "Insight with missing elements lookup",
+                                            "localIdentifier": "aayJ7P3yg8BY"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

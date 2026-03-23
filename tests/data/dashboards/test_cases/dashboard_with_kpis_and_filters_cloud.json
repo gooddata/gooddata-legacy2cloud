@@ -1,0 +1,280 @@
+[
+    {
+        "data": {
+            "id": "dashboard_with_kpis_and_filters_ad9S6VyaWer3",
+            "type": "analyticalDashboard",
+            "attributes": {
+                "title": "Dashboard WITH KPIs and filters",
+                "description": "",
+                "content": {
+                    "attributeFilterConfigs": [],
+                    "filterContextRef": {
+                        "identifier": {
+                            "id": "filtercontext_acMTetT0PV6j",
+                            "type": "filterContext"
+                        }
+                    },
+                    "layout": {
+                        "type": "IDashboardLayout",
+                        "sections": [
+                            {
+                                "type": "IDashboardLayoutSection",
+                                "header": {},
+                                "items": [
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "custom description goes here",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_ad9S6VyaWer3_different_name",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "Different Name",
+                                            "localIdentifier": "aeLS3zEyG7L8"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_ad9S6VyaWer3_nr_sold_products",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "# Sold Products",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "aciTef44TqqL"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_ad9S6VyaWer3_nr_sold_products",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "# Sold Products",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "acqTemLtL8Tv"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_ad9S6VyaWer3_differtent_name2",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "DIFFERTENT NAME2",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_ship",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "ackTeeNEUCWm"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "IDashboardLayoutSection",
+                                "header": {
+                                    "title": "TEST KPI widgets migration"
+                                },
+                                "items": [
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [
+                                                {
+                                                    "displayForm": {
+                                                        "identifier": {
+                                                            "id": "convertcurrency.currencycode",
+                                                            "type": "label"
+                                                        }
+                                                    },
+                                                    "type": "attributeFilterReference"
+                                                },
+                                                {
+                                                    "displayForm": {
+                                                        "identifier": {
+                                                            "id": "customer.customerid",
+                                                            "type": "label"
+                                                        }
+                                                    },
+                                                    "type": "attributeFilterReference"
+                                                }
+                                            ],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_ad9S6VyaWer3_kpi_with_no_date_range",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "KPI with no date range",
+                                            "localIdentifier": "aboUItFkF6Yf"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [
+                                                {
+                                                    "displayForm": {
+                                                        "identifier": {
+                                                            "id": "convertcurrency.currencycode",
+                                                            "type": "label"
+                                                        }
+                                                    },
+                                                    "type": "attributeFilterReference"
+                                                }
+                                            ],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_ad9S6VyaWer3_kpi_w_date_filter_with_comparison",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "KPI w date filter with comparison",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "aaCUItBwF5Oc"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [
+                                                {
+                                                    "displayForm": {
+                                                        "identifier": {
+                                                            "id": "convertcurrency.currencycode",
+                                                            "type": "label"
+                                                        }
+                                                    },
+                                                    "type": "attributeFilterReference"
+                                                },
+                                                {
+                                                    "displayForm": {
+                                                        "identifier": {
+                                                            "id": "customer.customerid",
+                                                            "type": "label"
+                                                        }
+                                                    },
+                                                    "type": "attributeFilterReference"
+                                                }
+                                            ],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_ad9S6VyaWer3_kpi_w_date_filter_wo_comparison",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "KPI w date filter wo comparison",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "afoUAJGPU54d"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

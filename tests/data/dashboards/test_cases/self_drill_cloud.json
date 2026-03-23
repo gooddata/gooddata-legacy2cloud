@@ -1,0 +1,80 @@
+[
+    {
+        "data": {
+            "id": "self_drill_aaxYwakgT0M9",
+            "type": "analyticalDashboard",
+            "attributes": {
+                "title": "self drill",
+                "description": "",
+                "content": {
+                    "attributeFilterConfigs": [],
+                    "filterContextRef": {
+                        "identifier": {
+                            "id": "filtercontext_ab2YwMvOUjQM",
+                            "type": "filterContext"
+                        }
+                    },
+                    "layout": {
+                        "type": "IDashboardLayout",
+                        "sections": [
+                            {
+                                "type": "IDashboardLayoutSection",
+                                "header": {},
+                                "items": [
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [
+                                                {
+                                                    "localIdentifier": "7e92e8d6b62040c393e59eca",
+                                                    "transition": "in-place",
+                                                    "origin": {
+                                                        "type": "drillFromMeasure",
+                                                        "measure": {
+                                                            "localIdentifier": "77cb2f534f354c7d9b70e459538ccd2a"
+                                                        }
+                                                    },
+                                                    "type": "drillToDashboard",
+                                                    "target": {
+                                                        "identifier": {
+                                                            "id": "self_drill_aaxYwakgT0M9",
+                                                            "type": "analyticalDashboard"
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "test_abfzi1Leji8x",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "test",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_ship",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "abNYwAPSzak1"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

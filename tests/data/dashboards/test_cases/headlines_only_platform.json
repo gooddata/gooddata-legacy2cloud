@@ -1,0 +1,70 @@
+[
+    {
+        "analyticalDashboard": {
+            "content": {
+                "widgets": [
+                    "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1871",
+                    "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1870"
+                ],
+                "layout": {
+                    "fluidLayout": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "size": {
+                                            "xl": {
+                                                "width": 2
+                                            }
+                                        },
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1871"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "size": {
+                                            "xl": {
+                                                "width": 2
+                                            }
+                                        },
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1870"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "filterContext": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1869"
+            },
+            "meta": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1872",
+                "created": "2022-05-29 18:50:02",
+                "identifier": "abooZpwUnr9B",
+                "sharedWithSomeone": 1,
+                "unlisted": 1,
+                "deprecated": "0",
+                "summary": "",
+                "title": "headlines only",
+                "updated": "2025-10-10 20:54:07",
+                "tags": "",
+                "flags": [
+                    "strictAccessControl"
+                ],
+                "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "isProduction": 1,
+                "category": "analyticalDashboard",
+                "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f"
+            }
+        }
+    }
+]

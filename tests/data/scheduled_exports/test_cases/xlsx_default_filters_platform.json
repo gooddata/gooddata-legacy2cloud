@@ -1,0 +1,46 @@
+[
+  {
+    "scheduledMail": {
+      "content": {
+        "to": ["example.user@gooddata.com"],
+        "when": {
+          "recurrency": "0:0:0:1*11:30:0",
+          "timeZone": "Europe/Amsterdam",
+          "startDate": "2025-08-18"
+        },
+        "body": "Hello,\n\nYour scheduled email is ready. You can download the dashboard in attachments.",
+        "lastSuccessfull": "2025-08-19 11:31:19",
+        "attachments": [
+          {
+            "visualizationWidgetAttachment": {
+              "exportOptions": {
+                "includeFilterContext": "yes",
+                "mergeHeaders": "yes"
+              },
+              "formats": ["xlsx"],
+              "dashboardUri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4844"
+            }
+          }
+        ],
+        "subject": "simple_xlsx"
+      },
+      "meta": {
+        "sharedWithSomeone": 0,
+        "unlisted": 1,
+        "category": "scheduledMail",
+        "summary": "Daily at 11:30 AM",
+        "isProduction": 1,
+        "title": "simple_xlsx",
+        "updated": "2025-08-19 11:31:19",
+        "tags": "",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4948",
+        "deprecated": "0",
+        "created": "2025-08-18 11:18:48",
+        "identifier": "aasnzoSjsncC",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c"
+      }
+    }
+  }
+]

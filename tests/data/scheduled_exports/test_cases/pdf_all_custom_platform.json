@@ -1,0 +1,42 @@
+[
+  {
+    "scheduledMail": {
+      "meta": {
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4972",
+        "updated": "2025-08-19 16:31:28",
+        "category": "scheduledMail",
+        "tags": "",
+        "summary": "Daily at 4:30 PM",
+        "title": "pdf_all_custom",
+        "identifier": "absuAzP81xYK",
+        "unlisted": 1,
+        "deprecated": "0",
+        "isProduction": 1,
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-19 16:16:56",
+        "sharedWithSomeone": 0
+      },
+      "content": {
+        "attachments": [
+          {
+            "kpiDashboardAttachment": {
+              "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4971",
+              "format": "pdf",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846"
+            }
+          }
+        ],
+        "body": "electronics for bluetooth speaker and usbc hub",
+        "to": ["example.user@gooddata.com"],
+        "subject": "pdf_all_custom",
+        "when": {
+          "startDate": "2025-08-19",
+          "timeZone": "Europe/Amsterdam",
+          "recurrency": "0:0:0:1*16:30:0"
+        },
+        "lastSuccessfull": "2025-08-19 16:31:27"
+      }
+    }
+  }
+]

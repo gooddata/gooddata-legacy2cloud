@@ -1,0 +1,46 @@
+{
+  "products.category": {
+    "data": {
+      "id": "products.category",
+      "type": "attribute",
+      "attributes": {
+        "title": "Category",
+        "description": "Category",
+        "tags": ["Products"],
+        "sourceColumn": "category",
+        "sourceColumnDataType": "STRING"
+      },
+      "meta": {
+        "origin": {
+          "originType": "NATIVE",
+          "originId": "scheduled_emails_cloud"
+        }
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/attributes/products.category"
+    }
+  },
+  "products.name": {
+    "data": {
+      "id": "products.name",
+      "type": "attribute",
+      "attributes": {
+        "title": "Name",
+        "description": "Name",
+        "tags": ["Products"],
+        "sourceColumn": "name",
+        "sourceColumnDataType": "STRING"
+      },
+      "meta": {
+        "origin": {
+          "originType": "NATIVE",
+          "originId": "scheduled_emails_cloud"
+        }
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/attributes/products.name"
+    }
+  }
+}

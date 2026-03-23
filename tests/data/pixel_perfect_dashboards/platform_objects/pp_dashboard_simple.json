@@ -1,0 +1,62 @@
+{
+  "projectDashboard": {
+    "meta": {
+      "author": "test_user",
+      "category": "test",
+      "identifier": "test_pp_dashboard_001",
+      "title": "Test Pixel Perfect Dashboard",
+      "uri": "/gdc/md/test_workspace/obj/9001",
+      "summary": "Test dashboard for migration",
+      "unlisted": 0
+    },
+    "content": {
+      "filters": [],
+      "tabs": [
+        {
+          "identifier": "tab_001",
+          "title": "Tab 1 - Reports",
+          "items": [
+            {
+              "reportItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 400,
+                "sizeY": 300,
+                "obj": "/gdc/md/test_workspace/obj/1001",
+                "filters": [],
+                "title": "Test Report 1"
+              }
+            },
+            {
+              "textItem": {
+                "positionX": 420,
+                "positionY": 0,
+                "sizeX": 300,
+                "sizeY": 50,
+                "text": "This is a test text item with sufficient length",
+                "textSize": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "identifier": "tab_002",
+          "title": "Tab 2 - Headlines",
+          "items": [
+            {
+              "headlineItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 300,
+                "sizeY": 150,
+                "metric": "/gdc/md/test_workspace/obj/2001",
+                "filters": [],
+                "title": "Test Headline"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

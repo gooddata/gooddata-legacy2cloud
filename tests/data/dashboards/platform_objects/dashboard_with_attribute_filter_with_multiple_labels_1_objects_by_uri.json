@@ -1,0 +1,106 @@
+{
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4003": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "aa6LcrTCksyT"
+      },
+      "content": {
+        "filters": [
+          {
+            "attributeFilter": {
+              "localIdentifier": "e05e218f570b4004a5888a755a1130e2",
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990010",
+              "attributeElements": [],
+              "negativeSelection": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990010": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.product.productid.product",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990011"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990011": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.product.productid",
+        "category": "attribute"
+      },
+      "content": {}
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "order"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990002": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "ship"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800000": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "aaqLka7tnKTs",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4002": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "aavLkgndn8D2",
+        "title": "visualization with attribute filter with multiple labels 2",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800000",
+        "ignoreDashboardFilters": [],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800001": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "abjLcJdtJ0d5",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4004": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "abZLcDMSkhzN",
+        "title": "visualization with attribute filter with multiple labels 1",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800001",
+        "ignoreDashboardFilters": [],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  }
+}

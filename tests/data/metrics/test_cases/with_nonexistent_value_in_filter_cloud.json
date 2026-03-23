@@ -1,0 +1,19 @@
+[
+    {
+        "data": {
+            "id": "with_nonexistent_value_in_filter_acxqIFzyCrSG",
+            "type": "metric",
+            "attributes": {
+                "title": "[WARN] With non-existent value in filter",
+                "tags": [
+                    "MAQL errors"
+                ],
+                "description": "MAQL errors: \n\nMissing value for /gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=12028",
+                "content": {
+                    "format": "#,##0.00",
+                    "maql": "SELECT {metric/_sales_aaXlbflxeioq} WHERE  {label/customer.country} in (\"Italy\", \"Kuwait\", \"Latvia\", \"--MISSING VALUE--\")"
+                }
+            }
+        }
+    }
+]

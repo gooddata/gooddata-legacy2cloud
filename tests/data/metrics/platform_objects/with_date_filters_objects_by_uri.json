@@ -1,0 +1,134 @@
+{
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796": {
+    "metric": {
+      "links": {
+        "explain2": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796/explain2"
+      },
+      "content": {
+        "expression": "SELECT SUM([/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/661])",
+        "tree": {
+          "position": {
+            "column": 14,
+            "line": 1
+          },
+          "type": "metric",
+          "content": [
+            {
+              "type": "expression",
+              "position": {
+                "line": 1,
+                "column": 21
+              },
+              "content": [
+                {
+                  "content": [
+                    {
+                      "position": {
+                        "line": 1,
+                        "column": 25
+                      },
+                      "type": "fact object",
+                      "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/661"
+                    }
+                  ],
+                  "value": "SUM",
+                  "position": {
+                    "line": 1,
+                    "column": 21
+                  },
+                  "type": "function"
+                }
+              ]
+            }
+          ]
+        },
+        "format": "#,##0.00"
+      },
+      "meta": {
+        "created": "2020-03-03 14:08:03",
+        "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "deprecated": "0",
+        "tags": "",
+        "updated": "2025-10-23 15:54:53",
+        "isProduction": 1,
+        "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "title": "$ Sales",
+        "identifier": "aaXlbflxeioq",
+        "summary": "",
+        "category": "metric"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/417": {
+    "attribute": {
+      "meta": {
+        "identifier": "target.date.day",
+        "category": "attribute"
+      },
+      "content": {
+        "type": "GDC.time.date",
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "target.date.day"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/418/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/418/elements?id=0": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/417/elements?id=0",
+          "title": "1-01-01"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243": {
+    "attribute": {
+      "meta": {
+        "identifier": "order.abm81lMifn6q",
+        "category": "attribute"
+      },
+      "content": {
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "order.abm81lMifn6q"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/244/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/244/elements?id=3": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243/elements?id=3",
+          "title": "03"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/244/elements?id=4": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243/elements?id=4",
+          "title": "04"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,289 @@
+{
+    "projectModelView": {
+        "model": {
+            "projectModel": {
+                "datasets": [
+                    {
+                        "dataset": {
+                            "identifier": "dataset.products",
+                            "title": "Products",
+                            "anchor": {
+                                "attribute": {
+                                    "identifier": "attr.products.productid",
+                                    "title": "Product Id",
+                                    "folder": "Products",
+                                    "labels": [
+                                        {
+                                            "label": {
+                                                "identifier": "label.products.productid",
+                                                "title": "Product Id",
+                                                "type": "GDC.text",
+                                                "dataType": "VARCHAR(128)"
+                                            }
+                                        },
+                                        {
+                                            "label": {
+                                                "identifier": "label.products.productid.product_id_label",
+                                                "title": "product_id_label",
+                                                "type": "GDC.text",
+                                                "dataType": "VARCHAR(128)"
+                                            }
+                                        }
+                                    ],
+                                    "defaultLabel": "label.products.productid"
+                                }
+                            },
+                            "attributes": [
+                                {
+                                    "attribute": {
+                                        "identifier": "attr.products.name",
+                                        "title": "Name",
+                                        "folder": "Products",
+                                        "labels": [
+                                            {
+                                                "label": {
+                                                    "identifier": "label.products.name",
+                                                    "title": "Name",
+                                                    "type": "GDC.text",
+                                                    "dataType": "VARCHAR(255)"
+                                                }
+                                            }
+                                        ],
+                                        "defaultLabel": "label.products.name"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "identifier": "attr.products.category",
+                                        "title": "Category",
+                                        "folder": "Products",
+                                        "labels": [
+                                            {
+                                                "label": {
+                                                    "identifier": "label.products.category",
+                                                    "title": "Category",
+                                                    "type": "GDC.text",
+                                                    "dataType": "VARCHAR(255)"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "facts": [
+                                {
+                                    "fact": {
+                                        "identifier": "fact.products.price",
+                                        "title": "Price",
+                                        "folder": "Products",
+                                        "dataType": "DECIMAL(15,3)"
+                                    }
+                                },
+                                {
+                                    "fact": {
+                                        "identifier": "fact.products.stockquantity",
+                                        "title": "Stock Quantity",
+                                        "folder": "Products",
+                                        "dataType": "DECIMAL(15,3)"
+                                    }
+                                }
+                            ],
+                            "production": true
+                        }
+                    },
+                    {
+                        "dataset": {
+                            "identifier": "dataset.orderitems",
+                            "title": "Order Items",
+                            "anchor": {
+                                "attribute": {
+                                    "identifier": "attr.orderitems.orderitemid",
+                                    "title": "Order Item Id",
+                                    "folder": "Order Items",
+                                    "labels": [
+                                        {
+                                            "label": {
+                                                "identifier": "label.orderitems.orderitemid",
+                                                "title": "Order Item Id",
+                                                "type": "GDC.text",
+                                                "dataType": "VARCHAR(128)"
+                                            }
+                                        }
+                                    ],
+                                    "defaultLabel": "label.orderitems.orderitemid"
+                                }
+                            },
+                            "facts": [
+                                {
+                                    "fact": {
+                                        "identifier": "fact.orderitems.itemprice",
+                                        "title": "Item Price",
+                                        "folder": "Order Items",
+                                        "dataType": "DECIMAL(15,3)"
+                                    }
+                                },
+                                {
+                                    "fact": {
+                                        "identifier": "fact.orderitems.quantity",
+                                        "title": "Quantity",
+                                        "folder": "Order Items",
+                                        "dataType": "DECIMAL(15,3)"
+                                    }
+                                }
+                            ],
+                            "references": [
+                                "dataset.products",
+                                "dataset.orders"
+                            ],
+                            "production": true
+                        }
+                    },
+                    {
+                        "dataset": {
+                            "identifier": "dataset.orders",
+                            "title": "Orders",
+                            "anchor": {
+                                "attribute": {
+                                    "identifier": "attr.orders.orderid",
+                                    "title": "Order Id",
+                                    "folder": "Orders",
+                                    "labels": [
+                                        {
+                                            "label": {
+                                                "identifier": "label.orders.orderid",
+                                                "title": "Order Id",
+                                                "type": "GDC.text",
+                                                "dataType": "VARCHAR(128)"
+                                            }
+                                        }
+                                    ],
+                                    "defaultLabel": "label.orders.orderid"
+                                }
+                            },
+                            "facts": [
+                                {
+                                    "fact": {
+                                        "identifier": "fact.orders.totalamount",
+                                        "title": "Total Amount",
+                                        "folder": "Orders",
+                                        "dataType": "DECIMAL(15,3)"
+                                    }
+                                }
+                            ],
+                            "references": [
+                                "dataset.customers",
+                                "orderdate"
+                            ],
+                            "production": true
+                        }
+                    },
+                    {
+                        "dataset": {
+                            "identifier": "dataset.customers",
+                            "title": "Customers",
+                            "anchor": {
+                                "attribute": {
+                                    "identifier": "attr.customers.customerid",
+                                    "title": "Customer Id",
+                                    "folder": "Customers",
+                                    "labels": [
+                                        {
+                                            "label": {
+                                                "identifier": "label.customers.customerid",
+                                                "title": "Customer Id",
+                                                "type": "GDC.text",
+                                                "dataType": "VARCHAR(128)"
+                                            }
+                                        }
+                                    ],
+                                    "defaultLabel": "label.customers.customerid"
+                                }
+                            },
+                            "attributes": [
+                                {
+                                    "attribute": {
+                                        "identifier": "attr.customers.name",
+                                        "title": "Name",
+                                        "folder": "Customers",
+                                        "labels": [
+                                            {
+                                                "label": {
+                                                    "identifier": "label.customers.name",
+                                                    "title": "Name",
+                                                    "type": "GDC.text",
+                                                    "dataType": "VARCHAR(255)"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "identifier": "attr.customers.email",
+                                        "title": "Email",
+                                        "folder": "Customers",
+                                        "labels": [
+                                            {
+                                                "label": {
+                                                    "identifier": "label.customers.email",
+                                                    "title": "Email",
+                                                    "type": "GDC.text",
+                                                    "dataType": "VARCHAR(255)"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "identifier": "attr.customers.city",
+                                        "title": "City",
+                                        "folder": "Customers",
+                                        "labels": [
+                                            {
+                                                "label": {
+                                                    "identifier": "label.customers.city",
+                                                    "title": "City",
+                                                    "type": "GDC.text",
+                                                    "dataType": "VARCHAR(255)"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            ],
+                            "references": [
+                                "signupdate"
+                            ],
+                            "production": true
+                        }
+                    }
+                ],
+                "dateDimensions": [
+                    {
+                        "dateDimension": {
+                            "name": "orderdate",
+                            "title": "Order Date",
+                            "production": true,
+                            "urn": "urn:custom_v2:date",
+                            "identifier": "orderdate.dataset.dt",
+                            "identifierPrefix": "orderdate",
+                            "bridges": []
+                        }
+                    },
+                    {
+                        "dateDimension": {
+                            "name": "signupdate",
+                            "title": "Signup Date",
+                            "production": true,
+                            "urn": "urn:custom_v2:date",
+                            "identifier": "signupdate.dataset.dt",
+                            "identifierPrefix": "signupdate",
+                            "bridges": []
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

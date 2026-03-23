@@ -1,0 +1,16 @@
+# (C) 2026 GoodData Corporation
+# AIDA validation registry
+#
+# Define command_id and processor_id specifications referenced by validation_policy.yaml.
+registry:
+  includes: []
+  commands:
+    format:
+      argv: ["make", "format"]
+    lint:
+      argv: ["make", "lint"]
+    test:
+      argv: ["make", "test"]
+    type:
+      argv: ["make", "type"]
+  processors: {}

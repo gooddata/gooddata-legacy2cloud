@@ -1,0 +1,235 @@
+{
+  "data": {
+    "id": "dashboard_filters_with_values_and_custom_filters_ab7Kdx9mprtR",
+    "type": "automation",
+    "attributes": {
+      "title": "dashboard filters with values and custom filters",
+      "description": "",
+      "details": {
+        "message": "dashboard has filters with values selected\ndate: last year\n\ncustom filters:\ncategory: office supplies\nname: notebook, water bottle (data only for notebook)",
+        "subject": "dashboard filters with values and custom filters"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": false
+          },
+          {
+            "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+            "title": "Category",
+            "isAllTimeDateFilter": false
+          },
+          {
+            "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+            "title": "Name",
+            "isAllTimeDateFilter": false
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 30 9 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "tabularExports": [
+        {
+          "requestPayload": {
+            "format": "XLSX",
+            "fileName": "avg something",
+            "settings": {
+              "mergeHeaders": true,
+              "showFilters": true
+            },
+            "visualizationObject": "avg_something_abv60hdhDegr",
+            "visualizationObjectCustomFilters": [
+              {
+                "relativeDateFilter": {
+                  "dataSet": {
+                    "identifier": {
+                      "id": "dt_orderdate",
+                      "type": "dataset"
+                    }
+                  },
+                  "granularity": "GDC.time.year",
+                  "from": -1,
+                  "to": -1,
+                  "localIdentifier": "0_dateFilter"
+                }
+              },
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.category",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Office Supplies"]
+                  }
+                }
+              },
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.name",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Notebook", "Water Bottle"]
+                  }
+                }
+              }
+            ],
+            "relatedDashboardId": "copy_of_sample_dashboard_without_kpi_ac9FimAGWOs0",
+            "metadata": {
+              "widget": "adqFiYEr3vfR",
+              "title": "Copy of Sample dashboard without KPI"
+            }
+          }
+        },
+        {
+          "requestPayload": {
+            "format": "XLSX",
+            "fileName": "Avg item price per category",
+            "settings": {
+              "mergeHeaders": true,
+              "showFilters": true
+            },
+            "visualizationObject": "avg_item_price_per_category_abb6SWS81yFv",
+            "visualizationObjectCustomFilters": [
+              {
+                "relativeDateFilter": {
+                  "dataSet": {
+                    "identifier": {
+                      "id": "dt_orderdate",
+                      "type": "dataset"
+                    }
+                  },
+                  "granularity": "GDC.time.year",
+                  "from": -1,
+                  "to": -1,
+                  "localIdentifier": "0_dateFilter"
+                }
+              },
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.category",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Office Supplies"]
+                  }
+                }
+              },
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.name",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Notebook", "Water Bottle"]
+                  }
+                }
+              }
+            ],
+            "relatedDashboardId": "copy_of_sample_dashboard_without_kpi_ac9FimAGWOs0",
+            "metadata": {
+              "widget": "aabFwC7boF74",
+              "title": "Copy of Sample dashboard without KPI"
+            }
+          }
+        }
+      ],
+      "visualExports": [
+        {
+          "requestPayload": {
+            "fileName": "dashboard filters with values and custom filters",
+            "dashboardId": "copy_of_sample_dashboard_without_kpi_ac9FimAGWOs0",
+            "metadata": {
+              "title": "Copy of Sample dashboard without KPI",
+              "filters": [
+                {
+                  "dateFilter": {
+                    "type": "relative",
+                    "granularity": "GDC.time.year",
+                    "to": "-1",
+                    "from": "-1",
+                    "localIdentifier": "0_dateFilter"
+                  }
+                },
+                {
+                  "attributeFilter": {
+                    "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+                    "attributeElements": {
+                      "uris": ["Office Supplies"]
+                    },
+                    "displayForm": {
+                      "identifier": {
+                        "id": "products.category",
+                        "type": "label"
+                      }
+                    },
+                    "negativeSelection": false,
+                    "selectionMode": "multi"
+                  }
+                },
+                {
+                  "attributeFilter": {
+                    "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+                    "attributeElements": {
+                      "uris": ["Notebook", "Water Bottle"]
+                    },
+                    "displayForm": {
+                      "identifier": {
+                        "id": "products.name",
+                        "type": "label"
+                      }
+                    },
+                    "negativeSelection": false,
+                    "selectionMode": "multi"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "copy_of_sample_dashboard_without_kpi_ac9FimAGWOs0",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

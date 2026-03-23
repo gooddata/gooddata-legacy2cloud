@@ -1,0 +1,104 @@
+[
+  {
+    "reportDefinition": {
+      "meta": {
+        "category": "report",
+        "title": "manual date is null",
+        "identifier": "abDateNullTest1",
+        "summary": ""
+      },
+      "content": {
+        "format": "grid",
+        "filters": [
+          {
+            "expression": "[/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4694] IN ([/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4694/elements?id=0])",
+            "tree": {
+              "type": "in",
+              "content": [
+                {
+                  "type": "attribute object",
+                  "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4694"
+                },
+                {
+                  "type": "list",
+                  "content": [
+                    {
+                      "type": "attributeElement object",
+                      "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4694/elements?id=0"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "grid": {
+          "columns": ["metricGroup"],
+          "metrics": [
+            {
+              "alias": "",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838"
+            }
+          ],
+          "rows": []
+        }
+      }
+    }
+  },
+  {
+    "reportDefinition": {
+      "meta": {
+        "category": "report",
+        "title": "manual date is not null",
+        "identifier": "abDateNotNullTest1",
+        "summary": ""
+      },
+      "content": {
+        "format": "grid",
+        "filters": [
+          {
+            "expression": "NOT ([/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4694] IN ([/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4694/elements?id=0]))",
+            "tree": {
+              "type": "not",
+              "content": [
+                {
+                  "type": "()",
+                  "content": [
+                    {
+                      "type": "in",
+                      "content": [
+                        {
+                          "type": "attribute object",
+                          "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4694"
+                        },
+                        {
+                          "type": "list",
+                          "content": [
+                            {
+                              "type": "attributeElement object",
+                              "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4694/elements?id=0"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "grid": {
+          "columns": ["metricGroup"],
+          "metrics": [
+            {
+              "alias": "",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838"
+            }
+          ],
+          "rows": []
+        }
+      }
+    }
+  }
+]

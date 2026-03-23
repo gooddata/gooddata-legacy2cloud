@@ -1,0 +1,17 @@
+[
+    {
+        "data": {
+            "id": "avg_order_item_total_price_aaD6TzxvzYiV",
+            "type": "metric",
+            "attributes": {
+                "title": "Avg order item total price",
+                "tags": [],
+                "description": "",
+                "content": {
+                    "format": "#,##0.00",
+                    "maql": "SELECT avg({fact/orderitems.f_itemprice} * {fact/orderitems.f_quantity})"
+                }
+            }
+        }
+    }
+]

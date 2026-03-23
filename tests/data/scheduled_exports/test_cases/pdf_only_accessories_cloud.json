@@ -1,0 +1,83 @@
+{
+  "data": {
+    "id": "pdf_only_accessories_aannHa2b4TVO",
+    "type": "automation",
+    "attributes": {
+      "title": "pdf_only_accessories",
+      "description": "",
+      "details": {
+        "message": "pdf export with custom filters:\ndate: all time default\ncategory: accessories only\nname: default",
+        "subject": "pdf_only_accessories"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": true
+          },
+          {
+            "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+            "title": "Category",
+            "isAllTimeDateFilter": false
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 0 0 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "visualExports": [
+        {
+          "requestPayload": {
+            "fileName": "pdf_only_accessories",
+            "dashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "title": "Sample dashboard without KPI",
+              "filters": [
+                {
+                  "attributeFilter": {
+                    "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+                    "attributeElements": {
+                      "uris": ["Accessories"]
+                    },
+                    "displayForm": {
+                      "identifier": {
+                        "id": "products.category",
+                        "type": "label"
+                      }
+                    },
+                    "negativeSelection": false,
+                    "selectionMode": "multi"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4": {
+    "visualizationClass": {
+      "content": {
+        "url": "local:table"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796": {
+    "metric": {
+      "meta": {
+        "title": "$ Sales",
+        "identifier": "aaXlbflxeioq",
+        "category": "metric"
+      },
+      "content": {
+        "expression": ""
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/644": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.product.productid.product",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900001": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.product.productid",
+        "category": "attribute"
+      },
+      "content": {}
+    }
+  }
+}

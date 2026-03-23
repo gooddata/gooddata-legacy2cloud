@@ -1,0 +1,42 @@
+[
+  {
+    "scheduledMail": {
+      "meta": {
+        "isProduction": 1,
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "sharedWithSomeone": 0,
+        "created": "2025-08-18 12:02:26",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "updated": "2025-08-20 00:01:13",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4958",
+        "title": "pdf_custom_date_and_filter",
+        "identifier": "aa5n7kITfpGf",
+        "deprecated": "0",
+        "unlisted": 1,
+        "tags": "",
+        "category": "scheduledMail",
+        "summary": "Daily at 12:00 AM"
+      },
+      "content": {
+        "attachments": [
+          {
+            "kpiDashboardAttachment": {
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846",
+              "format": "pdf",
+              "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4957"
+            }
+          }
+        ],
+        "body": "custom date (last year) category electronics only. name is set to all",
+        "to": ["example.user@gooddata.com"],
+        "when": {
+          "startDate": "2025-08-18",
+          "timeZone": "Europe/Amsterdam",
+          "recurrency": "0:0:0:1*0:0:0"
+        },
+        "subject": "pdf_custom_date_and_filter",
+        "lastSuccessfull": "2025-08-20 00:01:13"
+      }
+    }
+  }
+]

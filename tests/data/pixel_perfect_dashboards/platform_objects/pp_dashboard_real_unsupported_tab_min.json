@@ -1,0 +1,70 @@
+{
+  "projectDashboard": {
+    "meta": {
+      "author": "test_user",
+      "category": "test",
+      "identifier": "pp_real_unsupported_tab_001",
+      "title": "PP Real Unsupported Tab Minimal",
+      "uri": "/gdc/md/test_workspace/obj/9102",
+      "summary": "Minimized PP dashboard with one unsupported tab and one valid tab",
+      "unlisted": 0
+    },
+    "content": {
+      "filters": [
+        {
+          "filterItemContent": {
+            "type": "list",
+            "obj": "/gdc/md/test_workspace/obj/9999",
+            "multiple": 1,
+            "label": null,
+            "id": "fic_bad_001",
+            "createdFromDataSet": 0,
+            "datePickerDisabled": 0,
+            "timeRangeDisabled": 0,
+            "default": {
+              "type": "list",
+              "elements": []
+            }
+          }
+        }
+      ],
+      "tabs": [
+        {
+          "identifier": "tab_bad",
+          "title": "Unsupported tab",
+          "items": [
+            {
+              "filterItem": {
+                "id": "fi_bad_001",
+                "contentId": "fic_bad_001",
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 190,
+                "sizeY": 40,
+                "dropdownWidth": 240,
+                "parentFilters": []
+              }
+            }
+          ]
+        },
+        {
+          "identifier": "tab_ok",
+          "title": "Valid tab",
+          "items": [
+            {
+              "reportItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 400,
+                "sizeY": 300,
+                "obj": "/gdc/md/test_workspace/obj/1001",
+                "filters": [],
+                "title": "Test Report 1"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

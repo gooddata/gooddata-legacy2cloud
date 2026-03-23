@@ -1,0 +1,178 @@
+{
+  "data": {
+    "id": "dashboard_filters_with_values_aaWKptGW6pLh",
+    "type": "automation",
+    "attributes": {
+      "title": "dashboard filters with values",
+      "description": "",
+      "details": {
+        "message": "dashboard has filter with default values:\ndate is a relative filter set to last year\nname is set to \"notebook\"",
+        "subject": "dashboard filters with values"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": false
+          },
+          {
+            "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+            "title": "Name",
+            "isAllTimeDateFilter": false
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 30 9 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "tabularExports": [
+        {
+          "requestPayload": {
+            "format": "CSV",
+            "fileName": "Avg item price per category",
+            "visualizationObject": "avg_item_price_per_category_abb6SWS81yFv",
+            "visualizationObjectCustomFilters": [
+              {
+                "relativeDateFilter": {
+                  "dataSet": {
+                    "identifier": {
+                      "id": "dt_orderdate",
+                      "type": "dataset"
+                    }
+                  },
+                  "granularity": "GDC.time.year",
+                  "from": -1,
+                  "to": -1,
+                  "localIdentifier": "0_dateFilter"
+                }
+              },
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.name",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Notebook"]
+                  }
+                }
+              }
+            ],
+            "relatedDashboardId": "copy_of_sample_dashboard_without_kpi_ac9FimAGWOs0",
+            "metadata": {
+              "widget": "aabFwC7boF74",
+              "title": "Copy of Sample dashboard without KPI"
+            }
+          }
+        },
+        {
+          "requestPayload": {
+            "format": "CSV",
+            "fileName": "avg something",
+            "visualizationObject": "avg_something_abv60hdhDegr",
+            "visualizationObjectCustomFilters": [
+              {
+                "relativeDateFilter": {
+                  "dataSet": {
+                    "identifier": {
+                      "id": "dt_orderdate",
+                      "type": "dataset"
+                    }
+                  },
+                  "granularity": "GDC.time.year",
+                  "from": -1,
+                  "to": -1,
+                  "localIdentifier": "0_dateFilter"
+                }
+              },
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.name",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Notebook"]
+                  }
+                }
+              }
+            ],
+            "relatedDashboardId": "copy_of_sample_dashboard_without_kpi_ac9FimAGWOs0",
+            "metadata": {
+              "widget": "adqFiYEr3vfR",
+              "title": "Copy of Sample dashboard without KPI"
+            }
+          }
+        }
+      ],
+      "visualExports": [
+        {
+          "requestPayload": {
+            "fileName": "dashboard filters with values",
+            "dashboardId": "copy_of_sample_dashboard_without_kpi_ac9FimAGWOs0",
+            "metadata": {
+              "title": "Copy of Sample dashboard without KPI",
+              "filters": [
+                {
+                  "dateFilter": {
+                    "type": "relative",
+                    "granularity": "GDC.time.year",
+                    "to": "-1",
+                    "from": "-1",
+                    "localIdentifier": "0_dateFilter"
+                  }
+                },
+                {
+                  "attributeFilter": {
+                    "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+                    "attributeElements": {
+                      "uris": ["Notebook"]
+                    },
+                    "displayForm": {
+                      "identifier": {
+                        "id": "products.name",
+                        "type": "label"
+                      }
+                    },
+                    "negativeSelection": false,
+                    "selectionMode": "multi"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "copy_of_sample_dashboard_without_kpi_ac9FimAGWOs0",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

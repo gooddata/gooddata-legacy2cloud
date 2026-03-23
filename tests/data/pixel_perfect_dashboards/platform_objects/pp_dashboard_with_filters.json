@@ -1,0 +1,56 @@
+{
+  "projectDashboard": {
+    "meta": {
+      "author": "test_user",
+      "category": "test",
+      "identifier": "test_pp_with_filters",
+      "title": "PP With Filters",
+      "uri": "/gdc/md/test_workspace/obj/9200",
+      "summary": "",
+      "unlisted": 0
+    },
+    "content": {
+      "filters": [
+        {
+          "filterItemContent": {
+            "id": "fic_1",
+            "type": "list",
+            "obj": "/gdc/md/test_workspace/obj/4001",
+            "default": [],
+            "multiple": 1,
+            "label": "Test Attribute Filter"
+          }
+        }
+      ],
+      "tabs": [
+        {
+          "identifier": "tab_filters",
+          "title": "Filters Tab",
+          "items": [
+            {
+              "filterItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 300,
+                "sizeY": 40,
+                "id": "fi_1",
+                "contentId": "fic_1"
+              }
+            },
+            {
+              "reportItem": {
+                "positionX": 0,
+                "positionY": 60,
+                "sizeX": 400,
+                "sizeY": 300,
+                "obj": "/gdc/md/test_workspace/obj/1001",
+                "filters": [],
+                "title": "Test Report 1"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

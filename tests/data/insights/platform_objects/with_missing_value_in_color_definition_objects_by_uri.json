@@ -1,0 +1,111 @@
+{
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/7": {
+    "visualizationClass": {
+      "content": {
+        "url": "local:line"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/631": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.customer.customerid",
+        "category": "attribute"
+      },
+      "content": {
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "label.customer.customerid"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/632/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/632": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.customer.customerid",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/631"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.customer.country",
+        "category": "attribute"
+      },
+      "content": {
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "label.customer.country"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.customer.country",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2014": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2014",
+          "title": "Aruba"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2527": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2525": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/632/elements?id=661": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/631/elements?id=661",
+          "title": "Long, Cassidy G."
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/632/elements?id=2526": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/632/elements?id=2524": {
+    "attributeElements": {
+      "elements": []
+    }
+  }
+}

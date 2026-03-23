@@ -1,0 +1,67 @@
+{
+  "projectDashboard": {
+    "meta": {
+      "author": "test_user",
+      "category": "test",
+      "identifier": "pp_real_multi_tab_001",
+      "title": "PP Real Multi Tab Minimal",
+      "uri": "/gdc/md/test_workspace/obj/9101",
+      "summary": "Minimized real-world style PP dashboard with multiple tabs",
+      "unlisted": 0
+    },
+    "content": {
+      "filters": [],
+      "tabs": [
+        {
+          "identifier": "tab_reports",
+          "title": "Reports tab",
+          "items": [
+            {
+              "reportItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 400,
+                "sizeY": 300,
+                "obj": "/gdc/md/test_workspace/obj/1001",
+                "filters": [],
+                "title": "Test Report 1"
+              }
+            },
+            {
+              "textItem": {
+                "positionX": 420,
+                "positionY": 0,
+                "sizeX": 300,
+                "sizeY": 50,
+                "text": "This is a test text item with sufficient length",
+                "textSize": "normal"
+              }
+            }
+          ]
+        },
+        {
+          "identifier": "tab_empty",
+          "title": "Empty tab",
+          "items": []
+        },
+        {
+          "identifier": "tab_headline",
+          "title": "Headline tab",
+          "items": [
+            {
+              "headlineItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 300,
+                "sizeY": 150,
+                "metric": "/gdc/md/test_workspace/obj/2001",
+                "filters": [],
+                "title": "Test Headline"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

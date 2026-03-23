@@ -1,0 +1,354 @@
+{
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769": {
+    "fact": {
+      "content": {
+        "expr": [
+          {
+            "data": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4118",
+            "type": "col"
+          }
+        ],
+        "folders": [
+          "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4768"
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "fact",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:23",
+        "deprecated": "0",
+        "identifier": "fact.orderitems.itemprice",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Item Price",
+        "updated": "2025-04-09 17:05:23",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4770": {
+    "fact": {
+      "content": {
+        "expr": [
+          {
+            "data": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4120",
+            "type": "col"
+          }
+        ],
+        "folders": [
+          "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4768"
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "fact",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:23",
+        "deprecated": "0",
+        "identifier": "fact.orderitems.quantity",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Quantity",
+        "updated": "2025-04-09 17:05:23",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4770"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1937": {
+    "metric": {
+      "content": {
+        "expression": "SELECT SUM([/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/660]) BY [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/643], [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/650] ALL OTHER",
+        "tree": {
+          "position": {
+            "line": 1,
+            "column": 14
+          },
+          "type": "metric",
+          "content": [
+            {
+              "content": [
+                {
+                  "content": [
+                    {
+                      "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/660",
+                      "type": "fact object",
+                      "position": {
+                        "column": 25,
+                        "line": 1
+                      }
+                    }
+                  ],
+                  "value": "SUM",
+                  "position": {
+                    "line": 1,
+                    "column": 21
+                  },
+                  "type": "function"
+                }
+              ],
+              "position": {
+                "line": 1,
+                "column": 21
+              },
+              "type": "expression"
+            },
+            {
+              "position": {
+                "line": 1,
+                "column": 77
+              },
+              "type": "by",
+              "content": [
+                {
+                  "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/643",
+                  "position": {
+                    "line": 1,
+                    "column": 80
+                  },
+                  "type": "attribute object"
+                },
+                {
+                  "position": {
+                    "column": 132,
+                    "line": 1
+                  },
+                  "type": "attribute object",
+                  "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/650"
+                },
+                {
+                  "position": {
+                    "column": 183,
+                    "line": 1
+                  },
+                  "type": "all other",
+                  "content": []
+                }
+              ]
+            }
+          ]
+        },
+        "format": "#,##0"
+      },
+      "meta": {
+        "summary": "",
+        "category": "metric",
+        "title": "DEPRECATED METRIC",
+        "identifier": "abCqIvPhCrVX",
+        "unlisted": 1,
+        "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1937",
+        "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "created": "2024-05-09 11:40:22",
+        "deprecated": "1",
+        "updated": "2024-05-09 11:41:12",
+        "tags": "",
+        "sharedWithSomeone": 0,
+        "isProduction": 1
+      },
+      "links": {
+        "explain2": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1937/explain2"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796": {
+    "metric": {
+      "links": {
+        "explain2": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796/explain2"
+      },
+      "content": {
+        "expression": "SELECT SUM([/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/661])",
+        "tree": {
+          "position": {
+            "column": 14,
+            "line": 1
+          },
+          "type": "metric",
+          "content": [
+            {
+              "type": "expression",
+              "position": {
+                "line": 1,
+                "column": 21
+              },
+              "content": [
+                {
+                  "content": [
+                    {
+                      "position": {
+                        "line": 1,
+                        "column": 25
+                      },
+                      "type": "fact object",
+                      "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/661"
+                    }
+                  ],
+                  "value": "SUM",
+                  "position": {
+                    "line": 1,
+                    "column": 21
+                  },
+                  "type": "function"
+                }
+              ]
+            }
+          ]
+        },
+        "format": "#,##0.00"
+      },
+      "meta": {
+        "created": "2020-03-03 14:08:03",
+        "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "deprecated": "0",
+        "tags": "",
+        "updated": "2025-10-23 15:54:53",
+        "isProduction": 1,
+        "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "title": "$ Sales",
+        "identifier": "aaXlbflxeioq",
+        "summary": "",
+        "category": "metric"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/417": {
+    "attribute": {
+      "meta": {
+        "identifier": "target.date.day",
+        "category": "attribute"
+      },
+      "content": {
+        "type": "GDC.time.date",
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "target.date.day"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/418/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/418/elements?id=0": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/417/elements?id=0",
+          "title": "1-01-01"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243": {
+    "attribute": {
+      "meta": {
+        "identifier": "order.abm81lMifn6q",
+        "category": "attribute"
+      },
+      "content": {
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "order.abm81lMifn6q"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/244/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/244/elements?id=3": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243/elements?id=3",
+          "title": "03"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/244/elements?id=4": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243/elements?id=4",
+          "title": "04"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.customer.country",
+        "category": "attribute"
+      },
+      "content": {
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "label.customer.country"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.customer.country",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2025": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2025",
+          "title": "Italy"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2026": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2026",
+          "title": "Kuwait"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2027": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2027",
+          "title": "Latvia"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=12028": {
+    "attributeElements": {
+      "elements": []
+    }
+  }
+}

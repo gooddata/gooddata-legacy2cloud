@@ -1,0 +1,180 @@
+[
+    {
+        "data": {
+            "id": "has_all_additional_date_labels_gd_date_acIttRUwi4s5",
+            "type": "visualizationObject",
+            "attributes": {
+                "title": "has all additional date labels (GD date)",
+                "description": "",
+                "createdAt": "",
+                "content": {
+                    "filters": [],
+                    "attributeFilterConfigs": {},
+                    "buckets": [
+                        {
+                            "items": [
+                                {
+                                    "measure": {
+                                        "definition": {
+                                            "measureDefinition": {
+                                                "item": {
+                                                    "identifier": {
+                                                        "id": "_sales_aaXlbflxeioq",
+                                                        "type": "metric"
+                                                    }
+                                                },
+                                                "filters": []
+                                            }
+                                        },
+                                        "title": "$ Sales",
+                                        "localIdentifier": "76fdd371670549468b12a3d76e04fa7e"
+                                    }
+                                }
+                            ],
+                            "localIdentifier": "measures"
+                        },
+                        {
+                            "items": [
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "dt_order.quarterOfYear",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "3f9c20853ce0400fba0e5b968f267afe"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "dt_order.migration-not-in-ldm.aby81lMifn6q",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "7d075eea3c7846f1ae7f8adbda86de77"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "dt_order.monthOfYear",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "8b6211d957b14a11a0782f68727e164b"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "dt_order.migration-not-in-ldm.aaO81lMifn6q",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "ede80d1dec894b4eb1503da1091fdd41"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "dt_order.weekOfYear",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "9c6ab28e7e10468fbb82a0ce2bf25e90"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "dt_order.dayOfWeek",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "4f7e35ff3d6c4966820a768e43b7138c"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "dt_order.dayOfWeek",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "4c6292a18ae14d74910251f29d5d97bf"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "dt_order.dayOfWeek",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "fb36a1fc79024e35b207689a861af994"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "dt_order.dayOfMonth",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "59d924ae87ba4c8398f4ad889e788695"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "dt_order.migration-not-in-ldm.ab481lMifn6q",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "19b5ba751196451db928030d8f70acf8"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "dt_order.dayOfYear",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "00abcf2755be4533aa62b433b45e67e6"
+                                    }
+                                }
+                            ],
+                            "localIdentifier": "attribute"
+                        }
+                    ],
+                    "createdAt": "2024-05-09 22:52:45",
+                    "modifiedAt": "2024-05-09 22:53:47",
+                    "sorts": [
+                        {
+                            "attributeSortItem": {
+                                "attributeIdentifier": "3f9c20853ce0400fba0e5b968f267afe",
+                                "direction": "asc"
+                            }
+                        }
+                    ],
+                    "properties": {},
+                    "visualizationUrl": "local:table",
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

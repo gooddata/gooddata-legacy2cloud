@@ -1,0 +1,65 @@
+[
+  {
+    "data": {
+      "id": "migration_sample_aarrBr48ObDC",
+      "type": "analyticalDashboard",
+      "attributes": {
+        "title": "Migration sample",
+        "description": "",
+        "content": {
+          "attributeFilterConfigs": [],
+          "filterContextRef": {
+            "identifier": {
+              "id": "filtercontext_acBrpELxXJPQ",
+              "type": "filterContext"
+            }
+          },
+          "layout": {
+            "type": "IDashboardLayout",
+            "sections": [
+              {
+                "type": "IDashboardLayoutSection",
+                "header": {
+                  "description": "This dashboard section contains insights related to average item prices.",
+                  "title": "Average Item Prices"
+                },
+                "items": [
+                  {
+                    "type": "IDashboardLayoutItem",
+                    "size": {
+                      "xl": {
+                        "gridHeight": 22,
+                        "gridWidth": 6
+                      }
+                    },
+                    "widget": {
+                      "type": "insight",
+                      "drills": [],
+                      "description": "",
+                      "ignoreDashboardFilters": [],
+                      "insight": {
+                        "identifier": {
+                          "id": "avg_item_price_per_category_abb6SWS81yFv",
+                          "type": "visualizationObject"
+                        }
+                      },
+                      "title": "Avg item price per category",
+                      "dateDataSet": {
+                        "identifier": {
+                          "id": "dt_orderdate",
+                          "type": "dataset"
+                        }
+                      },
+                      "localIdentifier": "abJrpUa4bktT"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "version": "2"
+        }
+      }
+    }
+  }
+]

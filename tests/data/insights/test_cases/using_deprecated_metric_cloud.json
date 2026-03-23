@@ -1,0 +1,47 @@
+[
+    {
+        "data": {
+            "id": "using_deprecated_metric_abvq43no86k4",
+            "type": "visualizationObject",
+            "attributes": {
+                "title": "using deprecated metric",
+                "description": "",
+                "createdAt": "",
+                "content": {
+                    "filters": [],
+                    "attributeFilterConfigs": {},
+                    "buckets": [
+                        {
+                            "items": [
+                                {
+                                    "measure": {
+                                        "title": "Using Deprecated Metric",
+                                        "definition": {
+                                            "measureDefinition": {
+                                                "item": {
+                                                    "identifier": {
+                                                        "id": "deprecated_metric_abCqIvPhCrVX",
+                                                        "type": "metric"
+                                                    }
+                                                },
+                                                "filters": []
+                                            }
+                                        },
+                                        "localIdentifier": "bed9abb0db474742ab9f0aa7ccb232ca"
+                                    }
+                                }
+                            ],
+                            "localIdentifier": "measures"
+                        }
+                    ],
+                    "createdAt": "2024-05-09 12:50:34",
+                    "modifiedAt": "2024-05-09 12:51:02",
+                    "sorts": [],
+                    "properties": {},
+                    "visualizationUrl": "local:table",
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

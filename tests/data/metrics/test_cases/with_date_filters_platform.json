@@ -1,0 +1,140 @@
+[
+    {
+        "metric": {
+            "content": {
+                "expression": "SELECT [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796] \nWHERE [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/417] <> [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/417/elements?id=0]\nAND [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243] IN ([/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243/elements?id=3], [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243/elements?id=4])",
+                "format": "#,##0.00",
+                "tree": {
+                    "type": "metric",
+                    "position": {
+                        "column": 14,
+                        "line": 1
+                    },
+                    "content": [
+                        {
+                            "type": "expression",
+                            "position": {
+                                "line": 1,
+                                "column": 21
+                            },
+                            "content": [
+                                {
+                                    "position": {
+                                        "column": 21,
+                                        "line": 1
+                                    },
+                                    "type": "metric object",
+                                    "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796"
+                                }
+                            ]
+                        },
+                        {
+                            "content": [
+                                {
+                                    "type": "and",
+                                    "position": {
+                                        "line": 3,
+                                        "column": 1
+                                    },
+                                    "content": [
+                                        {
+                                            "content": [
+                                                {
+                                                    "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/417",
+                                                    "type": "attribute object",
+                                                    "position": {
+                                                        "line": 2,
+                                                        "column": 7
+                                                    }
+                                                },
+                                                {
+                                                    "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/417/elements?id=0",
+                                                    "position": {
+                                                        "column": 61,
+                                                        "line": 2
+                                                    },
+                                                    "type": "attributeElement object"
+                                                }
+                                            ],
+                                            "position": {
+                                                "column": 58,
+                                                "line": 2
+                                            },
+                                            "type": "<>"
+                                        },
+                                        {
+                                            "position": {
+                                                "column": 56,
+                                                "line": 3
+                                            },
+                                            "type": "in",
+                                            "content": [
+                                                {
+                                                    "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243",
+                                                    "position": {
+                                                        "column": 5,
+                                                        "line": 3
+                                                    },
+                                                    "type": "attribute object"
+                                                },
+                                                {
+                                                    "position": {
+                                                        "line": 3,
+                                                        "column": 60
+                                                    },
+                                                    "type": "list",
+                                                    "content": [
+                                                        {
+                                                            "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243/elements?id=3",
+                                                            "type": "attributeElement object",
+                                                            "position": {
+                                                                "column": 60,
+                                                                "line": 3
+                                                            }
+                                                        },
+                                                        {
+                                                            "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/243/elements?id=4",
+                                                            "position": {
+                                                                "line": 3,
+                                                                "column": 126
+                                                            },
+                                                            "type": "attributeElement object"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "position": {
+                                "line": 2,
+                                "column": 1
+                            },
+                            "type": "where"
+                        }
+                    ]
+                }
+            },
+            "meta": {
+                "title": "WITH date filters",
+                "identifier": "abtwNWm6eofd",
+                "unlisted": 1,
+                "summary": "",
+                "category": "metric",
+                "created": "2024-05-10 12:27:23",
+                "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "deprecated": "0",
+                "updated": "2024-05-10 12:28:42",
+                "tags": "",
+                "isProduction": 1,
+                "sharedWithSomeone": 0,
+                "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1990"
+            },
+            "links": {
+                "explain2": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1990/explain2"
+            }
+        }
+    }
+]

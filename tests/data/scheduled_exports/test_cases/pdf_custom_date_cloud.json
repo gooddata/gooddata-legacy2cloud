@@ -1,0 +1,71 @@
+{
+  "data": {
+    "id": "pdf_custom_date_adhnMiVc9MWr",
+    "type": "automation",
+    "attributes": {
+      "title": "pdf_custom_date",
+      "description": "",
+      "details": {
+        "message": "only date set as custom filter\nset to last year",
+        "subject": "pdf_custom_date"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": false
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 0 0 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "visualExports": [
+        {
+          "requestPayload": {
+            "fileName": "pdf_custom_date",
+            "dashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "title": "Sample dashboard without KPI",
+              "filters": [
+                {
+                  "dateFilter": {
+                    "type": "relative",
+                    "granularity": "GDC.time.year",
+                    "to": "-1",
+                    "from": "-1",
+                    "localIdentifier": "0_dateFilter"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

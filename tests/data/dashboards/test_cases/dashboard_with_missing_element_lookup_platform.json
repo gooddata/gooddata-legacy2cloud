@@ -1,0 +1,54 @@
+[
+    {
+        "analyticalDashboard": {
+            "meta": {
+                "identifier": "aaoJ715R1Bt2",
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4581",
+                "created": "2025-05-29 12:06:39",
+                "deprecated": "0",
+                "title": "Dashboard with missing element lookup",
+                "updated": "2025-05-29 12:06:45",
+                "summary": "",
+                "author": "/gdc/account/profile/f6166ec7e006ea9c85d852cb919bc152",
+                "category": "analyticalDashboard",
+                "isProduction": 1,
+                "contributor": "/gdc/account/profile/f6166ec7e006ea9c85d852cb919bc152",
+                "tags": ""
+            },
+            "content": {
+                "layout": {
+                    "fluidLayout": {
+                        "rows": [
+                            {
+                                "header": {
+                                    "description": "elements should be \"another_value_2, another_value_6, another_value_7, another_value_8\""
+                                },
+                                "columns": [
+                                    {
+                                        "size": {
+                                            "xl": {
+                                                "height": 22,
+                                                "width": 12
+                                            }
+                                        },
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4579"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "widgets": [
+                    "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4579"
+                ],
+                "filterContext": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4580"
+            }
+        }
+    }
+]

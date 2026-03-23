@@ -1,0 +1,79 @@
+{
+  "data": {
+    "id": "csv_absolute_date_filter_abBnUsMaM7aI",
+    "type": "automation",
+    "attributes": {
+      "title": "csv_absolute_date_filter",
+      "description": "",
+      "details": {
+        "message": "Hello,\n\nYour scheduled email is ready. You can download the dashboard in attachments.",
+        "subject": "csv_absolute_date_filter"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": false
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 0 0 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "tabularExports": [
+        {
+          "requestPayload": {
+            "format": "CSV",
+            "fileName": "Avg item price per category",
+            "visualizationObject": "avg_item_price_per_category_abb6SWS81yFv",
+            "visualizationObjectCustomFilters": [
+              {
+                "absoluteDateFilter": {
+                  "dataSet": {
+                    "identifier": {
+                      "id": "dt_orderdate",
+                      "type": "dataset"
+                    }
+                  },
+                  "granularity": "GDC.time.date",
+                  "from": "2024-01-01 00:00",
+                  "to": "2024-12-31 23:59",
+                  "localIdentifier": "0_dateFilter"
+                }
+              }
+            ],
+            "relatedDashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "widget": "abY6SQtmX2GI",
+              "title": "Sample dashboard without KPI"
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,102 @@
+[
+    {
+        "data": {
+            "id": "headline_as_a_kpi_ab7G2Ivr3Fhj",
+            "type": "visualizationObject",
+            "attributes": {
+                "title": "Headline as a KPI",
+                "description": "",
+                "createdAt": "",
+                "content": {
+                    "filters": [
+                        {
+                            "absoluteDateFilter": {
+                                "dataSet": {
+                                    "identifier": {
+                                        "id": "dt_ship",
+                                        "type": "dataset"
+                                    }
+                                },
+                                "to": "2019-05-22",
+                                "from": "2019-04-22"
+                            }
+                        }
+                    ],
+                    "attributeFilterConfigs": {},
+                    "buckets": [
+                        {
+                            "items": [
+                                {
+                                    "measure": {
+                                        "localIdentifier": "da5ae2f0653b4ed5a2c855fc4bc45ae5",
+                                        "definition": {
+                                            "measureDefinition": {
+                                                "item": {
+                                                    "identifier": {
+                                                        "id": "nr_orders_agLG2DYSJJgf",
+                                                        "type": "metric"
+                                                    }
+                                                },
+                                                "filters": []
+                                            }
+                                        },
+                                        "title": "# orders"
+                                    }
+                                }
+                            ],
+                            "localIdentifier": "measures"
+                        },
+                        {
+                            "items": [
+                                {
+                                    "measure": {
+                                        "localIdentifier": "da5ae2f0653b4ed5a2c855fc4bc45ae5_pop",
+                                        "definition": {
+                                            "popMeasureDefinition": {
+                                                "measureIdentifier": "da5ae2f0653b4ed5a2c855fc4bc45ae5",
+                                                "popAttribute": {
+                                                    "identifier": {
+                                                        "id": "dt_ship.year",
+                                                        "type": "attribute"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "localIdentifier": "secondary_measures"
+                        }
+                    ],
+                    "createdAt": "2024-05-22 20:46:18",
+                    "modifiedAt": "2024-05-27 21:04:18",
+                    "sorts": [],
+                    "properties": {
+                        "controls": {
+                            "comparison": {
+                                "calculationType": "change",
+                                "colorConfig": {
+                                    "negative": {
+                                        "type": "guid",
+                                        "value": "positive"
+                                    },
+                                    "positive": {
+                                        "type": "guid",
+                                        "value": "negative"
+                                    }
+                                },
+                                "enabled": true,
+                                "labelConfig": {
+                                    "isConditional": false
+                                },
+                                "position": "auto"
+                            }
+                        }
+                    },
+                    "visualizationUrl": "local:headline",
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

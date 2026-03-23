@@ -1,0 +1,69 @@
+{
+  "/gdc/md/test_workspace/obj/1001": {
+    "report": {
+      "meta": {
+        "author": "test_user",
+        "category": "report",
+        "identifier": "test_report_001",
+        "title": "Test Report",
+        "uri": "/gdc/md/test_workspace/obj/1001",
+        "summary": ""
+      },
+      "content": {}
+    }
+  },
+  "/gdc/md/test_workspace/obj/2001": {
+    "metric": {
+      "meta": {
+        "author": "test_user",
+        "category": "metric",
+        "identifier": "test_metric_001",
+        "title": "Test Metric",
+        "uri": "/gdc/md/test_workspace/obj/2001",
+        "summary": ""
+      },
+      "content": {
+        "format": "#,##0",
+        "expression": "SELECT SUM([/gdc/md/test_workspace/obj/3001])"
+      }
+    }
+  },
+  "/gdc/md/test_workspace/obj/4001": {
+    "attributeDisplayForm": {
+      "content": {
+        "formOf": "/gdc/md/test_workspace/obj/4002"
+      },
+      "links": {
+        "elements": {
+          "attributeElements": {
+            "elements": []
+          }
+        }
+      },
+      "meta": {
+        "author": "test_user",
+        "category": "attributeDisplayForm",
+        "identifier": "attr.test_attribute",
+        "title": "Test Attribute",
+        "uri": "/gdc/md/test_workspace/obj/4001",
+        "summary": ""
+      }
+    }
+  },
+  "/gdc/md/test_workspace/obj/4002": {
+    "attribute": {
+      "content": {
+        "displayForms": [],
+        "type": "dataset.test_dataset.test_attribute"
+      },
+      "meta": {
+        "author": "test_user",
+        "category": "attribute",
+        "identifier": "dataset.test_dataset.test_attribute",
+        "title": "Test Attribute",
+        "uri": "/gdc/md/test_workspace/obj/4002",
+        "summary": ""
+      }
+    }
+  }
+}

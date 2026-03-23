@@ -1,0 +1,398 @@
+{
+    "ldm": {
+        "datasets": [
+            {
+                "attributes": [
+                    {
+                        "id": "products.productid",
+                        "description": "Product Id",
+                        "labels": [
+                            {
+                                "description": "",
+                                "id": "products.productid.product_id_label",
+                                "sourceColumn": "product_id_label",
+                                "sourceColumnDataType": "STRING",
+                                "tags": [
+                                    "product_id_label"
+                                ],
+                                "title": "product_id_label",
+                                "valueType": "TEXT"
+                            }
+                        ],
+                        "sourceColumn": "product_id",
+                        "sourceColumnDataType": "STRING",
+                        "tags": [
+                            "Products"
+                        ],
+                        "title": "Product Id"
+                    },
+                    {
+                        "id": "products.name",
+                        "description": "Name",
+                        "labels": [],
+                        "sourceColumn": "name",
+                        "sourceColumnDataType": "STRING",
+                        "tags": [
+                            "Products"
+                        ],
+                        "title": "Name"
+                    },
+                    {
+                        "id": "products.category",
+                        "description": "Category",
+                        "labels": [],
+                        "sourceColumn": "category",
+                        "sourceColumnDataType": "STRING",
+                        "tags": [
+                            "Products"
+                        ],
+                        "title": "Category"
+                    }
+                ],
+                "description": "",
+                "facts": [
+                    {
+                        "description": "Price",
+                        "id": "products.f_price",
+                        "sourceColumn": "price",
+                        "sourceColumnDataType": "NUMERIC",
+                        "tags": [
+                            "Products"
+                        ],
+                        "title": "Price"
+                    },
+                    {
+                        "description": "Stock Quantity",
+                        "id": "products.f_stockquantity",
+                        "sourceColumn": "stock_quantity",
+                        "sourceColumnDataType": "NUMERIC",
+                        "tags": [
+                            "Products"
+                        ],
+                        "title": "Stock Quantity"
+                    }
+                ],
+                "grain": [
+                    {
+                        "id": "products.productid",
+                        "type": "attribute"
+                    }
+                ],
+                "id": "products",
+                "references": [],
+                "tags": [
+                    "Products"
+                ],
+                "title": "Products",
+                "dataSourceTableId": {
+                    "dataSourceId": "gdc_csv_ds_sksgz",
+                    "id": "products",
+                    "path": [
+                        "Faked E-Commerce",
+                        "products"
+                    ],
+                    "type": "dataSource"
+                }
+            },
+            {
+                "attributes": [
+                    {
+                        "id": "orderitems.orderitemid",
+                        "description": "Order Item Id",
+                        "labels": [],
+                        "sourceColumn": "order_item_id",
+                        "sourceColumnDataType": "STRING",
+                        "tags": [
+                            "Order Items"
+                        ],
+                        "title": "Order Item Id"
+                    }
+                ],
+                "description": "",
+                "facts": [
+                    {
+                        "description": "Item Price",
+                        "id": "orderitems.f_itemprice",
+                        "sourceColumn": "item_price",
+                        "sourceColumnDataType": "NUMERIC",
+                        "tags": [
+                            "Order Items"
+                        ],
+                        "title": "Item Price"
+                    },
+                    {
+                        "description": "Quantity",
+                        "id": "orderitems.f_quantity",
+                        "sourceColumn": "quantity",
+                        "sourceColumnDataType": "NUMERIC",
+                        "tags": [
+                            "Order Items"
+                        ],
+                        "title": "Quantity"
+                    }
+                ],
+                "grain": [
+                    {
+                        "id": "orderitems.orderitemid",
+                        "type": "attribute"
+                    }
+                ],
+                "id": "orderitems",
+                "references": [
+                    {
+                        "identifier": {
+                            "id": "products",
+                            "type": "dataset"
+                        },
+                        "multivalue": false,
+                        "sourceColumns": [
+                            "product_id"
+                        ],
+                        "sourceColumnDataTypes": [
+                            "STRING"
+                        ]
+                    },
+                    {
+                        "identifier": {
+                            "id": "orders",
+                            "type": "dataset"
+                        },
+                        "multivalue": false,
+                        "sourceColumns": [
+                            "order_id"
+                        ],
+                        "sourceColumnDataTypes": [
+                            "STRING"
+                        ]
+                    }
+                ],
+                "tags": [
+                    "Order Items"
+                ],
+                "title": "Order Items",
+                "dataSourceTableId": {
+                    "dataSourceId": "gdc_csv_ds_sksgz",
+                    "id": "order_items",
+                    "path": [
+                        "Faked E-Commerce",
+                        "order_items"
+                    ],
+                    "type": "dataSource"
+                }
+            },
+            {
+                "attributes": [
+                    {
+                        "id": "orders.orderid",
+                        "description": "Order Id",
+                        "labels": [],
+                        "sourceColumn": "order_id",
+                        "sourceColumnDataType": "STRING",
+                        "tags": [
+                            "Orders"
+                        ],
+                        "title": "Order Id"
+                    }
+                ],
+                "description": "",
+                "facts": [
+                    {
+                        "description": "Total Amount",
+                        "id": "orders.f_totalamount",
+                        "sourceColumn": "total_amount",
+                        "sourceColumnDataType": "NUMERIC",
+                        "tags": [
+                            "Orders"
+                        ],
+                        "title": "Total Amount"
+                    }
+                ],
+                "grain": [
+                    {
+                        "id": "orders.orderid",
+                        "type": "attribute"
+                    }
+                ],
+                "id": "orders",
+                "references": [
+                    {
+                        "identifier": {
+                            "id": "customers",
+                            "type": "dataset"
+                        },
+                        "multivalue": false,
+                        "sourceColumns": [
+                            "customer_id"
+                        ],
+                        "sourceColumnDataTypes": [
+                            "STRING"
+                        ]
+                    },
+                    {
+                        "identifier": {
+                            "id": "dt_orderdate",
+                            "type": "dataset"
+                        },
+                        "multivalue": false,
+                        "sourceColumns": [
+                            "order_date"
+                        ],
+                        "sourceColumnDataTypes": [
+                            "DATE"
+                        ]
+                    }
+                ],
+                "tags": [
+                    "Orders"
+                ],
+                "title": "Orders",
+                "dataSourceTableId": {
+                    "dataSourceId": "gdc_csv_ds_sksgz",
+                    "id": "orders",
+                    "path": [
+                        "Faked E-Commerce",
+                        "orders"
+                    ],
+                    "type": "dataSource"
+                }
+            },
+            {
+                "attributes": [
+                    {
+                        "id": "customers.customerid",
+                        "description": "Customer Id",
+                        "labels": [],
+                        "sourceColumn": "customer_id",
+                        "sourceColumnDataType": "STRING",
+                        "tags": [
+                            "Customers"
+                        ],
+                        "title": "Customer Id"
+                    },
+                    {
+                        "id": "customers.name",
+                        "description": "Name",
+                        "labels": [],
+                        "sourceColumn": "name",
+                        "sourceColumnDataType": "STRING",
+                        "tags": [
+                            "Customers"
+                        ],
+                        "title": "Name"
+                    },
+                    {
+                        "id": "customers.email",
+                        "description": "Email",
+                        "labels": [],
+                        "sourceColumn": "email",
+                        "sourceColumnDataType": "STRING",
+                        "tags": [
+                            "Customers"
+                        ],
+                        "title": "Email"
+                    },
+                    {
+                        "id": "customers.city",
+                        "description": "City",
+                        "labels": [],
+                        "sourceColumn": "city",
+                        "sourceColumnDataType": "STRING",
+                        "tags": [
+                            "Customers"
+                        ],
+                        "title": "City"
+                    }
+                ],
+                "description": "",
+                "facts": [],
+                "grain": [
+                    {
+                        "id": "customers.customerid",
+                        "type": "attribute"
+                    }
+                ],
+                "id": "customers",
+                "references": [
+                    {
+                        "identifier": {
+                            "id": "dt_signupdate",
+                            "type": "dataset"
+                        },
+                        "multivalue": false,
+                        "sourceColumns": [
+                            "signup_date"
+                        ],
+                        "sourceColumnDataTypes": [
+                            "DATE"
+                        ]
+                    }
+                ],
+                "tags": [
+                    "Customers"
+                ],
+                "title": "Customers",
+                "dataSourceTableId": {
+                    "dataSourceId": "gdc_csv_ds_sksgz",
+                    "id": "customers",
+                    "path": [
+                        "Faked E-Commerce",
+                        "customers"
+                    ],
+                    "type": "dataSource"
+                }
+            }
+        ],
+        "dateInstances": [
+            {
+                "description": "",
+                "granularities": [
+                    "DAY",
+                    "WEEK",
+                    "MONTH",
+                    "QUARTER",
+                    "YEAR",
+                    "DAY_OF_WEEK",
+                    "DAY_OF_MONTH",
+                    "DAY_OF_YEAR",
+                    "WEEK_OF_YEAR",
+                    "MONTH_OF_YEAR",
+                    "QUARTER_OF_YEAR"
+                ],
+                "granularitiesFormatting": {
+                    "titleBase": "",
+                    "titlePattern": "%titleBase - %granularityTitle"
+                },
+                "id": "dt_orderdate",
+                "tags": [
+                    "Order Date"
+                ],
+                "title": "Order Date"
+            },
+            {
+                "description": "",
+                "granularities": [
+                    "DAY",
+                    "WEEK",
+                    "MONTH",
+                    "QUARTER",
+                    "YEAR",
+                    "DAY_OF_WEEK",
+                    "DAY_OF_MONTH",
+                    "DAY_OF_YEAR",
+                    "WEEK_OF_YEAR",
+                    "MONTH_OF_YEAR",
+                    "QUARTER_OF_YEAR"
+                ],
+                "granularitiesFormatting": {
+                    "titleBase": "",
+                    "titlePattern": "%titleBase - %granularityTitle"
+                },
+                "id": "dt_signupdate",
+                "tags": [
+                    "Signup Date"
+                ],
+                "title": "Signup Date"
+            }
+        ]
+    }
+}

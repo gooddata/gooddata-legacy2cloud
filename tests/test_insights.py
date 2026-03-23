@@ -1,0 +1,73 @@
+# (C) 2026 GoodData Corporation
+"""
+This test aims to verify the transformation of Platform insights to Cloud insights.
+
+All calls to Platform and Cloud are mocked, the data is loaded from JSON files stored
+in the `tests/data/insights` directory.
+
+The test verifies that the transformation of Platform insights metadata matches
+the expected Cloud insights metadata.
+"""
+
+import pytest
+
+from gooddata_platform2cloud.insights.cloud_insights_builder import CloudInsightsBuilder
+from tests.test_utils import dicts_are_equal, load_json
+
+TEST_CASES_DIR = "tests/data/insights/test_cases"
+
+
+@pytest.mark.parametrize(
+    "case_file_name",
+    [
+        "basic_insight",
+        "with_missing_value_in_color_definition",
+        "with_metric_value_filter",
+        "with_top_filter",
+        "headline_as_a_kpi",
+        "has_all_additional_date_labels_gd_date",
+        "using_deprecated_metric",
+    ],
+)
+def test_insights_migration(
+    case_file_name: str,
+    insights_builder: CloudInsightsBuilder,
+) -> None:
+    """Test the transformation of Platform insights to Cloud insights.
+
+    To add a test case, add its name to the test parameters and create two files
+    in the `tests/data/insights/test_cases` directory:
+    - <case_file_name>_platform.json - Platform insights metadata
+    - <case_file_name>_cloud.json - Expected Cloud insights metadata
+    """
+
+    # Load Platform insights
+    platform_insights = load_json(f"{TEST_CASES_DIR}/{case_file_name}_platform.json")
+    assert isinstance(platform_insights, list), "Platform insights should be a list"
+
+    # Load expected Cloud insights
+    expected_cloud_insights = load_json(f"{TEST_CASES_DIR}/{case_file_name}_cloud.json")
+    assert isinstance(expected_cloud_insights, list), "Cloud insights should be a list"
+
+    # Process Platform insights
+    insights_builder.process_platform_insights(platform_insights)
+
+    # Get Cloud insights
+    actual_cloud_insights = insights_builder.get_cloud_insights()
+
+    # Filter out None values (insights that couldn't be migrated)
+    actual_cloud_insights = [i for i in actual_cloud_insights if i is not None]
+
+    # Compare the actual data with expected_cloud_insights
+    # Sort both lists for comparison
+    actual_sorted = sorted(actual_cloud_insights, key=lambda x: x["data"]["id"])
+    expected_sorted = sorted(expected_cloud_insights, key=lambda x: x["data"]["id"])
+
+    if len(actual_sorted) != len(expected_sorted):
+        pytest.fail(
+            f"Insight count mismatch: actual={len(actual_sorted)}, expected={len(expected_sorted)}"
+        )
+
+    for actual, expected in zip(actual_sorted, expected_sorted):
+        dicts_are_equal(actual, expected)
+        dicts_are_equal(expected, actual)

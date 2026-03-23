@@ -1,0 +1,313 @@
+{
+  "datasetMappings": {
+    "items": [
+      {
+        "datasetMapping": {
+          "identifier": "dataset.products",
+          "source": {
+            "identifier": "products",
+            "csv": {
+              "headerRow": 1,
+              "delimiter": ","
+            }
+          },
+          "fields": [
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "label.products.productid.product_id_label",
+                  "type": "label"
+                },
+                "sourceColumn": {
+                  "name": "product_id_label",
+                  "dataType": "text",
+                  "format": ""
+                }
+              }
+            },
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "label.products.category",
+                  "type": "label"
+                },
+                "sourceColumn": {
+                  "name": "category",
+                  "dataType": "text"
+                }
+              }
+            },
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "label.products.name",
+                  "type": "label"
+                },
+                "sourceColumn": {
+                  "name": "name",
+                  "dataType": "text"
+                }
+              }
+            },
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "label.products.productid",
+                  "type": "label"
+                },
+                "sourceColumn": {
+                  "name": "product_id",
+                  "dataType": "text"
+                }
+              }
+            },
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "fact.products.price",
+                  "type": "fact"
+                },
+                "sourceColumn": {
+                  "name": "price",
+                  "dataType": "number"
+                }
+              }
+            },
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "fact.products.stockquantity",
+                  "type": "fact"
+                },
+                "sourceColumn": {
+                  "name": "stock_quantity",
+                  "dataType": "number"
+                }
+              }
+            }
+          ],
+          "references": [],
+          "system": {}
+        }
+      },
+      {
+        "datasetMapping": {
+          "identifier": "dataset.orderitems",
+          "source": {
+            "identifier": "order_items",
+            "csv": {
+              "headerRow": 0,
+              "delimiter": ","
+            }
+          },
+          "fields": [
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "fact.orderitems.itemprice",
+                  "type": "fact"
+                },
+                "sourceColumn": {
+                  "name": "item_price",
+                  "dataType": "number"
+                }
+              }
+            },
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "fact.orderitems.quantity",
+                  "type": "fact"
+                },
+                "sourceColumn": {
+                  "name": "quantity",
+                  "dataType": "number"
+                }
+              }
+            },
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "label.orderitems.orderitemid",
+                  "type": "label"
+                },
+                "sourceColumn": {
+                  "name": "order_item_id",
+                  "dataType": "text"
+                }
+              }
+            }
+          ],
+          "references": [
+            {
+              "referenceMapping": {
+                "target": {
+                  "identifier": "dataset.orders",
+                  "type": "dataset"
+                },
+                "sourceColumn": {
+                  "name": "order_id",
+                  "dataType": "number"
+                }
+              }
+            },
+            {
+              "referenceMapping": {
+                "target": {
+                  "identifier": "dataset.products",
+                  "type": "dataset"
+                },
+                "sourceColumn": {
+                  "name": "product_id",
+                  "dataType": "text"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "datasetMapping": {
+          "identifier": "dataset.orders",
+          "source": {
+            "identifier": "orders",
+            "csv": {
+              "headerRow": 0,
+              "delimiter": ","
+            }
+          },
+          "fields": [
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "fact.orders.totalamount",
+                  "type": "fact"
+                },
+                "sourceColumn": {
+                  "name": "total_amount",
+                  "dataType": "number"
+                }
+              }
+            },
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "label.orders.orderid",
+                  "type": "label"
+                },
+                "sourceColumn": {
+                  "name": "order_id",
+                  "dataType": "text"
+                }
+              }
+            }
+          ],
+          "references": [
+            {
+              "referenceMapping": {
+                "target": {
+                  "identifier": "dataset.customers",
+                  "type": "dataset"
+                },
+                "sourceColumn": {
+                  "name": "customer_id",
+                  "dataType": "number"
+                }
+              }
+            },
+            {
+              "referenceMapping": {
+                "target": {
+                  "identifier": "orderdate",
+                  "type": "date"
+                },
+                "sourceColumn": {
+                  "name": "order_date",
+                  "dataType": "date",
+                  "format": "yyyy-MM-dd"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "datasetMapping": {
+          "identifier": "dataset.customers",
+          "source": {
+            "identifier": "customers",
+            "csv": {
+              "headerRow": 0,
+              "delimiter": ","
+            }
+          },
+          "fields": [
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "label.customers.city",
+                  "type": "label"
+                },
+                "sourceColumn": {
+                  "name": "city",
+                  "dataType": "text"
+                }
+              }
+            },
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "label.customers.customerid",
+                  "type": "label"
+                },
+                "sourceColumn": {
+                  "name": "customer_id",
+                  "dataType": "text"
+                }
+              }
+            },
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "label.customers.email",
+                  "type": "label"
+                },
+                "sourceColumn": {
+                  "name": "email",
+                  "dataType": "text"
+                }
+              }
+            },
+            {
+              "fieldMapping": {
+                "field": {
+                  "identifier": "label.customers.name",
+                  "type": "label"
+                },
+                "sourceColumn": {
+                  "name": "name",
+                  "dataType": "text"
+                }
+              }
+            }
+          ],
+          "references": [
+            {
+              "referenceMapping": {
+                "target": {
+                  "identifier": "signupdate",
+                  "type": "date"
+                },
+                "sourceColumn": {
+                  "name": "signup_date",
+                  "dataType": "date",
+                  "format": "yyyy-MM-dd"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+[
+    {
+        "reportDefinition": {
+            "links": {
+                "explain2": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4990/explain2"
+            },
+            "content": {
+                "filters": [],
+                "grid": {
+                    "metrics": [
+                        {
+                            "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838",
+                            "alias": ""
+                        }
+                    ],
+                    "sort": {
+                        "columns": [],
+                        "rows": []
+                    },
+                    "rows": [],
+                    "columnWidths": [],
+                    "columns": [
+                        "metricGroup"
+                    ]
+                },
+                "format": "grid"
+            },
+            "meta": {
+                "summary": "",
+                "sharedWithSomeone": 0,
+                "isProduction": 1,
+                "tags": "",
+                "identifier": "abwyxFJ9u7f5",
+                "updated": "2025-09-10 13:22:20",
+                "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+                "created": "2025-09-10 13:22:20",
+                "title": "sample report",
+                "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4991",
+                "unlisted": 1,
+                "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+                "deprecated": "0",
+                "category": "report"
+            }
+        }
+    }
+]

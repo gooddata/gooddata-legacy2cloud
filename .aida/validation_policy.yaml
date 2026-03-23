@@ -1,0 +1,21 @@
+# (C) 2026 GoodData Corporation
+# AIDA validation policy
+#
+# This file wires domains -> pipelines -> steps (command_id + processor_id).
+# Initially empty (validate may no-op until you configure routes).
+validation_policy:
+  codegen: []
+  routes:
+    - domain: python
+      pipeline: python_check
+  pipelines:
+    python_check:
+      steps:
+        - command_id: format
+          processor_id: passthrough
+        - command_id: lint
+          processor_id: passthrough
+        - command_id: test
+          processor_id: pytest
+        - command_id: type
+          processor_id: passthrough

@@ -1,0 +1,42 @@
+[
+  {
+    "scheduledMail": {
+      "content": {
+        "body": "only date set as custom filter\nset to last year",
+        "attachments": [
+          {
+            "kpiDashboardAttachment": {
+              "format": "pdf",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846",
+              "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4953"
+            }
+          }
+        ],
+        "lastSuccessfull": "2025-08-20 00:01:13",
+        "subject": "pdf_custom_date",
+        "when": {
+          "recurrency": "0:0:0:1*0:0:0",
+          "timeZone": "Europe/Amsterdam",
+          "startDate": "2025-08-18"
+        },
+        "to": ["example.user@gooddata.com"]
+      },
+      "meta": {
+        "isProduction": 1,
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "sharedWithSomeone": 0,
+        "created": "2025-08-18 12:01:12",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "updated": "2025-08-20 00:01:13",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4954",
+        "title": "pdf_custom_date",
+        "unlisted": 1,
+        "deprecated": "0",
+        "identifier": "adhnMiVc9MWr",
+        "tags": "",
+        "category": "scheduledMail",
+        "summary": "Daily at 12:00 AM"
+      }
+    }
+  }
+]

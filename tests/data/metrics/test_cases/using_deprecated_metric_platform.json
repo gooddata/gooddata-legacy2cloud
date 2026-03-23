@@ -1,0 +1,72 @@
+[
+    {
+        "metric": {
+            "links": {
+                "explain2": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1938/explain2"
+            },
+            "content": {
+                "tree": {
+                    "position": {
+                        "line": 1,
+                        "column": 14
+                    },
+                    "type": "metric",
+                    "content": [
+                        {
+                            "type": "expression",
+                            "position": {
+                                "line": 1,
+                                "column": 22
+                            },
+                            "content": [
+                                {
+                                    "type": "+",
+                                    "position": {
+                                        "line": 1,
+                                        "column": 22
+                                    },
+                                    "content": [
+                                        {
+                                            "type": "number",
+                                            "position": {
+                                                "line": 1,
+                                                "column": 21
+                                            },
+                                            "value": "1"
+                                        },
+                                        {
+                                            "position": {
+                                                "line": 1,
+                                                "column": 23
+                                            },
+                                            "type": "metric object",
+                                            "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1937"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "format": "#,##0.00",
+                "expression": "SELECT 1+[/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1937] "
+            },
+            "meta": {
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1938",
+                "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "isProduction": 1,
+                "sharedWithSomeone": 0,
+                "updated": "2024-05-09 11:41:06",
+                "tags": "",
+                "deprecated": "0",
+                "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "created": "2024-05-09 11:41:06",
+                "category": "metric",
+                "summary": "",
+                "unlisted": 1,
+                "identifier": "actqILRpfsL5",
+                "title": "Using Deprecated Metric"
+            }
+        }
+    }
+]

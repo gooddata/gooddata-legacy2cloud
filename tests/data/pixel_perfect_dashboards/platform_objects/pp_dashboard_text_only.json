@@ -1,0 +1,44 @@
+{
+  "projectDashboard": {
+    "meta": {
+      "author": "test_user",
+      "category": "test",
+      "identifier": "test_pp_text_only",
+      "title": "PP Text Only",
+      "uri": "/gdc/md/test_workspace/obj/9100",
+      "summary": "",
+      "unlisted": 0
+    },
+    "content": {
+      "filters": [],
+      "tabs": [
+        {
+          "identifier": "tab_text",
+          "title": "Text Tab",
+          "items": [
+            {
+              "textItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 600,
+                "sizeY": 80,
+                "text": "This is a long enough text item to be migrated",
+                "textSize": "normal"
+              }
+            },
+            {
+              "textItem": {
+                "positionX": 0,
+                "positionY": 100,
+                "sizeX": 600,
+                "sizeY": 30,
+                "text": "shrt",
+                "textSize": "normal"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

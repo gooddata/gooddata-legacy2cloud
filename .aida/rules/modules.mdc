@@ -1,0 +1,40 @@
+# (C) 2026 GoodData Corporation
+---
+alwaysApply: true
+---
+
+# GoodData Migration Toolkit - Module Organization
+
+## Migration Scripts
+
+- `gooddata_platform2cloud/workfows/migrate_ldm.py` - Logical Data Model migration
+- `gooddata_platform2cloud/workfows/migrate_metrics.py` - Metrics migration
+- `gooddata_platform2cloud/workfows/migrate_insights.py` - Insights/visualizations migration
+- `gooddata_platform2cloud/workfows/migrate_dashboards.py` - Dashboard migration
+- `gooddata_platform2cloud/workfows/migrate_reports.py` - Pixel Perfect Reports migration
+- `gooddata_platform2cloud/workfows/migrate_scheduled_exports.py` - Scheduled exports migration
+- `gooddata_platform2cloud/workfows/migrate_dashboard_permissions.py` - Dashboard permissions migration
+
+## gooddata_platform2cloud/ Subdirectories
+
+- `gooddata_platform2cloud/backends/` — API clients for Platform and Cloud platforms
+- `gooddata_platform2cloud/ldm/` — Logical Data Model transformation logic
+- `gooddata_platform2cloud/metrics/` — Metrics and MAQL conversion
+- `gooddata_platform2cloud/insights/` — Visualization migration logic
+- `gooddata_platform2cloud/dashboards/` — Dashboard migration with drill support
+- `gooddata_platform2cloud/reports/` — Pixel Perfect report conversion
+- `gooddata_platform2cloud/scheduled_exports/` — Scheduled email migration
+- `gooddata_platform2cloud/dashboard_permissions/` — Permission and creator migration
+- `gooddata_platform2cloud/user_management/` — User/group mapping between Platform and Cloud
+- `gooddata_platform2cloud/models/` — Pydantic data models (partial coverage)
+- `gooddata_platform2cloud/arg_parsing/` — CLI argument handling
+- `gooddata_platform2cloud/mapping/` — Read/write/filter mapping files (CSV: Platform ID → Cloud ID)
+- `gooddata_platform2cloud/web_compare_processing/` — Web-based validation tool processing
+- `gooddata_platform2cloud/output_writer.py` — Centralized output file writing
+- `gooddata_platform2cloud/constants.py` — Project-wide constants
+
+## tests/ Directory
+
+- `tests/conftest.py` — Broadly applicable fixtures **only**
+- `tests/fixtures/` — Domain-specific fixtures (e.g., `scheduled_exports_fixtures.py`)
+- `tests/data/` — Real sanitized captured data (JSON, CSV) for tests

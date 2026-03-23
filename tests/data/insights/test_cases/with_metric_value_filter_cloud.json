@@ -1,0 +1,109 @@
+[
+    {
+        "data": {
+            "id": "with_metric_value_filter_aaSqXC1xQgDd",
+            "type": "visualizationObject",
+            "attributes": {
+                "title": "with metric value filter",
+                "description": "",
+                "createdAt": "",
+                "content": {
+                    "filters": [
+                        {
+                            "negativeAttributeFilter": {
+                                "notIn": {
+                                    "values": []
+                                },
+                                "displayForm": {
+                                    "identifier": {
+                                        "id": "product.productid",
+                                        "type": "label"
+                                    }
+                                },
+                                "localIdentifier": "8b6537261b2c4a9cbb80725a20cf0089"
+                            }
+                        },
+                        {
+                            "measureValueFilter": {
+                                "condition": {
+                                    "range": {
+                                        "treatNullValuesAs": 0.0,
+                                        "operator": "BETWEEN",
+                                        "from": 300000.0,
+                                        "to": 800000.0
+                                    }
+                                },
+                                "measure": {
+                                    "localIdentifier": "2248a190a54a458c9627bf86bf633e0b"
+                                }
+                            }
+                        }
+                    ],
+                    "attributeFilterConfigs": {
+                        "8b6537261b2c4a9cbb80725a20cf0089": {
+                            "displayAsLabel": {
+                                "identifier": {
+                                    "id": "product.productid.product",
+                                    "type": "label"
+                                }
+                            }
+                        }
+                    },
+                    "buckets": [
+                        {
+                            "items": [
+                                {
+                                    "measure": {
+                                        "localIdentifier": "2248a190a54a458c9627bf86bf633e0b",
+                                        "definition": {
+                                            "measureDefinition": {
+                                                "item": {
+                                                    "identifier": {
+                                                        "id": "_sales_aaXlbflxeioq",
+                                                        "type": "metric"
+                                                    }
+                                                },
+                                                "filters": []
+                                            }
+                                        },
+                                        "title": "$ Sales"
+                                    }
+                                }
+                            ],
+                            "localIdentifier": "measures"
+                        },
+                        {
+                            "items": [
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "product.productid.product",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "cc99a27840d544e8be30fd99c3d50093"
+                                    }
+                                }
+                            ],
+                            "localIdentifier": "attribute"
+                        }
+                    ],
+                    "createdAt": "2024-05-09 12:13:24",
+                    "modifiedAt": "2024-05-09 12:13:24",
+                    "sorts": [
+                        {
+                            "attributeSortItem": {
+                                "attributeIdentifier": "cc99a27840d544e8be30fd99c3d50093",
+                                "direction": "asc"
+                            }
+                        }
+                    ],
+                    "properties": {},
+                    "visualizationUrl": "local:table",
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

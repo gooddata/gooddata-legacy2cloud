@@ -1,0 +1,42 @@
+[
+  {
+    "scheduledMail": {
+      "content": {
+        "attachments": [
+          {
+            "kpiDashboardAttachment": {
+              "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4961",
+              "format": "pdf",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846"
+            }
+          }
+        ],
+        "body": "Hello,\n\nYour scheduled email is ready. You can download the dashboard in attachments.",
+        "to": ["example.user@gooddata.com"],
+        "subject": "pdf_absolute_date_filter",
+        "when": {
+          "startDate": "2025-08-18",
+          "timeZone": "Europe/Amsterdam",
+          "recurrency": "0:0:0:1*0:0:0"
+        },
+        "lastSuccessfull": "2025-08-20 00:01:14"
+      },
+      "meta": {
+        "tags": "",
+        "category": "scheduledMail",
+        "summary": "Daily at 12:00 AM",
+        "title": "pdf_absolute_date_filter",
+        "unlisted": 1,
+        "deprecated": "0",
+        "identifier": "aaXnUtZzawOy",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4962",
+        "updated": "2025-08-20 00:01:14",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-18 12:58:16",
+        "sharedWithSomeone": 0,
+        "isProduction": 1
+      }
+    }
+  }
+]

@@ -1,0 +1,144 @@
+[
+  {
+    "data": {
+      "id": "ppmigr__measure_filter_granularity_subset_abDimGranTest1",
+      "type": "visualizationObject",
+      "attributes": {
+        "title": "[PP] measure filter granularity subset",
+        "description": "",
+        "content": {
+          "buckets": [
+            {
+              "localIdentifier": "measures",
+              "items": [
+                {
+                  "measure": {
+                    "localIdentifier": "avg_order_item_total_price_aaD6TzxvzYiV",
+                    "definition": {
+                      "measureDefinition": {
+                        "item": {
+                          "identifier": {
+                            "id": "avg_order_item_total_price_aaD6TzxvzYiV",
+                            "type": "metric"
+                          }
+                        },
+                        "filters": []
+                      }
+                    },
+                    "title": "Avg order item total price",
+                    "alias": "",
+                    "format": ""
+                  }
+                }
+              ]
+            },
+            {
+              "localIdentifier": "attribute",
+              "items": [
+                {
+                  "attribute": {
+                    "localIdentifier": "products.category",
+                    "displayForm": {
+                      "identifier": {
+                        "id": "products.category",
+                        "type": "label"
+                      }
+                    },
+                    "alias": ""
+                  }
+                },
+                {
+                  "attribute": {
+                    "localIdentifier": "customers.city",
+                    "displayForm": {
+                      "identifier": {
+                        "id": "customers.city",
+                        "type": "label"
+                      }
+                    },
+                    "alias": ""
+                  }
+                }
+              ],
+              "totals": []
+            },
+            {
+              "localIdentifier": "columns",
+              "items": [
+                {
+                  "attribute": {
+                    "localIdentifier": "products.name",
+                    "displayForm": {
+                      "identifier": {
+                        "id": "products.name",
+                        "type": "label"
+                      }
+                    },
+                    "alias": ""
+                  }
+                }
+              ]
+            }
+          ],
+          "filters": [
+            {
+              "measureValueFilter": {
+                "measure": {
+                  "identifier": {
+                    "id": "avg_order_item_total_price_aaD6TzxvzYiV",
+                    "type": "metric"
+                  }
+                },
+                "condition": {
+                  "comparison": {
+                    "operator": "GREATER_THAN_OR_EQUAL_TO",
+                    "value": 30.0
+                  }
+                },
+                "dimensionality": [
+                  {
+                    "identifier": {
+                      "id": "products.category",
+                      "type": "label"
+                    }
+                  },
+                  {
+                    "identifier": {
+                      "id": "customers.city",
+                      "type": "label"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "measureValueFilter": {
+                "measure": {
+                  "identifier": {
+                    "id": "avg_order_item_total_price_aaD6TzxvzYiV",
+                    "type": "metric"
+                  }
+                },
+                "condition": {
+                  "comparison": {
+                    "operator": "GREATER_THAN_OR_EQUAL_TO",
+                    "value": 50.0
+                  }
+                }
+              }
+            }
+          ],
+          "attributeFilterConfigs": {},
+          "sorts": [],
+          "properties": {
+            "controls": {
+              "measureGroupDimension": "columns"
+            }
+          },
+          "visualizationUrl": "local:table",
+          "version": "2"
+        }
+      }
+    }
+  }
+]

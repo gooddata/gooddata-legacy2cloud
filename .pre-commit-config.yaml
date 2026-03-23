@@ -1,0 +1,27 @@
+# (C) 2026 GoodData Corporation
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-case-conflict
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.14.4
+    hooks:
+      # Run the linter.
+      - id: ruff-check
+      # Run the formatter.
+      - id: ruff-format
+  - repo: local
+    hooks:
+      - id: copyright
+        name: Copyright
+        description: Scan for missing copyright
+        entry: python3 scripts/check_copyright.py
+        args: [ "--update", "FILES" ]
+        language: system
+        types: [ text ]
