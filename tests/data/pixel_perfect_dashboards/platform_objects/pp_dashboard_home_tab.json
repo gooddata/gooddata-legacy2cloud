@@ -1,0 +1,34 @@
+{
+  "projectDashboard": {
+    "meta": {
+      "author": "test_user",
+      "category": "test",
+      "identifier": "test_pp_dashboard_home",
+      "title": "Test PP Dashboard With Home",
+      "uri": "/gdc/md/test_workspace/obj/9002",
+      "summary": "Test dashboard with Home tab",
+      "unlisted": 0
+    },
+    "content": {
+      "filters": [],
+      "tabs": [
+        {
+          "identifier": "tab_home",
+          "title": "Home",
+          "items": [
+            {
+              "textItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 600,
+                "sizeY": 80,
+                "text": "Home tab text item with sufficient length for migration",
+                "textSize": "normal"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

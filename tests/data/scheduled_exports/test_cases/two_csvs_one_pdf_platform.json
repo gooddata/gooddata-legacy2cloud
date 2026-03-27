@@ -1,0 +1,55 @@
+[
+  {
+    "scheduledMail": {
+      "meta": {
+        "category": "scheduledMail",
+        "tags": "",
+        "summary": "Daily at 12:00 AM",
+        "title": "two_csvs_one_pdf",
+        "identifier": "adNukmUJcm4b",
+        "unlisted": 1,
+        "deprecated": "0",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4966",
+        "updated": "2025-08-20 00:01:14",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "sharedWithSomeone": 0,
+        "created": "2025-08-19 15:19:48",
+        "isProduction": 1
+      },
+      "content": {
+        "body": "this should contain a pdf and two csvs",
+        "attachments": [
+          {
+            "kpiDashboardAttachment": {
+              "format": "pdf",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846"
+            }
+          },
+          {
+            "visualizationWidgetAttachment": {
+              "dashboardUri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846",
+              "formats": ["csv"],
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4844"
+            }
+          },
+          {
+            "visualizationWidgetAttachment": {
+              "dashboardUri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4848",
+              "formats": ["csv"]
+            }
+          }
+        ],
+        "lastSuccessfull": "2025-08-20 00:01:14",
+        "subject": "two_csvs_one_pdf",
+        "when": {
+          "recurrency": "0:0:0:1*0:0:0",
+          "timeZone": "Europe/Amsterdam",
+          "startDate": "2025-08-19"
+        },
+        "to": ["example.user@gooddata.com"]
+      }
+    }
+  }
+]

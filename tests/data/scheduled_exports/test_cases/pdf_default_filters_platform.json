@@ -1,0 +1,40 @@
+[
+  {
+    "scheduledMail": {
+      "content": {
+        "when": {
+          "timeZone": "Europe/Amsterdam",
+          "startDate": "2025-08-19",
+          "recurrency": "0:0:0:1*0:0:0"
+        },
+        "body": "Hello,\n\nYour scheduled email is ready. You can download the dashboard in attachments.",
+        "to": ["example.user@gooddata.com"],
+        "subject": "simple_pdf",
+        "attachments": [
+          {
+            "kpiDashboardAttachment": {
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846",
+              "format": "pdf"
+            }
+          }
+        ]
+      },
+      "meta": {
+        "identifier": "ab0tjeD9VQIB",
+        "updated": "2025-08-19 11:41:03",
+        "summary": "Daily at 12:00 AM",
+        "sharedWithSomeone": 0,
+        "deprecated": "0",
+        "isProduction": 1,
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4965",
+        "tags": "",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "title": "simple_pdf",
+        "unlisted": 1,
+        "created": "2025-08-19 11:41:03",
+        "category": "scheduledMail",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c"
+      }
+    }
+  }
+]

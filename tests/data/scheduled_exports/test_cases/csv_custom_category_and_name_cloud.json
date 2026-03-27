@@ -1,0 +1,103 @@
+{
+  "data": {
+    "id": "csv_custom_category_and_name_acBnvuJYZBHC",
+    "type": "automation",
+    "attributes": {
+      "title": "csv_custom_category_and_name",
+      "description": "",
+      "details": {
+        "message": "custom filters:\ndate: default all time\ncategory: accessories\nname: all except two items",
+        "subject": "csv_custom_category_and_name"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": true
+          },
+          {
+            "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+            "title": "Category",
+            "isAllTimeDateFilter": false
+          },
+          {
+            "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+            "title": "Name",
+            "isAllTimeDateFilter": false
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 0 0 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "tabularExports": [
+        {
+          "requestPayload": {
+            "format": "CSV",
+            "fileName": "Avg item price per category",
+            "visualizationObject": "avg_item_price_per_category_abb6SWS81yFv",
+            "visualizationObjectCustomFilters": [
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.category",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Accessories"]
+                  }
+                }
+              },
+              {
+                "negativeAttributeFilter": {
+                  "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.name",
+                      "type": "label"
+                    }
+                  },
+                  "notIn": {
+                    "uris": ["Wireless Mouse", "Gaming Keyboard"]
+                  }
+                }
+              }
+            ],
+            "relatedDashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "widget": "abY6SQtmX2GI",
+              "title": "Sample dashboard without KPI"
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+[
+  {
+    "analyticalDashboard": {
+      "meta": {
+        "isProduction": 1,
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-10 09:45:38",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846",
+        "updated": "2025-08-01 16:02:21",
+        "summary": "",
+        "category": "analyticalDashboard",
+        "tags": "",
+        "identifier": "aaA60LBQzTKf",
+        "deprecated": "0",
+        "title": "Sample dashboard without KPI"
+      },
+      "content": {
+        "layout": {
+          "fluidLayout": {
+            "rows": [
+              {
+                "columns": [
+                  {
+                    "size": {
+                      "xl": {
+                        "width": 6,
+                        "height": 22
+                      }
+                    },
+                    "content": {
+                      "widget": {
+                        "qualifier": {
+                          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4844"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "content": {
+                      "widget": {
+                        "qualifier": {
+                          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4848"
+                        }
+                      }
+                    },
+                    "size": {
+                      "xl": {
+                        "height": 22,
+                        "width": 6
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "widgets": [
+          "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4844",
+          "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4848"
+        ],
+        "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4845"
+      }
+    }
+  },
+  {
+    "analyticalDashboard": {
+      "content": {
+        "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4977",
+        "layout": {
+          "fluidLayout": {
+            "rows": [
+              {
+                "columns": [
+                  {
+                    "content": {
+                      "widget": {
+                        "qualifier": {
+                          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4976"
+                        }
+                      }
+                    },
+                    "size": {
+                      "xl": {
+                        "height": 22,
+                        "width": 6
+                      }
+                    }
+                  },
+                  {
+                    "content": {
+                      "widget": {
+                        "qualifier": {
+                          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4975"
+                        }
+                      }
+                    },
+                    "size": {
+                      "xl": {
+                        "height": 22,
+                        "width": 6
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        "widgets": [
+          "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4976",
+          "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4975"
+        ]
+      },
+      "meta": {
+        "isProduction": 1,
+        "deprecated": "0",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "title": "Copy of Sample dashboard without KPI",
+        "summary": "",
+        "identifier": "ac9FimAGWOs0",
+        "created": "2025-08-21 12:58:48",
+        "updated": "2025-08-21 12:59:39",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "analyticalDashboard",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4978",
+        "tags": ""
+      }
+    }
+  }
+]

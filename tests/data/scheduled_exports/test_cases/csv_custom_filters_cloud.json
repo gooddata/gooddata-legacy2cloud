@@ -1,0 +1,98 @@
+{
+  "data": {
+    "id": "csv_custom_filters_acaAkjwaoL5A",
+    "type": "automation",
+    "attributes": {
+      "title": "csv_custom_filters",
+      "description": "",
+      "details": {
+        "message": "csv with custom date filter (relative, last year) and category set to electronics only",
+        "subject": "csv_custom_filters"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": false
+          },
+          {
+            "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+            "title": "Category",
+            "isAllTimeDateFilter": false
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 0 0 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "tabularExports": [
+        {
+          "requestPayload": {
+            "format": "CSV",
+            "fileName": "Avg item price per category",
+            "visualizationObject": "avg_item_price_per_category_abb6SWS81yFv",
+            "visualizationObjectCustomFilters": [
+              {
+                "relativeDateFilter": {
+                  "dataSet": {
+                    "identifier": {
+                      "id": "dt_orderdate",
+                      "type": "dataset"
+                    }
+                  },
+                  "granularity": "GDC.time.year",
+                  "from": -1,
+                  "to": -1,
+                  "localIdentifier": "0_dateFilter"
+                }
+              },
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.category",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Electronics"]
+                  }
+                }
+              }
+            ],
+            "relatedDashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "widget": "abY6SQtmX2GI",
+              "title": "Sample dashboard without KPI"
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

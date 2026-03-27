@@ -1,0 +1,104 @@
+[
+    {
+        "visualizationObject": {
+            "content": {
+                "visualizationClass": {
+                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4"
+                },
+                "properties": "{\"sortItems\":[{\"attributeSortItem\":{\"attributeIdentifier\":\"2df492309d2e4eb98943232ae694ebb7\",\"direction\":\"asc\"}}]}",
+                "buckets": [
+                    {
+                        "localIdentifier": "measures",
+                        "items": [
+                            {
+                                "measure": {
+                                    "localIdentifier": "efbe772386d14113b6077b12f82951eb",
+                                    "title": "$ Sales",
+                                    "definition": {
+                                        "measureDefinition": {
+                                            "item": {
+                                                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "items": [
+                            {
+                                "visualizationAttribute": {
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/637"
+                                    },
+                                    "localIdentifier": "2df492309d2e4eb98943232ae694ebb7"
+                                }
+                            },
+                            {
+                                "visualizationAttribute": {
+                                    "localIdentifier": "9913a0e6bda548d6abbbfa20b710f998",
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/629"
+                                    }
+                                }
+                            }
+                        ],
+                        "localIdentifier": "attribute"
+                    }
+                ],
+                "filters": [
+                    {
+                        "negativeAttributeFilter": {
+                            "notIn": [],
+                            "displayForm": {
+                                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/629"
+                            }
+                        }
+                    },
+                    {
+                        "negativeAttributeFilter": {
+                            "notIn": [],
+                            "displayForm": {
+                                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/637"
+                            }
+                        }
+                    },
+                    {
+                        "rankingFilter": {
+                            "value": 2,
+                            "measures": [
+                                {
+                                    "localIdentifier": "efbe772386d14113b6077b12f82951eb"
+                                }
+                            ],
+                            "attributes": [
+                                {
+                                    "localIdentifier": "9913a0e6bda548d6abbbfa20b710f998"
+                                }
+                            ],
+                            "operator": "TOP"
+                        }
+                    }
+                ]
+            },
+            "links": {
+                "explain": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1958/explain"
+            },
+            "meta": {
+                "identifier": "adAqKWxoDv2y",
+                "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "deprecated": "0",
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1958",
+                "summary": "",
+                "title": "with TOP filter",
+                "isProduction": 1,
+                "tags": "",
+                "created": "2024-05-09 12:11:49",
+                "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "updated": "2024-05-09 12:11:49",
+                "category": "visualizationObject"
+            }
+        }
+    }
+]

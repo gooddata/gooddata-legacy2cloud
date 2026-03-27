@@ -1,0 +1,122 @@
+[
+    {
+        "metric": {
+            "links": {
+                "explain2": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1947/explain2"
+            },
+            "meta": {
+                "updated": "2024-05-09 11:51:35",
+                "tags": "",
+                "isProduction": 1,
+                "sharedWithSomeone": 0,
+                "created": "2024-05-09 11:50:12",
+                "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "deprecated": "0",
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1947",
+                "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "identifier": "acxqIFzyCrSG",
+                "unlisted": 1,
+                "title": "With non-existent value in filter",
+                "summary": "",
+                "category": "metric"
+            },
+            "content": {
+                "format": "#,##0.00",
+                "tree": {
+                    "type": "metric",
+                    "position": {
+                        "line": 1,
+                        "column": 14
+                    },
+                    "content": [
+                        {
+                            "content": [
+                                {
+                                    "position": {
+                                        "line": 1,
+                                        "column": 21
+                                    },
+                                    "type": "metric object",
+                                    "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796"
+                                }
+                            ],
+                            "position": {
+                                "line": 1,
+                                "column": 21
+                            },
+                            "type": "expression"
+                        },
+                        {
+                            "content": [
+                                {
+                                    "content": [
+                                        {
+                                            "type": "attribute object",
+                                            "position": {
+                                                "column": 78,
+                                                "line": 1
+                                            },
+                                            "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633"
+                                        },
+                                        {
+                                            "type": "list",
+                                            "position": {
+                                                "line": 1,
+                                                "column": 133
+                                            },
+                                            "content": [
+                                                {
+                                                    "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2025",
+                                                    "type": "attributeElement object",
+                                                    "position": {
+                                                        "column": 133,
+                                                        "line": 1
+                                                    }
+                                                },
+                                                {
+                                                    "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2026",
+                                                    "position": {
+                                                        "line": 1,
+                                                        "column": 202
+                                                    },
+                                                    "type": "attributeElement object"
+                                                },
+                                                {
+                                                    "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2027",
+                                                    "type": "attributeElement object",
+                                                    "position": {
+                                                        "column": 271,
+                                                        "line": 1
+                                                    }
+                                                },
+                                                {
+                                                    "type": "attributeElement object",
+                                                    "position": {
+                                                        "column": 340,
+                                                        "line": 1
+                                                    },
+                                                    "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=12028"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "type": "in",
+                                    "position": {
+                                        "line": 1,
+                                        "column": 129
+                                    }
+                                }
+                            ],
+                            "type": "where",
+                            "position": {
+                                "column": 72,
+                                "line": 1
+                            }
+                        }
+                    ]
+                },
+                "expression": "SELECT [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796] WHERE [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633] IN ([/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2025], [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2026], [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2027], [/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=12028])"
+            }
+        }
+    }
+]

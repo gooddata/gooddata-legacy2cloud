@@ -1,0 +1,1156 @@
+{
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4844": {
+    "visualizationWidget": {
+      "content": {
+        "dateDataSet": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4453",
+        "ignoreDashboardFilters": [],
+        "visualization": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4839"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "visualizationWidget",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-10 09:45:38",
+        "deprecated": "0",
+        "identifier": "abY6SQtmX2GI",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Avg item price per category",
+        "updated": "2025-04-10 09:45:38",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4844"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4839": {
+    "visualizationObject": {
+      "content": {
+        "buckets": [
+          {
+            "items": [
+              {
+                "measure": {
+                  "definition": {
+                    "measureDefinition": {
+                      "aggregation": "avg",
+                      "item": {
+                        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769"
+                      }
+                    }
+                  },
+                  "format": "#,##0.00",
+                  "localIdentifier": "97b94dad34c84bc39dd59342a448a9cb",
+                  "title": "Avg Item Price"
+                }
+              }
+            ],
+            "localIdentifier": "measures"
+          },
+          {
+            "items": [
+              {
+                "visualizationAttribute": {
+                  "displayForm": {
+                    "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755"
+                  },
+                  "localIdentifier": "d6f211db045248f08cc861b88eecfe12"
+                }
+              }
+            ],
+            "localIdentifier": "view"
+          }
+        ],
+        "visualizationClass": {
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/14"
+        }
+      },
+      "links": {
+        "explain": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4839/explain"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "visualizationObject",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-10 09:25:16",
+        "deprecated": "0",
+        "identifier": "abb6SWS81yFv",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Avg item price per category",
+        "updated": "2025-04-10 09:25:16",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4839"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4953": {
+    "filterContext": {
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "from": "-1",
+              "granularity": "GDC.time.year",
+              "to": "-1",
+              "type": "relative"
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+              "filterElementsBy": [],
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "negativeSelection": true
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+              "filterElementsBy": [],
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "negativeSelection": true
+            }
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "filterContext",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-18 12:01:12",
+        "deprecated": "0",
+        "identifier": "aacnKnF79xaK",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "filterContext",
+        "updated": "2025-08-18 12:01:12",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4953"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755": {
+    "attributeDisplayForm": {
+      "content": {
+        "expression": "[/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4151]",
+        "formOf": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754"
+      },
+      "links": {
+        "elements": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755/elements"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "attributeDisplayForm",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:22",
+        "deprecated": "0",
+        "identifier": "label.products.category",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Category",
+        "updated": "2025-04-09 17:05:22",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754": {
+    "attribute": {
+      "content": {
+        "dimension": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4749",
+        "displayForms": [
+          {
+            "content": {
+              "expression": "[/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4151]",
+              "formOf": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754"
+            },
+            "links": {
+              "elements": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755/elements"
+            },
+            "meta": {
+              "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+              "category": "attributeDisplayForm",
+              "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+              "created": "2025-04-09 17:05:22",
+              "deprecated": "0",
+              "identifier": "label.products.category",
+              "isProduction": 1,
+              "summary": "",
+              "tags": "",
+              "title": "Category",
+              "updated": "2025-04-09 17:05:22",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755"
+            }
+          }
+        ],
+        "fk": [
+          {
+            "data": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4136",
+            "multivalue": false,
+            "type": "col"
+          }
+        ],
+        "pk": [
+          {
+            "data": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4149",
+            "type": "col"
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "attribute",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:22",
+        "deprecated": "0",
+        "identifier": "attr.products.category",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Category",
+        "updated": "2025-04-09 17:05:22",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753": {
+    "attributeDisplayForm": {
+      "content": {
+        "default": 1,
+        "expression": "[/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4115]",
+        "formOf": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752"
+      },
+      "links": {
+        "elements": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753/elements"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "attributeDisplayForm",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:22",
+        "deprecated": "0",
+        "identifier": "label.products.name",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Name",
+        "updated": "2025-04-22 11:08:43",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752": {
+    "attribute": {
+      "content": {
+        "dimension": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4749",
+        "displayForms": [
+          {
+            "content": {
+              "default": 1,
+              "expression": "[/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4115]",
+              "formOf": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752"
+            },
+            "links": {
+              "elements": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753/elements"
+            },
+            "meta": {
+              "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+              "category": "attributeDisplayForm",
+              "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+              "created": "2025-04-09 17:05:22",
+              "deprecated": "0",
+              "identifier": "label.products.name",
+              "isProduction": 1,
+              "summary": "",
+              "tags": "",
+              "title": "Name",
+              "updated": "2025-04-22 11:08:43",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753"
+            }
+          }
+        ],
+        "fk": [
+          {
+            "data": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4144",
+            "multivalue": false,
+            "type": "col"
+          }
+        ],
+        "pk": [
+          {
+            "data": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4113",
+            "type": "col"
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "attribute",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:22",
+        "deprecated": "0",
+        "identifier": "attr.products.name",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Name",
+        "updated": "2025-04-22 11:08:43",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4957": {
+    "filterContext": {
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "from": "-1",
+              "granularity": "GDC.time.year",
+              "to": "-1",
+              "type": "relative"
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754/elements?id=2540"
+              ],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+              "filterElementsBy": [],
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "negativeSelection": false
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+              "filterElementsBy": [],
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "negativeSelection": true
+            }
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "filterContext",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-18 12:02:26",
+        "deprecated": "0",
+        "identifier": "abMnAf9MEuwb",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "filterContext",
+        "updated": "2025-08-18 12:02:26",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4957"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755/elements?id=2540": {
+    "attributeElements": {
+      "elements": [
+        {
+          "title": "Electronics",
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754/elements?id=2540"
+        }
+      ],
+      "elementsMeta": {
+        "attribute": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754",
+        "attributeDisplayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+        "count": 1,
+        "filter": "",
+        "mode": "includeuris",
+        "offset": "0",
+        "order": "asc",
+        "prompt": "",
+        "records": "1"
+      },
+      "paging": {
+        "count": 1,
+        "next": null,
+        "offset": "0",
+        "total": "1"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4848": {
+    "visualizationWidget": {
+      "content": {
+        "dateDataSet": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4453",
+        "ignoreDashboardFilters": [],
+        "visualization": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4847"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "visualizationWidget",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-10 09:50:42",
+        "deprecated": "0",
+        "identifier": "ack6T0xRtMV5",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "avg something",
+        "updated": "2025-04-10 09:50:42",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4848"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4847": {
+    "visualizationObject": {
+      "content": {
+        "buckets": [
+          {
+            "items": [
+              {
+                "measure": {
+                  "definition": {
+                    "measureDefinition": {
+                      "item": {
+                        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838"
+                      }
+                    }
+                  },
+                  "localIdentifier": "5327c2545bea4f59b66caff0cbc460bb",
+                  "title": "Avg order item total price"
+                }
+              }
+            ],
+            "localIdentifier": "measures"
+          },
+          {
+            "items": [
+              {
+                "visualizationAttribute": {
+                  "displayForm": {
+                    "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753"
+                  },
+                  "localIdentifier": "beb56f53c6a64eacb28a62938986eaa9"
+                }
+              }
+            ],
+            "localIdentifier": "view"
+          }
+        ],
+        "properties": "{\"controls\":{\"dualAxis\":true,\"primaryChartType\":\"column\",\"secondaryChartType\":\"line\"}}",
+        "visualizationClass": {
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/9"
+        }
+      },
+      "links": {
+        "explain": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4847/explain"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "visualizationObject",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-10 09:50:23",
+        "deprecated": "0",
+        "identifier": "abv60hdhDegr",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "avg something",
+        "updated": "2025-04-10 09:50:23",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4847"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4971": {
+    "filterContext": {
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "from": "-1",
+              "granularity": "GDC.time.year",
+              "to": "-1",
+              "type": "relative"
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754/elements?id=2540"
+              ],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+              "filterElementsBy": [],
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "negativeSelection": false
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2610",
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2581"
+              ],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+              "filterElementsBy": [],
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "negativeSelection": false
+            }
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "filterContext",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-19 16:16:55",
+        "deprecated": "0",
+        "identifier": "acFuzylAiWsK",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "filterContext",
+        "updated": "2025-08-19 16:16:55",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4971"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753/elements?id=2610": {
+    "attributeElements": {
+      "elements": [
+        {
+          "title": "Bluetooth Speaker",
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2610"
+        }
+      ],
+      "elementsMeta": {
+        "attribute": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752",
+        "attributeDisplayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+        "count": 1,
+        "filter": "",
+        "mode": "includeuris",
+        "offset": "0",
+        "order": "asc",
+        "prompt": "",
+        "records": "1"
+      },
+      "paging": {
+        "count": 1,
+        "next": null,
+        "offset": "0",
+        "total": "1"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753/elements?id=2581": {
+    "attributeElements": {
+      "elements": [
+        {
+          "title": "USB-C Hub",
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2581"
+        }
+      ],
+      "elementsMeta": {
+        "attribute": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752",
+        "attributeDisplayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+        "count": 1,
+        "filter": "",
+        "mode": "includeuris",
+        "offset": "0",
+        "order": "asc",
+        "prompt": "",
+        "records": "1"
+      },
+      "paging": {
+        "count": 1,
+        "next": null,
+        "offset": "0",
+        "total": "1"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4963": {
+    "filterContext": {
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "from": "2024-01-01",
+              "granularity": "GDC.time.date",
+              "to": "2024-12-31",
+              "type": "absolute"
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+              "filterElementsBy": [],
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "negativeSelection": true
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+              "filterElementsBy": [],
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "negativeSelection": true
+            }
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "filterContext",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-18 12:58:35",
+        "deprecated": "0",
+        "identifier": "aaFnUMof1uNv",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "filterContext",
+        "updated": "2025-08-18 12:58:35",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4963"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4961": {
+    "filterContext": {
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "from": "2024-01-01",
+              "granularity": "GDC.time.date",
+              "to": "2024-12-31",
+              "type": "absolute"
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+              "filterElementsBy": [],
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "negativeSelection": true
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+              "filterElementsBy": [],
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "negativeSelection": true
+            }
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "filterContext",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-18 12:58:16",
+        "deprecated": "0",
+        "identifier": "aebnUtelawQf",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "filterContext",
+        "updated": "2025-08-18 12:58:16",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4961"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4949": {
+    "filterContext": {
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "granularity": "GDC.time.year",
+              "type": "absolute"
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754/elements?id=2580"
+              ],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+              "filterElementsBy": [],
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "negativeSelection": false
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+              "filterElementsBy": [],
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "negativeSelection": true
+            }
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "filterContext",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-18 11:58:32",
+        "deprecated": "0",
+        "identifier": "abxnCRufzZ8w",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "filterContext",
+        "updated": "2025-08-18 11:58:32",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4949"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755/elements?id=2580": {
+    "attributeElements": {
+      "elements": [
+        {
+          "title": "Accessories",
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754/elements?id=2580"
+        }
+      ],
+      "elementsMeta": {
+        "attribute": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754",
+        "attributeDisplayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+        "count": 1,
+        "filter": "",
+        "mode": "includeuris",
+        "offset": "0",
+        "order": "asc",
+        "prompt": "",
+        "records": "1"
+      },
+      "paging": {
+        "count": 1,
+        "next": null,
+        "offset": "0",
+        "total": "1"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4959": {
+    "filterContext": {
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "from": "-1",
+              "granularity": "GDC.time.year",
+              "to": "-1",
+              "type": "relative"
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754/elements?id=2540"
+              ],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+              "filterElementsBy": [],
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "negativeSelection": false
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+              "filterElementsBy": [],
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "negativeSelection": true
+            }
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "filterContext",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-18 12:04:28",
+        "deprecated": "0",
+        "identifier": "aaBnKq0D523g",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "filterContext",
+        "updated": "2025-08-18 12:04:28",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4959"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4973": {
+    "filterContext": {
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "from": "-1",
+              "granularity": "GDC.time.year",
+              "to": "-1",
+              "type": "relative"
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754/elements?id=2540"
+              ],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+              "filterElementsBy": [],
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "negativeSelection": false
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2610",
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2581"
+              ],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+              "filterElementsBy": [],
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "negativeSelection": false
+            }
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "filterContext",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-19 16:17:16",
+        "deprecated": "0",
+        "identifier": "aabuDx1UzmyG",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "filterContext",
+        "updated": "2025-08-19 16:17:16",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4973"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4951": {
+    "filterContext": {
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "granularity": "GDC.time.year",
+              "type": "absolute"
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754/elements?id=2580"
+              ],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+              "filterElementsBy": [],
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "negativeSelection": false
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2578",
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2614"
+              ],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+              "filterElementsBy": [],
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "negativeSelection": true
+            }
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "filterContext",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-18 12:00:09",
+        "deprecated": "0",
+        "identifier": "abEnxIFLR9it",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "filterContext",
+        "updated": "2025-08-18 12:00:09",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4951"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753/elements?id=2578": {
+    "attributeElements": {
+      "elements": [
+        {
+          "title": "Wireless Mouse",
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2578"
+        }
+      ],
+      "elementsMeta": {
+        "attribute": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752",
+        "attributeDisplayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+        "count": 1,
+        "filter": "",
+        "mode": "includeuris",
+        "offset": "0",
+        "order": "asc",
+        "prompt": "",
+        "records": "1"
+      },
+      "paging": {
+        "count": 1,
+        "next": null,
+        "offset": "0",
+        "total": "1"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753/elements?id=2614": {
+    "attributeElements": {
+      "elements": [
+        {
+          "title": "Gaming Keyboard",
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2614"
+        }
+      ],
+      "elementsMeta": {
+        "attribute": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752",
+        "attributeDisplayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+        "count": 1,
+        "filter": "",
+        "mode": "includeuris",
+        "offset": "0",
+        "order": "asc",
+        "prompt": "",
+        "records": "1"
+      },
+      "paging": {
+        "count": 1,
+        "next": null,
+        "offset": "0",
+        "total": "1"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4981": {
+    "filterContext": {
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "from": "-1",
+              "granularity": "GDC.time.year",
+              "to": "-1",
+              "type": "relative"
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754/elements?id=2612"
+              ],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+              "filterElementsBy": [],
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "negativeSelection": false
+            }
+          },
+          {
+            "attributeFilter": {
+              "attributeElements": [
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2611",
+                "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2582"
+              ],
+              "displayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+              "filterElementsBy": [],
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "negativeSelection": false
+            }
+          }
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "filterContext",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-22 09:19:11",
+        "deprecated": "0",
+        "identifier": "aaQKpM3LPZSp",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "filterContext",
+        "updated": "2025-08-22 09:19:11",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4981"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755/elements?id=2612": {
+    "attributeElements": {
+      "elements": [
+        {
+          "title": "Office Supplies",
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754/elements?id=2612"
+        }
+      ],
+      "elementsMeta": {
+        "attribute": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754",
+        "attributeDisplayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755",
+        "count": 1,
+        "filter": "",
+        "mode": "includeuris",
+        "offset": "0",
+        "order": "asc",
+        "prompt": "",
+        "records": "1"
+      },
+      "paging": {
+        "count": 1,
+        "next": null,
+        "offset": "0",
+        "total": "1"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753/elements?id=2611": {
+    "attributeElements": {
+      "elements": [
+        {
+          "title": "Notebook",
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2611"
+        }
+      ],
+      "elementsMeta": {
+        "attribute": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752",
+        "attributeDisplayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+        "count": 1,
+        "filter": "",
+        "mode": "includeuris",
+        "offset": "0",
+        "order": "asc",
+        "prompt": "",
+        "records": "1"
+      },
+      "paging": {
+        "count": 1,
+        "next": null,
+        "offset": "0",
+        "total": "1"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753/elements?id=2582": {
+    "attributeElements": {
+      "elements": [
+        {
+          "title": "Water Bottle",
+          "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752/elements?id=2582"
+        }
+      ],
+      "elementsMeta": {
+        "attribute": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752",
+        "attributeDisplayForm": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4753",
+        "count": 1,
+        "filter": "",
+        "mode": "includeuris",
+        "offset": "0",
+        "order": "asc",
+        "prompt": "",
+        "records": "1"
+      },
+      "paging": {
+        "count": 1,
+        "next": null,
+        "offset": "0",
+        "total": "1"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4976": {
+    "visualizationWidget": {
+      "content": {
+        "dateDataSet": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4453",
+        "ignoreDashboardFilters": [],
+        "visualization": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4839"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "visualizationWidget",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-21 12:58:47",
+        "deprecated": "0",
+        "identifier": "aabFwC7boF74",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Avg item price per category",
+        "updated": "2025-08-21 12:58:47",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4976"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4975": {
+    "visualizationWidget": {
+      "content": {
+        "dateDataSet": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4453",
+        "ignoreDashboardFilters": [],
+        "visualization": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4847"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "visualizationWidget",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-08-21 12:58:47",
+        "deprecated": "0",
+        "identifier": "adqFiYEr3vfR",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "avg something",
+        "updated": "2025-08-21 12:58:47",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4975"
+      }
+    }
+  },
+  "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c": {
+    "accountSetting": {
+      "ssoProvider": null,
+      "updated": "2025-02-27 14:22:45",
+      "timezone": null,
+      "position": null,
+      "phoneNumber": "",
+      "login": "example.user@gooddata.com",
+      "lastName": "User",
+      "firstName": "Example",
+      "created": "2025-02-27 14:22:45",
+      "country": null,
+      "companyName": "",
+      "email": "example.user@gooddata.com",
+      "authenticationModes": [],
+      "language": "en-US",
+      "ipWhitelist": null,
+      "effectiveIpWhitelist": null,
+      "links": {
+        "self": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "projects": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c/projects",
+        "domain": "/gdc/domains/gd_internal_training",
+        "auditEvents": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c/auditEvents"
+      }
+    }
+  }
+}

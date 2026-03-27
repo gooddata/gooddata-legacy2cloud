@@ -1,0 +1,129 @@
+{
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838": {
+    "metric": {
+      "content": {
+        "expression": "SELECT avg([/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769]*[/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4770])",
+        "format": "#,##0.00",
+        "tree": {
+          "content": [
+            {
+              "content": [
+                {
+                  "content": [
+                    {
+                      "content": [
+                        {
+                          "position": {
+                            "column": 25,
+                            "line": 1
+                          },
+                          "type": "fact object",
+                          "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769"
+                        },
+                        {
+                          "position": {
+                            "column": 77,
+                            "line": 1
+                          },
+                          "type": "fact object",
+                          "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4770"
+                        }
+                      ],
+                      "position": {
+                        "column": 76,
+                        "line": 1
+                      },
+                      "type": "*"
+                    }
+                  ],
+                  "position": {
+                    "column": 21,
+                    "line": 1
+                  },
+                  "type": "function",
+                  "value": "avg"
+                }
+              ],
+              "position": {
+                "column": 21,
+                "line": 1
+              },
+              "type": "expression"
+            }
+          ],
+          "position": {
+            "column": 14,
+            "line": 1
+          },
+          "type": "metric"
+        }
+      },
+      "links": {
+        "explain2": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838/explain2"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "metric",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-10 09:24:10",
+        "deprecated": "0",
+        "identifier": "aaD6TzxvzYiV",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Avg order item total price",
+        "updated": "2025-04-10 09:26:53",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4694": {
+    "attribute": {
+      "content": {
+        "displayForms": [],
+        "type": "GDC.time.year"
+      },
+      "meta": {
+        "identifier": "signupdate.year",
+        "title": "Sign Up Date Year",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4694"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754": {
+    "attribute": {
+      "content": {
+        "displayForms": []
+      },
+      "meta": {
+        "identifier": "attr.products.category",
+        "title": "Products Category",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4766": {
+    "attribute": {
+      "content": {
+        "displayForms": []
+      },
+      "meta": {
+        "identifier": "attr.customers.city",
+        "title": "Customers City",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4766"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755": {
+    "attribute": {
+      "content": {
+        "displayForms": []
+      },
+      "meta": {
+        "identifier": "attr.products.name",
+        "title": "Products Name",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755"
+      }
+    }
+  }
+}

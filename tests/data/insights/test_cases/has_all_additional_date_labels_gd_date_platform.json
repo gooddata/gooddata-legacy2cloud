@@ -1,0 +1,142 @@
+[
+    {
+        "visualizationObject": {
+            "links": {
+                "explain": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1986/explain"
+            },
+            "meta": {
+                "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "identifier": "acIttRUwi4s5",
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1986",
+                "deprecated": "0",
+                "created": "2024-05-09 22:52:45",
+                "isProduction": 1,
+                "tags": "",
+                "title": "has all additional date labels (GD date)",
+                "summary": "",
+                "updated": "2024-05-09 22:53:47",
+                "category": "visualizationObject",
+                "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f"
+            },
+            "content": {
+                "buckets": [
+                    {
+                        "items": [
+                            {
+                                "measure": {
+                                    "definition": {
+                                        "measureDefinition": {
+                                            "item": {
+                                                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796"
+                                            }
+                                        }
+                                    },
+                                    "title": "$ Sales",
+                                    "localIdentifier": "76fdd371670549468b12a3d76e04fa7e"
+                                }
+                            }
+                        ],
+                        "localIdentifier": "measures"
+                    },
+                    {
+                        "items": [
+                            {
+                                "visualizationAttribute": {
+                                    "localIdentifier": "3f9c20853ce0400fba0e5b968f267afe",
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/254"
+                                    }
+                                }
+                            },
+                            {
+                                "visualizationAttribute": {
+                                    "localIdentifier": "7d075eea3c7846f1ae7f8adbda86de77",
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/275"
+                                    }
+                                }
+                            },
+                            {
+                                "visualizationAttribute": {
+                                    "localIdentifier": "8b6211d957b14a11a0782f68727e164b",
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/271"
+                                    }
+                                }
+                            },
+                            {
+                                "visualizationAttribute": {
+                                    "localIdentifier": "ede80d1dec894b4eb1503da1091fdd41",
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/262"
+                                    }
+                                }
+                            },
+                            {
+                                "visualizationAttribute": {
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/261"
+                                    },
+                                    "localIdentifier": "9c6ab28e7e10468fbb82a0ce2bf25e90"
+                                }
+                            },
+                            {
+                                "visualizationAttribute": {
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/277"
+                                    },
+                                    "localIdentifier": "4f7e35ff3d6c4966820a768e43b7138c"
+                                }
+                            },
+                            {
+                                "visualizationAttribute": {
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/279"
+                                    },
+                                    "localIdentifier": "4c6292a18ae14d74910251f29d5d97bf"
+                                }
+                            },
+                            {
+                                "visualizationAttribute": {
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/278"
+                                    },
+                                    "localIdentifier": "fb36a1fc79024e35b207689a861af994"
+                                }
+                            },
+                            {
+                                "visualizationAttribute": {
+                                    "localIdentifier": "59d924ae87ba4c8398f4ad889e788695",
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/284"
+                                    }
+                                }
+                            },
+                            {
+                                "visualizationAttribute": {
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/283"
+                                    },
+                                    "localIdentifier": "19b5ba751196451db928030d8f70acf8"
+                                }
+                            },
+                            {
+                                "visualizationAttribute": {
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/276"
+                                    },
+                                    "localIdentifier": "00abcf2755be4533aa62b433b45e67e6"
+                                }
+                            }
+                        ],
+                        "localIdentifier": "attribute"
+                    }
+                ],
+                "visualizationClass": {
+                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4"
+                },
+                "properties": "{\"sortItems\":[{\"attributeSortItem\":{\"attributeIdentifier\":\"3f9c20853ce0400fba0e5b968f267afe\",\"direction\":\"asc\"}}]}"
+            }
+        }
+    }
+]

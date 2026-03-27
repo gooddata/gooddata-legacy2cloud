@@ -1,0 +1,42 @@
+[
+  {
+    "scheduledMail": {
+      "content": {
+        "lastSuccessfull": "2025-08-20 00:01:13",
+        "when": {
+          "timeZone": "Europe/Amsterdam",
+          "startDate": "2025-08-18",
+          "recurrency": "0:0:0:1*0:0:0"
+        },
+        "subject": "pdf_only_accessories",
+        "to": ["example.user@gooddata.com"],
+        "body": "pdf export with custom filters:\ndate: all time default\ncategory: accessories only\nname: default",
+        "attachments": [
+          {
+            "kpiDashboardAttachment": {
+              "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4949",
+              "format": "pdf",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846"
+            }
+          }
+        ]
+      },
+      "meta": {
+        "updated": "2025-08-20 00:01:13",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4950",
+        "title": "pdf_only_accessories",
+        "identifier": "aannHa2b4TVO",
+        "deprecated": "0",
+        "unlisted": 1,
+        "tags": "",
+        "category": "scheduledMail",
+        "summary": "Daily at 12:00 AM",
+        "isProduction": 1,
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "sharedWithSomeone": 0,
+        "created": "2025-08-18 11:58:32",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c"
+      }
+    }
+  }
+]

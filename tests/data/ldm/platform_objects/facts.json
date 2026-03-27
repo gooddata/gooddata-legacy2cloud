@@ -1,0 +1,91 @@
+{
+  "query": {
+    "meta": {
+      "summary": "Metadata Query Resources for project 'dinu996plcf6ajcp6wygnqn952uyom9u'",
+      "category": "query",
+      "title": "List of facts"
+    },
+    "entries": [
+      {
+        "isProduction": 1,
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:23",
+        "link": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769",
+        "locked": 0,
+        "summary": "",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "fact",
+        "title": "Item Price",
+        "updated": "2025-04-09 17:05:23",
+        "deprecated": "0",
+        "identifier": "fact.orderitems.itemprice",
+        "unlisted": 0,
+        "tags": ""
+      },
+      {
+        "updated": "2025-04-09 17:05:23",
+        "category": "fact",
+        "title": "Quantity",
+        "tags": "",
+        "unlisted": 0,
+        "deprecated": "0",
+        "identifier": "fact.orderitems.quantity",
+        "link": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4770",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "isProduction": 1,
+        "created": "2025-04-09 17:05:23",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "summary": "",
+        "locked": 0
+      },
+      {
+        "locked": 0,
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "summary": "",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:23",
+        "isProduction": 1,
+        "link": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4772",
+        "identifier": "fact.products.price",
+        "deprecated": "0",
+        "tags": "",
+        "unlisted": 0,
+        "title": "Price",
+        "category": "fact",
+        "updated": "2025-04-09 17:05:23"
+      },
+      {
+        "locked": 0,
+        "summary": "",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:23",
+        "isProduction": 1,
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "link": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4773",
+        "deprecated": "0",
+        "identifier": "fact.products.stockquantity",
+        "unlisted": 0,
+        "tags": "",
+        "category": "fact",
+        "title": "Stock Quantity",
+        "updated": "2025-04-09 17:05:23"
+      },
+      {
+        "isProduction": 1,
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:23",
+        "link": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4775",
+        "locked": 0,
+        "summary": "",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "title": "Total Amount",
+        "category": "fact",
+        "updated": "2025-04-09 17:05:23",
+        "identifier": "fact.orders.totalamount",
+        "deprecated": "0",
+        "unlisted": 0,
+        "tags": ""
+      }
+    ]
+  }
+}

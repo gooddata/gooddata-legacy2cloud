@@ -1,0 +1,521 @@
+{
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769": {
+    "fact": {
+      "content": {
+        "expr": [
+          {
+            "data": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4118",
+            "type": "col"
+          }
+        ],
+        "folders": [
+          "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4768"
+        ]
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "fact",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:23",
+        "deprecated": "0",
+        "identifier": "fact.orderitems.itemprice",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Item Price",
+        "updated": "2025-04-09 17:05:23",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755": {
+    "attributeDisplayForm": {
+      "content": {
+        "expression": "[/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4151]",
+        "formOf": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4754"
+      },
+      "links": {
+        "elements": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755/elements"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "attributeDisplayForm",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-09 17:05:22",
+        "deprecated": "0",
+        "identifier": "label.products.category",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Category",
+        "updated": "2025-04-09 17:05:22",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4755"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838": {
+    "metric": {
+      "content": {
+        "expression": "SELECT avg([/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769]*[/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4770])",
+        "format": "#,##0.00",
+        "tree": {
+          "content": [
+            {
+              "content": [
+                {
+                  "content": [
+                    {
+                      "content": [
+                        {
+                          "position": {
+                            "column": 25,
+                            "line": 1
+                          },
+                          "type": "fact object",
+                          "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769"
+                        },
+                        {
+                          "position": {
+                            "column": 77,
+                            "line": 1
+                          },
+                          "type": "fact object",
+                          "value": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4770"
+                        }
+                      ],
+                      "position": {
+                        "column": 76,
+                        "line": 1
+                      },
+                      "type": "*"
+                    }
+                  ],
+                  "position": {
+                    "column": 21,
+                    "line": 1
+                  },
+                  "type": "function",
+                  "value": "avg"
+                }
+              ],
+              "position": {
+                "column": 21,
+                "line": 1
+              },
+              "type": "expression"
+            }
+          ],
+          "position": {
+            "column": 14,
+            "line": 1
+          },
+          "type": "metric"
+        }
+      },
+      "links": {
+        "explain2": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838/explain2"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "metric",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "created": "2025-04-10 09:24:10",
+        "deprecated": "0",
+        "identifier": "aaD6TzxvzYiV",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Avg order item total price",
+        "updated": "2025-04-10 09:26:53",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4838"
+      }
+    }
+  },
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/14": {
+    "visualizationClass": {
+      "content": {
+        "checksum": "local",
+        "icon": "local:bar",
+        "iconSelected": "local:bar.selected",
+        "orderIndex": 2.0,
+        "url": "local:bar"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "category": "visualizationClass",
+        "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "created": "2020-02-28 14:56:57",
+        "deprecated": "0",
+        "flags": [
+          "preloaded"
+        ],
+        "identifier": "gdc.visualization.bar",
+        "isProduction": 1,
+        "summary": "",
+        "tags": "",
+        "title": "Bar chart",
+        "updated": "2025-11-18 16:16:57",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/14"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4": {
+    "visualizationClass": {
+      "content": {
+        "url": "local:table"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796": {
+    "metric": {
+      "meta": {
+        "title": "$ Sales",
+        "identifier": "aaXlbflxeioq",
+        "category": "metric"
+      },
+      "content": {
+        "expression": ""
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/254": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "order.aam81lMifn6q",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/275": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "order.aby81lMifn6q",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/271": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "order.abm81lMifn6q",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/262": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "order.aaO81lMifn6q",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/261": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "order.aaI81lMifn6q",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/277": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "order.abU81lMifn6q",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/279": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "order.abU81lMifn6q",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/278": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "order.abU81lMifn6q",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/284": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "order.aca81lMifn6q",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/283": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "order.ab481lMifn6q",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/276": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "order.abE81lMifn6q",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900000"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/5": {
+    "visualizationClass": {
+      "content": {
+        "url": "local:headline"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2570": {
+    "metric": {
+      "meta": {
+        "title": "# orders",
+        "identifier": "agLG2DYSJJgf",
+        "category": "metric"
+      },
+      "content": {
+        "expression": ""
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/565": {
+    "attribute": {
+      "meta": {
+        "identifier": "ship.aag81lMifn6q",
+        "category": "attribute"
+      },
+      "content": {}
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/625": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "ship"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1937": {
+    "metric": {
+      "meta": {
+        "title": "DEPRECATED METRIC",
+        "identifier": "abCqIvPhCrVX",
+        "category": "metric"
+      },
+      "content": {
+        "expression": ""
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/644": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.product.productid.product",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900001"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900001": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.product.productid",
+        "category": "attribute"
+      },
+      "content": {}
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/7": {
+    "visualizationClass": {
+      "content": {
+        "url": "local:line"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/631": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.customer.customerid",
+        "category": "attribute"
+      },
+      "content": {
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "label.customer.customerid"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/632/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/632": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.customer.customerid",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/631"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.customer.country",
+        "category": "attribute"
+      },
+      "content": {
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "label.customer.country"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.customer.country",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2014": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2014",
+          "title": "Aruba"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2527": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2525": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/632/elements?id=661": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/631/elements?id=661",
+          "title": "Long, Cassidy G."
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/632/elements?id=2526": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/632/elements?id=2524": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/637": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.team.teamid.teamname",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900002"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/629": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.region.regionid",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900003"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900002": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.team.teamid",
+        "category": "attribute"
+      },
+      "content": {}
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/900003": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.region.regionid",
+        "category": "attribute"
+      },
+      "content": {}
+    }
+  }
+}

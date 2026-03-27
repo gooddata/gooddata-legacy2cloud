@@ -1,0 +1,88 @@
+{
+  "data": {
+    "id": "two_csvs_one_pdf_adNukmUJcm4b",
+    "type": "automation",
+    "attributes": {
+      "title": "two_csvs_one_pdf",
+      "description": "",
+      "details": {
+        "message": "this should contain a pdf and two csvs",
+        "subject": "two_csvs_one_pdf"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": true
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 0 0 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "tabularExports": [
+        {
+          "requestPayload": {
+            "format": "CSV",
+            "fileName": "Avg item price per category",
+            "visualizationObject": "avg_item_price_per_category_abb6SWS81yFv",
+            "visualizationObjectCustomFilters": [],
+            "relatedDashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "widget": "abY6SQtmX2GI",
+              "title": "Sample dashboard without KPI"
+            }
+          }
+        },
+        {
+          "requestPayload": {
+            "format": "CSV",
+            "fileName": "avg something",
+            "visualizationObject": "avg_something_abv60hdhDegr",
+            "visualizationObjectCustomFilters": [],
+            "relatedDashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "widget": "ack6T0xRtMV5",
+              "title": "Sample dashboard without KPI"
+            }
+          }
+        }
+      ],
+      "visualExports": [
+        {
+          "requestPayload": {
+            "fileName": "two_csvs_one_pdf",
+            "dashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "title": "Sample dashboard without KPI"
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

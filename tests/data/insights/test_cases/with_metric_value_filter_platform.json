@@ -1,0 +1,87 @@
+[
+    {
+        "visualizationObject": {
+            "content": {
+                "buckets": [
+                    {
+                        "localIdentifier": "measures",
+                        "items": [
+                            {
+                                "measure": {
+                                    "localIdentifier": "2248a190a54a458c9627bf86bf633e0b",
+                                    "definition": {
+                                        "measureDefinition": {
+                                            "item": {
+                                                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796"
+                                            }
+                                        }
+                                    },
+                                    "title": "$ Sales"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "items": [
+                            {
+                                "visualizationAttribute": {
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/644"
+                                    },
+                                    "localIdentifier": "cc99a27840d544e8be30fd99c3d50093"
+                                }
+                            }
+                        ],
+                        "localIdentifier": "attribute"
+                    }
+                ],
+                "filters": [
+                    {
+                        "negativeAttributeFilter": {
+                            "notIn": [],
+                            "displayForm": {
+                                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/644"
+                            }
+                        }
+                    },
+                    {
+                        "measureValueFilter": {
+                            "condition": {
+                                "range": {
+                                    "treatNullValuesAs": 0.0,
+                                    "operator": "BETWEEN",
+                                    "from": 300000.0,
+                                    "to": 800000.0
+                                }
+                            },
+                            "measure": {
+                                "localIdentifier": "2248a190a54a458c9627bf86bf633e0b"
+                            }
+                        }
+                    }
+                ],
+                "visualizationClass": {
+                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4"
+                },
+                "properties": "{\"sortItems\":[{\"attributeSortItem\":{\"attributeIdentifier\":\"cc99a27840d544e8be30fd99c3d50093\",\"direction\":\"asc\"}}]}"
+            },
+            "meta": {
+                "summary": "",
+                "tags": "",
+                "isProduction": 1,
+                "title": "with metric value filter",
+                "created": "2024-05-09 12:13:24",
+                "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "category": "visualizationObject",
+                "updated": "2024-05-09 12:13:24",
+                "identifier": "aaSqXC1xQgDd",
+                "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "deprecated": "0",
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1959"
+            },
+            "links": {
+                "explain": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/1959/explain"
+            }
+        }
+    }
+]

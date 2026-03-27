@@ -1,0 +1,43 @@
+[
+  {
+    "scheduledMail": {
+      "content": {
+        "body": "custom filters:\ndate: default all time\ncategory: accessories\nname: all except two items",
+        "when": {
+          "startDate": "2025-08-18",
+          "timeZone": "Europe/Amsterdam",
+          "recurrency": "0:0:0:1*0:0:0"
+        },
+        "subject": "csv_custom_category_and_name",
+        "to": ["example.user@gooddata.com"],
+        "attachments": [
+          {
+            "visualizationWidgetAttachment": {
+              "formats": ["csv"],
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4844",
+              "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4951",
+              "dashboardUri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846"
+            }
+          }
+        ],
+        "lastSuccessfull": "2025-08-21 00:01:13"
+      },
+      "meta": {
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "title": "csv_custom_category_and_name",
+        "tags": "",
+        "deprecated": "0",
+        "isProduction": 1,
+        "sharedWithSomeone": 0,
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "summary": "Daily at 12:00 AM",
+        "updated": "2025-08-21 00:01:13",
+        "unlisted": 1,
+        "created": "2025-08-18 12:00:09",
+        "identifier": "acBnvuJYZBHC",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4952",
+        "category": "scheduledMail"
+      }
+    }
+  }
+]

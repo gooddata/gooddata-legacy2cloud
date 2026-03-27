@@ -1,0 +1,50 @@
+# (C) 2026 GoodData Corporation
+---
+alwaysApply: true
+---
+
+# GoodData Migration Toolkit - Architecture
+
+## Terminology
+
+- **Platform**: GoodData Platform (legacy private cloud)
+- **Cloud**: GoodData Cloud (modern cloud platform)
+
+## Three-Tier Pattern
+
+```
+Migration Scripts (gooddata_platform2cloud/workflows/migrate_*.py) → Builders → API Clients
+```
+
+- **Migration Scripts**: Entry points orchestrating the full migration process
+- **Builders**: Transform Platform objects to Cloud objects (e.g., `CloudMetricsBuilder`)
+- **API Clients**: `gooddata_platform2cloud/backends/platform/client.py` (custom REST), `gooddata_platform2cloud/backends/cloud/client.py` (SDK + custom REST)
+
+## Data Flow
+
+Platform API → Raw JSON → Builder transformation → Cloud JSON → Cloud API
+
+## Mapping Files
+
+- CSV files tracking Platform ID → Cloud ID mappings
+- Later scripts depend on mapping files produced by earlier scripts
+- Format: `{prefix}{type}_mappings.csv` (e.g., `metric_mappings.csv`)
+
+## Object Skip Behavior
+
+- Objects already in Cloud are skipped by default (based on ID)
+- Use `--overwrite-existing` to update existing objects
+- Skipped IDs logged to `{prefix}cloud_skipped_{type}.json`
+
+## Client Prefix Pattern
+
+Enables parent/child workspace migrations. With `--client-prefix client1_`:
+- Reads both default and prefixed mapping files
+- Only migrates objects not in default (parent) mappings
+- All output files get the prefix
+
+## Required .env Variables
+
+- Platform: `PLATFORM_DOMAIN`, `PLATFORM_LOGIN`, `PLATFORM_PASSWORD`, `PLATFORM_WS`
+- Cloud: `CLOUD_DOMAIN`, `CLOUD_TOKEN`, `CLOUD_WS`
+- Data source: `DATA_SOURCE_ID`, `SCHEMA`, `TABLE_PREFIX`

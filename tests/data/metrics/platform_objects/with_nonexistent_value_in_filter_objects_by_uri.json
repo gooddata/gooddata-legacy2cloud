@@ -1,0 +1,129 @@
+{
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796": {
+    "metric": {
+      "links": {
+        "explain2": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796/explain2"
+      },
+      "content": {
+        "expression": "SELECT SUM([/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/661])",
+        "tree": {
+          "position": {
+            "column": 14,
+            "line": 1
+          },
+          "type": "metric",
+          "content": [
+            {
+              "type": "expression",
+              "position": {
+                "line": 1,
+                "column": 21
+              },
+              "content": [
+                {
+                  "content": [
+                    {
+                      "position": {
+                        "line": 1,
+                        "column": 25
+                      },
+                      "type": "fact object",
+                      "value": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/661"
+                    }
+                  ],
+                  "value": "SUM",
+                  "position": {
+                    "line": 1,
+                    "column": 21
+                  },
+                  "type": "function"
+                }
+              ]
+            }
+          ]
+        },
+        "format": "#,##0.00"
+      },
+      "meta": {
+        "created": "2020-03-03 14:08:03",
+        "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "deprecated": "0",
+        "tags": "",
+        "updated": "2025-10-23 15:54:53",
+        "isProduction": 1,
+        "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/796",
+        "title": "$ Sales",
+        "identifier": "aaXlbflxeioq",
+        "summary": "",
+        "category": "metric"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.customer.country",
+        "category": "attribute"
+      },
+      "content": {
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "label.customer.country"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.customer.country",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2025": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2025",
+          "title": "Italy"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2026": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2026",
+          "title": "Kuwait"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=2027": {
+    "attributeElements": {
+      "elements": [
+        {
+          "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2027",
+          "title": "Latvia"
+        }
+      ]
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634/elements?id=12028": {
+    "attributeElements": {
+      "elements": []
+    }
+  }
+}

@@ -1,0 +1,83 @@
+[
+    {
+        "visualizationObject": {
+            "links": {
+                "explain": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3192/explain"
+            },
+            "meta": {
+                "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "updated": "2024-11-12 00:55:54",
+                "category": "visualizationObject",
+                "isProduction": 1,
+                "tags": "",
+                "title": "with missing value in color definition",
+                "created": "2024-11-12 00:55:54",
+                "summary": "",
+                "deprecated": "0",
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/3192",
+                "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "identifier": "aab1VwSPqDik"
+            },
+            "content": {
+                "filters": [
+                    {
+                        "positiveAttributeFilter": {
+                            "in": [
+                                "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2527",
+                                "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2525",
+                                "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/633/elements?id=2014"
+                            ],
+                            "displayForm": {
+                                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/634"
+                            }
+                        }
+                    }
+                ],
+                "buckets": [
+                    {
+                        "localIdentifier": "measures",
+                        "items": [
+                            {
+                                "measure": {
+                                    "format": "#,##0",
+                                    "localIdentifier": "ec36abdd39674739ab6c06c79416c6f2",
+                                    "definition": {
+                                        "measureDefinition": {
+                                            "item": {
+                                                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/631"
+                                            },
+                                            "aggregation": "count"
+                                        }
+                                    },
+                                    "title": "Count of Customer ID"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "items": [
+                            {
+                                "visualizationAttribute": {
+                                    "displayForm": {
+                                        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/632"
+                                    },
+                                    "localIdentifier": "95e9b9dc4db645bea240d84cc2e5a018"
+                                }
+                            }
+                        ],
+                        "localIdentifier": "segment"
+                    }
+                ],
+                "properties": "{\"controls\":{\"colorMapping\":[{\"color\":{\"type\":\"guid\",\"value\":\"3\"},\"id\":\"93e3f96a07ae4856b05b0294e743efde\"},{\"color\":{\"type\":\"guid\",\"value\":\"17\"},\"id\":\"5bd71afd702641e1bc2d795fcecae37d\"},{\"color\":{\"type\":\"guid\",\"value\":\"6\"},\"id\":\"ef6beef38ed545ceafa16c51d23817fa\"}]}}",
+                "visualizationClass": {
+                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/7"
+                },
+                "references": {
+                    "ef6beef38ed545ceafa16c51d23817fa": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/631/elements?id=661",
+                    "93e3f96a07ae4856b05b0294e743efde": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/631/elements?id=2526",
+                    "5bd71afd702641e1bc2d795fcecae37d": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/631/elements?id=2524"
+                }
+            }
+        }
+    }
+]

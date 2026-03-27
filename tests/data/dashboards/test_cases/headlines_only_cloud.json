@@ -1,0 +1,91 @@
+[
+    {
+        "data": {
+            "id": "headlines_only_abooZpwUnr9B",
+            "type": "analyticalDashboard",
+            "attributes": {
+                "title": "headlines only",
+                "description": "",
+                "content": {
+                    "attributeFilterConfigs": [],
+                    "filterContextRef": {
+                        "identifier": {
+                            "id": "filtercontext_aaGo5QELlseN",
+                            "type": "filterContext"
+                        }
+                    },
+                    "layout": {
+                        "type": "IDashboardLayout",
+                        "sections": [
+                            {
+                                "type": "IDashboardLayoutSection",
+                                "header": {},
+                                "items": [
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                    "gridHeight": 8,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "h1_aaGo3uEVoct8",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "h1",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "aaSoZyirhFX9"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                    "gridHeight": 8,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "h2_aato1E4KZlRV",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "h2",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "aaSo4WRwptAU"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

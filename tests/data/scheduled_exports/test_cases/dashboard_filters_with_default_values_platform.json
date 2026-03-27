@@ -1,0 +1,54 @@
+[
+  {
+    "scheduledMail": {
+      "content": {
+        "attachments": [
+          {
+            "kpiDashboardAttachment": {
+              "format": "pdf",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4978"
+            }
+          },
+          {
+            "visualizationWidgetAttachment": {
+              "formats": ["csv"],
+              "dashboardUri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4978",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4976"
+            }
+          },
+          {
+            "visualizationWidgetAttachment": {
+              "dashboardUri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4978",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4975",
+              "formats": ["csv"]
+            }
+          }
+        ],
+        "subject": "dashboard filters with values",
+        "to": ["example.user@gooddata.com"],
+        "body": "dashboard has filter with default values:\ndate is a relative filter set to last year\nname is set to \"notebook\"",
+        "when": {
+          "startDate": "2025-08-21",
+          "timeZone": "Europe/Amsterdam",
+          "recurrency": "0:0:0:1*9:30:0"
+        }
+      },
+      "meta": {
+        "tags": "",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "category": "scheduledMail",
+        "title": "dashboard filters with values",
+        "unlisted": 1,
+        "created": "2025-08-21 13:06:49",
+        "sharedWithSomeone": 0,
+        "isProduction": 1,
+        "deprecated": "0",
+        "summary": "Daily at 9:30 AM",
+        "updated": "2025-08-22 09:22:20",
+        "identifier": "aaWKptGW6pLh",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4980"
+      }
+    }
+  }
+]

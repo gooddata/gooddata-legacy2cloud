@@ -1,0 +1,71 @@
+{
+  "data": {
+    "id": "pdf_absolute_date_filter_aaXnUtZzawOy",
+    "type": "automation",
+    "attributes": {
+      "title": "pdf_absolute_date_filter",
+      "description": "",
+      "details": {
+        "message": "Hello,\n\nYour scheduled email is ready. You can download the dashboard in attachments.",
+        "subject": "pdf_absolute_date_filter"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": false
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 0 0 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "visualExports": [
+        {
+          "requestPayload": {
+            "fileName": "pdf_absolute_date_filter",
+            "dashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "title": "Sample dashboard without KPI",
+              "filters": [
+                {
+                  "dateFilter": {
+                    "type": "absolute",
+                    "granularity": "GDC.time.date",
+                    "to": "2024-12-31 23:59",
+                    "from": "2024-01-01 00:00",
+                    "localIdentifier": "0_dateFilter"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

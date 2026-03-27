@@ -1,0 +1,78 @@
+[
+    {
+        "visualizationObject": {
+            "content": {
+                "filters": [
+                    {
+                        "absoluteDateFilter": {
+                            "dataSet": {
+                                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/625"
+                            },
+                            "to": "2019-05-22",
+                            "from": "2019-04-22"
+                        }
+                    }
+                ],
+                "buckets": [
+                    {
+                        "localIdentifier": "measures",
+                        "items": [
+                            {
+                                "measure": {
+                                    "localIdentifier": "da5ae2f0653b4ed5a2c855fc4bc45ae5",
+                                    "definition": {
+                                        "measureDefinition": {
+                                            "item": {
+                                                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2570"
+                                            }
+                                        }
+                                    },
+                                    "title": "# orders"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "localIdentifier": "secondary_measures",
+                        "items": [
+                            {
+                                "measure": {
+                                    "localIdentifier": "da5ae2f0653b4ed5a2c855fc4bc45ae5_pop",
+                                    "definition": {
+                                        "popMeasureDefinition": {
+                                            "measureIdentifier": "da5ae2f0653b4ed5a2c855fc4bc45ae5",
+                                            "popAttribute": {
+                                                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/565"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "properties": "{\"controls\":{\"comparison\":{\"calculationType\":\"change\",\"colorConfig\":{\"negative\":{\"type\":\"guid\",\"value\":\"positive\"},\"positive\":{\"type\":\"guid\",\"value\":\"negative\"}},\"enabled\":true,\"labelConfig\":{\"isConditional\":false},\"position\":\"auto\"}}}",
+                "visualizationClass": {
+                    "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/5"
+                }
+            },
+            "meta": {
+                "created": "2024-05-22 20:46:18",
+                "title": "Headline as a KPI",
+                "isProduction": 1,
+                "tags": "",
+                "summary": "",
+                "category": "visualizationObject",
+                "updated": "2024-05-27 21:04:18",
+                "contributor": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "author": "/gdc/account/profile/0102b54c3859150e0d75e52f1a3d034f",
+                "identifier": "ab7G2Ivr3Fhj",
+                "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2568",
+                "deprecated": "0"
+            },
+            "links": {
+                "explain": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2568/explain"
+            }
+        }
+    }
+]

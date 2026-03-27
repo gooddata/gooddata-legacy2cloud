@@ -1,0 +1,173 @@
+{
+  "data": {
+    "id": "csv_all_custom_ac8AlvazTH3S",
+    "type": "automation",
+    "attributes": {
+      "title": "csv_all_custom",
+      "description": "",
+      "details": {
+        "message": "electronics for bluetooth speaker and usbc hub\nrelative date filter set to last year\ntwo csvs",
+        "subject": "csv_all_custom"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": false
+          },
+          {
+            "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+            "title": "Category",
+            "isAllTimeDateFilter": false
+          },
+          {
+            "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+            "title": "Name",
+            "isAllTimeDateFilter": false
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 0 0 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "tabularExports": [
+        {
+          "requestPayload": {
+            "format": "CSV",
+            "fileName": "Avg item price per category",
+            "visualizationObject": "avg_item_price_per_category_abb6SWS81yFv",
+            "visualizationObjectCustomFilters": [
+              {
+                "relativeDateFilter": {
+                  "dataSet": {
+                    "identifier": {
+                      "id": "dt_orderdate",
+                      "type": "dataset"
+                    }
+                  },
+                  "granularity": "GDC.time.year",
+                  "from": -1,
+                  "to": -1,
+                  "localIdentifier": "0_dateFilter"
+                }
+              },
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.category",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Electronics"]
+                  }
+                }
+              },
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.name",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Bluetooth Speaker", "USB-C Hub"]
+                  }
+                }
+              }
+            ],
+            "relatedDashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "widget": "abY6SQtmX2GI",
+              "title": "Sample dashboard without KPI"
+            }
+          }
+        },
+        {
+          "requestPayload": {
+            "format": "CSV",
+            "fileName": "avg something",
+            "visualizationObject": "avg_something_abv60hdhDegr",
+            "visualizationObjectCustomFilters": [
+              {
+                "relativeDateFilter": {
+                  "dataSet": {
+                    "identifier": {
+                      "id": "dt_orderdate",
+                      "type": "dataset"
+                    }
+                  },
+                  "granularity": "GDC.time.year",
+                  "from": -1,
+                  "to": -1,
+                  "localIdentifier": "0_dateFilter"
+                }
+              },
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.category",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Electronics"]
+                  }
+                }
+              },
+              {
+                "positiveAttributeFilter": {
+                  "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+                  "displayForm": {
+                    "identifier": {
+                      "id": "products.name",
+                      "type": "label"
+                    }
+                  },
+                  "in": {
+                    "uris": ["Bluetooth Speaker", "USB-C Hub"]
+                  }
+                }
+              }
+            ],
+            "relatedDashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "widget": "ack6T0xRtMV5",
+              "title": "Sample dashboard without KPI"
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "projectDashboard": {
+    "meta": {
+      "author": "test_user",
+      "category": "test",
+      "identifier": "test_pp_multi",
+      "title": "PP Multi Tab",
+      "uri": "/gdc/md/test_workspace/obj/9300",
+      "summary": "",
+      "unlisted": 0
+    },
+    "content": {
+      "filters": [],
+      "tabs": [
+        {
+          "identifier": "t1",
+          "title": "Reports",
+          "items": [
+            {
+              "reportItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 400,
+                "sizeY": 300,
+                "obj": "/gdc/md/test_workspace/obj/1001",
+                "filters": [],
+                "title": "Test Report 1"
+              }
+            }
+          ]
+        },
+        {
+          "identifier": "t2",
+          "title": "Headline",
+          "items": [
+            {
+              "headlineItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 300,
+                "sizeY": 150,
+                "metric": "/gdc/md/test_workspace/obj/2001",
+                "filters": [],
+                "title": "Test Headline"
+              }
+            }
+          ]
+        },
+        {
+          "identifier": "t3",
+          "title": "Text",
+          "items": [
+            {
+              "textItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 600,
+                "sizeY": 80,
+                "text": "Multi-tab text item with sufficient length",
+                "textSize": "normal"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

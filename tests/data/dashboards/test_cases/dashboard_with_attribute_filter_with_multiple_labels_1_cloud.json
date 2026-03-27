@@ -1,0 +1,101 @@
+[
+    {
+        "data": {
+            "id": "dashboard_with_attribute_filter_with_multiple_labels_1_abrLcCYyiyXE",
+            "type": "analyticalDashboard",
+            "attributes": {
+                "title": "dashboard with attribute filter with multiple labels 1",
+                "description": "",
+                "content": {
+                    "attributeFilterConfigs": [
+                        {
+                            "localIdentifier": "e05e218f570b4004a5888a755a1130e2",
+                            "displayAsLabel": {
+                                "identifier": {
+                                    "id": "product.productid.product",
+                                    "type": "label"
+                                }
+                            }
+                        }
+                    ],
+                    "filterContextRef": {
+                        "identifier": {
+                            "id": "filtercontext_aa6LcrTCksyT",
+                            "type": "filterContext"
+                        }
+                    },
+                    "layout": {
+                        "type": "IDashboardLayout",
+                        "sections": [
+                            {
+                                "type": "IDashboardLayoutSection",
+                                "header": {},
+                                "items": [
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 22,
+                                                "gridWidth": 12
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "visualization_with_attribute_filter_with_multiple_labels_2_aaqLka7tnKTs",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "visualization with attribute filter with multiple labels 2",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "aavLkgndn8D2"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 22,
+                                                "gridWidth": 12
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "visualization_with_attribute_filter_with_multiple_labels_1_abjLcJdtJ0d5",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "visualization with attribute filter with multiple labels 1",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "abZLcDMSkhzN"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

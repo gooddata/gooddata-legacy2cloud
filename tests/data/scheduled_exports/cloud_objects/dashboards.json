@@ -1,0 +1,195 @@
+[
+  {
+    "id": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+    "type": "analyticalDashboard",
+    "attributes": {
+      "title": "Sample dashboard without KPI",
+      "description": "",
+      "content": {
+        "attributeFilterConfigs": [],
+        "filterContextRef": {
+          "identifier": {
+            "id": "filtercontext_aaG60lgL28E5",
+            "type": "filterContext"
+          }
+        },
+        "layout": {
+          "type": "IDashboardLayout",
+          "sections": [
+            {
+              "type": "IDashboardLayoutSection",
+              "header": {},
+              "items": [
+                {
+                  "type": "IDashboardLayoutItem",
+                  "size": {
+                    "xl": {
+                      "gridHeight": 22,
+                      "gridWidth": 6
+                    }
+                  },
+                  "widget": {
+                    "type": "insight",
+                    "drills": [],
+                    "description": "",
+                    "ignoreDashboardFilters": [],
+                    "insight": {
+                      "identifier": {
+                        "id": "avg_item_price_per_category_abb6SWS81yFv",
+                        "type": "visualizationObject"
+                      }
+                    },
+                    "title": "Avg item price per category",
+                    "dateDataSet": {
+                      "identifier": {
+                        "id": "dt_orderdate",
+                        "type": "dataset"
+                      }
+                    },
+                    "localIdentifier": "abY6SQtmX2GI"
+                  }
+                },
+                {
+                  "type": "IDashboardLayoutItem",
+                  "size": {
+                    "xl": {
+                      "gridHeight": 22,
+                      "gridWidth": 6
+                    }
+                  },
+                  "widget": {
+                    "type": "insight",
+                    "drills": [],
+                    "description": "",
+                    "ignoreDashboardFilters": [],
+                    "insight": {
+                      "identifier": {
+                        "id": "avg_something_abv60hdhDegr",
+                        "type": "visualizationObject"
+                      }
+                    },
+                    "title": "avg something",
+                    "dateDataSet": {
+                      "identifier": {
+                        "id": "dt_orderdate",
+                        "type": "dataset"
+                      }
+                    },
+                    "localIdentifier": "ack6T0xRtMV5"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "version": "2"
+      },
+      "createdAt": "2025-08-18 12:47",
+      "modifiedAt": "2025-08-18 12:47"
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/analyticalDashboards/sample_dashboard_without_kpi_aaA60LBQzTKf"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  },
+  {
+    "id": "copy_of_sample_dashboard_without_kpi_ac9FimAGWOs0",
+    "type": "analyticalDashboard",
+    "attributes": {
+      "title": "Copy of Sample dashboard without KPI",
+      "description": "",
+      "content": {
+        "attributeFilterConfigs": [],
+        "filterContextRef": {
+          "identifier": {
+            "id": "filtercontext_aeEFik5Fl4Dv",
+            "type": "filterContext"
+          }
+        },
+        "layout": {
+          "type": "IDashboardLayout",
+          "sections": [
+            {
+              "type": "IDashboardLayoutSection",
+              "header": {},
+              "items": [
+                {
+                  "type": "IDashboardLayoutItem",
+                  "size": {
+                    "xl": {
+                      "gridHeight": 22,
+                      "gridWidth": 6
+                    }
+                  },
+                  "widget": {
+                    "type": "insight",
+                    "drills": [],
+                    "description": "",
+                    "ignoreDashboardFilters": [],
+                    "insight": {
+                      "identifier": {
+                        "id": "avg_item_price_per_category_abb6SWS81yFv",
+                        "type": "visualizationObject"
+                      }
+                    },
+                    "title": "Avg item price per category",
+                    "dateDataSet": {
+                      "identifier": {
+                        "id": "dt_orderdate",
+                        "type": "dataset"
+                      }
+                    },
+                    "localIdentifier": "aabFwC7boF74"
+                  }
+                },
+                {
+                  "type": "IDashboardLayoutItem",
+                  "size": {
+                    "xl": {
+                      "gridHeight": 22,
+                      "gridWidth": 6
+                    }
+                  },
+                  "widget": {
+                    "type": "insight",
+                    "drills": [],
+                    "description": "",
+                    "ignoreDashboardFilters": [],
+                    "insight": {
+                      "identifier": {
+                        "id": "avg_something_abv60hdhDegr",
+                        "type": "visualizationObject"
+                      }
+                    },
+                    "title": "avg something",
+                    "dateDataSet": {
+                      "identifier": {
+                        "id": "dt_orderdate",
+                        "type": "dataset"
+                      }
+                    },
+                    "localIdentifier": "adqFiYEr3vfR"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "version": "2"
+      },
+      "createdAt": "2025-08-21 11:00",
+      "modifiedAt": "2025-08-21 11:00"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  }
+]

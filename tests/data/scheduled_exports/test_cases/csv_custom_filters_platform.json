@@ -1,0 +1,42 @@
+[
+  {
+    "scheduledMail": {
+      "content": {
+        "attachments": [
+          {
+            "visualizationWidgetAttachment": {
+              "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4959",
+              "dashboardUri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4846",
+              "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4844",
+              "formats": ["csv"]
+            }
+          }
+        ],
+        "body": "csv with custom date filter (relative, last year) and category set to electronics only",
+        "to": ["example.user@gooddata.com"],
+        "when": {
+          "recurrency": "0:0:0:1*0:0:0",
+          "startDate": "2025-08-18",
+          "timeZone": "Europe/Amsterdam"
+        },
+        "subject": "csv_custom_filters"
+      },
+      "meta": {
+        "updated": "2025-08-20 15:59:39",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4960",
+        "title": "csv_custom_filters",
+        "unlisted": 1,
+        "deprecated": "0",
+        "identifier": "acaAkjwaoL5A",
+        "category": "scheduledMail",
+        "tags": "",
+        "summary": "Daily at 12:00 AM",
+        "isProduction": 1,
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "sharedWithSomeone": 0,
+        "created": "2025-08-18 12:04:29",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c"
+      }
+    }
+  }
+]

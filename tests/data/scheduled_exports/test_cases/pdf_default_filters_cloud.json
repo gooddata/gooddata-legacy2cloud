@@ -1,0 +1,60 @@
+{
+  "data": {
+    "id": "simple_pdf_ab0tjeD9VQIB",
+    "type": "automation",
+    "attributes": {
+      "title": "simple_pdf",
+      "description": "",
+      "details": {
+        "message": "Hello,\n\nYour scheduled email is ready. You can download the dashboard in attachments.",
+        "subject": "simple_pdf"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": true
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 0 0 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "visualExports": [
+        {
+          "requestPayload": {
+            "fileName": "simple_pdf",
+            "dashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "title": "Sample dashboard without KPI"
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

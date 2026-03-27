@@ -1,0 +1,92 @@
+{
+  "data": {
+    "id": "pdf_custom_date_and_filter_aa5n7kITfpGf",
+    "type": "automation",
+    "attributes": {
+      "title": "pdf_custom_date_and_filter",
+      "description": "",
+      "details": {
+        "message": "custom date (last year) category electronics only. name is set to all",
+        "subject": "pdf_custom_date_and_filter"
+      },
+      "metadata": {
+        "visibleFilters": [
+          {
+            "localIdentifier": "0_dateFilter",
+            "title": "Date range",
+            "isAllTimeDateFilter": false
+          },
+          {
+            "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+            "title": "Category",
+            "isAllTimeDateFilter": false
+          }
+        ]
+      },
+      "schedule": {
+        "cron": "0 0 0 * * *",
+        "timezone": "Europe/Amsterdam"
+      },
+      "visualExports": [
+        {
+          "requestPayload": {
+            "fileName": "pdf_custom_date_and_filter",
+            "dashboardId": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+            "metadata": {
+              "title": "Sample dashboard without KPI",
+              "filters": [
+                {
+                  "dateFilter": {
+                    "type": "relative",
+                    "granularity": "GDC.time.year",
+                    "to": "-1",
+                    "from": "-1",
+                    "localIdentifier": "0_dateFilter"
+                  }
+                },
+                {
+                  "attributeFilter": {
+                    "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+                    "attributeElements": {
+                      "uris": ["Electronics"]
+                    },
+                    "displayForm": {
+                      "identifier": {
+                        "id": "products.category",
+                        "type": "label"
+                      }
+                    },
+                    "negativeSelection": false,
+                    "selectionMode": "multi"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "relationships": {
+      "analyticalDashboard": {
+        "data": {
+          "id": "sample_dashboard_without_kpi_aaA60LBQzTKf",
+          "type": "analyticalDashboard"
+        }
+      },
+      "recipients": {
+        "data": [
+          {
+            "id": "example.user",
+            "type": "user"
+          }
+        ]
+      },
+      "notificationChannel": {
+        "data": {
+          "id": "invalid_channel_id",
+          "type": "notificationChannel"
+        }
+      }
+    }
+  }
+}

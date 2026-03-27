@@ -1,0 +1,133 @@
+[
+    {
+        "data": {
+            "id": "with_top_filter_adAqKWxoDv2y",
+            "type": "visualizationObject",
+            "attributes": {
+                "title": "with TOP filter",
+                "description": "",
+                "createdAt": "",
+                "content": {
+                    "filters": [
+                        {
+                            "negativeAttributeFilter": {
+                                "notIn": {
+                                    "values": []
+                                },
+                                "displayForm": {
+                                    "identifier": {
+                                        "id": "region.regionid",
+                                        "type": "label"
+                                    }
+                                },
+                                "localIdentifier": "6d2712e356fb41baa1bad32657ca924d"
+                            }
+                        },
+                        {
+                            "negativeAttributeFilter": {
+                                "notIn": {
+                                    "values": []
+                                },
+                                "displayForm": {
+                                    "identifier": {
+                                        "id": "team.teamid",
+                                        "type": "label"
+                                    }
+                                },
+                                "localIdentifier": "4e0a7c81148a48fca796119c1ee3dbf8"
+                            }
+                        },
+                        {
+                            "rankingFilter": {
+                                "value": 2,
+                                "attributes": [
+                                    {
+                                        "localIdentifier": "9913a0e6bda548d6abbbfa20b710f998"
+                                    }
+                                ],
+                                "operator": "TOP",
+                                "measure": {
+                                    "localIdentifier": "efbe772386d14113b6077b12f82951eb"
+                                }
+                            }
+                        }
+                    ],
+                    "attributeFilterConfigs": {
+                        "4e0a7c81148a48fca796119c1ee3dbf8": {
+                            "displayAsLabel": {
+                                "identifier": {
+                                    "id": "team.teamid.teamname",
+                                    "type": "label"
+                                }
+                            }
+                        }
+                    },
+                    "buckets": [
+                        {
+                            "items": [
+                                {
+                                    "measure": {
+                                        "localIdentifier": "efbe772386d14113b6077b12f82951eb",
+                                        "title": "$ Sales",
+                                        "definition": {
+                                            "measureDefinition": {
+                                                "item": {
+                                                    "identifier": {
+                                                        "id": "_sales_aaXlbflxeioq",
+                                                        "type": "metric"
+                                                    }
+                                                },
+                                                "filters": []
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "localIdentifier": "measures"
+                        },
+                        {
+                            "items": [
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "team.teamid.teamname",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "2df492309d2e4eb98943232ae694ebb7"
+                                    }
+                                },
+                                {
+                                    "attribute": {
+                                        "displayForm": {
+                                            "identifier": {
+                                                "id": "region.regionid",
+                                                "type": "label"
+                                            }
+                                        },
+                                        "localIdentifier": "9913a0e6bda548d6abbbfa20b710f998"
+                                    }
+                                }
+                            ],
+                            "localIdentifier": "attribute"
+                        }
+                    ],
+                    "createdAt": "2024-05-09 12:11:49",
+                    "modifiedAt": "2024-05-09 12:11:49",
+                    "sorts": [
+                        {
+                            "attributeSortItem": {
+                                "attributeIdentifier": "2df492309d2e4eb98943232ae694ebb7",
+                                "direction": "asc"
+                            }
+                        }
+                    ],
+                    "properties": {},
+                    "visualizationUrl": "local:table",
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

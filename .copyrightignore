@@ -1,0 +1,83 @@
+# (C) 2022 GoodData Corporation
+# Set of glob-like patterns which defines files and folders to ignore by copyright tool
+# glob pattern documentation https://en.wikipedia.org/wiki/Glob_(programming)
+# wildcard ** is supported
+
+# files which does not support comments or must be skipped
+**/*.md
+**/*.json
+**/*.csv
+
+# git
+.git/**
+**/*.gitignore
+
+# github configuration scripts
+.github/**
+
+# IDEA IDE
+.idea/**
+**/*.iml
+
+# Byte-compiled / optimized / DLL files
+**/__pycache__/**
+**/*.py[cod]
+**/*$py.class
+
+# Unit test / coverage reports
+**/.tox/**
+**/*.coverage
+**/*.cache
+**/coverage.xml
+**/*.python-version
+**/.pytest_cache/**
+
+# Type support
+**/.mypy_cache/**
+**/py.typed
+
+# python venvs
+venv/**
+.venv/**
+.python-version
+uv.lock
+
+# Distribution / packaging
+**/.Python
+**/env/**
+**/build/**
+**/develop-eggs/**
+**/dist/**
+**/downloads/**
+**/eggs/**
+**/.eggs/**
+**/parts/**
+**/sdist/**
+**/var/**
+**/*.egg-info/**
+**/.installed.cfg
+**/*.egg
+**/*requirements.txt
+
+# Docker
+**/.dockerignore
+
+# Sphinx documentation
+**/docs/_build/**
+**/docs/_autosummary/**
+**/*.rst
+
+# Hugo docs
+**/docs/**
+
+# PyBuilder
+**/target/**
+
+# Linting support
+**/.ruff_cache/**
+
+# Test helper files
+gooddata-sdk/tests/catalog/store/**
+
+# Testing certificates
+**/*.pem

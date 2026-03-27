@@ -1,0 +1,59 @@
+[
+    {
+        "data": {
+            "id": "ppmigr__sample_report_abwyxFJ9u7f5",
+            "type": "visualizationObject",
+            "attributes": {
+                "title": "[PP] sample report",
+                "description": "",
+                "content": {
+                    "buckets": [
+                        {
+                            "localIdentifier": "measures",
+                            "items": [
+                                {
+                                    "measure": {
+                                        "localIdentifier": "avg_order_item_total_price_aaD6TzxvzYiV",
+                                        "definition": {
+                                            "measureDefinition": {
+                                                "item": {
+                                                    "identifier": {
+                                                        "id": "avg_order_item_total_price_aaD6TzxvzYiV",
+                                                        "type": "metric"
+                                                    }
+                                                },
+                                                "filters": []
+                                            }
+                                        },
+                                        "title": "Avg order item total price",
+                                        "alias": "",
+                                        "format": ""
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "localIdentifier": "attribute",
+                            "items": [],
+                            "totals": []
+                        },
+                        {
+                            "localIdentifier": "columns",
+                            "items": []
+                        }
+                    ],
+                    "filters": [],
+                    "attributeFilterConfigs": {},
+                    "sorts": [],
+                    "properties": {
+                        "controls": {
+                            "measureGroupDimension": "columns"
+                        }
+                    },
+                    "visualizationUrl": "local:table",
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

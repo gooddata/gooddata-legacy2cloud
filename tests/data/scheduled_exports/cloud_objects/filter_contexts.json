@@ -1,0 +1,402 @@
+[
+  {
+    "id": "filtercontext_aa9oMtBVqUFn",
+    "type": "filterContext",
+    "attributes": {
+      "title": "filterContext",
+      "description": "",
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "granularity": "GDC.time.month",
+              "from": "0",
+              "to": "0",
+              "type": "relative",
+              "localIdentifier": "0_dateFilter"
+            }
+          }
+        ],
+        "version": "2"
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/filterContexts/filtercontext_aa9oMtBVqUFn"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  },
+  {
+    "id": "filtercontext_aaG60lgL28E5",
+    "type": "filterContext",
+    "attributes": {
+      "title": "filterContext",
+      "description": "",
+      "content": {
+        "filters": [
+          {
+            "attributeFilter": {
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "attributeElements": {
+                "uris": []
+              },
+              "displayForm": {
+                "identifier": {
+                  "id": "products.category",
+                  "type": "label"
+                }
+              },
+              "negativeSelection": true,
+              "selectionMode": "multi"
+            }
+          },
+          {
+            "attributeFilter": {
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "attributeElements": {
+                "uris": []
+              },
+              "displayForm": {
+                "identifier": {
+                  "id": "products.name",
+                  "type": "label"
+                }
+              },
+              "negativeSelection": true,
+              "selectionMode": "multi"
+            }
+          }
+        ],
+        "version": "2"
+      }
+    },
+    "relationships": {
+      "labels": {
+        "data": [
+          {
+            "id": "products.category",
+            "type": "label"
+          },
+          {
+            "id": "products.name",
+            "type": "label"
+          }
+        ]
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/filterContexts/filtercontext_aaG60lgL28E5"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  },
+  {
+    "id": "filtercontext_aaGo5QELlseN",
+    "type": "filterContext",
+    "attributes": {
+      "title": "filterContext",
+      "description": "",
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "type": "relative",
+              "from": "-3",
+              "to": "0",
+              "granularity": "GDC.time.quarter",
+              "localIdentifier": "0_dateFilter"
+            }
+          }
+        ],
+        "version": "2"
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/filterContexts/filtercontext_aaGo5QELlseN"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  },
+  {
+    "id": "filtercontext_aanlPeK0Giaz",
+    "type": "filterContext",
+    "attributes": {
+      "title": "filterContext",
+      "description": "",
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "to": "0",
+              "from": "0",
+              "type": "relative",
+              "granularity": "GDC.time.month",
+              "localIdentifier": "0_dateFilter"
+            }
+          }
+        ],
+        "version": "2"
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/filterContexts/filtercontext_aanlPeK0Giaz"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  },
+  {
+    "id": "filtercontext_aaOoSipvtnPS",
+    "type": "filterContext",
+    "attributes": {
+      "title": "filterContext",
+      "description": "",
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "granularity": "GDC.time.month",
+              "from": "0",
+              "to": "0",
+              "type": "relative",
+              "localIdentifier": "0_dateFilter"
+            }
+          }
+        ],
+        "version": "2"
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/filterContexts/filtercontext_aaOoSipvtnPS"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  },
+  {
+    "id": "filtercontext_aaRG3JOysE9Q",
+    "type": "filterContext",
+    "attributes": {
+      "title": "filterContext",
+      "description": "",
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "granularity": "GDC.time.date",
+              "type": "absolute",
+              "to": "2020-02-29 23:59",
+              "from": "2020-02-01 00:00",
+              "localIdentifier": "0_dateFilter"
+            }
+          }
+        ],
+        "version": "2"
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/filterContexts/filtercontext_aaRG3JOysE9Q"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  },
+  {
+    "id": "filtercontext_aay7U0TiNnxZ",
+    "type": "filterContext",
+    "attributes": {
+      "title": "filterContext",
+      "description": "",
+      "content": {
+        "filters": [],
+        "version": "2"
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/filterContexts/filtercontext_aay7U0TiNnxZ"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  },
+  {
+    "id": "filtercontext_aczKsRPgmsI2",
+    "type": "filterContext",
+    "attributes": {
+      "title": "filterContext",
+      "description": "",
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "to": "0",
+              "from": "0",
+              "type": "relative",
+              "granularity": "GDC.time.month",
+              "localIdentifier": "0_dateFilter"
+            }
+          }
+        ],
+        "version": "2"
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/filterContexts/filtercontext_aczKsRPgmsI2"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  },
+  {
+    "id": "filtercontext_adqAkTyfqltK",
+    "type": "filterContext",
+    "attributes": {
+      "title": "filterContext",
+      "description": "",
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "granularity": "GDC.time.month",
+              "from": "0",
+              "to": "0",
+              "type": "relative",
+              "localIdentifier": "0_dateFilter"
+            }
+          }
+        ],
+        "version": "2"
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/filterContexts/filtercontext_adqAkTyfqltK"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  },
+  {
+    "id": "filtercontext_aef0xHO88sX8",
+    "type": "filterContext",
+    "attributes": {
+      "title": "filterContext",
+      "description": "",
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "granularity": "GDC.time.year",
+              "from": "-1",
+              "to": "-1",
+              "type": "relative",
+              "localIdentifier": "0_dateFilter"
+            }
+          }
+        ],
+        "version": "2"
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/filterContexts/filtercontext_aef0xHO88sX8"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  },
+  {
+    "id": "filtercontext_aeEFik5Fl4Dv",
+    "type": "filterContext",
+    "attributes": {
+      "title": "filterContext",
+      "description": "",
+      "content": {
+        "filters": [
+          {
+            "dateFilter": {
+              "type": "relative",
+              "granularity": "GDC.time.year",
+              "from": "-1",
+              "to": "-1",
+              "localIdentifier": "0_dateFilter"
+            }
+          },
+          {
+            "attributeFilter": {
+              "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
+              "attributeElements": {
+                "uris": []
+              },
+              "displayForm": {
+                "identifier": {
+                  "id": "products.category",
+                  "type": "label"
+                }
+              },
+              "negativeSelection": true,
+              "selectionMode": "multi"
+            }
+          },
+          {
+            "attributeFilter": {
+              "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
+              "attributeElements": {
+                "uris": ["Notebook"]
+              },
+              "displayForm": {
+                "identifier": {
+                  "id": "products.name",
+                  "type": "label"
+                }
+              },
+              "negativeSelection": false,
+              "selectionMode": "multi"
+            }
+          }
+        ],
+        "version": "2"
+      }
+    },
+    "links": {
+      "self": "https://example-domain.cloud.gooddata.com/api/v1/entities/workspaces/scheduled_emails_cloud/filterContexts/filtercontext_aeEFik5Fl4Dv"
+    },
+    "meta": {
+      "origin": {
+        "originType": "NATIVE",
+        "originId": "scheduled_emails_cloud"
+      }
+    }
+  }
+]

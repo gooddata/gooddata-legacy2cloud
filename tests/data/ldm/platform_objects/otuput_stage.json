@@ -1,0 +1,11 @@
+{
+  "outputStage": {
+    "schema": "/gdc/datawarehouse/instances/d4fb5ff54433283b0edb904a6804a4c9/schemas/default",
+    "outputStagePrefix": "MIGRATION_TEST_",
+    "links": {
+      "self": "/gdc/dataload/projects/dinu996plcf6ajcp6wygnqn952uyom9u/outputStage",
+      "outputStageDiff": "/gdc/dataload/projects/dinu996plcf6ajcp6wygnqn952uyom9u/outputStage/sqlDiff",
+      "dataloadProcess": "/gdc/projects/dinu996plcf6ajcp6wygnqn952uyom9u/dataload/processes/f8731cf3-b89c-417c-b360-f173025d623e"
+    }
+  }
+}

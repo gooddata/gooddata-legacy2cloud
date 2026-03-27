@@ -1,0 +1,116 @@
+[
+  {
+    "data": {
+      "id": "ppmigr__manual_date_is_null_abDateNullTest1",
+      "type": "visualizationObject",
+      "attributes": {
+        "title": "[WARN] [PP] manual date is null",
+        "description": "**migration warnings:**\n* Failed to create date NULL filter: Search Cloud Id - Unknown Cloud identifier signupdate.year\n\n---\n",
+        "content": {
+          "buckets": [
+            {
+              "localIdentifier": "measures",
+              "items": [
+                {
+                  "measure": {
+                    "localIdentifier": "avg_order_item_total_price_aaD6TzxvzYiV",
+                    "definition": {
+                      "measureDefinition": {
+                        "item": {
+                          "identifier": {
+                            "id": "avg_order_item_total_price_aaD6TzxvzYiV",
+                            "type": "metric"
+                          }
+                        },
+                        "filters": []
+                      }
+                    },
+                    "title": "Avg order item total price",
+                    "alias": "",
+                    "format": ""
+                  }
+                }
+              ]
+            },
+            {
+              "localIdentifier": "attribute",
+              "items": [],
+              "totals": []
+            },
+            {
+              "localIdentifier": "columns",
+              "items": []
+            }
+          ],
+          "filters": [],
+          "attributeFilterConfigs": {},
+          "sorts": [],
+          "properties": {
+            "controls": {
+              "measureGroupDimension": "columns"
+            }
+          },
+          "visualizationUrl": "local:table",
+          "version": "2"
+        }
+      }
+    }
+  },
+  {
+    "data": {
+      "id": "ppmigr__manual_date_is_not_null_abDateNotNullTest1",
+      "type": "visualizationObject",
+      "attributes": {
+        "title": "[WARN] [PP] manual date is not null",
+        "description": "**migration warnings:**\n* Failed to create date NULL filter: Search Cloud Id - Unknown Cloud identifier signupdate.year\n\n---\n",
+        "content": {
+          "buckets": [
+            {
+              "localIdentifier": "measures",
+              "items": [
+                {
+                  "measure": {
+                    "localIdentifier": "avg_order_item_total_price_aaD6TzxvzYiV",
+                    "definition": {
+                      "measureDefinition": {
+                        "item": {
+                          "identifier": {
+                            "id": "avg_order_item_total_price_aaD6TzxvzYiV",
+                            "type": "metric"
+                          }
+                        },
+                        "filters": []
+                      }
+                    },
+                    "title": "Avg order item total price",
+                    "alias": "",
+                    "format": ""
+                  }
+                }
+              ]
+            },
+            {
+              "localIdentifier": "attribute",
+              "items": [],
+              "totals": []
+            },
+            {
+              "localIdentifier": "columns",
+              "items": []
+            }
+          ],
+          "filters": [],
+          "attributeFilterConfigs": {},
+          "sorts": [],
+          "properties": {
+            "controls": {
+              "measureGroupDimension": "columns"
+            }
+          },
+          "visualizationUrl": "local:table",
+          "version": "2"
+        }
+      }
+    }
+  }
+]

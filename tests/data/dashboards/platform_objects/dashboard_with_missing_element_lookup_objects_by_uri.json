@@ -1,0 +1,127 @@
+{
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4580": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "aaHJ73pKGnOS"
+      },
+      "content": {
+        "filters": [
+          {
+            "attributeFilter": {
+              "localIdentifier": "some_filter",
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2918",
+              "attributeElements": [
+                "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2538",
+                "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2540",
+                "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2542",
+                "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2530"
+              ],
+              "negativeSelection": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2918": {
+    "attributeDisplayForm": {
+      "meta": {
+        "identifier": "label.datasetwithformerpk.anotherattribute",
+        "category": "attributeDisplayForm"
+      },
+      "content": {
+        "formOf": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917": {
+    "attribute": {
+      "meta": {
+        "identifier": "attr.datasetwithformerpk.anotherattribute",
+        "category": "attribute"
+      },
+      "content": {
+        "displayForms": [
+          {
+            "meta": {
+              "identifier": "attr.datasetwithformerpk.anotherattribute"
+            },
+            "links": {
+              "elements": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2538": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2540": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2542": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/2917/elements?id=2530": {
+    "attributeElements": {
+      "elements": []
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "order"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990002": {
+    "dataSet": {
+      "meta": {
+        "category": "dataSet"
+      },
+      "content": {
+        "identifierPrefix": "ship"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4579": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "aayJ7P3yg8BY",
+        "title": "Insight with missing elements lookup",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800000",
+        "ignoreDashboardFilters": []
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800000": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "adlJS6GygmL3",
+        "category": "visualizationObject"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/999999": {
+    "visualizationObject": {
+      "meta": {
+        "identifier": "unused_placeholder",
+        "category": "visualizationObject"
+      }
+    }
+  }
+}

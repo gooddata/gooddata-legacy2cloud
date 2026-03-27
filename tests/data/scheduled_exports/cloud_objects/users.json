@@ -1,0 +1,11 @@
+[
+  {
+    "id": "example.user",
+    "attributes": {
+      "firstname": "Example",
+      "lastname": "User",
+      "email": "example.user@gooddata.com",
+      "authenticationId": "purposefully_invalid_id"
+    }
+  }
+]

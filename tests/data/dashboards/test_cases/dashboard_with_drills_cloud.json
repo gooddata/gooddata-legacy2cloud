@@ -1,0 +1,397 @@
+[
+    {
+        "data": {
+            "id": "dashboard_with_drills_acXRfpleIgFv",
+            "type": "analyticalDashboard",
+            "attributes": {
+                "title": "Dashboard with Drills",
+                "description": "",
+                "content": {
+                    "attributeFilterConfigs": [],
+                    "filterContextRef": {
+                        "identifier": {
+                            "id": "filtercontext_afQQ39B8sjFV",
+                            "type": "filterContext"
+                        }
+                    },
+                    "layout": {
+                        "type": "IDashboardLayout",
+                        "sections": [
+                            {
+                                "type": "IDashboardLayoutSection",
+                                "header": {},
+                                "items": [
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 8,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [
+                                                {
+                                                    "localIdentifier": "5b21204022884f36be5cf752",
+                                                    "transition": "pop-up",
+                                                    "origin": {
+                                                        "type": "drillFromMeasure",
+                                                        "measure": {
+                                                            "localIdentifier": "13249210475f4766ad57290286b16c6b"
+                                                        }
+                                                    },
+                                                    "type": "drillToInsight",
+                                                    "target": {
+                                                        "identifier": {
+                                                            "id": "ahoj_123_aado12ITy5Y7",
+                                                            "type": "visualizationObject"
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "test_aabD81raCNNE",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "drill to insight ahoj 123",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "acky4MoMC9IX"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_acXRfpleIgFv_nr_sold_products",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "# Sold Products",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_ship",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "aaozyaSgYe6w"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 22,
+                                                "gridWidth": 12
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [
+                                                {
+                                                    "localIdentifier": "887e5d99330645d794852221",
+                                                    "transition": "new-window",
+                                                    "origin": {
+                                                        "type": "drillFromAttribute",
+                                                        "attribute": {
+                                                            "localIdentifier": "dcc44bc0f6d144088c3da219d338026b"
+                                                        }
+                                                    },
+                                                    "type": "drillToAttributeUrl",
+                                                    "target": {
+                                                        "hyperlinkDisplayForm": {
+                                                            "identifier": {
+                                                                "id": "product.productid.producturl",
+                                                                "type": "label"
+                                                            }
+                                                        },
+                                                        "displayForm": {
+                                                            "identifier": {
+                                                                "id": "product.productid.product",
+                                                                "type": "label"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "localIdentifier": "13e924a2559040138b95a5f7",
+                                                    "transition": "new-window",
+                                                    "origin": {
+                                                        "type": "drillFromMeasure",
+                                                        "measure": {
+                                                            "localIdentifier": "fedcf8b1ea6641739fad62aef1fe82ee"
+                                                        }
+                                                    },
+                                                    "type": "drillToCustomUrl",
+                                                    "target": {
+                                                        "url": [
+                                                            "https://google.com?q=",
+                                                            {
+                                                                "identifier": {
+                                                                    "id": "product.productid.producturl",
+                                                                    "type": "label"
+                                                                }
+                                                            },
+                                                            "+{dash_attribute_filter_selection(customer.country)}+{workspace_id}"
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "configuration": {
+                                                "hideTitle": false
+                                            },
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "product_test_aamTZt6I6Shp",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "drill to URL",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "acsTRJbSFV5U"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 8,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [
+                                                {
+                                                    "localIdentifier": "30ee971053af4364a3405c14",
+                                                    "transition": "new-window",
+                                                    "origin": {
+                                                        "type": "drillFromMeasure",
+                                                        "measure": {
+                                                            "localIdentifier": "13249210475f4766ad57290286b16c6b"
+                                                        }
+                                                    },
+                                                    "type": "drillToCustomUrl",
+                                                    "target": {
+                                                        "url": [
+                                                            "https://google.com?q={attribute_filter_selection(customer.country)}+{dash_attribute_filter_selection(customer.country)}"
+                                                        ]
+                                                    }
+                                                }
+                                            ],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "test_aabD81raCNNE",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "test",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "aapTRqEn3vGo"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 12,
+                                                "gridWidth": 12
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [
+                                                {
+                                                    "localIdentifier": "eeaa7f7882e14df09b41d294",
+                                                    "transition": "in-place",
+                                                    "origin": {
+                                                        "type": "drillFromMeasure",
+                                                        "measure": {
+                                                            "localIdentifier": "d6bde0e48a664ba58b95a4dc7a854128"
+                                                        }
+                                                    },
+                                                    "type": "drillToDashboard",
+                                                    "target": {
+                                                        "identifier": {
+                                                            "id": "d1_abJgxnGba7zp",
+                                                            "type": "analyticalDashboard"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "localIdentifier": "f0386d0a7b684129b20cefb3",
+                                                    "transition": "pop-up",
+                                                    "origin": {
+                                                        "type": "drillFromAttribute",
+                                                        "attribute": {
+                                                            "localIdentifier": "3d7ad08b7e774a87856d868eafc95a09"
+                                                        }
+                                                    },
+                                                    "type": "drillToInsight",
+                                                    "target": {
+                                                        "identifier": {
+                                                            "id": "customer_list_abP55MJbmGbc",
+                                                            "type": "visualizationObject"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "localIdentifier": "9f121f3a9859427db0195097",
+                                                    "transition": "in-place",
+                                                    "origin": {
+                                                        "type": "drillFromAttribute",
+                                                        "attribute": {
+                                                            "localIdentifier": "0759c57684d646599d260cd80cddb169"
+                                                        }
+                                                    },
+                                                    "type": "drillToDashboard",
+                                                    "target": {
+                                                        "identifier": {
+                                                            "id": "dashboard_with_drills_acXRfpleIgFv",
+                                                            "type": "analyticalDashboard"
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "visualization_with_attribute_filter_with_multiple_labels_2_aaqLka7tnKTs",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "drill to dashboard and insight",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "acRRbCNSvHIC"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "IDashboardLayoutSection",
+                                "header": {},
+                                "items": [
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 22,
+                                                "gridWidth": 11
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [
+                                                {
+                                                    "localIdentifier": "7f7e49d01e4846c2a5ec62fd",
+                                                    "transition": "new-window",
+                                                    "origin": {
+                                                        "type": "drillFromAttribute",
+                                                        "attribute": {
+                                                            "localIdentifier": "f575ecd3020e45e1a188895c42879d43"
+                                                        }
+                                                    },
+                                                    "type": "drillToCustomUrl",
+                                                    "target": {
+                                                        "url": [
+                                                            "https://google.com?q={visualization_id}++{dashboard_id}+{workspace_id}+",
+                                                            {
+                                                                "identifier": {
+                                                                    "id": "dt_order.month",
+                                                                    "type": "label"
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "localIdentifier": "aff336d65fd446f0bc9f649d",
+                                                    "transition": "pop-up",
+                                                    "origin": {
+                                                        "type": "drillFromMeasure",
+                                                        "measure": {
+                                                            "localIdentifier": "838713b1e4f647029781d639b3635c04"
+                                                        }
+                                                    },
+                                                    "type": "drillToInsight",
+                                                    "target": {
+                                                        "identifier": {
+                                                            "id": "test_ifnull_adeLbCcriKNm",
+                                                            "type": "visualizationObject"
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "properties": {
+                                                "controls": {
+                                                    "zoomInsight": true
+                                                }
+                                            },
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "testing_runsum_aboyXq7GHSbz",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "testing runsum",
+                                            "dateDataSet": {
+                                                "identifier": {
+                                                    "id": "dt_order",
+                                                    "type": "dataset"
+                                                }
+                                            },
+                                            "localIdentifier": "abURjLseyFyS"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

@@ -1,0 +1,33 @@
+name: Python Checks
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  python_checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          python-version: "3.14.2"
+          enable-cache: true
+
+      - name: Install dependencies
+        run: make dev
+
+      - name: Check format
+        run: make format-check
+
+      - name: Check lint
+        run: make lint
+
+      - name: Check type
+        run: make type
+
+      - name: Run tests
+        run: make test

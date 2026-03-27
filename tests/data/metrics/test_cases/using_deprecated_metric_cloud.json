@@ -1,0 +1,17 @@
+[
+    {
+        "data": {
+            "id": "using_deprecated_metric_actqILRpfsL5",
+            "type": "metric",
+            "attributes": {
+                "title": "Using Deprecated Metric",
+                "tags": [],
+                "description": "",
+                "content": {
+                    "format": "#,##0.00",
+                    "maql": "SELECT 1 + {metric/deprecated_metric_abCqIvPhCrVX}"
+                }
+            }
+        }
+    }
+]
