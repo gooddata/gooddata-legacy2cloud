@@ -29,6 +29,7 @@ The migration can be performed as a complete workspace transfer or selectively f
 - [Introduction](#introduction)
 - [Quick Start Guide](#quick-start-guide)
   - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
   - [Environment Setup](#environment-setup)
   - [Basic Migration Workflow](#basic-migration-workflow)
 - [Common Use Cases](#common-use-cases)
@@ -63,60 +64,56 @@ The migration can be performed as a complete workspace transfer or selectively f
 - Access to both GoodData Platform and GoodData Cloud environments
 - Admin permissions for both environments
 
+### Installation
+
+#### Install from Source
+
+1. **Clone this repository**
+
+    ```bash
+    git clone git@github.com:gooddata/gooddata-platform2cloud.git
+    ```
+
+1. **Install the package**
+
+    Navigate to the cloned repository in your system and install the package in your environment.
+
+    ```bash
+    cd gooddata-platform2cloud
+    pip install .
+    ```
+
 ### Environment Setup
 
-1. **Install dependencies**
+Create a `.env` file with your access credentials:
 
-   Project dependencies are managed using uv. You can find how to install uv [here](https://docs.astral.sh/uv/getting-started/installation/).
+```
+PLATFORM_DOMAIN = "https://your-platform-domain.com/"
+PLATFORM_LOGIN = "your_username"
+PLATFORM_PASSWORD = "your_password"
+PLATFORM_WS = "your_platform_workspace_id"
 
-   Using a make command:
+CLOUD_DOMAIN = "https://your-cloud-domain.gooddata.com/"
+CLOUD_TOKEN = "your_bearer_token"
+CLOUD_WS = "your_cloud_workspace_id"
 
-   ```bash
-   make dev
+DATA_SOURCE_ID = "your_data_source_id"
+SCHEMA = "your_schema"
+TABLE_PREFIX = "your_table_prefix"
 
-   source .venv/bin/activate
-   ```
+# Optional parameters
+WS_DATA_FILTER_ID = "filter_id"
+WS_DATA_FILTER_COLUMN = "filter_column"
+WS_DATA_FILTER_DESCRIPTION = "filter_description"
 
-   Or manually:
+# Notification channel ID is required for scheduled exports migration
+CLOUD_NOTIFICATION_CHANNEL_ID=notification_channel_to_use_with_migrated_exports
+```
 
-   ```
-   uv sync
-   source .venv/bin/activate
-
-   pre-commit install
-   ```
-
-2. **Create configuration (.env) file**
-
-   Create a `.env` file with your access credentials:
-
-   ```
-   PLATFORM_DOMAIN = "https://your-platform-domain.com/"
-   PLATFORM_LOGIN = "your_username"
-   PLATFORM_PASSWORD = "your_password"
-   PLATFORM_WS = "your_platform_workspace_id"
-
-   CLOUD_DOMAIN = "https://your-cloud-domain.gooddata.com/"
-   CLOUD_TOKEN = "your_bearer_token"
-   CLOUD_WS = "your_cloud_workspace_id"
-
-   DATA_SOURCE_ID = "your_data_source_id"
-   SCHEMA = "your_schema"
-   TABLE_PREFIX = "your_table_prefix"
-
-   # Optional parameters
-   WS_DATA_FILTER_ID = "filter_id"
-   WS_DATA_FILTER_COLUMN = "filter_column"
-   WS_DATA_FILTER_DESCRIPTION = "filter_description"
-
-   # Notification channel ID is required for scheduled exports migration
-   CLOUD_NOTIFICATION_CHANNEL_ID=notification_channel_to_use_with_migrated_exports
-   ```
-
-   **Where to find these values:**
-   - **PLATFORM_WS**: Navigate to your GoodData Platform workspace and copy the project ID (PID) from the URL
-   - **CLOUD_TOKEN**: Generate a token in GoodData Cloud under User Settings > API Tokens
-   - **DATA_SOURCE_ID**: Get this from your Cloud workspace data source settings (create the data source before the migration)
+**Where to find these values:**
+- **PLATFORM_WS**: Navigate to your GoodData Platform workspace and copy the project ID (PID) from the URL
+- **CLOUD_TOKEN**: Generate a token in GoodData Cloud under User Settings > API Tokens
+- **DATA_SOURCE_ID**: Get this from your Cloud workspace data source settings (create the data source before the migration)
 
 ### Basic Migration Workflow
 

@@ -5,6 +5,23 @@ version = "0.1.0"
 requires-python = ">=3.14"
 description = "Transfer workspace metadata from GD Platform to GD Cloud."
 readme = "README.md"
+license = "MIT"
+authors = [
+    {name = "GoodData", email = "support@gooddata.com"}
+]
+keywords = [
+    "gooddata",
+    "analytics",
+    "business",
+    "intelligence",
+    "cloud",
+    "platform",
+    "native",
+    "semantic",
+    "layer",
+    "sql",
+    "metrics",
+]
 dependencies = [
     "requests==2.32.5",
     "python-dotenv==1.1.1",
