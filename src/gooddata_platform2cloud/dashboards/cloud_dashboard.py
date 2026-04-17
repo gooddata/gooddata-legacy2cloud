@@ -108,15 +108,18 @@ class CloudDashboard:
 
         if overwrite_existing:
             # Try to get the filter context
-            filter_context = self.ctx.cloud_client.get_filter_context(
-                filter_context_object["data"]["id"]
-            )
+            try:
+                filter_context = self.ctx.cloud_client.get_filter_context(
+                    filter_context_object["data"]["id"]
+                )
 
-            if filter_context.get("data"):
-                # If the filter context exists, the endpoint should return a response
-                # with a `data` object. Update the filter context
-                self.ctx.cloud_client.update_filter_context(filter_context_object)
-                return
+                if filter_context.get("data"):
+                    # If the filter context exists, the endpoint should return a response
+                    # with a `data` object. Update the filter context
+                    self.ctx.cloud_client.update_filter_context(filter_context_object)
+                    return
+            except Exception as e:
+                logger.error(e)
 
         # If overwrite is not requested, or the filter context does not exist, create it
         self.ctx.cloud_client.create_filter_context(filter_context_object)

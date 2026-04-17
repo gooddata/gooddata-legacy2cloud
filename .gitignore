@@ -12,6 +12,7 @@ logs/
 .dev/
 
 
+docs/superpowers
 
 # ------- Keep -------
 !.mcp.json
