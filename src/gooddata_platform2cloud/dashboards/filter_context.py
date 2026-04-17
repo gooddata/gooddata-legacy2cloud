@@ -23,6 +23,11 @@ class FilterContext:
         filter_type = "label" if filter_type == "attributedisplayform" else filter_type
         return filter_type
 
+    @staticmethod
+    def _transform_attribute_type_value(obj: dict) -> str:
+        attr_type = obj["attribute"]["meta"]["category"].lower()
+        return "label" if attr_type == "attribute" else attr_type
+
     def _get_filter_attribute_elements(
         self, attribute_elements: list
     ) -> tuple[list, list]:
@@ -51,7 +56,14 @@ class FilterContext:
                 new_attr = self.ctx.ldm_mappings.search_mapping_identifier(
                     obj["attribute"]["meta"]["identifier"]
                 )
-                new_attrs.append(new_attr)
+                new_attrs.append(
+                    {
+                        "identifier": {
+                            "id": new_attr,
+                            "type": self._transform_attribute_type_value(obj),
+                        }
+                    }
+                )
             if new_attrs:
                 new_filter_elements.append(
                     {

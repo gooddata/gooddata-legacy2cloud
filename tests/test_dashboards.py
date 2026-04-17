@@ -31,6 +31,7 @@ TEST_CASES_DIR = "tests/data/dashboards/test_cases"
         "dashboard_with_drills",
         "dashboard_with_missing_element_lookup",
         "self_drill",
+        "dashboard_with_dependent_filters",
     ],
 )
 def test_dashboards_migration(

@@ -1,0 +1,56 @@
+[
+  {
+    "data": {
+      "id": "dashboard_with_dependent_filters_depFiltersDash001",
+      "type": "analyticalDashboard",
+      "attributes": {
+        "title": "Dashboard with dependent filters",
+        "description": "",
+        "content": {
+          "attributeFilterConfigs": [],
+          "filterContextRef": {
+            "identifier": {
+              "id": "filtercontext_depFiltersCtx001",
+              "type": "filterContext"
+            }
+          },
+          "layout": {
+            "type": "IDashboardLayout",
+            "sections": [
+              {
+                "type": "IDashboardLayoutSection",
+                "header": {},
+                "items": [
+                  {
+                    "type": "IDashboardLayoutItem",
+                    "size": {
+                      "xl": {
+                        "gridHeight": 22,
+                        "gridWidth": 12
+                      }
+                    },
+                    "widget": {
+                      "type": "insight",
+                      "drills": [],
+                      "description": "",
+                      "ignoreDashboardFilters": [],
+                      "insight": {
+                        "identifier": {
+                          "id": "testing_runsum_aboyXq7GHSbz",
+                          "type": "visualizationObject"
+                        }
+                      },
+                      "title": "Dependent filters widget",
+                      "localIdentifier": "depFiltersWidget001"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "version": "2"
+        }
+      }
+    }
+  }
+]
