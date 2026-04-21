@@ -58,7 +58,7 @@
                     }
                   },
                   "in": {
-                    "uris": ["Notebook"]
+                    "values": ["Notebook"]
                   }
                 }
               }
@@ -100,7 +100,7 @@
                     }
                   },
                   "in": {
-                    "uris": ["Notebook"]
+                    "values": ["Notebook"]
                   }
                 }
               }
@@ -134,7 +134,7 @@
                   "attributeFilter": {
                     "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
                     "attributeElements": {
-                      "uris": ["Notebook"]
+                      "values": ["Notebook"]
                     },
                     "displayForm": {
                       "identifier": {

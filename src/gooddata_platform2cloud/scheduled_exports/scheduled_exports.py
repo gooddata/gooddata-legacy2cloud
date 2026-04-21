@@ -216,7 +216,7 @@ class ScheduledExportMigrator:
             # filters that have values selected.
             for filter_ in cloud_filters:
                 if filter_.attribute_filter:
-                    if filter_.attribute_filter.attribute_elements.uris:
+                    if filter_.attribute_filter.attribute_elements.values:
                         visible_filters.append(self._get_visible_filter(filter_))
                 if filter_.date_filter:
                     cloud_has_date_filter = True
@@ -337,7 +337,7 @@ class ScheduledExportMigrator:
         for filter_ in cloud_filters:
             if filter_.attribute_filter:
                 # If the filter has no selected values, skip it
-                if not filter_.attribute_filter.attribute_elements.uris:
+                if not filter_.attribute_filter.attribute_elements.values:
                     continue
 
                 if (
@@ -372,7 +372,7 @@ class ScheduledExportMigrator:
                                     filter_type_name: AttributeFilterModel.from_kwargs(
                                         local_identifier=filter_.attribute_filter.local_identifier,
                                         display_form=filter_.attribute_filter.display_form,
-                                        uris=filter_.attribute_filter.attribute_elements,
+                                        values=filter_.attribute_filter.attribute_elements,
                                     )
                                 }
                             )

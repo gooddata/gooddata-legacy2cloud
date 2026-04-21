@@ -5,7 +5,7 @@ from pydantic import Field
 
 from gooddata_platform2cloud.models.base import Base
 from gooddata_platform2cloud.models.cloud.identifier import IdentifierWrapper
-from gooddata_platform2cloud.models.cloud.uris import Uris
+from gooddata_platform2cloud.models.cloud.insight_filters.values import Values
 
 
 class DateFilter(Base):
@@ -18,7 +18,7 @@ class DateFilter(Base):
 
 class AttributeFilter(Base):
     local_identifier: str
-    attribute_elements: Uris
+    attribute_elements: Values
     display_form: IdentifierWrapper
     negative_selection: bool
     selection_mode: str | None = Field(default=None)

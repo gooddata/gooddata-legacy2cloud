@@ -226,7 +226,7 @@ class AttachmentProcessor:
             for filter_ in filter_context_object.attributes.content.filters:
                 if (
                     filter_.attribute_filter
-                    and not filter_.attribute_filter.attribute_elements.uris
+                    and not filter_.attribute_filter.attribute_elements.values
                 ):
                     continue
                 else:
@@ -291,7 +291,7 @@ class AttachmentProcessor:
 
             if filter_.attribute_filter:
                 # Do not apply the filter if it does not store values
-                if not filter_.attribute_filter.attribute_elements.uris:
+                if not filter_.attribute_filter.attribute_elements.values:
                     continue
 
                 # Attribute filters can be positive or negative
@@ -305,7 +305,7 @@ class AttachmentProcessor:
                 filter_dict[filter_type_name] = AttributeFilterModel.from_kwargs(
                     local_identifier=filter_.attribute_filter.local_identifier,
                     display_form=filter_.attribute_filter.display_form,
-                    uris=filter_.attribute_filter.attribute_elements,
+                    values=filter_.attribute_filter.attribute_elements,
                 )
 
                 self.applied_filters.add(

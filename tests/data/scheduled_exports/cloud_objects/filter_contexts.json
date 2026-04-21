@@ -42,7 +42,7 @@
             "attributeFilter": {
               "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
               "attributeElements": {
-                "uris": []
+                "values": []
               },
               "displayForm": {
                 "identifier": {
@@ -58,7 +58,7 @@
             "attributeFilter": {
               "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
               "attributeElements": {
-                "uris": []
+                "values": []
               },
               "displayForm": {
                 "identifier": {
@@ -357,7 +357,7 @@
             "attributeFilter": {
               "localIdentifier": "c8d30783d4724e2e8bd85d899ec7e62c",
               "attributeElements": {
-                "uris": []
+                "values": []
               },
               "displayForm": {
                 "identifier": {
@@ -373,7 +373,7 @@
             "attributeFilter": {
               "localIdentifier": "8b8c2170e984450bbf5f5f95aeb208c9",
               "attributeElements": {
-                "uris": ["Notebook"]
+                "values": ["Notebook"]
               },
               "displayForm": {
                 "identifier": {

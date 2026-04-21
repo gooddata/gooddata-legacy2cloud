@@ -12,7 +12,7 @@ from pydantic import Field, field_validator
 from gooddata_platform2cloud.models.base import Base
 from gooddata_platform2cloud.models.cloud.filter_context import Filter
 from gooddata_platform2cloud.models.cloud.identifier import IdentifierWrapper
-from gooddata_platform2cloud.models.cloud.uris import Uris
+from gooddata_platform2cloud.models.cloud.insight_filters.values import Values
 from gooddata_platform2cloud.models.enums import ExportFormat
 
 
@@ -114,26 +114,26 @@ class AbsoluteDateFilter(Base):
 class NegativeAttributeFilter(Base):
     local_identifier: str
     display_form: IdentifierWrapper
-    not_in: Uris
+    not_in: Values
 
     @classmethod
     def from_kwargs(
         cls,
         local_identifier: str,
         display_form: IdentifierWrapper,
-        uris: Uris,
+        values: Values,
     ) -> "NegativeAttributeFilter":
         return cls(
             local_identifier=local_identifier,
             display_form=display_form,
-            not_in=uris,
+            not_in=values,
         )
 
 
 class PositiveAttributeFilter(Base):
     local_identifier: str
     display_form: IdentifierWrapper
-    in_: Uris = Field(alias="in")
+    in_: Values = Field(alias="in")
 
     if TYPE_CHECKING:
 
@@ -142,7 +142,7 @@ class PositiveAttributeFilter(Base):
             *,
             local_identifier: str,
             display_form: IdentifierWrapper,
-            in_: Uris,
+            in_: Values,
         ) -> None: ...
 
     @classmethod
@@ -150,12 +150,12 @@ class PositiveAttributeFilter(Base):
         cls,
         local_identifier: str,
         display_form: IdentifierWrapper,
-        uris: Uris,
+        values: Values,
     ) -> "PositiveAttributeFilter":
         return cls(
             local_identifier=local_identifier,
             display_form=display_form,
-            in_=uris,
+            in_=values,
         )
 
 

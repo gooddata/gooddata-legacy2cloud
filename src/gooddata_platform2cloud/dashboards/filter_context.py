@@ -8,6 +8,10 @@ from gooddata_platform2cloud.models.cloud.filter_context import (
     FilterContextWrapper,
 )
 
+# TODO: refactor FilterContext class to reuse the pydantic mode.
+#   - [ ] Phase 1: class typed internally, get() dumps before return
+#   - [ ] Phase 2: get() returns typed object, consumers handle it
+
 
 class FilterContext:
     def __init__(self, ctx: DashboardContext, filter_context_uri: str):
@@ -121,7 +125,7 @@ class FilterContext:
                 new_filter = {
                     "attributeFilter": {
                         "localIdentifier": filter["attributeFilter"]["localIdentifier"],
-                        "attributeElements": {"uris": new_attributes},
+                        "attributeElements": {"values": new_attributes},
                         "displayForm": display_form,
                         "negativeSelection": filter["attributeFilter"][
                             "negativeSelection"
