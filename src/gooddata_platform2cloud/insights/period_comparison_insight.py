@@ -4,6 +4,7 @@ This module contains the PeriodComparisonInsight class,
 which is used to build period comparison insights.
 """
 
+import logging
 import uuid
 from typing import Any
 
@@ -15,6 +16,8 @@ from gooddata_platform2cloud.models.enums import Operation
 # Constants for KPI comparison measure aliases
 PREVIOUS_PERIOD_ALIAS = "prev. period"
 LAST_YEAR_ALIAS = "prev. year"
+
+logger = logging.getLogger("migration")
 
 
 class PeriodComparisonInsight:
@@ -207,14 +210,11 @@ class PeriodComparisonInsight:
         }
 
     @staticmethod
-    def _get_properties(obj):
+    def _get_properties(obj, effective_comparison_type: str):
         comparison: dict[str, Any] = {"enabled": False}
         properties: dict[str, Any] = {"controls": {"comparison": comparison}}
-        # Check if comparisonType is set to anything other than "none"
-        if obj["kpi"]["content"].get("comparisonType") != "none":
-            # Enable comparison if comparisonDirection exists and is not "none"
+        if effective_comparison_type != "none":
             comparison["enabled"] = True
-            # Check for comparisonDirection and set colorConfig accordingly
             if obj["kpi"]["content"].get("comparisonDirection") == "growIsBad":
                 comparison["colorConfig"] = {
                     "negative": {"type": "guid", "value": "positive"},
@@ -238,12 +238,27 @@ class PeriodComparisonInsight:
             new_dataset_id = self.ctx.ldm_mappings.search_mapping_identifier(
                 dataset_obj["dataSet"]["content"]["identifierPrefix"]
             )
+            has_date_dataset = True
         else:
             new_dataset_id = ""
+            has_date_dataset = False
+
+        raw_comparison_type = self.obj["kpi"]["content"].get("comparisonType", "none")
+        if raw_comparison_type != "none" and not has_date_dataset:
+            logger.warning(
+                "Dropping period comparison for KPI %r: no date dataset on widget, "
+                "but comparisonType=%s. Cloud headline requires a date dataset for "
+                "period comparison; producing plain headline.",
+                self.obj["kpi"]["meta"]["title"],
+                raw_comparison_type,
+            )
+            effective_comparison_type = "none"
+        else:
+            effective_comparison_type = raw_comparison_type
 
         new_local_identifier = uuid.uuid4().hex
 
-        if self.obj["kpi"]["content"]["comparisonType"] == "previousPeriod":
+        if effective_comparison_type == "previousPeriod":
             new_local_identifier_previous = f"{new_local_identifier}_previous_period"
             primary_measure = {
                 "items": [
@@ -261,14 +276,13 @@ class PeriodComparisonInsight:
                 new_local_identifier,
                 1,
             )
-            # Add alias for KPI comparison
             secondary_measure_item["measure"]["alias"] = PREVIOUS_PERIOD_ALIAS
             secondary_measure = {
                 "items": [secondary_measure_item],
                 "localIdentifier": "secondary_measures",
             }
             buckets = [primary_measure, secondary_measure]
-        elif self.obj["kpi"]["content"]["comparisonType"] == "lastYear":
+        elif effective_comparison_type == "lastYear":
             new_local_identifier_pop = f"{new_local_identifier}_pop"
             primary_measure = {
                 "items": [
@@ -283,14 +297,13 @@ class PeriodComparisonInsight:
             secondary_measure_item = self._get_measure_last_year(
                 new_dataset_id, new_local_identifier_pop, new_local_identifier
             )
-            # Add alias for KPI comparison
             secondary_measure_item["measure"]["alias"] = LAST_YEAR_ALIAS
             secondary_measure = {
                 "items": [secondary_measure_item],
                 "localIdentifier": "secondary_measures",
             }
             buckets = [primary_measure, secondary_measure]
-        elif self.obj["kpi"]["content"]["comparisonType"] == "none":
+        elif effective_comparison_type == "none":
             buckets = [
                 {
                     "items": [
@@ -316,7 +329,9 @@ class PeriodComparisonInsight:
                         "buckets": buckets,
                         "filters": self._get_insight_filter(self.obj),
                         "sorts": [],
-                        "properties": self._get_properties(self.obj),
+                        "properties": self._get_properties(
+                            self.obj, effective_comparison_type
+                        ),
                         "visualizationUrl": "local:headline",
                         "version": "2",
                     },
