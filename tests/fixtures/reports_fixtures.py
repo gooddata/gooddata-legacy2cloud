@@ -7,27 +7,27 @@ import json
 
 import pytest
 
-from gooddata_platform2cloud.backends.cloud.client import CloudClient
-from gooddata_platform2cloud.backends.platform.client import PlatformClient
-from gooddata_platform2cloud.id_mappings import IdMappings
-from gooddata_platform2cloud.reports.cloud_reports_builder import CloudReportsBuilder
-from gooddata_platform2cloud.reports.data_classes import ReportContext
+from gooddata_legacy2cloud.backends.cloud.client import CloudClient
+from gooddata_legacy2cloud.backends.legacy.client import LegacyClient
+from gooddata_legacy2cloud.id_mappings import IdMappings
+from gooddata_legacy2cloud.reports.cloud_reports_builder import CloudReportsBuilder
+from gooddata_legacy2cloud.reports.data_classes import ReportContext
 from tests.conftest import MAPPING_FILES_DIR
 
-PLATFORM_OBJECTS_DIR = "tests/data/reports/platform_objects"
+LEGACY_OBJECTS_DIR = "tests/data/reports/legacy_objects"
 
 
 @pytest.fixture
-def reports_context(platform_client: PlatformClient, cloud_client: CloudClient, mocker):
+def reports_context(legacy_client: LegacyClient, cloud_client: CloudClient, mocker):
     """Create Context for reports builder with mocked APIs."""
-    # Load Platform objects by URI mapping
-    with open(f"{PLATFORM_OBJECTS_DIR}/objects_by_uri.json", "r") as file:
+    # Load Legacy objects by URI mapping
+    with open(f"{LEGACY_OBJECTS_DIR}/objects_by_uri.json", "r") as file:
         objects_by_uri = json.load(file)
 
     def get_objects_by_uri(uri):
         return objects_by_uri[uri]
 
-    mocker.patch.object(platform_client, "get_object", side_effect=get_objects_by_uri)
+    mocker.patch.object(legacy_client, "get_object", side_effect=get_objects_by_uri)
 
     # Mock Cloud get_attribute_json
     mocker.patch.object(cloud_client, "get_attribute_json", return_value={})
@@ -40,7 +40,7 @@ def reports_context(platform_client: PlatformClient, cloud_client: CloudClient, 
     mapping_logger = mocker.MagicMock()
 
     return ReportContext(
-        platform_client=platform_client,
+        legacy_client=legacy_client,
         cloud_client=cloud_client,
         ldm_mappings=ldm_mappings,
         metric_mappings=metric_mappings,

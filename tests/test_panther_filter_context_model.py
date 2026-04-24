@@ -7,7 +7,7 @@ responses, to avoid hard-failing entire migrations when a single entity payload
 contains unexpected nulls.
 """
 
-from gooddata_platform2cloud.models.cloud.filter_context import FilterContextModel
+from gooddata_legacy2cloud.models.cloud.filter_context import FilterContextModel
 
 
 def test_filter_context_model_allows_null_value_in_attribute_elements() -> None:

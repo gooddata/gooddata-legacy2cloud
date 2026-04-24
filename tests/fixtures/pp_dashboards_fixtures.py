@@ -7,11 +7,11 @@ import json
 
 import pytest
 
-from gooddata_platform2cloud.backends.cloud.client import CloudClient
-from gooddata_platform2cloud.backends.platform.client import PlatformClient
-from gooddata_platform2cloud.id_mappings import IdMappings
-from gooddata_platform2cloud.pp_dashboards.data_classes import PPDashboardContext
-from gooddata_platform2cloud.pp_dashboards.grid_maker import GridConfig
+from gooddata_legacy2cloud.backends.cloud.client import CloudClient
+from gooddata_legacy2cloud.backends.legacy.client import LegacyClient
+from gooddata_legacy2cloud.id_mappings import IdMappings
+from gooddata_legacy2cloud.pp_dashboards.data_classes import PPDashboardContext
+from gooddata_legacy2cloud.pp_dashboards.grid_maker import GridConfig
 
 
 @pytest.fixture
@@ -28,12 +28,12 @@ def pp_grid_config():
 
 
 @pytest.fixture
-def pp_context(platform_client: PlatformClient, cloud_client: CloudClient, mocker):
+def pp_context(legacy_client: LegacyClient, cloud_client: CloudClient, mocker):
     """Mock pixel perfect context object."""
     # Import here to avoid circular dependencies during test collection
 
     return PPDashboardContext(
-        platform_client=platform_client,
+        legacy_client=legacy_client,
         cloud_client=cloud_client,
         ldm_mappings=IdMappings(
             "tests/data/pixel_perfect_dashboards/mapping_files/ldm_mappings.csv"
@@ -51,11 +51,11 @@ def pp_context(platform_client: PlatformClient, cloud_client: CloudClient, mocke
 
 
 @pytest.fixture
-def mock_platform_pp_dashboards(mocker, platform_client: PlatformClient):
-    """Mock Platform API responses for pixel perfect dashboards."""
-    # Load Platform objects by URI
+def mock_legacy_pp_dashboards(mocker, legacy_client: LegacyClient):
+    """Mock Legacy API responses for pixel perfect dashboards."""
+    # Load Legacy objects by URI
     with open(
-        "tests/data/pixel_perfect_dashboards/platform_objects/objects_by_uri.json", "r"
+        "tests/data/pixel_perfect_dashboards/legacy_objects/objects_by_uri.json", "r"
     ) as file:
         objects_by_uri = json.load(file)
 
@@ -64,18 +64,16 @@ def mock_platform_pp_dashboards(mocker, platform_client: PlatformClient):
             return objects_by_uri.get(obj_link, {})
         return {}
 
-    mocker.patch.object(platform_client, "get_object", side_effect=get_object_by_uri)
+    mocker.patch.object(legacy_client, "get_object", side_effect=get_object_by_uri)
 
     # Load dashboard data
     with open(
-        "tests/data/pixel_perfect_dashboards/platform_objects/pp_dashboard_simple.json",
+        "tests/data/pixel_perfect_dashboards/legacy_objects/pp_dashboard_simple.json",
         "r",
     ) as file:
         dashboard_data = json.load(file)
 
-    mocker.patch.object(
-        platform_client, "get_dashboards", return_value=[dashboard_data]
-    )
+    mocker.patch.object(legacy_client, "get_dashboards", return_value=[dashboard_data])
 
     return dashboard_data
 
@@ -174,7 +172,7 @@ def mock_cloud_pp_api(mocker, cloud_client: CloudClient):
 @pytest.fixture
 def pp_dashboards_builder(pp_context, pp_grid_config):
     """Create CloudPixelPerfectDashboardsBuilder instance for tests."""
-    from gooddata_platform2cloud.pp_dashboards.cloud_pp_dashboards_builder import (
+    from gooddata_legacy2cloud.pp_dashboards.cloud_pp_dashboards_builder import (
         CloudPixelPerfectDashboardsBuilder,
     )
 
@@ -191,7 +189,7 @@ def pp_dashboards_builder(pp_context, pp_grid_config):
 @pytest.fixture
 def pp_dashboards_builder_legacy_split(pp_context, pp_grid_config):
     """Create builder instance configured for legacy split-tabs behavior."""
-    from gooddata_platform2cloud.pp_dashboards.cloud_pp_dashboards_builder import (
+    from gooddata_legacy2cloud.pp_dashboards.cloud_pp_dashboards_builder import (
         CloudPixelPerfectDashboardsBuilder,
     )
 

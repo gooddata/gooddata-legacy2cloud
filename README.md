@@ -1,20 +1,20 @@
-# gooddata-platform2cloud-tools
+# gooddata-legacy2cloud-tools
 
-Repository for GoodData Platform to Cloud migration tools
+Repository for GoodData Legacy to Cloud migration tools
 
 Recommended Python version: **>3.14.2**
 
 ## Introduction
 
-This migration toolkit facilitates the transition of analytics content from GoodData Platform to GoodData Cloud.
+This migration toolkit facilitates the transition of analytics content from GoodData Legacy to GoodData Cloud.
 
 Throughout the readme and the codebase, the products are referred to as such:
 
-- **Platform** refers to GoodData Platform, the legacy private cloud-based analytics solution
-- **Cloud** refers to GoodData Cloud, the modern cloud-based analytics platform
+- **Legacy** refers to GoodData Legacy, the legacy private cloud-based analytics solution
+- **Cloud** refers to GoodData Cloud, the modern cloud-based analytics legacy
 
 **What problem does this toolkit solve?**
-This toolkit automates the migration of your analytical content, preserving the relationships between different objects while handling the architectural differences between the two platforms. It can migrate:
+This toolkit automates the migration of your analytical content, preserving the relationships between different objects while handling the architectural differences between the two legacys. It can migrate:
 
 - Logical Data Models (LDM) with data source mappings
 - Metrics (calculations/measures)
@@ -61,7 +61,7 @@ The migration can be performed as a complete workspace transfer or selectively f
 ### Prerequisites
 
 - Python 3.14.2 or newer
-- Access to both GoodData Platform and GoodData Cloud environments
+- Access to both GoodData Legacy and GoodData Cloud environments
 - Admin permissions for both environments
 
 ### Installation
@@ -71,7 +71,7 @@ The migration can be performed as a complete workspace transfer or selectively f
 1. **Clone this repository**
 
     ```bash
-    git clone git@github.com:gooddata/gooddata-platform2cloud.git
+    git clone git@github.com:gooddata/gooddata-legacy2cloud.git
     ```
 
 1. **Install the package**
@@ -79,7 +79,7 @@ The migration can be performed as a complete workspace transfer or selectively f
     Navigate to the cloned repository in your system and install the package in your environment.
 
     ```bash
-    cd gooddata-platform2cloud
+    cd gooddata-legacy2cloud
     pip install .
     ```
 
@@ -88,10 +88,10 @@ The migration can be performed as a complete workspace transfer or selectively f
 Create a `.env` file with your access credentials:
 
 ```
-PLATFORM_DOMAIN = "https://your-platform-domain.com/"
-PLATFORM_LOGIN = "your_username"
-PLATFORM_PASSWORD = "your_password"
-PLATFORM_WS = "your_platform_workspace_id"
+LEGACY_DOMAIN = "https://your-legacy-domain.com/"
+LEGACY_LOGIN = "your_username"
+LEGACY_PASSWORD = "your_password"
+LEGACY_WS = "your_legacy_workspace_id"
 
 CLOUD_DOMAIN = "https://your-cloud-domain.gooddata.com/"
 CLOUD_TOKEN = "your_bearer_token"
@@ -111,7 +111,7 @@ CLOUD_NOTIFICATION_CHANNEL_ID=notification_channel_to_use_with_migrated_exports
 ```
 
 **Where to find these values:**
-- **PLATFORM_WS**: Navigate to your GoodData Platform workspace and copy the project ID (PID) from the URL
+- **LEGACY_WS**: Navigate to your GoodData Legacy workspace and copy the project ID (PID) from the URL
 - **CLOUD_TOKEN**: Generate a token in GoodData Cloud under User Settings > API Tokens
 - **DATA_SOURCE_ID**: Get this from your Cloud workspace data source settings (create the data source before the migration)
 
@@ -122,7 +122,7 @@ Run these scripts in sequence, verifying results after each step:
 1. **Migrate the Logical Data Model**
 
    ```
-   gooddata-platform2cloud ldm
+   gooddata-legacy2cloud ldm
    ```
 
    - Check in Cloud that your data model has been migrated correctly, check the data mapping if it was migrated
@@ -131,13 +131,13 @@ Run these scripts in sequence, verifying results after each step:
 1. **Migrate the color palette**
 
    ```bash
-   gooddata-platform2cloud color-palette
+   gooddata-legacy2cloud color-palette
    ```
 
 1. **Migrate Metrics**
 
    ```
-   gooddata-platform2cloud metrics
+   gooddata-legacy2cloud metrics
    ```
 
    Verify the metrics in Cloud, especially any with [ERROR] or [WARN] in the title
@@ -145,7 +145,7 @@ Run these scripts in sequence, verifying results after each step:
 1. **Migrate Insights (Visualizations)**
 
    ```
-   gooddata-platform2cloud insights
+   gooddata-legacy2cloud insights
    ```
 
    Verify the insights in Cloud, especially any with [ERROR] or [WARN] in the title
@@ -153,7 +153,7 @@ Run these scripts in sequence, verifying results after each step:
 1. **Migrate Dashboards**
 
    ```
-   gooddata-platform2cloud dashboards
+   gooddata-legacy2cloud dashboards
    ```
 
    Verify the dashboards in Cloud
@@ -161,7 +161,7 @@ Run these scripts in sequence, verifying results after each step:
 1. **Migrate Pixel Perfect Reports**
 
    ```
-   gooddata-platform2cloud reports
+   gooddata-legacy2cloud reports
    ```
 
    Verify the Visualziations migrated from report in Cloud (by default they will have "[PP]" prefix)
@@ -169,7 +169,7 @@ Run these scripts in sequence, verifying results after each step:
 1. **Migrate Pixel Perfect Dashboards**
 
    ```bash
-   gooddata-platform2cloud pp-dashboards
+   gooddata-legacy2cloud pp-dashboards
    ```
 
    Verify the migrated Dashboards in Cloud
@@ -178,15 +178,15 @@ Run these scripts in sequence, verifying results after each step:
 
 ### Single Workspace Migration
 
-Migrating all content from one GoodData Platform workspace to one GoodData Cloud workspace:
+Migrating all content from one GoodData Legacy workspace to one GoodData Cloud workspace:
 
 1. **Set up your environment file** with source and target workspace IDs
 2. **Run the migration scripts in sequence**:
    ```
-   gooddata-platform2cloud ldm
-   gooddata-platform2cloud metrics
-   gooddata-platform2cloud insights
-   gooddata-platform2cloud dashboards
+   gooddata-legacy2cloud ldm
+   gooddata-legacy2cloud metrics
+   gooddata-legacy2cloud insights
+   gooddata-legacy2cloud dashboards
    ```
 3. **Verify the migrated content** in your Cloud workspace
 
@@ -201,11 +201,11 @@ For organizations with multiple workspaces that share content and want to also m
 2. **Migrate the parent workspace** first:
 
    ```
-   gooddata-platform2cloud ldm
-   gooddata-platform2cloud metrics
-   gooddata-platform2cloud insights
-   gooddata-platform2cloud dashboards
-   gooddata-platform2cloud reports
+   gooddata-legacy2cloud ldm
+   gooddata-legacy2cloud metrics
+   gooddata-legacy2cloud insights
+   gooddata-legacy2cloud dashboards
+   gooddata-legacy2cloud reports
    ```
 
    - **Note:** This migration toolkit does **not** create workspaces or provision users, user groups, or user permissions (except dashboard permissions). You must create all client workspaces to the Cloud organization separately before running the migration. If you want to migrate also dashboard permissions or scheduled emails, you also need to provision the users/user groups before that.
@@ -219,19 +219,19 @@ For organizations with multiple workspaces that share content and want to also m
    - Only migrates objects not present in the parent (=not present in the default mapping files)
    - Prefixes any mapping or log it creates with the defined client-specific prefix (to prevent overwriting and easy identification)
    - Validates that the target workspace is a child workspace (=has parent defined)
-   - Requires use of --platform-ws and --parent-ws to prevent accidentally migrating into parent workspace in client mode
+   - Requires use of --legacy-ws and --parent-ws to prevent accidentally migrating into parent workspace in client mode
 
    ```
    # For client 1
-   gooddata-platform2cloud metrics --platform-ws client1_platform_id --cloud-ws client1_cloud_id --client-prefix client1_
-   gooddata-platform2cloud insights --platform-ws client1_platform_id --cloud-ws client1_cloud_id --client-prefix client1_
-   gooddata-platform2cloud dashboards --platform-ws client1_platform_id --cloud-ws client1_cloud_id --client-prefix client1_
-   gooddata-platform2cloud reports --platform-ws client1_platform_id --cloud-ws client1_cloud_id --client-prefix client1_
+   gooddata-legacy2cloud metrics --legacy-ws client1_legacy_id --cloud-ws client1_cloud_id --client-prefix client1_
+   gooddata-legacy2cloud insights --legacy-ws client1_legacy_id --cloud-ws client1_cloud_id --client-prefix client1_
+   gooddata-legacy2cloud dashboards --legacy-ws client1_legacy_id --cloud-ws client1_cloud_id --client-prefix client1_
+   gooddata-legacy2cloud reports --legacy-ws client1_legacy_id --cloud-ws client1_cloud_id --client-prefix client1_
    # For client 2
-   gooddata-platform2cloud metrics --platform-ws client2_platform_id --cloud-ws client2_cloud_id --client-prefix client2_
-   gooddata-platform2cloud insights --platform-ws client2_platform_id --cloud-ws client2_cloud_id --client-prefix client2_
-   gooddata-platform2cloud dashboards --platform-ws client2_platform_id --cloud-ws client2_cloud_id --client-prefix client2_
-   gooddata-platform2cloud reports --platform-ws client2_platform_id --cloud-ws client2_cloud_id --client-prefix client2_
+   gooddata-legacy2cloud metrics --legacy-ws client2_legacy_id --cloud-ws client2_cloud_id --client-prefix client2_
+   gooddata-legacy2cloud insights --legacy-ws client2_legacy_id --cloud-ws client2_cloud_id --client-prefix client2_
+   gooddata-legacy2cloud dashboards --legacy-ws client2_legacy_id --cloud-ws client2_cloud_id --client-prefix client2_
+   gooddata-legacy2cloud reports --legacy-ws client2_legacy_id --cloud-ws client2_cloud_id --client-prefix client2_
 
    # Repeat for each client
    ```
@@ -241,23 +241,23 @@ For organizations with multiple workspaces that share content and want to also m
 
 ```bash
 # Migrate all clients metrics
-gooddata-platform2cloud metrics --platform-ws client1_platform_id --cloud-ws client1_cloud_id --client-prefix client1_
-gooddata-platform2cloud metrics --platform-ws client2_platform_id --cloud-ws client2_cloud_id --client-prefix client2_
+gooddata-legacy2cloud metrics --legacy-ws client1_legacy_id --cloud-ws client1_cloud_id --client-prefix client1_
+gooddata-legacy2cloud metrics --legacy-ws client2_legacy_id --cloud-ws client2_cloud_id --client-prefix client2_
 # Repeat for each client
 
 # Migrate all clients insights
-gooddata-platform2cloud insights --platform-ws client2_platform_id --cloud-ws client2_cloud_id --client-prefix client2_
-gooddata-platform2cloud insights --platform-ws client1_platform_id --cloud-ws client1_cloud_id --client-prefix client1_
+gooddata-legacy2cloud insights --legacy-ws client2_legacy_id --cloud-ws client2_cloud_id --client-prefix client2_
+gooddata-legacy2cloud insights --legacy-ws client1_legacy_id --cloud-ws client1_cloud_id --client-prefix client1_
 # Repeat for each client
 
 # Migrate all clients dashboards
-gooddata-platform2cloud dashboards --platform-ws client1_platform_id --cloud-ws client1_cloud_id --client-prefix client1_
-gooddata-platform2cloud dashboards --platform-ws client2_platform_id --cloud-ws client2_cloud_id --client-prefix client2_
+gooddata-legacy2cloud dashboards --legacy-ws client1_legacy_id --cloud-ws client1_cloud_id --client-prefix client1_
+gooddata-legacy2cloud dashboards --legacy-ws client2_legacy_id --cloud-ws client2_cloud_id --client-prefix client2_
 # Repeat for each client
 
 # Migrate all clients reports
-gooddata-platform2cloud reports --platform-ws client1_platform_id --cloud-ws client1_cloud_id --client-prefix client1_
-gooddata-platform2cloud reports --platform-ws client2_platform_id --cloud-ws client2_cloud_id --client-prefix client2_
+gooddata-legacy2cloud reports --legacy-ws client1_legacy_id --cloud-ws client1_cloud_id --client-prefix client1_
+gooddata-legacy2cloud reports --legacy-ws client2_legacy_id --cloud-ws client2_cloud_id --client-prefix client2_
 # Repeat for each client
 ```
 
@@ -266,10 +266,10 @@ gooddata-platform2cloud reports --platform-ws client2_platform_id --cloud-ws cli
 Migrating only new objects added since your last migration:
 
 ```
-gooddata-platform2cloud metrics --without-mapped-objects
-gooddata-platform2cloud insights --without-mapped-objects
-gooddata-platform2cloud dashboards --without-mapped-objects
-gooddata-platform2cloud reports --without-mapped-objects
+gooddata-legacy2cloud metrics --without-mapped-objects
+gooddata-legacy2cloud insights --without-mapped-objects
+gooddata-legacy2cloud dashboards --without-mapped-objects
+gooddata-legacy2cloud reports --without-mapped-objects
 ```
 
 Note that the migration scripts currently do not support overwriting already existing objects in Cloud. Instead of overwriting, any object with ID already existing in the Cloud workspace is skipped.
@@ -284,13 +284,13 @@ These parameters are available in all migration scripts:
 
 **--env [path_to_env_file]** - Specify a custom .env file (default: .env)
 
-**--platform-ws** - Source Platform workspace ID. Overrides PLATFORM_WS from the .env file (required for --client-prefix)
+**--legacy-ws** - Source Legacy workspace ID. Overrides LEGACY_WS from the .env file (required for --client-prefix)
 
 **--cloud-ws** - Target Cloud workspace ID. Overrides CLOUD_WS from the .env file (required for --client-prefix)
 
 **--skip-deploy** - Skip deployment to Cloud (useful for testing)
 
-**--dump-platform** - Dump Platform objects to a JSON file
+**--dump-legacy** - Dump Legacy objects to a JSON file
 
 **--dump-cloud** - Dump Cloud objects to a JSON file
 
@@ -308,20 +308,20 @@ These parameters are available in all migration scripts:
 
 #### Element Lookup Parameters
 
-These parameters optimize the lookup of attribute element values (filter values) from Platform during migration. In Platform normally if an attribute value is used in an object definition (i.e. a filter) it has to be present in the workspce to be able to read and migrate it. Otherwise a manual fix is needed to the migrated object. These parameters allow to overcome this limation by looking up the value in the Platform workspace Validation that checks reports and metrics for missing values.
+These parameters optimize the lookup of attribute element values (filter values) from Legacy during migration. In Legacy normally if an attribute value is used in an object definition (i.e. a filter) it has to be present in the workspce to be able to read and migrate it. Otherwise a manual fix is needed to the migrated object. These parameters allow to overcome this limation by looking up the value in the Legacy workspace Validation that checks reports and metrics for missing values.
 These are meant to fill-in a few missing values, do not run the migration tool with these on an empty workspace.
 
-**--element-values-prefetch** - Scans objects for migration for attribute element URIs and batch-fetches their values before processing. This optimization reduces Platform API calls during migration. Works independently of validation. Does not fix any missing values by itself.
+**--element-values-prefetch** - Scans objects for migration for attribute element URIs and batch-fetches their values before processing. This optimization reduces Legacy API calls during migration. Works independently of validation. Does not fix any missing values by itself.
 
-**--validation-element-lookup** - Uses Platform's workspace validation endpoint to fetch missing attribute element values. The validation process returns missing element values for used in metrics and reports and they are later used for the migration of missing values.
+**--validation-element-lookup** - Uses Legacy's workspace validation endpoint to fetch missing attribute element values. The validation process returns missing element values for used in metrics and reports and they are later used for the migration of missing values.
 
-**--validation-element-lookup-with-metrics** - Advanced strategy combining values prefetch prefetch with temporary Platform metric creation for comprehensive element lookup. it creates temporary metrics in the Platform workspace for any unmapped elements, runs validation to populate cache from these metrics, and finally deletes the temporary metrics. This requires permission to create and delete metrics in the Platform workspace. Includes prefetch and validation, no need to use the other `*-element-*` parameters with it.
+**--validation-element-lookup-with-metrics** - Advanced strategy combining values prefetch prefetch with temporary Legacy metric creation for comprehensive element lookup. it creates temporary metrics in the Legacy workspace for any unmapped elements, runs validation to populate cache from these metrics, and finally deletes the temporary metrics. This requires permission to create and delete metrics in the Legacy workspace. Includes prefetch and validation, no need to use the other `*-element-*` parameters with it.
 This parameter is only available for `insights` and `dashboards`
 
 ### LDM Migration
 
 ```
-gooddata-platform2cloud ldm
+gooddata-legacy2cloud ldm
 ```
 
 Script generates:
@@ -330,14 +330,14 @@ Script generates:
 
 **LDM-specific options:**
 
-**--ignore-folders** - Platform folders for LDM objects are not migrated to Cloud tags. Use if you used only tags for organizing the catalog in Platform.
+**--ignore-folders** - Legacy folders for LDM objects are not migrated to Cloud tags. Use if you used only tags for organizing the catalog in Legacy.
 
-**--ignore-explicit-mapping** - Explicit LDM mapping (Platform Mapping from Modeler used for ADDv2) is not used even if it exists. Instead the ADS naming convention is used for LDM mapping.
+**--ignore-explicit-mapping** - Explicit LDM mapping (Legacy Mapping from Modeler used for ADDv2) is not used even if it exists. Instead the ADS naming convention is used for LDM mapping.
 
 ### Metrics Migration
 
 ```
-gooddata-platform2cloud metrics
+gooddata-legacy2cloud metrics
 ```
 
 Script generates:
@@ -353,35 +353,35 @@ Script reads:
 
 Notes:
 
-- If any element values are missing within the Platform metric, they are replaced with `--MISSING VALUE--`. Such metrics can be found in `metrics_maql.log` file and these metrics are also marked with [WARN] in their title (unless `--suppress-migration-warnings` is used). Warnings are always printed to console.
+- If any element values are missing within the Legacy metric, they are replaced with `--MISSING VALUE--`. Such metrics can be found in `metrics_maql.log` file and these metrics are also marked with [WARN] in their title (unless `--suppress-migration-warnings` is used). Warnings are always printed to console.
 - If converted MAQL fails to be saved to Cloud, such metrics are converted to "ERROR metrics". These have [ERROR] in their title, their definition is changed to `SELECT SQRT(-1)` (=returns NULL) and their original converted MAQL is left in the comment. These metrics should be manually inspected.
 - Objects that already exist in Cloud (based on their ID) are skipped and their IDs are recorded in the skipped objects file (unless `--overwrite-existing` is used).
 - To prevent missing element values, use `--validation-element-lookup` (see [Element Lookup Parameters](#element-lookup-parameters))
 
 **Metrics-specific options:**
 
-**--keep-original-ids** - Keep original metric identifiers from Platform. Otherwise the Cloud ID is derived from metric title and Platform identfier.
+**--keep-original-ids** - Keep original metric identifiers from Legacy. Otherwise the Cloud ID is derived from metric title and Legacy identfier.
 
-**--ignore-folders** - Platform folders of Metrics are not migrated to Cloud tags. Use if you used only tags for organizing the catalog in Platform.
+**--ignore-folders** - Legacy folders of Metrics are not migrated to Cloud tags. Use if you used only tags for organizing the catalog in Legacy.
 
 ### Color Palette Migration
 
 ```bash
-gooddata-platform2cloud color-palette
+gooddata-legacy2cloud color-palette
 ```
 
-Migrate color palette from Platform workspace and set it as the default palette at Organization level. This will also remove all other existing color palettes from the organization. Migrating color palettes per workspace is currently not supported.
+Migrate color palette from Legacy workspace and set it as the default palette at Organization level. This will also remove all other existing color palettes from the organization. Migrating color palettes per workspace is currently not supported.
 
 To see the supported CLI arguments, run
 
 ```bash
-gooddata-platform2cloud color-palette --help
+gooddata-legacy2cloud color-palette --help
 ```
 
 ### Insights Migration
 
 ```bash
-gooddata-platform2cloud insights
+gooddata-legacy2cloud insights
 ```
 
 Script generates:
@@ -398,7 +398,7 @@ Script reads:
 
 Notes:
 
-- If any element values used in Platform insight filter definition are missing, they are removed and such insight is marked as [WARN] (unless `--suppress-migration-warnings` is used). It should be manually inspected. Information about what is missing is added to the insight description. Warnings are always printed to console.
+- If any element values used in Legacy insight filter definition are missing, they are removed and such insight is marked as [WARN] (unless `--suppress-migration-warnings` is used). It should be manually inspected. Information about what is missing is added to the insight description. Warnings are always printed to console.
 - If there are any errors in Cloud insight creation, such insights can be found in `insights_logs.log` file.
 - The script cannot migrate Geo charts at this time.
 - Objects that already exist in Cloud (based on their ID) are skipped and their IDs are recorded in the skipped objects file (unless `--overwrite-existing` is used).
@@ -407,7 +407,7 @@ Notes:
 ### Dashboards Migration
 
 ```bash
-gooddata-platform2cloud dashboards
+gooddata-legacy2cloud dashboards
 ```
 
 Script generates:
@@ -426,7 +426,7 @@ Script reads:
 Notes:
 This script only migrates the Responsive Dashboards (a.k.a. KPI Dashboards). The tooling currently does not migrate Pixel Perfect Dashboards.
 
-- If any element values used in the Platform definition of a Dashboards is missing within the Platform dashboards, they are removed and such dashboard is marked as [WARN] (unless `--suppress-migration-warnings` is used) with details in the description for manual inspection. Warnings are always printed to console.
+- If any element values used in the Legacy definition of a Dashboards is missing within the Legacy dashboards, they are removed and such dashboard is marked as [WARN] (unless `--suppress-migration-warnings` is used) with details in the description for manual inspection. Warnings are always printed to console.
 - If there are any errors in Cloud dashboard creation, such dashboards can be found in `dashboards_logs.log` file.
 - All migrated dashboards are first created as empty ones and in the next phase updated to the final structure to make sure all drillToDashboards have existing target. If some target is missing (i.e. because that dashboard is not migrated) such drill is removed and the dashboard is marked as [WARN] (unless `--suppress-migration-warnings` is used) and details about removed drills are put into its description. Warnings are always printed to console.
 - Objects that already exist in Cloud (based on their ID) are skipped and their IDs are recorded in the skipped objects file (unless `--overwrite-existing` is used).
@@ -435,18 +435,18 @@ This script only migrates the Responsive Dashboards (a.k.a. KPI Dashboards). The
 ### Pixel Perfect Dashboards Migration
 
 ```bash
-gooddata-platform2cloud pp-dashboards
+gooddata-legacy2cloud pp-dashboards
 ```
 
 Notes:
 
-- By default, each Platform Pixel Perfect dashboard is migrated **one-to-one** into a single Cloud KPI dashboard that uses **native tabs** (one Platform tab -> one Cloud tab).
-- Use `--pp-legacy-split-tabs` to enable the legacy behavior where each Platform tab is migrated as a separate Cloud dashboard (intended for transition only).
+- By default, each Legacy Pixel Perfect dashboard is migrated **one-to-one** into a single Cloud KPI dashboard that uses **native tabs** (one Legacy tab -> one Cloud tab).
+- Use `--pp-legacy-split-tabs` to enable the legacy behavior where each Legacy tab is migrated as a separate Cloud dashboard (intended for transition only).
 
 ### Reports Migration
 
 ```bash
-gooddata-platform2cloud reports
+gooddata-legacy2cloud reports
 ```
 
 Script generates:
@@ -463,7 +463,7 @@ Script reads:
 
 Notes:
 
-- This script performs a best-effort migration of Pixel Perfect Reports from Platform to Cloud.
+- This script performs a best-effort migration of Pixel Perfect Reports from Legacy to Cloud.
 - Pixel Perfect reports do not exist in Cloud, the script converts them to Cloud visualizations as closely as possible. The visual appearance may differ.
 - Some features specific to Pixel Perfect reports (i.e. types of filters) might not be available in Cloud.
 - Reports containing features not available in Cloud are marked by adding [WARN] to the migrated visualization name (unless `--suppress-migration-warnings` is used). Details are added to the description. Warnings are always printed to console.
@@ -476,7 +476,7 @@ Notes:
 ### Scheduled Exports Migration
 
 ```bash
-gooddata-platform2cloud scheduled-exports
+gooddata-legacy2cloud scheduled-exports
 ```
 
 Script generates:
@@ -492,37 +492,37 @@ Script reads:
 Prerequisities:
 
 - The LDM, insights and dashboards need to be migrated prior to sheduled exports.
-- Platform users need to be provisioned in Cloud. The script will match `to` recipients based on email. Existence of `bcc` recipients is not checked.
+- Legacy users need to be provisioned in Cloud. The script will match `to` recipients based on email. Existence of `bcc` recipients is not checked.
 
 - `CLOUD_NOTIFICATION_CHANNEL_ID` environment variable needs to be set.
 
 Notes:
 
 - By default, the script does not migrate such scheduled emails which do not have a recipient or any attachment.
-- If Platform recipient from `to` field does not exist in Cloud, they are skipped. The script will still attempt to create the export.
-- Platform recipients from `to` field are mapped to Cloud `recipients`, Platform `bcc` email addresses will be set as `external_recipients` in Cloud.
-- Only scheduled emails from Platform KPI dashboards are migrated. The script does not migrate automations generated on Pixel Perfect reports.
-- If a migrated Platform export uses only dashboard filters, but those filters have values selected, these filter values will be baked into the Cloud automation. This could be adjusted for visual exports (PDF), but Cloud tabular exports (CSV, XLSX) can only be created with persistent filter selections.
+- If Legacy recipient from `to` field does not exist in Cloud, they are skipped. The script will still attempt to create the export.
+- Legacy recipients from `to` field are mapped to Cloud `recipients`, Legacy `bcc` email addresses will be set as `external_recipients` in Cloud.
+- Only scheduled emails from Legacy KPI dashboards are migrated. The script does not migrate automations generated on Pixel Perfect reports.
+- If a migrated Legacy export uses only dashboard filters, but those filters have values selected, these filter values will be baked into the Cloud automation. This could be adjusted for visual exports (PDF), but Cloud tabular exports (CSV, XLSX) can only be created with persistent filter selections.
 
 **Reports-specific options:**
 
-**--exports-to-migrate** - List of specific scheduled exports to migrate. The value should be a path to a csv containing a single column (without header) with Platform IDs of scheduled exports which should be migrated.
+**--exports-to-migrate** - List of specific scheduled exports to migrate. The value should be a path to a csv containing a single column (without header) with Legacy IDs of scheduled exports which should be migrated.
 
 ### Dashboard Permissions Migration
 
-After migrating dashboards from Platform to Cloud, and provisioning users and user groups to your Cloud Organization (which is not done by this migration toolkit), you can migrate dashboard ownership and permissions to properly attribute ownership and access rights to non-public dashboards to the original users and user groups.
+After migrating dashboards from Legacy to Cloud, and provisioning users and user groups to your Cloud Organization (which is not done by this migration toolkit), you can migrate dashboard ownership and permissions to properly attribute ownership and access rights to non-public dashboards to the original users and user groups.
 
 ```bash
-gooddata-platform2cloud dashboard-permissions
+gooddata-legacy2cloud dashboard-permissions
 ```
 
 **What this script does:**
 
-1. Fetches selected Platform dashboards based on filter parameters
-2. Identifies the creator (account that created the dashboard) from Platform
-3. Collects sharing information (grantees) from Platform dashboard permissions
-4. Maps Platform users to Cloud users based on either Platform `email` field or Platform `login` field
-5. Maps Platform user groups to Cloud user groups based on group names
+1. Fetches selected Legacy dashboards based on filter parameters
+2. Identifies the creator (account that created the dashboard) from Legacy
+3. Collects sharing information (grantees) from Legacy dashboard permissions
+4. Maps Legacy users to Cloud users based on either Legacy `email` field or Legacy `login` field
+5. Maps Legacy user groups to Cloud user groups based on group names
 6. Updates the Cloud workspace layout to reflect the correct creator and dashboard permissions for matched users and user groups
 
 **Script generates:**
@@ -537,18 +537,18 @@ gooddata-platform2cloud dashboard-permissions
 **Prerequisites:**
 
 - Dashboards need to be migrated to Cloud before running this script
-- Platform users should be provisioned in Cloud with matching identifiers:
-  - By default: Platform `login` field should match Cloud user `email` field
-  - With `--use-email`: Platform `email` field (not `login`) should match Cloud user `email` field
-- Platform user groups should exist in Cloud with matching names
-  - Note that while in Platform the user groups are workspace-specific, in Cloud they are organization-wide
+- Legacy users should be provisioned in Cloud with matching identifiers:
+  - By default: Legacy `login` field should match Cloud user `email` field
+  - With `--use-email`: Legacy `email` field (not `login`) should match Cloud user `email` field
+- Legacy user groups should exist in Cloud with matching names
+  - Note that while in Legacy the user groups are workspace-specific, in Cloud they are organization-wide
 - User account executing the migration needs `org.MANAGE` permissions to update workspace layout via API
 
 **Dashboard Permissions-specific options:**
 
 **--dump-layout** - Store the layout JSON locally before and after modifications for debugging purposes
 
-**--use-email** - Use Platform email field instead of login field when matching Platform users to Cloud users. By default, the script uses the login field from Platform users to match against Cloud user emails. With this parameter it uses email field from Platform users to match against Cloud user emails.
+**--use-email** - Use Legacy email field instead of login field when matching Legacy users to Cloud users. By default, the script uses the login field from Legacy users to match against Cloud user emails. With this parameter it uses email field from Legacy users to match against Cloud user emails.
 
 **--skip-creators** - Skip migrating creator permissions (only migrate grantees)
 
@@ -556,11 +556,11 @@ gooddata-platform2cloud dashboard-permissions
 
 **--skip-group-grantees** - Skip migrating user group grantee permissions (only migrate creators and individual grantees)
 
-**--permission [VIEW|SHARE|EDIT]** - Dashboard permission level to assign to grantee users and user groups (default: EDIT). The dashboard creator always receives EDIT permission regardless of this setting. Note that in Platform there was only a single dashboard permission and ability to edit was determined by user role in the workspace.
+**--permission [VIEW|SHARE|EDIT]** - Dashboard permission level to assign to grantee users and user groups (default: EDIT). The dashboard creator always receives EDIT permission regardless of this setting. Note that in Legacy there was only a single dashboard permission and ability to edit was determined by user role in the workspace.
 
-**--print-user-mappings** - Print detailed user mapping information for each Platform user during the migration process
+**--print-user-mappings** - Print detailed user mapping information for each Legacy user during the migration process
 
-**--keep-existing-permissions** - Keep existing Cloud permissions that are not present in the Platform source. Without this flag the script removes unmanaged permissions during the synchronization step.
+**--keep-existing-permissions** - Keep existing Cloud permissions that are not present in the Legacy source. Without this flag the script removes unmanaged permissions during the synchronization step.
 
 **--skip-kpi-dashboards** - Skip adjusting permissions of KPI dashboards.
 
@@ -573,28 +573,28 @@ gooddata-platform2cloud dashboard-permissions
 ```bash
 
 # Migrate all permissions (creators, users, and groups)
-gooddata-platform2cloud dashboard-permissions
+gooddata-legacy2cloud dashboard-permissions
 
 # Only migrate creators, skip all grantees
-gooddata-platform2cloud dashboard-permissions --skip-individual-grantees --skip-group-grantees
+gooddata-legacy2cloud dashboard-permissions --skip-individual-grantees --skip-group-grantees
 
 # Migrate with VIEW permission for grantees instead of EDIT
-gooddata-platform2cloud dashboard-permissions --permission VIEW
+gooddata-legacy2cloud dashboard-permissions --permission VIEW
 
 # Update with client prefix
-gooddata-platform2cloud dashboard-permissions --client-prefix client1_ --platform-ws client1_platform_ws --cloud-ws client1_cloud_ws
+gooddata-legacy2cloud dashboard-permissions --client-prefix client1_ --legacy-ws client1_legacy_ws --cloud-ws client1_cloud_ws
 ```
 
 **Important notes:**
-**Warning:** By default this script synchronizes permissions, meaning it removes any Cloud permissions that do not exist in Platform (unless they belong to sections skipped with `--skip-*`). This includes the permission of the account used for the migraiton! Workspace admins can still see all the dashboards. Use `--keep-existing-permissions` to keep extra Cloud permissions untouched.
+**Warning:** By default this script synchronizes permissions, meaning it removes any Cloud permissions that do not exist in Legacy (unless they belong to sections skipped with `--skip-*`). This includes the permission of the account used for the migraiton! Workspace admins can still see all the dashboards. Use `--keep-existing-permissions` to keep extra Cloud permissions untouched.
 
 - This script modifies the workspace layout directly via the Layout API
 - Always test with `--skip-deploy` first to preview changes
 - The script only logs actual changes made, not items that were already correct
 - User mapping is case-sensitive:
-  - By default: Platform `login` field is matched against Cloud user `email`
-  - With `--use-email`: Platform `email` field is matched against Cloud user `email`
-- User group mapping is based on exact name matching between Platform and Cloud
+  - By default: Legacy `login` field is matched against Cloud user `email`
+  - With `--use-email`: Legacy `email` field is matched against Cloud user `email`
+- User group mapping is based on exact name matching between Legacy and Cloud
 - The script does not provision users or user groups to the Cloud organization
 - The script does not grant users workspace permissions (only dashboard-specific permissions)
 - The log file groups changes by dashboard title with one JSON line per change for easy parsing
@@ -604,11 +604,11 @@ gooddata-platform2cloud dashboard-permissions --client-prefix client1_ --platfor
 ### Filtering Objects for Migration
 
 The migration scripts provide flexible filtering options to control which objects get migrated. All these parameters only apply to `metrics`, `insights` and `dashboards`. (Logical Data Model is always migrated as a complete).
-The filtering works as a two-step process. First set of parameters (--only-\* parameters) defines which objects are being read from Platform. Then these can be further filtered down by various properties defined by a second set of parameters (--with\_/--without\*).
+The filtering works as a two-step process. First set of parameters (--only-\* parameters) defines which objects are being read from Legacy. Then these can be further filtered down by various properties defined by a second set of parameters (--with\_/--without\*).
 
 #### Initial Object Selection (--only-\* parameters)
 
-Controls which objects are gathered from Platform for the migration:
+Controls which objects are gathered from Legacy for the migration:
 
 - **--only-object-ids** - Only migrate specific objects by their numeric IDs (comma-separated)
 - **--only-identifiers** - Only migrate specific objects by their alphanumeric identifiers (comma-separated)
@@ -627,20 +627,20 @@ Further filter the downloaded objects based on specific features before migratin
 - **--without-tags** - Only migrate downloaded objects that don't have any of the specified tags (comma-separated)
 - **--with-locked-flag** - Only migrate downloaded objects that have locked=1 flag in their metadata
 - **--without-locked-flag** - Only migrate downloaded objects that have locked=0 or no locked flag in their metadata
-- **--with-creator-profiles** - Only migrate downloaded objects created by one of the specified Platform user profile IDs (comma-separated, without /gdc/account/profile/ prefix)
-- **--without-creator-profiles** - Only migrate downloaded objects NOT created by any of the specified Platform user profile IDs (comma-separated, without /gdc/account/profile/ prefix)
-- **--without-mapped-objects** - Filter out downloaded objects with Platform identifiers already present in the corresponding mapping file(s). By default, checks all (default and additional) mapping files. Use --without-mapped-objects default_only to only check the default mapping file.
+- **--with-creator-profiles** - Only migrate downloaded objects created by one of the specified Legacy user profile IDs (comma-separated, without /gdc/account/profile/ prefix)
+- **--without-creator-profiles** - Only migrate downloaded objects NOT created by any of the specified Legacy user profile IDs (comma-separated, without /gdc/account/profile/ prefix)
+- **--without-mapped-objects** - Filter out downloaded objects with Legacy identifiers already present in the corresponding mapping file(s). By default, checks all (default and additional) mapping files. Use --without-mapped-objects default_only to only check the default mapping file.
 
 Multiple --with*/--without* parameters can be used together and are treated with AND operator
 
-**Note on Creator Profiles:** The Platform user profile ID can be found in the object's metadata under the `author` field. It's formatted as `/gdc/account/profile/{profile_id}`. When using the `--with-creator-profiles` or `--without-creator-profiles` parameters, provide only the `{profile_id}` part (e.g., `0102b54c3859150e0d75e52f1a3d034f`).
+**Note on Creator Profiles:** The Legacy user profile ID can be found in the object's metadata under the `author` field. It's formatted as `/gdc/account/profile/{profile_id}`. When using the `--with-creator-profiles` or `--without-creator-profiles` parameters, provide only the `{profile_id}` part (e.g., `0102b54c3859150e0d75e52f1a3d034f`).
 
 ### Understanding Mapping Files
 
 Mapping files are critical for the migration process:
 
 - Each migration script generates a mapping file of the objects it migrated (e.g., ldm_mappings.csv, metric_mappings.csv)
-- These files contain "Platform ID (identifier)" to "Cloud ID" mappings
+- These files contain "Legacy ID (identifier)" to "Cloud ID" mappings
 - Later scripts use these mappings to establish relationships between migrated objects
 - Presence of an identifier in the mapping file (from previous migration runs) can also be used to filter which objects to migrate
 - There can be more than one mapping file on the script input - in that case all are used combined
@@ -648,7 +648,7 @@ Mapping files are critical for the migration process:
 
 ### Custom Client Object Migration
 
-Cloud supports true inheritance of objects between workspaces, while in Platform all the objects are local copies. To properly migrate between these two paradigms, you need to decide what is common and should go to the parent and what are client-specific objects and will go to individual client workspaces.
+Cloud supports true inheritance of objects between workspaces, while in Legacy all the objects are local copies. To properly migrate between these two paradigms, you need to decide what is common and should go to the parent and what are client-specific objects and will go to individual client workspaces.
 
 The migration tooling does support this use case directly with a parameter --client-prefix:
 
@@ -656,7 +656,7 @@ The migration tooling does support this use case directly with a parameter --cli
 
 - Sets the prefix for all output files (same as --output-files-prefix)
 - Enables checking the parent workspace (same as --check-parent-workspace)
-- **Must** be used together with --platform-ws and --cloud-ws parameters
+- **Must** be used together with --legacy-ws and --cloud-ws parameters
 - Looks for both standard and prefixed mapping files (i.e. metric_mappings.csv and client1_metric_mappings.csv) if found, will use both
 - Automatically enables filtering by default mapping files (same as --without-mapped-objects default_only)
 
@@ -665,10 +665,10 @@ All the objects migrated to the parent workspace are in the default mapping file
 
 The target Cloud workspace already must be in a workspace hierarchy and have a parent defined.
 
-**Note:** When using `--client-prefix`, you **must** also specify `--platform-ws` and `--cloud-ws` parameters. This is a safety measure to ensure you're migrating between the correct client workspaces, not accidentally using the master workspaces from your .env file.
+**Note:** When using `--client-prefix`, you **must** also specify `--legacy-ws` and `--cloud-ws` parameters. This is a safety measure to ensure you're migrating between the correct client workspaces, not accidentally using the master workspaces from your .env file.
 
 ```bash
-gooddata-platform2cloud insights --client-prefix client1_ --platform-ws client1_ws --cloud-ws client1_cloud_ws
+gooddata-legacy2cloud insights --client-prefix client1_ --legacy-ws client1_ws --cloud-ws client1_cloud_ws
 ```
 
 ### Advanced Mapping File Parameters
@@ -695,7 +695,7 @@ You can specify multiple mapping files in two ways:
 1. **Using comma-separated lists:**
 
 ```bash
-gooddata-platform2cloud insights --metric-mapping-file main_metrics.csv,project1_metrics.csv,project2_metrics.csv
+gooddata-legacy2cloud insights --metric-mapping-file main_metrics.csv,project1_metrics.csv,project2_metrics.csv
 ```
 
 This loads all three mapping files for lookups
@@ -703,7 +703,7 @@ This loads all three mapping files for lookups
 2. **Using --client-prefix:**
 
 ```bash
-gooddata-platform2cloud insights --client-prefix client1_
+gooddata-legacy2cloud insights --client-prefix client1_
 ```
 
 This loads both the default file (e.g., metric_mappings.csv) and the prefixed version (e.g., client1_metric_mappings.csv) if it exists.
@@ -715,7 +715,7 @@ The --client-prefix parameter is a handy shortcut that automatically sets --outp
 The toolkit includes a web-based comparison tool that visualizes migration results in user-friendly HTML pages, making it easy to review and validate migrated content.
 
 ```bash
-gooddata-platform2cloud web-compare
+gooddata-legacy2cloud web-compare
 ```
 
 ### Key Features
@@ -723,7 +723,7 @@ gooddata-platform2cloud web-compare
 - Automatically processes all migration log files in a directory
 - Detects object types (metrics, insights, dashboards) and client prefixes from log filenames
 - Generates a separate HTML page for each log file with detailed migration results
-- Provides side-by-side comparison view of objects in Platform and Cloud
+- Provides side-by-side comparison view of objects in Legacy and Cloud
 - Organizes prefixed client outputs in separate directories. Shows also objects inherited from the hierarchy
 - Includes filtering, sorting, and search capabilities in the web interface
 - Works completely offline without requiring a web server
@@ -732,13 +732,13 @@ gooddata-platform2cloud web-compare
 
 ```bash
 # Process logs in current directory, output to `compare_web` folder
-gooddata-platform2cloud web-compare --env .env
+gooddata-legacy2cloud web-compare --env .env
 
 # Specify custom directories
-gooddata-platform2cloud web-compare --log-dir=logs/project1 --output-dir=reviews/project1
+gooddata-legacy2cloud web-compare --log-dir=logs/project1 --output-dir=reviews/project1
 
 # Do not show inherited objects for client workspaces
-gooddata-platform2cloud web-compare --skip-inherited
+gooddata-legacy2cloud web-compare --skip-inherited
 ```
 
 ### Workspace Structure
@@ -765,11 +765,11 @@ The web interface provides several powerful features:
    - Sort the table by clicking on any column header
 
 3. **Object Comparison**
-   - Click the "Compare" button to open a live side-by-side view of the object in Platform and Cloud
+   - Click the "Compare" button to open a live side-by-side view of the object in Legacy and Cloud
    - Use the divider controls to adjust the split view ratio (the arrow icons maximize one of the views, the = sign splits the view equally).
    - Navigate between individual objects with Previous/Next buttons
-   - Open either object in its full native UI with the "Open in Platform/Cloud" buttons
-   - Compare and Platform and Cloud workspace links require valid GoodData sessions in your browser to work
+   - Open either object in its full native UI with the "Open in Legacy/Cloud" buttons
+   - Compare and Legacy and Cloud workspace links require valid GoodData sessions in your browser to work
    - Note: For Pixel Perfect Reports, the comparison is currently not avialable for inherited objects
 
 4. **Status Indicators**
@@ -779,7 +779,7 @@ The web interface provides several powerful features:
 
 ### Command Line Options
 
-Usage: gooddata-platform2cloud web-compare [options]
+Usage: gooddata-legacy2cloud web-compare [options]
 
 Options:
 | Option | Description |

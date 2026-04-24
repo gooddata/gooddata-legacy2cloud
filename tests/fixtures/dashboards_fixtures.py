@@ -7,31 +7,29 @@ import json
 
 import pytest
 
-from gooddata_platform2cloud.backends.cloud.client import CloudClient
-from gooddata_platform2cloud.backends.platform.client import PlatformClient
-from gooddata_platform2cloud.dashboards.cloud_dashboards_builder import (
+from gooddata_legacy2cloud.backends.cloud.client import CloudClient
+from gooddata_legacy2cloud.backends.legacy.client import LegacyClient
+from gooddata_legacy2cloud.dashboards.cloud_dashboards_builder import (
     CloudDashboardsBuilder,
 )
-from gooddata_platform2cloud.dashboards.data_classes import DashboardContext
-from gooddata_platform2cloud.id_mappings import IdMappings
+from gooddata_legacy2cloud.dashboards.data_classes import DashboardContext
+from gooddata_legacy2cloud.id_mappings import IdMappings
 from tests.conftest import MAPPING_FILES_DIR
 
-PLATFORM_OBJECTS_DIR = "tests/data/dashboards/platform_objects"
+LEGACY_OBJECTS_DIR = "tests/data/dashboards/legacy_objects"
 
 
 @pytest.fixture
-def dashboards_context(
-    platform_client: PlatformClient, cloud_client: CloudClient, mocker
-):
+def dashboards_context(legacy_client: LegacyClient, cloud_client: CloudClient, mocker):
     """Create Context for dashboards builder with mocked APIs."""
-    # Load Platform objects by URI mapping
-    with open(f"{PLATFORM_OBJECTS_DIR}/objects_by_uri.json", "r") as file:
+    # Load Legacy objects by URI mapping
+    with open(f"{LEGACY_OBJECTS_DIR}/objects_by_uri.json", "r") as file:
         objects_by_uri = json.load(file)
 
     def get_objects_by_uri(uri):
         return objects_by_uri[uri]
 
-    mocker.patch.object(platform_client, "get_object", side_effect=get_objects_by_uri)
+    mocker.patch.object(legacy_client, "get_object", side_effect=get_objects_by_uri)
 
     # Mock Cloud filter context methods
     def create_filter_context(filter_context_object):
@@ -77,7 +75,7 @@ def dashboards_context(
     mapping_logger = mocker.MagicMock()
 
     return DashboardContext(
-        platform_client=platform_client,
+        legacy_client=legacy_client,
         cloud_client=cloud_client,
         ldm_mappings=ldm_mappings,
         metric_mappings=metric_mappings,

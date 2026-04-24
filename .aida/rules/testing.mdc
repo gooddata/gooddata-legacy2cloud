@@ -28,6 +28,6 @@ Do not put domain-specific fixtures in `conftest.py`.
 
 ## Test Data
 
-- Use real sanitized data from `tests/data/` (JSON/CSV files with real Platform/Cloud structures)
+- Use real sanitized data from `tests/data/` (JSON/CSV files with real Legacy/Cloud structures)
 - Do not create synthetic data when real examples exist
 - Mock all external calls (API, file I/O) — tests must not hit real APIs

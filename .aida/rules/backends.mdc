@@ -1,12 +1,12 @@
 # (C) 2026 GoodData Corporation
 ---
 globs:
-  - gooddata_platform2cloud/backends/**
+  - gooddata_legacy2cloud/backends/**
 ---
 
 # GoodData Migration Toolkit - Backend API Clients
 
-## Platform API Client (`gooddata_platform2cloud/backends/platform/client.py`)
+## Legacy API Client (`gooddata_legacy2cloud/backends/legacy/client.py`)
 
 - Built-in caching: `self.cache`, `self.cache_attribute_elements`
 - All requests go through `_get()`; 60s timeout
@@ -15,7 +15,7 @@ Key methods: `get_model()`, `get_metrics()`, `get_insights()`, `get_reports()`,
 `get_dashboards()`, `get_scheduled_exports()`, `get_validated_attribute_elements()`,
 `initialize_attribute_elements_cache()`
 
-## Cloud API Client (`gooddata_platform2cloud/backends/cloud/client.py`)
+## Cloud API Client (`gooddata_legacy2cloud/backends/cloud/client.py`)
 
 - Auth: Bearer token in `Authorization` header
 - Page size: 250 objects per page

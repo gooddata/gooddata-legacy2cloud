@@ -8,37 +8,37 @@ import json
 import pytest
 from gooddata_sdk import CatalogUser
 
-from gooddata_platform2cloud.backends.cloud.client import CloudClient
-from gooddata_platform2cloud.backends.platform.client import PlatformClient
-from gooddata_platform2cloud.id_mappings import IdMappings
-from gooddata_platform2cloud.models.platform.analytical_dashboards import (
+from gooddata_legacy2cloud.backends.cloud.client import CloudClient
+from gooddata_legacy2cloud.backends.legacy.client import LegacyClient
+from gooddata_legacy2cloud.id_mappings import IdMappings
+from gooddata_legacy2cloud.models.legacy.analytical_dashboards import (
     AnalyticalDashboardWrapper,
 )
-from gooddata_platform2cloud.scheduled_exports.scheduled_export_context import (
+from gooddata_legacy2cloud.scheduled_exports.scheduled_export_context import (
     Backends,
     CommandLineArguments,
     Logging,
     Mappings,
     ScheduledExportsContext,
 )
-from gooddata_platform2cloud.scheduled_exports.scheduled_exports import (
+from gooddata_legacy2cloud.scheduled_exports.scheduled_exports import (
     ScheduledExportMigrator,
 )
 from tests.conftest import MAPPING_FILES_DIR
 
 CLOUD_OBJECTS_DIR = "tests/data/scheduled_exports/cloud_objects"
-PLATFORM_OBJECTS_DIR = "tests/data/scheduled_exports/platform_objects"
+LEGACY_OBJECTS_DIR = "tests/data/scheduled_exports/legacy_objects"
 
 
 @pytest.fixture
 def scheduled_exports_context(
-    platform_client: PlatformClient, cloud_client: CloudClient, mocker
+    legacy_client: LegacyClient, cloud_client: CloudClient, mocker
 ):
     """Mock scheduled exports context object."""
     return ScheduledExportsContext(
         input_file=None,
         notification_channel_id="invalid_channel_id",
-        backends=Backends(platform_client=platform_client, cloud_client=cloud_client),
+        backends=Backends(legacy_client=legacy_client, cloud_client=cloud_client),
         mappings=Mappings(
             ldm_mappings=IdMappings(f"{MAPPING_FILES_DIR}/ldm_mappings.csv"),
             metric_mappings=IdMappings(f"{MAPPING_FILES_DIR}/metric_mappings.csv"),
@@ -54,8 +54,8 @@ def scheduled_exports_context(
             mapping_logger=mocker.MagicMock(), output_logger=mocker.MagicMock()
         ),
         command_line_arguments=CommandLineArguments(
-            dump_platform=False,
-            platform_dump_file="",
+            dump_legacy=False,
+            legacy_dump_file="",
             dump_cloud=False,
             cloud_dump_file="",
             cleanup_target_env=False,
@@ -68,7 +68,7 @@ def scheduled_exports_context(
 
 @pytest.fixture
 def scheduled_exports_migrator(
-    scheduled_exports_context, mocker, platform_dashboards_for_exports
+    scheduled_exports_context, mocker, legacy_dashboards_for_exports
 ):
     """Create a scheduled export migrator instance with appropriate mocks"""
 
@@ -131,36 +131,36 @@ def scheduled_exports_migrator(
         side_effect=mock_get_attribute_json,
     )
 
-    # Load Platform objects by URI. The mocked Platform method will return objects from this file.
-    with open(f"{PLATFORM_OBJECTS_DIR}/objects_by_uri.json", "r") as file:
+    # Load Legacy objects by URI. The mocked Legacy method will return objects from this file.
+    with open(f"{LEGACY_OBJECTS_DIR}/objects_by_uri.json", "r") as file:
         objects_by_uri = json.load(file)
 
     def get_objects_by_uri(uri):
         return objects_by_uri[uri]
 
     mocker.patch.object(
-        scheduled_exports_migrator.context.backends.platform_client,
+        scheduled_exports_migrator.context.backends.legacy_client,
         "get_object",
         side_effect=get_objects_by_uri,
     )
 
     mocker.patch.object(
-        scheduled_exports_migrator.context.backends.platform_client,
+        scheduled_exports_migrator.context.backends.legacy_client,
         "get_dashboard_objects",
-        return_value=platform_dashboards_for_exports,
+        return_value=legacy_dashboards_for_exports,
     )
 
     return scheduled_exports_migrator
 
 
 @pytest.fixture
-def platform_dashboards_for_exports():
-    """Load Platform dashboards for exports."""
-    with open(f"{PLATFORM_OBJECTS_DIR}/platform_dashboards.json", "r") as file:
-        raw_platform_dashboards = json.load(file)
+def legacy_dashboards_for_exports():
+    """Load Legacy dashboards for exports."""
+    with open(f"{LEGACY_OBJECTS_DIR}/dashboards.json", "r") as file:
+        raw_legacy_dashboards = json.load(file)
         return [
             AnalyticalDashboardWrapper(**dashboard)
-            for dashboard in raw_platform_dashboards
+            for dashboard in raw_legacy_dashboards
         ]
 
 

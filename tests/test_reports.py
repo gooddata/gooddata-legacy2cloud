@@ -1,18 +1,18 @@
 # (C) 2026 GoodData Corporation
 """
-This test aims to verify the transformation of Platform reports to Cloud reports.
+This test aims to verify the transformation of Legacy reports to Cloud reports.
 
-All calls to Platform and Cloud are mocked, the data is loaded from JSON files stored
+All calls to Legacy and Cloud are mocked, the data is loaded from JSON files stored
 in the `tests/data/reports` directory.
 
-The test verifies that the transformation of Platform reports metadata matches
+The test verifies that the transformation of Legacy reports metadata matches
 the expected Cloud reports metadata.
 """
 
 import pytest
 from pytest import CaptureFixture
 
-from gooddata_platform2cloud.reports.cloud_reports_builder import CloudReportsBuilder
+from gooddata_legacy2cloud.reports.cloud_reports_builder import CloudReportsBuilder
 from tests.test_utils import dicts_are_equal, load_json
 
 TEST_CASES_DIR = "tests/data/reports/test_cases"
@@ -31,24 +31,24 @@ def test_reports_migration(
     reports_builder: CloudReportsBuilder,
     capsys: CaptureFixture[str],
 ) -> None:
-    """Test the transformation of Platform reports to Cloud reports.
+    """Test the transformation of Legacy reports to Cloud reports.
 
     To add a test case, add its name to the test parameters and create two files
     in the `tests/data/reports/test_cases` directory:
-    - <case_file_name>_platform.json - Platform reports metadata
+    - <case_file_name>_legacy.json - Legacy reports metadata
     - <case_file_name>_cloud.json - Expected Cloud reports metadata
     """
 
-    # Load Platform reports
-    platform_reports = load_json(f"{TEST_CASES_DIR}/{case_file_name}_platform.json")
-    assert isinstance(platform_reports, list), "Platform reports should be a list"
+    # Load Legacy reports
+    legacy_reports = load_json(f"{TEST_CASES_DIR}/{case_file_name}_legacy.json")
+    assert isinstance(legacy_reports, list), "Legacy reports should be a list"
 
     # Load expected Cloud reports
     expected_cloud_reports = load_json(f"{TEST_CASES_DIR}/{case_file_name}_cloud.json")
     assert isinstance(expected_cloud_reports, list), "Cloud reports should be a list"
 
-    # Process Platform reports
-    reports_builder.process_platform_reports(platform_reports)
+    # Process Legacy reports
+    reports_builder.process_legacy_reports(legacy_reports)
 
     # Get Cloud reports
     actual_cloud_reports = reports_builder.get_cloud_reports()

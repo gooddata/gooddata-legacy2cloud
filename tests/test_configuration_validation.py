@@ -2,19 +2,19 @@
 import pytest
 from pydantic import ValidationError
 
-from gooddata_platform2cloud.config.configuration_objects import (
+from gooddata_legacy2cloud.config.configuration_objects import (
     MetricConfig,
     ScheduledExportConfig,
     WorkspaceConfig,
     is_client_prefix_used,
     is_mapping_params_used,
 )
-from gooddata_platform2cloud.config.shared_configs import (
+from gooddata_legacy2cloud.config.shared_configs import (
     CommonConfig,
     ObjectFilterConfig,
     ObjectMigrationConfig,
 )
-from gooddata_platform2cloud.constants import (
+from gooddata_legacy2cloud.constants import (
     LDM_MAPPING_FILE,
     METRIC_MAPPING_FILE,
 )
@@ -57,7 +57,7 @@ def test_is_mapping_params_used_custom():
 
 def test_validate_config_client_prefix_conflict():
     common = CommonConfig(client_prefix="test_")
-    workspace = WorkspaceConfig(platform_ws="b", cloud_ws="p")
+    workspace = WorkspaceConfig(legacy_ws="b", cloud_ws="p")
     # Non-default mapping file
     # We expect ValidationError because validate_config is called in model_post_init
     with pytest.raises(
@@ -73,11 +73,11 @@ def test_validate_config_client_prefix_conflict():
 
 
 def test_validate_config_missing_workspaces():
-    # Missing platform_ws and cloud_ws when client_prefix is used
+    # Missing legacy_ws and cloud_ws when client_prefix is used
     common = CommonConfig(client_prefix="test_")
     with pytest.raises(
         ValidationError,
-        match="`client-prefix` requires both `platform-ws` and `cloud-ws`",
+        match="`client-prefix` requires both `legacy-ws` and `cloud-ws`",
     ):
         MetricConfig(
             workspace_config=WorkspaceConfig(),
@@ -89,7 +89,7 @@ def test_validate_config_missing_workspaces():
 
 def test_validate_config_side_effects_metric():
     common = CommonConfig(client_prefix="test_")
-    workspace = WorkspaceConfig(platform_ws="b", cloud_ws="p")
+    workspace = WorkspaceConfig(legacy_ws="b", cloud_ws="p")
     config = MetricConfig(
         workspace_config=workspace,
         common_config=common,
@@ -105,7 +105,7 @@ def test_validate_config_side_effects_metric():
 
 def test_validate_config_side_effects_scheduled_export():
     common = CommonConfig(client_prefix="test_")
-    workspace = WorkspaceConfig(platform_ws="b", cloud_ws="p")
+    workspace = WorkspaceConfig(legacy_ws="b", cloud_ws="p")
     config = ScheduledExportConfig(
         workspace_config=workspace,
         common_config=common,

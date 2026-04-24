@@ -1,12 +1,12 @@
 # (C) 2026 GoodData Corporation
 from unittest.mock import MagicMock
 
-from gooddata_platform2cloud.dashboards.filter_context import FilterContext
+from gooddata_legacy2cloud.dashboards.filter_context import FilterContext
 
 
 def test_get_filter_elements_by_wraps_attributes_as_identifier_refs():
     ctx = MagicMock()
-    ctx.platform_client.get_object.return_value = {
+    ctx.legacy_client.get_object.return_value = {
         "attribute": {
             "meta": {"identifier": "attr.region.regionid", "category": "attribute"},
             "content": {},

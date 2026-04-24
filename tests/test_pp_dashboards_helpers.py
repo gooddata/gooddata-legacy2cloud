@@ -4,7 +4,7 @@ Unit tests for pixel perfect dashboard helper functions.
 """
 
 # Import helper functions from the helpers module
-from gooddata_platform2cloud.pp_dashboards.helpers import extract_values_by_key
+from gooddata_legacy2cloud.pp_dashboards.helpers import extract_values_by_key
 
 
 class TestExtractValuesByKey:

@@ -1,17 +1,17 @@
 # (C) 2026 GoodData Corporation
 """
-This test aims to verify the transformation of Platform insights to Cloud insights.
+This test aims to verify the transformation of Legacy insights to Cloud insights.
 
-All calls to Platform and Cloud are mocked, the data is loaded from JSON files stored
+All calls to Legacy and Cloud are mocked, the data is loaded from JSON files stored
 in the `tests/data/insights` directory.
 
-The test verifies that the transformation of Platform insights metadata matches
+The test verifies that the transformation of Legacy insights metadata matches
 the expected Cloud insights metadata.
 """
 
 import pytest
 
-from gooddata_platform2cloud.insights.cloud_insights_builder import CloudInsightsBuilder
+from gooddata_legacy2cloud.insights.cloud_insights_builder import CloudInsightsBuilder
 from tests.test_utils import dicts_are_equal, load_json
 
 TEST_CASES_DIR = "tests/data/insights/test_cases"
@@ -33,24 +33,24 @@ def test_insights_migration(
     case_file_name: str,
     insights_builder: CloudInsightsBuilder,
 ) -> None:
-    """Test the transformation of Platform insights to Cloud insights.
+    """Test the transformation of Legacy insights to Cloud insights.
 
     To add a test case, add its name to the test parameters and create two files
     in the `tests/data/insights/test_cases` directory:
-    - <case_file_name>_platform.json - Platform insights metadata
+    - <case_file_name>_legacy.json - Legacy insights metadata
     - <case_file_name>_cloud.json - Expected Cloud insights metadata
     """
 
-    # Load Platform insights
-    platform_insights = load_json(f"{TEST_CASES_DIR}/{case_file_name}_platform.json")
-    assert isinstance(platform_insights, list), "Platform insights should be a list"
+    # Load Legacy insights
+    legacy_insights = load_json(f"{TEST_CASES_DIR}/{case_file_name}_legacy.json")
+    assert isinstance(legacy_insights, list), "Legacy insights should be a list"
 
     # Load expected Cloud insights
     expected_cloud_insights = load_json(f"{TEST_CASES_DIR}/{case_file_name}_cloud.json")
     assert isinstance(expected_cloud_insights, list), "Cloud insights should be a list"
 
-    # Process Platform insights
-    insights_builder.process_platform_insights(platform_insights)
+    # Process Legacy insights
+    insights_builder.process_legacy_insights(legacy_insights)
 
     # Get Cloud insights
     actual_cloud_insights = insights_builder.get_cloud_insights()

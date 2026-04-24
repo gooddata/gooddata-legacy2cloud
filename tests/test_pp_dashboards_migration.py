@@ -2,45 +2,45 @@
 """
 Integration tests for pixel perfect dashboard migration.
 
-These tests verify the end-to-end transformation of Platform pixel perfect dashboards
+These tests verify the end-to-end transformation of Legacy pixel perfect dashboards
 to Cloud responsive dashboards.
 """
 
 import pytest
 from pytest import CaptureFixture
 
-from gooddata_platform2cloud.helpers import PP_FILTER_CONTEXT_PREFIX
-from gooddata_platform2cloud.pp_dashboards.utils import sanitize_string
+from gooddata_legacy2cloud.helpers import PP_FILTER_CONTEXT_PREFIX
+from gooddata_legacy2cloud.pp_dashboards.utils import sanitize_string
 from tests.test_utils import load_json
 
-PLATFORM_OBJECTS_DIR = "tests/data/pixel_perfect_dashboards/platform_objects"
+LEGACY_OBJECTS_DIR = "tests/data/pixel_perfect_dashboards/legacy_objects"
 
 
 @pytest.mark.parametrize("case_file_name", ["simple_two_tabs"])
 def test_pp_dashboard_migration(
     case_file_name,
     pp_dashboards_builder,
-    mock_platform_pp_dashboards,
+    mock_legacy_pp_dashboards,
     mock_cloud_pp_api,
     capsys: CaptureFixture[str],
 ):
-    """Test the transformation of Platform pixel perfect dashboard to Cloud.
+    """Test the transformation of Legacy pixel perfect dashboard to Cloud.
 
     This test will be fully implemented after the Builder pattern is in place (Phase 2).
 
     To add test cases:
     1. Add case name to parametrize list
     2. Create test data files in tests/data/pixel_perfect_dashboards/test_cases/
-       - <case_name>_platform.json - Platform PP dashboard
+       - <case_name>_legacy.json - Legacy PP dashboard
        - <case_name>_cloud.json - Expected Cloud dashboard
     """
 
     assert case_file_name == "simple_two_tabs"
-    platform_dashboards = [mock_platform_pp_dashboards]
+    legacy_dashboards = [mock_legacy_pp_dashboards]
 
     # skip_deploy=True so tests don't depend on deployment API calls
-    pp_dashboards_builder.process_platform_dashboards(
-        platform_dashboards=platform_dashboards,
+    pp_dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards=legacy_dashboards,
         skip_deploy=True,
         overwrite_existing=False,
     )
@@ -69,15 +69,15 @@ def test_pp_dashboard_migration(
 
 def test_home_tab_not_filtered(
     pp_dashboards_builder,
-    mock_platform_pp_dashboards,
+    mock_legacy_pp_dashboards,
     mock_cloud_pp_api,
     capsys: CaptureFixture[str],
 ):
     """Test that tabs named 'Home' are NOT filtered out after bug fix."""
-    platform_dashboard = load_json(f"{PLATFORM_OBJECTS_DIR}/pp_dashboard_home_tab.json")
+    legacy_dashboard = load_json(f"{LEGACY_OBJECTS_DIR}/pp_dashboard_home_tab.json")
 
-    pp_dashboards_builder.process_platform_dashboards(
-        platform_dashboards=[platform_dashboard],
+    pp_dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards=[legacy_dashboard],
         skip_deploy=True,
         overwrite_existing=False,
     )
@@ -94,16 +94,14 @@ def test_home_tab_not_filtered(
 
 def test_tab_with_text_items_only(
     pp_dashboards_builder,
-    mock_platform_pp_dashboards,
+    mock_legacy_pp_dashboards,
     mock_cloud_pp_api,
 ):
     """Test migration of tab containing only textItems."""
-    platform_dashboard = load_json(
-        f"{PLATFORM_OBJECTS_DIR}/pp_dashboard_text_only.json"
-    )
+    legacy_dashboard = load_json(f"{LEGACY_OBJECTS_DIR}/pp_dashboard_text_only.json")
 
-    pp_dashboards_builder.process_platform_dashboards(
-        platform_dashboards=[platform_dashboard],
+    pp_dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards=[legacy_dashboard],
         skip_deploy=True,
         overwrite_existing=False,
     )
@@ -122,16 +120,14 @@ def test_tab_with_text_items_only(
 
 def test_tab_with_filters(
     pp_dashboards_builder,
-    mock_platform_pp_dashboards,
+    mock_legacy_pp_dashboards,
     mock_cloud_pp_api,
 ):
     """Test migration of tab with filter items."""
-    platform_dashboard = load_json(
-        f"{PLATFORM_OBJECTS_DIR}/pp_dashboard_with_filters.json"
-    )
+    legacy_dashboard = load_json(f"{LEGACY_OBJECTS_DIR}/pp_dashboard_with_filters.json")
 
-    pp_dashboards_builder.process_platform_dashboards(
-        platform_dashboards=[platform_dashboard],
+    pp_dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards=[legacy_dashboard],
         skip_deploy=True,
         overwrite_existing=False,
     )
@@ -161,16 +157,14 @@ def test_tab_with_filters(
 
 def test_dashboard_with_multiple_tabs(
     pp_dashboards_builder,
-    mock_platform_pp_dashboards,
+    mock_legacy_pp_dashboards,
     mock_cloud_pp_api,
 ):
     """Test migration of dashboard with 3+ tabs."""
-    platform_dashboard = load_json(
-        f"{PLATFORM_OBJECTS_DIR}/pp_dashboard_multi_tab.json"
-    )
+    legacy_dashboard = load_json(f"{LEGACY_OBJECTS_DIR}/pp_dashboard_multi_tab.json")
 
-    pp_dashboards_builder.process_platform_dashboards(
-        platform_dashboards=[platform_dashboard],
+    pp_dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards=[legacy_dashboard],
         skip_deploy=True,
         overwrite_existing=False,
     )
@@ -182,12 +176,12 @@ def test_dashboard_with_multiple_tabs(
 
 def test_legacy_split_flag_keeps_old_behavior(
     pp_dashboards_builder_legacy_split,
-    mock_platform_pp_dashboards,
+    mock_legacy_pp_dashboards,
     mock_cloud_pp_api,
 ):
     """Test that legacy split-tabs behavior still produces one dashboard per tab."""
-    pp_dashboards_builder_legacy_split.process_platform_dashboards(
-        platform_dashboards=[mock_platform_pp_dashboards],
+    pp_dashboards_builder_legacy_split.process_legacy_dashboards(
+        legacy_dashboards=[mock_legacy_pp_dashboards],
         skip_deploy=True,
         overwrite_existing=False,
     )
@@ -199,16 +193,16 @@ def test_legacy_split_flag_keeps_old_behavior(
 
 def test_tabbed_dashboard_creates_filter_context_per_tab_and_keeps_empty_tabs(
     pp_dashboards_builder,
-    mock_platform_pp_dashboards,
+    mock_legacy_pp_dashboards,
     mock_cloud_pp_api,
 ):
     """Test tabbed dashboard keeps empty tabs and creates filter context per migrated tab."""
-    platform_dashboard = load_json(
-        f"{PLATFORM_OBJECTS_DIR}/pp_dashboard_real_multi_tab_min.json"
+    legacy_dashboard = load_json(
+        f"{LEGACY_OBJECTS_DIR}/pp_dashboard_real_multi_tab_min.json"
     )
 
-    pp_dashboards_builder.process_platform_dashboards(
-        platform_dashboards=[platform_dashboard],
+    pp_dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards=[legacy_dashboard],
         skip_deploy=True,
         overwrite_existing=False,
     )
@@ -245,16 +239,16 @@ def test_tabbed_dashboard_creates_filter_context_per_tab_and_keeps_empty_tabs(
 
 def test_tabbed_dashboard_skips_unsupported_tab_but_keeps_valid_tabs(
     pp_dashboards_builder,
-    mock_platform_pp_dashboards,
+    mock_legacy_pp_dashboards,
     mock_cloud_pp_api,
 ):
     """Test that unsupported tabs are skipped while other tabs still migrate."""
-    platform_dashboard = load_json(
-        f"{PLATFORM_OBJECTS_DIR}/pp_dashboard_real_unsupported_tab_min.json"
+    legacy_dashboard = load_json(
+        f"{LEGACY_OBJECTS_DIR}/pp_dashboard_real_unsupported_tab_min.json"
     )
 
-    pp_dashboards_builder.process_platform_dashboards(
-        platform_dashboards=[platform_dashboard],
+    pp_dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards=[legacy_dashboard],
         skip_deploy=True,
         overwrite_existing=False,
     )
@@ -269,17 +263,17 @@ def test_tabbed_dashboard_skips_unsupported_tab_but_keeps_valid_tabs(
 
 def test_tabbed_dashboard_all_tabs_unsupported_is_skipped(
     pp_dashboards_builder,
-    mock_platform_pp_dashboards,
+    mock_legacy_pp_dashboards,
     mock_cloud_pp_api,
     caplog: pytest.LogCaptureFixture,
 ):
     """Test that a dashboard is skipped when no tabs can be migrated."""
-    platform_dashboard = load_json(
-        f"{PLATFORM_OBJECTS_DIR}/pp_dashboard_real_all_tabs_unsupported_min.json"
+    legacy_dashboard = load_json(
+        f"{LEGACY_OBJECTS_DIR}/pp_dashboard_real_all_tabs_unsupported_min.json"
     )
 
-    pp_dashboards_builder.process_platform_dashboards(
-        platform_dashboards=[platform_dashboard],
+    pp_dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards=[legacy_dashboard],
         skip_deploy=True,
         overwrite_existing=False,
     )

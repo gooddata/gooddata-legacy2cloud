@@ -1,19 +1,19 @@
 # (C) 2026 GoodData Corporation
 """
-This test aims to verify the transformation of Platform scheduled exports to Cloud.
+This test aims to verify the transformation of Legacy scheduled exports to Cloud.
 
-All calls to Platform and Cloud are mocked, the data is loaded from JSON files stored
+All calls to Legacy and Cloud are mocked, the data is loaded from JSON files stored
 in the `tests/data/scheduled_exports` directory.
 
-The test verifies that the transformation of Platform scheduled exports metadata matches
+The test verifies that the transformation of Legacy scheduled exports metadata matches
 the expected Cloud metadata.
 """
 
 import pytest
 
-from gooddata_platform2cloud.id_mappings import IdMappings
-from gooddata_platform2cloud.models.enums import Action
-from gooddata_platform2cloud.scheduled_exports.scheduled_export_context import (
+from gooddata_legacy2cloud.id_mappings import IdMappings
+from gooddata_legacy2cloud.models.enums import Action
+from gooddata_legacy2cloud.scheduled_exports.scheduled_export_context import (
     Backends,
     CommandLineArguments,
     Logging,
@@ -51,11 +51,11 @@ def test_scheduled_exports_migration(
     mocker,
     caplog,
 ):
-    """Test the transformation of Platform scheduled exports to Cloud.
+    """Test the transformation of Legacy scheduled exports to Cloud.
 
     To add a test case, add its name to the test parameters and create two files
     in the `tests/data/scheduled_exports/test_cases` directory:
-    - <case_file_name>_platform.json - Platform scheduled email metadata
+    - <case_file_name>_legacy.json - Legacy scheduled email metadata
     - <case_file_name>_cloud.json - Expected Cloud metadata
 
     Make sure to provide any additional metadata objects needed for processing of
@@ -67,14 +67,10 @@ def test_scheduled_exports_migration(
         scheduled_exports_migrator, "_set_automation_author", return_value=None
     )
 
-    # Load Platform scheduled email
-    platform_metadata_data = load_json(
-        f"{TEST_CASES_DIR}/{case_file_name}_platform.json"
-    )
-    assert isinstance(platform_metadata_data, list), (
-        "Platform metadata should be a list"
-    )
-    platform_metadata: list[dict] = platform_metadata_data
+    # Load Legacy scheduled email
+    legacy_metadata_data = load_json(f"{TEST_CASES_DIR}/{case_file_name}_legacy.json")
+    assert isinstance(legacy_metadata_data, list), "Legacy metadata should be a list"
+    legacy_metadata: list[dict] = legacy_metadata_data
 
     # Load expected Cloud metadata (the result of the migration)
     expected_cloud_metadata_data = load_json(
@@ -86,9 +82,9 @@ def test_scheduled_exports_migration(
     expected_cloud_metadata: dict = expected_cloud_metadata_data
 
     mocker.patch.object(
-        scheduled_exports_migrator.context.backends.platform_client,
+        scheduled_exports_migrator.context.backends.legacy_client,
         "get_objects_by_category",
-        return_value=platform_metadata,
+        return_value=legacy_metadata,
     )
 
     # Mocke the deployment function to compare the metadata instead
@@ -119,7 +115,7 @@ def test_scheduled_exports_migration(
 
 @pytest.mark.parametrize("notification_cahnnel_id", [None, ""])
 def test_scheduled_exports_migration_falsey_notification_channel_id(
-    notification_cahnnel_id, platform_client, cloud_client, mocker
+    notification_cahnnel_id, legacy_client, cloud_client, mocker
 ) -> None:
     """Test that the context object raises a ValueError if the notification
     channel id is missing (None or empty string).
@@ -131,9 +127,7 @@ def test_scheduled_exports_migration_falsey_notification_channel_id(
         ScheduledExportsContext(
             input_file=None,
             notification_channel_id=notification_cahnnel_id,
-            backends=Backends(
-                platform_client=platform_client, cloud_client=cloud_client
-            ),
+            backends=Backends(legacy_client=legacy_client, cloud_client=cloud_client),
             mappings=Mappings(
                 ldm_mappings=IdMappings(
                     "tests/data/shared/mapping_files/ldm_mappings.csv"
@@ -155,8 +149,8 @@ def test_scheduled_exports_migration_falsey_notification_channel_id(
                 mapping_logger=mocker.MagicMock(), output_logger=mocker.MagicMock()
             ),
             command_line_arguments=CommandLineArguments(
-                dump_platform=False,
-                platform_dump_file="",
+                dump_legacy=False,
+                legacy_dump_file="",
                 dump_cloud=False,
                 cloud_dump_file="",
                 cleanup_target_env=False,
@@ -189,14 +183,10 @@ def test_intentional_skipping(
     - When migrated email has a recipient that is not found in Cloud, the recipient is skipped.
     """
 
-    # Load Platform scheduled email
-    platform_metadata_data = load_json(
-        f"{TEST_CASES_DIR}/{case_file_name}_platform.json"
-    )
-    assert isinstance(platform_metadata_data, list), (
-        "Platform metadata should be a list"
-    )
-    platform_metadata: list[dict] = platform_metadata_data
+    # Load Legacy scheduled email
+    legacy_metadata_data = load_json(f"{TEST_CASES_DIR}/{case_file_name}_legacy.json")
+    assert isinstance(legacy_metadata_data, list), "Legacy metadata should be a list"
+    legacy_metadata: list[dict] = legacy_metadata_data
 
     # Patch the _set_automation_author
     mocker.patch.object(
@@ -204,9 +194,9 @@ def test_intentional_skipping(
     )
 
     mocker.patch.object(
-        scheduled_exports_migrator.context.backends.platform_client,
+        scheduled_exports_migrator.context.backends.legacy_client,
         "get_objects_by_category",
-        return_value=platform_metadata,
+        return_value=legacy_metadata,
     )
 
     # Skip the deployment. In case of missing user, the script would go on with
@@ -239,20 +229,20 @@ def test_with_overwrite_existing(scheduled_exports_migrator, mocker) -> None:
         scheduled_exports_migrator, "_set_automation_author", return_value=None
     )
 
-    csv_data = load_json(f"{TEST_CASES_DIR}/csv_default_filters_platform.json")
-    pdf_all_data = load_json(f"{TEST_CASES_DIR}/pdf_all_custom_platform.json")
+    csv_data = load_json(f"{TEST_CASES_DIR}/csv_default_filters_legacy.json")
+    pdf_all_data = load_json(f"{TEST_CASES_DIR}/pdf_all_custom_legacy.json")
     pdf_absolute_data = load_json(
-        f"{TEST_CASES_DIR}/pdf_absolute_date_filter_platform.json"
+        f"{TEST_CASES_DIR}/pdf_absolute_date_filter_legacy.json"
     )
-    assert isinstance(csv_data, list), "Platform metadata should be a list"
-    assert isinstance(pdf_all_data, list), "Platform metadata should be a list"
-    assert isinstance(pdf_absolute_data, list), "Platform metadata should be a list"
-    platform_metadata: list[dict] = csv_data + pdf_all_data + pdf_absolute_data
+    assert isinstance(csv_data, list), "Legacy metadata should be a list"
+    assert isinstance(pdf_all_data, list), "Legacy metadata should be a list"
+    assert isinstance(pdf_absolute_data, list), "Legacy metadata should be a list"
+    legacy_metadata: list[dict] = csv_data + pdf_all_data + pdf_absolute_data
 
     mocker.patch.object(
-        scheduled_exports_migrator.context.backends.platform_client,
+        scheduled_exports_migrator.context.backends.legacy_client,
         "get_objects_by_category",
-        return_value=platform_metadata,
+        return_value=legacy_metadata,
     )
 
     # Mock existing upstream automation

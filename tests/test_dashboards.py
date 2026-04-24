@@ -1,19 +1,19 @@
 # (C) 2026 GoodData Corporation
 """
-This test aims to verify the transformation of Platform dashboards to Cloud dashboards.
+This test aims to verify the transformation of Legacy dashboards to Cloud dashboards.
 
-All calls to Platform and Cloud are mocked, the data is loaded from JSON files stored
+All calls to Legacy and Cloud are mocked, the data is loaded from JSON files stored
 in the `tests/data/dashboards` directory.
 
-The test verifies that the transformation of Platform dashboards metadata matches
+The test verifies that the transformation of Legacy dashboards metadata matches
 the expected Cloud dashboards metadata.
 """
 
 import pytest
 from pytest import CaptureFixture
 
-from gooddata_platform2cloud.dashboards.cloud_dashboard import CloudDashboard
-from gooddata_platform2cloud.dashboards.cloud_dashboards_builder import (
+from gooddata_legacy2cloud.dashboards.cloud_dashboard import CloudDashboard
+from gooddata_legacy2cloud.dashboards.cloud_dashboards_builder import (
     CloudDashboardsBuilder,
 )
 from tests.test_utils import dicts_are_equal, load_json
@@ -40,11 +40,11 @@ def test_dashboards_migration(
     capsys: CaptureFixture[str],
     mocker,
 ) -> None:
-    """Test the transformation of Platform dashboards to Cloud dashboards.
+    """Test the transformation of Legacy dashboards to Cloud dashboards.
 
     To add a test case, add its name to the test parameters and create two files
     in the `tests/data/dashboards/test_cases` directory:
-    - <case_file_name>_platform.json - Platform dashboards metadata
+    - <case_file_name>_legacy.json - Legacy dashboards metadata
     - <case_file_name>_cloud.json - Expected Cloud dashboards metadata
     """
 
@@ -57,9 +57,9 @@ def test_dashboards_migration(
             CloudDashboard, "_resolve_widget_type", return_value="insight"
         )
 
-    # Load Platform dashboards
-    platform_dashboards = load_json(f"{TEST_CASES_DIR}/{case_file_name}_platform.json")
-    assert isinstance(platform_dashboards, list), "Platform dashboards should be a list"
+    # Load Legacy dashboards
+    legacy_dashboards = load_json(f"{TEST_CASES_DIR}/{case_file_name}_legacy.json")
+    assert isinstance(legacy_dashboards, list), "Legacy dashboards should be a list"
 
     # Load expected Cloud dashboards
     expected_cloud_dashboards = load_json(
@@ -69,9 +69,9 @@ def test_dashboards_migration(
         "Cloud dashboards should be a list"
     )
 
-    # Process Platform dashboards (skip_deploy=True to avoid Cloud API calls)
-    dashboards_builder.process_platform_dashboards(
-        platform_dashboards, skip_deploy=True, overwrite_existing=False
+    # Process Legacy dashboards (skip_deploy=True to avoid Cloud API calls)
+    dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards, skip_deploy=True, overwrite_existing=False
     )
 
     # Get Cloud dashboards

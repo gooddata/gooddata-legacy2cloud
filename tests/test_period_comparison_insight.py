@@ -1,7 +1,7 @@
 # (C) 2026 GoodData Corporation
 """Unit tests for PeriodComparisonInsight.create_insight_object_from_kpi.
 
-Covers the edge case where a Platform KPI has comparisonType != "none" but no
+Covers the edge case where a Legacy KPI has comparisonType != "none" but no
 widget-level dateDataSet. Cloud headline insights require a date dataset for
 period comparison, so the comparison must be dropped during migration.
 """
@@ -10,7 +10,7 @@ import logging
 
 import pytest
 
-from gooddata_platform2cloud.insights.period_comparison_insight import (
+from gooddata_legacy2cloud.insights.period_comparison_insight import (
     PeriodComparisonInsight,
 )
 
@@ -48,7 +48,7 @@ def _make_ctx(mocker):
             }
         raise KeyError(uri)
 
-    ctx.platform_client.get_object.side_effect = get_object
+    ctx.legacy_client.get_object.side_effect = get_object
     ctx.metric_mappings.search_mapping_identifier.return_value = "cloud.metric.revenue"
     ctx.ldm_mappings.search_mapping_identifier.return_value = "cloud.date_ds"
     return ctx
@@ -57,7 +57,7 @@ def _make_ctx(mocker):
 def _build(kpi: dict, mocker) -> dict | None:
     inst = PeriodComparisonInsight(
         ctx=_make_ctx(mocker),
-        platform_definition=kpi,
+        legacy_definition=kpi,
         new_insight_id="new-insight-id",
         cloud_filters=[],
     )

@@ -8,7 +8,7 @@ separate from the integration tests in test_dashboards.py.
 
 import pytest
 
-from gooddata_platform2cloud.dashboards.cloud_dashboard import CloudDashboard
+from gooddata_legacy2cloud.dashboards.cloud_dashboard import CloudDashboard
 
 
 def test_resolve_widget_type_kpi_widget_returns_kpi(mocker):
@@ -23,14 +23,14 @@ def test_resolve_widget_type_kpi_widget_returns_kpi(mocker):
     result = dashboard._resolve_widget_type(widget_object)
 
     assert result == "kpi"
-    mock_ctx.platform_client.get_object.assert_not_called()
+    mock_ctx.legacy_client.get_object.assert_not_called()
 
 
 def test_resolve_widget_type_headline_visualization_returns_kpi(mocker):
     """Headline visualization widgets should return 'kpi' type."""
     mock_ctx = mocker.MagicMock()
 
-    mock_ctx.platform_client.get_object.side_effect = [
+    mock_ctx.legacy_client.get_object.side_effect = [
         # First call: get visualization object
         {
             "visualizationObject": {
@@ -69,14 +69,14 @@ def test_resolve_widget_type_headline_visualization_returns_kpi(mocker):
     result = dashboard._resolve_widget_type(widget_object)
 
     assert result == "kpi"
-    assert mock_ctx.platform_client.get_object.call_count == 2
+    assert mock_ctx.legacy_client.get_object.call_count == 2
 
 
 def test_resolve_widget_type_non_headline_visualization_returns_insight(mocker):
     """Non-headline visualization widgets should return 'insight' type."""
     mock_ctx = mocker.MagicMock()
 
-    mock_ctx.platform_client.get_object.side_effect = [
+    mock_ctx.legacy_client.get_object.side_effect = [
         # First call: get visualization object
         {
             "visualizationObject": {
@@ -121,7 +121,7 @@ def test_resolve_widget_type_without_class_returns_insight(mocker):
     """Visualization without visualizationClass should return 'insight' (fallback)."""
     mock_ctx = mocker.MagicMock()
 
-    mock_ctx.platform_client.get_object.return_value = {
+    mock_ctx.legacy_client.get_object.return_value = {
         "visualizationObject": {
             "content": {
                 "buckets": []
@@ -140,7 +140,7 @@ def test_resolve_widget_type_without_class_returns_insight(mocker):
     result = dashboard._resolve_widget_type(widget_object)
 
     assert result == "insight"
-    mock_ctx.platform_client.get_object.assert_called_once()
+    mock_ctx.legacy_client.get_object.assert_called_once()
 
 
 def test_resolve_widget_type_unknown_raises_value_error(mocker):

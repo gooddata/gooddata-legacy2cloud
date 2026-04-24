@@ -5,43 +5,43 @@ This module contains fixtures for the LDM migration tests.
 
 import pytest
 
-from gooddata_platform2cloud.ldm.cloud_model_builder import CloudModelBuilder
-from gooddata_platform2cloud.ldm.model_builder_config import CloudModelBuilderConfig
+from gooddata_legacy2cloud.ldm.cloud_model_builder import CloudModelBuilder
+from gooddata_legacy2cloud.ldm.model_builder_config import CloudModelBuilderConfig
 from tests.test_utils import load_json
 
-PLATFORM_OBJECTS_DIR = "tests/data/ldm/platform_objects"
+LEGACY_OBJECTS_DIR = "tests/data/ldm/legacy_objects"
 
 
 @pytest.fixture
-def ldm_builder_config(platform_client, mocker):
-    """Create CloudModelBuilderConfig with mocked Platform API."""
+def ldm_builder_config(legacy_client, mocker):
+    """Create CloudModelBuilderConfig with mocked Legacy API."""
 
-    # Mock Platform methods that TagProvider needs
+    # Mock Legacy methods that TagProvider needs
     def mock_get_attributes():
-        return load_json(f"{PLATFORM_OBJECTS_DIR}/attributes.json")
+        return load_json(f"{LEGACY_OBJECTS_DIR}/attributes.json")
 
     def mock_get_facts():
-        return load_json(f"{PLATFORM_OBJECTS_DIR}/facts.json")
+        return load_json(f"{LEGACY_OBJECTS_DIR}/facts.json")
 
     mocker.patch.object(
-        platform_client, "get_attributes", return_value=mock_get_attributes()
+        legacy_client, "get_attributes", return_value=mock_get_attributes()
     )
-    mocker.patch.object(platform_client, "get_facts", return_value=mock_get_facts())
+    mocker.patch.object(legacy_client, "get_facts", return_value=mock_get_facts())
 
-    # Mock Platform methods that ADSMapping needs
+    # Mock Legacy methods that ADSMapping needs
     def mock_get_dataset_mappings():
-        return load_json(f"{PLATFORM_OBJECTS_DIR}/dataset_mappings.json")
+        return load_json(f"{LEGACY_OBJECTS_DIR}/dataset_mappings.json")
 
     def mock_get_output_stage():
-        return load_json(f"{PLATFORM_OBJECTS_DIR}/otuput_stage.json")
+        return load_json(f"{LEGACY_OBJECTS_DIR}/otuput_stage.json")
 
     mocker.patch.object(
-        platform_client,
+        legacy_client,
         "get_dataset_mappings",
         return_value=mock_get_dataset_mappings(),
     )
     mocker.patch.object(
-        platform_client, "get_output_stage", return_value=mock_get_output_stage()
+        legacy_client, "get_output_stage", return_value=mock_get_output_stage()
     )
 
     return CloudModelBuilderConfig(
@@ -51,7 +51,7 @@ def ldm_builder_config(platform_client, mocker):
         ws_data_filter_id="",
         ws_data_filter_column="",
         ws_data_filter_description="",
-        platform_client=platform_client,
+        legacy_client=legacy_client,
         ignore_folders=False,
         ignore_explicit_mapping=False,
     )

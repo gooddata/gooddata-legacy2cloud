@@ -28,8 +28,8 @@ Script input is defined by configuration objects in `utils/config/configuration_
 
 ## Output Files
 
-- `{prefix}{type}_mappings.csv` — Platform identifier, Platform ID, Cloud ID
+- `{prefix}{type}_mappings.csv` — Legacy identifier, Legacy ID, Cloud ID
 - `{prefix}{type}_logs.log` — Transformation details, warnings, errors
 - `{prefix}cloud_failed_{type}.json` — Objects that failed to create
 - `{prefix}cloud_skipped_{type}.json` — Objects skipped (already exist)
-- `{prefix}platform_{type}.json` / `{prefix}cloud_{type}.json` — Dumps (optional)
+- `{prefix}legacy_{type}.json` / `{prefix}cloud_{type}.json` — Dumps (optional)

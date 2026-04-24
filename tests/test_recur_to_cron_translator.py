@@ -2,7 +2,7 @@
 import csv
 import os
 
-from gooddata_platform2cloud.scheduled_exports.recur_to_cron.translator import (
+from gooddata_legacy2cloud.scheduled_exports.recur_to_cron.translator import (
     RecurToCronTranslator,
 )
 

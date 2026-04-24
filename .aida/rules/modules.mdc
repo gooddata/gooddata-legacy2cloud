@@ -7,31 +7,31 @@ alwaysApply: true
 
 ## Migration Scripts
 
-- `gooddata_platform2cloud/workfows/migrate_ldm.py` - Logical Data Model migration
-- `gooddata_platform2cloud/workfows/migrate_metrics.py` - Metrics migration
-- `gooddata_platform2cloud/workfows/migrate_insights.py` - Insights/visualizations migration
-- `gooddata_platform2cloud/workfows/migrate_dashboards.py` - Dashboard migration
-- `gooddata_platform2cloud/workfows/migrate_reports.py` - Pixel Perfect Reports migration
-- `gooddata_platform2cloud/workfows/migrate_scheduled_exports.py` - Scheduled exports migration
-- `gooddata_platform2cloud/workfows/migrate_dashboard_permissions.py` - Dashboard permissions migration
+- `gooddata_legacy2cloud/workfows/migrate_ldm.py` - Logical Data Model migration
+- `gooddata_legacy2cloud/workfows/migrate_metrics.py` - Metrics migration
+- `gooddata_legacy2cloud/workfows/migrate_insights.py` - Insights/visualizations migration
+- `gooddata_legacy2cloud/workfows/migrate_dashboards.py` - Dashboard migration
+- `gooddata_legacy2cloud/workfows/migrate_reports.py` - Pixel Perfect Reports migration
+- `gooddata_legacy2cloud/workfows/migrate_scheduled_exports.py` - Scheduled exports migration
+- `gooddata_legacy2cloud/workfows/migrate_dashboard_permissions.py` - Dashboard permissions migration
 
-## gooddata_platform2cloud/ Subdirectories
+## gooddata_legacy2cloud/ Subdirectories
 
-- `gooddata_platform2cloud/backends/` — API clients for Platform and Cloud platforms
-- `gooddata_platform2cloud/ldm/` — Logical Data Model transformation logic
-- `gooddata_platform2cloud/metrics/` — Metrics and MAQL conversion
-- `gooddata_platform2cloud/insights/` — Visualization migration logic
-- `gooddata_platform2cloud/dashboards/` — Dashboard migration with drill support
-- `gooddata_platform2cloud/reports/` — Pixel Perfect report conversion
-- `gooddata_platform2cloud/scheduled_exports/` — Scheduled email migration
-- `gooddata_platform2cloud/dashboard_permissions/` — Permission and creator migration
-- `gooddata_platform2cloud/user_management/` — User/group mapping between Platform and Cloud
-- `gooddata_platform2cloud/models/` — Pydantic data models (partial coverage)
-- `gooddata_platform2cloud/arg_parsing/` — CLI argument handling
-- `gooddata_platform2cloud/mapping/` — Read/write/filter mapping files (CSV: Platform ID → Cloud ID)
-- `gooddata_platform2cloud/web_compare_processing/` — Web-based validation tool processing
-- `gooddata_platform2cloud/output_writer.py` — Centralized output file writing
-- `gooddata_platform2cloud/constants.py` — Project-wide constants
+- `gooddata_legacy2cloud/backends/` — API clients for Legacy and Cloud legacys
+- `gooddata_legacy2cloud/ldm/` — Logical Data Model transformation logic
+- `gooddata_legacy2cloud/metrics/` — Metrics and MAQL conversion
+- `gooddata_legacy2cloud/insights/` — Visualization migration logic
+- `gooddata_legacy2cloud/dashboards/` — Dashboard migration with drill support
+- `gooddata_legacy2cloud/reports/` — Pixel Perfect report conversion
+- `gooddata_legacy2cloud/scheduled_exports/` — Scheduled email migration
+- `gooddata_legacy2cloud/dashboard_permissions/` — Permission and creator migration
+- `gooddata_legacy2cloud/user_management/` — User/group mapping between Legacy and Cloud
+- `gooddata_legacy2cloud/models/` — Pydantic data models (partial coverage)
+- `gooddata_legacy2cloud/arg_parsing/` — CLI argument handling
+- `gooddata_legacy2cloud/mapping/` — Read/write/filter mapping files (CSV: Legacy ID → Cloud ID)
+- `gooddata_legacy2cloud/web_compare_processing/` — Web-based validation tool processing
+- `gooddata_legacy2cloud/output_writer.py` — Centralized output file writing
+- `gooddata_legacy2cloud/constants.py` — Project-wide constants
 
 ## tests/ Directory
 
