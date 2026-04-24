@@ -8,10 +8,7 @@ globs:
 
 ## Requirements
 
-All new code must have unit tests. Test:
-- Happy path (normal expected usage)
-- Error cases (API failures, missing data, invalid input)
-- Edge cases (empty inputs, None values, boundary conditions)
+All new code must have unit tests.
 
 ## Stack
 

@@ -2,9 +2,6 @@
 
 ## Docstring Requirements
 
-- Every new function/method: 1-2 line concise docstring
-- Every new class: brief description of purpose and responsibility
-- Every new module: high-level overview at the top
 - Public APIs (entry points, Builder methods): Google-style with Args/Returns/Raises
 
 ## README.md Requirements

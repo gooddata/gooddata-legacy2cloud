@@ -15,10 +15,6 @@ Migration Scripts (src/gooddata_legacy2cloud/workflows/migrate_*.py) → Builder
 - **Builders**: Transform Legacy objects to Cloud objects (e.g., `CloudMetricsBuilder`)
 - **API Clients**: `src/gooddata_legacy2cloud/backends/legacy/client.py` (custom REST), `src/gooddata_legacy2cloud/backends/cloud/client.py` (SDK + custom REST)
 
-## Data Flow
-
-Legacy API → Raw JSON → Builder transformation → Cloud JSON → Cloud API
-
 ## Mapping Files
 
 - CSV files tracking Legacy ID → Cloud ID mappings
@@ -37,9 +33,3 @@ Enables parent/child workspace migrations. With `--client-prefix client1_`:
 - Reads both default and prefixed mapping files
 - Only migrates objects not in default (parent) mappings
 - All output files get the prefix
-
-## Required .env Variables
-
-- Legacy: `LEGACY_DOMAIN`, `LEGACY_LOGIN`, `LEGACY_PASSWORD`, `LEGACY_WS`
-- Cloud: `CLOUD_DOMAIN`, `CLOUD_TOKEN`, `CLOUD_WS`
-- Data source: `DATA_SOURCE_ID`, `SCHEMA`, `TABLE_PREFIX`

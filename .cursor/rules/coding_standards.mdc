@@ -35,3 +35,8 @@ All new code requires comprehensive type hints (params, return values, class att
 - Single responsibility per function/class/module
 - Prefer composition over inheritance
 - All imports at top of file, PEP 8 order (stdlib → third-party → local)
+
+## Validation
+
+Run `make check` before completing any code change. Runs: format, lint, tests, type-check.
+Individual targets: `make format`, `make lint`, `make test`, `make type`.
