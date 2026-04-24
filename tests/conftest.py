@@ -23,6 +23,23 @@ pytest_plugins = [
 ]
 
 
+@pytest.fixture(autouse=True)
+def reset_output_prefix(monkeypatch):
+    import gooddata_platform2cloud.helpers as helpers
+
+    monkeypatch.setattr(helpers, "OUTPUT_FILES_PREFIX", "")
+
+
+@pytest.fixture(autouse=True)
+def mock_output_writer(mocker):
+    mocker.patch("gooddata_platform2cloud.metrics.cloud_metrics_builder.OutputWriter")
+    mocker.patch("gooddata_platform2cloud.insights.cloud_insights_builder.OutputWriter")
+    mocker.patch("gooddata_platform2cloud.reports.cloud_reports_builder.OutputWriter")
+    mocker.patch(
+        "gooddata_platform2cloud.dashboards.cloud_dashboards_builder.OutputWriter"
+    )
+
+
 # Define common fixtures here:
 @pytest.fixture
 def platform_client():
