@@ -5,6 +5,7 @@
 
 # files which does not support comments or must be skipped
 **/*.md
+**/*.mdc
 **/*.json
 **/*.csv
 

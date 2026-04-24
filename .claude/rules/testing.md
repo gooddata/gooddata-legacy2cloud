@@ -1,10 +1,3 @@
-# (C) 2026 GoodData Corporation
----
-globs:
-  - tests/**
-  - test_*.py
----
-
 # GoodData Migration Toolkit - Testing Guidelines
 
 ## Requirements

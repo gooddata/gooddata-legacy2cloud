@@ -1,0 +1,23 @@
+---
+alwaysApply: true
+---
+
+# Conversation Guidelines
+
+## When to Ask Questions
+
+Ask when the goal is ambiguous, multiple valid approaches exist with tradeoffs, or a change
+requires modifying sections of the codebase beyond the original scope.
+
+Don't ask for simple, clear requests with one obvious implementation.
+
+## Scope Management
+
+Only fix what was asked. If the task requires changes beyond the original scope, confirm
+with the user before proceeding.
+
+## Response Style
+
+- Keep responses concise
+- Only fix what was asked — don't proactively change unrelated code
+- Follow existing patterns and conventions

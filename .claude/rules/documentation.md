@@ -1,10 +1,3 @@
-# (C) 2026 GoodData Corporation
----
-globs:
-  - "**/*.py"
-  - README.md
----
-
 # GoodData Migration Toolkit - Documentation Guidelines
 
 ## Docstring Requirements

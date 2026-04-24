@@ -1,0 +1,27 @@
+# GoodData Migration Toolkit - Backend API Clients
+
+## Legacy API Client (`src/gooddata_legacy2cloud/backends/legacy/client.py`)
+
+- Built-in caching: `self.cache`, `self.cache_attribute_elements`
+- All requests go through `_get()`; 60s timeout
+
+Key methods: `get_model()`, `get_metrics()`, `get_insights()`, `get_reports()`,
+`get_dashboards()`, `get_scheduled_exports()`, `get_validated_attribute_elements()`,
+`initialize_attribute_elements_cache()`
+
+## Cloud API Client (`src/gooddata_legacy2cloud/backends/cloud/client.py`)
+
+- Auth: Bearer token in `Authorization` header
+- Page size: 250 objects per page
+- Uses official `gooddata-sdk` for some operations (`self.sdk`) — prefer SDK over custom REST
+- Retry: tenacity, 3 attempts, exponential backoff (4–10s), skips `DO_NOT_RETRY_EXCEPTIONS`
+- 60s timeout; supports concurrent requests via `ThreadSafeCount`
+
+Key methods: `get_workspace()`, `check_parent_workspace()`, `get_ldm()`, `put_ldm()`,
+`get_metrics()`, `get_insights()`, `get_dashboards()`, `create_or_update()`,
+`get_layout()`, `put_layout()`
+
+## Object Creation Strategy (`cloud_object_creator_strategy.py`)
+
+Strategy pattern for creating different Cloud object types. Determines API endpoint,
+request format, batch vs individual creation, and error handling per type.

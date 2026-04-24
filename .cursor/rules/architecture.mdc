@@ -1,4 +1,3 @@
-# (C) 2026 GoodData Corporation
 ---
 alwaysApply: true
 ---
@@ -8,17 +7,17 @@ alwaysApply: true
 ## Terminology
 
 - **Legacy**: GoodData Legacy (legacy private cloud)
-- **Cloud**: GoodData Cloud (modern cloud legacy)
+- **Cloud**: GoodData Cloud (modern cloud platform)
 
 ## Three-Tier Pattern
 
 ```
-Migration Scripts (gooddata_legacy2cloud/workflows/migrate_*.py) → Builders → API Clients
+Migration Scripts (src/gooddata_legacy2cloud/workflows/migrate_*.py) → Builders → API Clients
 ```
 
 - **Migration Scripts**: Entry points orchestrating the full migration process
 - **Builders**: Transform Legacy objects to Cloud objects (e.g., `CloudMetricsBuilder`)
-- **API Clients**: `gooddata_legacy2cloud/backends/legacy/client.py` (custom REST), `gooddata_legacy2cloud/backends/cloud/client.py` (SDK + custom REST)
+- **API Clients**: `src/gooddata_legacy2cloud/backends/legacy/client.py` (custom REST), `src/gooddata_legacy2cloud/backends/cloud/client.py` (SDK + custom REST)
 
 ## Data Flow
 

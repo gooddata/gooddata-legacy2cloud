@@ -1,8 +1,3 @@
-# (C) 2026 GoodData Corporation
----
-alwaysApply: true
----
-
 # Conversation Guidelines
 
 ## When to Ask Questions
@@ -22,4 +17,3 @@ with the user before proceeding.
 - Keep responses concise
 - Only fix what was asked — don't proactively change unrelated code
 - Follow existing patterns and conventions
-- After code changes, call `mcp__aida__validate` with `scope="pre_commit"`

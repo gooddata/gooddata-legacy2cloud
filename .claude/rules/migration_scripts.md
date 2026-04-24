@@ -1,9 +1,3 @@
-# (C) 2026 GoodData Corporation
----
-globs:
-  - migrate_*.py
----
-
 # GoodData Migration Toolkit - Migration Scripts
 
 ## Migration Order (Critical)
@@ -17,14 +11,12 @@ Dependency chain:
 - **Insights** require `metric_mappings.csv`, `ldm_mappings.csv`
 - **Dashboards** require `insight_mappings.csv`, `metric_mappings.csv`, `ldm_mappings.csv`
 - **Reports** require `ldm_mappings.csv`, `metric_mappings.csv`
-- **Pixel Perfect Dashboards** require
 - **Scheduled Exports** require `insight_mappings.csv`, `dashboard_mappings.csv`
 - **Dashboard Permissions** require `dashboard_mappings.csv`
 
 ## Inputs
 
-Script input is defined by configuration objects in `utils/config/configuration_objects.py`
-
+Script input is defined by configuration objects in `src/gooddata_legacy2cloud/config/`
 
 ## Output Files
 
