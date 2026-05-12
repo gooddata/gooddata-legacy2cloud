@@ -4,7 +4,7 @@ from typing import Any
 
 from pydantic import BaseModel, Field
 
-from gooddata_legacy2cloud.helpers import PP_DASHBOARD_PREFIX
+from gooddata_legacy2cloud.helpers import PP_DASHBOARD_PREFIX, parse_legacy_tags
 from gooddata_legacy2cloud.pp_dashboards.legacy_objects.pixel_perfect_dashboard import (
     PixelPerfectDashboard,
     Tab,
@@ -121,6 +121,7 @@ class Attributes(BaseModel):
     title: str
     content: Content
     description: str | None = ""
+    tags: list[str] = Field(default_factory=list)
 
 
 class CloudDashboard(BaseModel):
@@ -162,6 +163,7 @@ class CloudDashboard(BaseModel):
             attributes=Attributes(
                 title=f"[PP] {pixel_perfect_dashboard.meta.title} - {tab_idx:02} - {tab.title}",
                 content=Content(layout=Layout(sections=[])),
+                tags=parse_legacy_tags(pixel_perfect_dashboard.meta.model_dump()),
             ),
         )
 
@@ -179,5 +181,6 @@ class CloudDashboard(BaseModel):
             attributes=Attributes(
                 title=f"[PP] {pixel_perfect_dashboard.meta.title}",
                 content=Content(layout=Layout(sections=[])),
+                tags=parse_legacy_tags(pixel_perfect_dashboard.meta.model_dump()),
             ),
         )

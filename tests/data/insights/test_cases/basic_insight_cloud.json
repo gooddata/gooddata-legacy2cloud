@@ -6,6 +6,7 @@
       "attributes": {
         "title": "Avg item price per category",
         "description": "",
+        "tags": ["finance", "revenue"],
         "createdAt": "",
         "content": {
           "filters": [],

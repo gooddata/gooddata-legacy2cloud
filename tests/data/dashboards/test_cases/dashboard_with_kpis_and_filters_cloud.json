@@ -6,6 +6,7 @@
             "attributes": {
                 "title": "Dashboard WITH KPIs and filters",
                 "description": "",
+                "tags": [],
                 "content": {
                     "attributeFilterConfigs": [],
                     "filterContextRef": {

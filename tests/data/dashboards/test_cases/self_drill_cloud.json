@@ -6,6 +6,7 @@
             "attributes": {
                 "title": "self drill",
                 "description": "",
+                "tags": [],
                 "content": {
                     "attributeFilterConfigs": [],
                     "filterContextRef": {

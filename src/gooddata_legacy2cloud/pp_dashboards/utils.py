@@ -12,6 +12,7 @@ class Meta(BaseModel):
     identifier: str
     title: str
     uri: str
+    tags: str = ""
     unlisted: Optional[int] = 0
 
 

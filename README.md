@@ -360,7 +360,7 @@ Notes:
 
 **Metrics-specific options:**
 
-**--keep-original-ids** - Keep original metric identifiers from Legacy. Otherwise the Cloud ID is derived from metric title and Legacy identfier.
+**--keep-original-ids** - Keep original metric identifiers from Legacy. Otherwise the Cloud ID is derived from metric title and Legacy identifier.
 
 **--ignore-folders** - Legacy folders of Metrics are not migrated to Cloud tags. Use if you used only tags for organizing the catalog in Legacy.
 

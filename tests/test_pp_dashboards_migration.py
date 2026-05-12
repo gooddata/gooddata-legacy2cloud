@@ -57,6 +57,9 @@ def test_pp_dashboard_migration(
     dumped = cloud_dashboards[0].model_dump(exclude_none=True)
     assert "filterContextRef" not in dumped["attributes"]["content"]
 
+    # Tags migrated from legacy meta
+    assert cloud_dashboards[0].attributes.tags == ["finance", "revenue"]
+
     # Smoke-check IDs and titles
     for dashboard in cloud_dashboards:
         assert dashboard.id.startswith("ppdash")
