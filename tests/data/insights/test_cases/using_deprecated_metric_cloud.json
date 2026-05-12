@@ -6,6 +6,7 @@
             "attributes": {
                 "title": "using deprecated metric",
                 "description": "",
+                "tags": [],
                 "createdAt": "",
                 "content": {
                     "filters": [],

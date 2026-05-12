@@ -6,6 +6,7 @@
       "attributes": {
         "title": "[WARN] [PP] manual date is null",
         "description": "**migration warnings:**\n* Failed to create date NULL filter: Search Cloud Id - Unknown Cloud identifier signupdate.year\n\n---\n",
+        "tags": [],
         "content": {
           "buckets": [
             {
@@ -63,6 +64,7 @@
       "attributes": {
         "title": "[WARN] [PP] manual date is not null",
         "description": "**migration warnings:**\n* Failed to create date NULL filter: Search Cloud Id - Unknown Cloud identifier signupdate.year\n\n---\n",
+        "tags": [],
         "content": {
           "buckets": [
             {

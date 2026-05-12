@@ -6,6 +6,7 @@
             "attributes": {
                 "title": "[WARN] Dashboard with missing element lookup",
                 "description": "",
+                "tags": [],
                 "content": {
                     "attributeFilterConfigs": [],
                     "filterContextRef": {

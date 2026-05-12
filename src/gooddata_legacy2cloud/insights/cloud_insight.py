@@ -8,7 +8,7 @@ import json
 import logging
 import uuid
 
-from gooddata_legacy2cloud.helpers import get_cloud_id
+from gooddata_legacy2cloud.helpers import get_cloud_id, parse_legacy_tags
 from gooddata_legacy2cloud.id_mappings import IdMappings
 from gooddata_legacy2cloud.insights.data_classes import InsightContext
 from gooddata_legacy2cloud.insights.period_comparison_insight import (
@@ -518,6 +518,7 @@ class CloudInsight:
                 "attributes": {
                     "title": self.title,
                     "description": self.description,
+                    "tags": parse_legacy_tags(self.meta),
                     "createdAt": "",
                     "content": {
                         "filters": self.filters,

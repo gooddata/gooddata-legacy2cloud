@@ -6,6 +6,7 @@
             "attributes": {
                 "title": "Dashboard with Drills",
                 "description": "",
+                "tags": ["important", "is", "this", "very"],
                 "content": {
                     "attributeFilterConfigs": [],
                     "filterContextRef": {

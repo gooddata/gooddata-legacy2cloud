@@ -9,8 +9,13 @@ Debug logging is added to trace each step.
 """
 
 import logging
+from typing import Any
 
-from gooddata_legacy2cloud.helpers import REPORT_INSIGHT_PREFIX, get_cloud_id
+from gooddata_legacy2cloud.helpers import (
+    REPORT_INSIGHT_PREFIX,
+    get_cloud_id,
+    parse_legacy_tags,
+)
 from gooddata_legacy2cloud.reports.charts import process_chart_report
 from gooddata_legacy2cloud.reports.data_classes import (
     ContextWithWarnings,
@@ -87,13 +92,14 @@ def transform_legacy_report(
         meta.get("identifier", "unknown"), top_level_id
     )
 
-    cloud_json = {
+    cloud_json: dict[str, Any] = {
         "data": {
             "id": top_level_id,
             "type": "visualizationObject",
             "attributes": {
                 "title": legacy_title,
                 "description": legacy_summary,
+                "tags": parse_legacy_tags(meta),
                 "content": cloud_content,
             },
         }
@@ -103,7 +109,7 @@ def transform_legacy_report(
     warnings_list = warning_collector.get_warnings()
     errors_list = warning_collector.get_errors()
     if errors_list or warnings_list:
-        old_title = cloud_json["data"]["attributes"].get("title", "")
+        old_title = legacy_title
         if errors_list:
             new_prefix = "[ERROR] "
         elif (
@@ -116,7 +122,7 @@ def transform_legacy_report(
         if new_prefix and not old_title.startswith(new_prefix):
             cloud_json["data"]["attributes"]["title"] = new_prefix + old_title
 
-        old_description = cloud_json["data"]["attributes"].get("description", "")
+        old_description = legacy_summary
         messages_str = ""
 
         if errors_list:

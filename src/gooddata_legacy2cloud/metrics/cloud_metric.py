@@ -7,7 +7,7 @@ which is responsible for transforming the Legacy metric to Cloud format.
 import logging
 from typing import Any
 
-from gooddata_legacy2cloud.helpers import get_cloud_id
+from gooddata_legacy2cloud.helpers import get_cloud_id, parse_legacy_tags
 from gooddata_legacy2cloud.metrics.data_classes import MetricContext
 from gooddata_legacy2cloud.metrics.cloud_maql import CloudMaql
 from gooddata_legacy2cloud.metrics.utils import get_folders_names
@@ -47,17 +47,7 @@ class CloudMetric:
         )
 
     def _get_tags(self):
-        """
-        Prepares the tags for the metric.
-        @param tags_str: The metadata tags string.
-        """
-        tags_str = self.meta.get("tags", "")
-        tags = [
-            tag.strip()
-            for part in tags_str.split(",")
-            for tag in part.split()
-            if tag.strip()
-        ]
+        tags = parse_legacy_tags(self.meta)
 
         # add Legacy folders to Cloud tags
         if "folders" in self.metric_content and not self.ctx.ignore_folders:

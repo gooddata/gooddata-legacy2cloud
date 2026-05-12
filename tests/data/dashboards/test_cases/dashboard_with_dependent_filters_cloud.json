@@ -6,6 +6,7 @@
       "attributes": {
         "title": "Dashboard with dependent filters",
         "description": "",
+        "tags": [],
         "content": {
           "attributeFilterConfigs": [],
           "filterContextRef": {

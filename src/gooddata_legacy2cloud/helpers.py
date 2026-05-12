@@ -139,6 +139,17 @@ def get_object_list(input):
     return list(set(matches))  # get rid of duplicities
 
 
+def parse_legacy_tags(meta: dict) -> list[str]:
+    """Parses the space/comma-separated tags string from Legacy metadata into a list."""
+    tags_str = meta.get("tags", "")
+    return [
+        tag.strip()
+        for part in tags_str.split(",")
+        for tag in part.split()
+        if tag.strip()
+    ]
+
+
 def get_cloud_id(title: str, legacy_identifier: str) -> str:
     """
     Returns the Cloud metric identifier.

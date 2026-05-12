@@ -14,7 +14,11 @@ from gooddata_legacy2cloud.dashboards.drill_converter import (
     DrillConverter,
 )
 from gooddata_legacy2cloud.dashboards.filter_context import FilterContext
-from gooddata_legacy2cloud.helpers import dashboard_specific_insight_id, get_cloud_id
+from gooddata_legacy2cloud.helpers import (
+    dashboard_specific_insight_id,
+    get_cloud_id,
+    parse_legacy_tags,
+)
 from gooddata_legacy2cloud.insights.period_comparison_insight import (
     PeriodComparisonInsight,
 )
@@ -491,6 +495,7 @@ You can view the original insight [here]({legacy_obj_uri})."""
                 "attributes": {
                     "title": self.title,
                     "description": self.meta["summary"],
+                    "tags": parse_legacy_tags(self.meta),
                     "content": {
                         "attributeFilterConfigs": self.attribute_filter_configs,
                         "filterContextRef": self.filter_context_id,

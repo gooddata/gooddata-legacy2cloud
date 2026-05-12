@@ -6,6 +6,7 @@
             "attributes": {
                 "title": "dashboard with attribute filter with multiple labels 1",
                 "description": "",
+                "tags": [],
                 "content": {
                     "attributeFilterConfigs": [
                         {
