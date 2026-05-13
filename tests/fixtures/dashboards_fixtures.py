@@ -90,6 +90,51 @@ def dashboards_context(legacy_client: LegacyClient, cloud_client: CloudClient, m
 
 
 @pytest.fixture
+def dashboards_context_keep_ids(
+    legacy_client: LegacyClient, cloud_client: CloudClient, mocker
+):
+    """Create DashboardContext with keep_original_ids=True for testing."""
+    with open(f"{LEGACY_OBJECTS_DIR}/objects_by_uri.json", "r") as file:
+        objects_by_uri = json.load(file)
+
+    def get_objects_by_uri(uri):
+        return objects_by_uri[uri]
+
+    mocker.patch.object(legacy_client, "get_object", side_effect=get_objects_by_uri)
+    mocker.patch.object(cloud_client, "get_filter_context", return_value={})
+    mocker.patch.object(cloud_client, "create_filter_context", return_value=None)
+    mocker.patch.object(cloud_client, "update_filter_context", return_value=None)
+    mocker.patch.object(cloud_client, "get_dashboards", return_value=[])
+    mocker.patch.object(cloud_client, "get_insights", return_value=[])
+    mocker.patch.object(
+        cloud_client,
+        "create_insight",
+        return_value=type("MockResponse", (), {"ok": True, "status_code": 201})(),
+    )
+
+    ldm_mappings = IdMappings(f"{MAPPING_FILES_DIR}/ldm_mappings.csv")
+    metric_mappings = IdMappings(f"{MAPPING_FILES_DIR}/metric_mappings.csv")
+    insight_mappings = IdMappings(f"{MAPPING_FILES_DIR}/insight_mappings.csv")
+    dashboard_mappings = IdMappings(f"{MAPPING_FILES_DIR}/dashboard_mappings.csv")
+    mapping_logger = mocker.MagicMock()
+
+    return DashboardContext(
+        legacy_client=legacy_client,
+        cloud_client=cloud_client,
+        ldm_mappings=ldm_mappings,
+        metric_mappings=metric_mappings,
+        insight_mappings=insight_mappings,
+        mapping_logger=mapping_logger,
+        dashboard_mappings=dashboard_mappings,
+        suppress_warnings=False,
+        client_prefix=None,
+        current_batch_dashboard_mappings=None,
+        dashboard_type="analyticalDashboard",
+        keep_original_ids=True,
+    )
+
+
+@pytest.fixture
 def dashboards_builder(dashboards_context):
     """Create CloudDashboardsBuilder instance."""
     return CloudDashboardsBuilder(dashboards_context)

@@ -23,3 +23,4 @@ class DashboardContext:
     client_prefix: str | None = field(default=None)
     current_batch_dashboard_mappings: dict[str, str] | None = field(default=None)
     dashboard_type: str = field(default="analyticsDashboard")
+    keep_original_ids: bool = field(default=False)

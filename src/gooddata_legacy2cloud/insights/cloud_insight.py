@@ -50,9 +50,12 @@ class CloudInsight:
         self.visualization_url = self._get_visualization_url(
             self.insights_content["visualizationClass"]["uri"]
         )
-        self.cloud_insight_id = get_cloud_id(
-            self.meta["title"], self.meta["identifier"]
-        )
+        if self.ctx.keep_original_ids:
+            self.cloud_insight_id = self.meta["identifier"]
+        else:
+            self.cloud_insight_id = get_cloud_id(
+                self.meta["title"], self.meta["identifier"]
+            )
         self.title, self.description = self._get_title_and_description()
 
     def _get_title_and_description(self):

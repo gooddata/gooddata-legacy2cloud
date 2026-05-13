@@ -169,15 +169,21 @@ class CloudDashboard(BaseModel):
 
     @classmethod
     def create_tabbed_from_legacy_definition(
-        cls, pixel_perfect_dashboard: PixelPerfectDashboard
+        cls,
+        pixel_perfect_dashboard: PixelPerfectDashboard,
+        keep_original_ids: bool = False,
     ):
         """Create a single tabbed Cloud dashboard from a Legacy PP dashboard."""
-        return cls(
-            id=get_migration_id(
+        if keep_original_ids:
+            dashboard_id = pixel_perfect_dashboard.meta.identifier
+        else:
+            dashboard_id = get_migration_id(
                 prefix=PP_DASHBOARD_PREFIX,
                 legacy_identifier=pixel_perfect_dashboard.meta.identifier,
                 legacy_title=f"{pixel_perfect_dashboard.meta.title}",
-            ),
+            )
+        return cls(
+            id=dashboard_id,
             attributes=Attributes(
                 title=f"[PP] {pixel_perfect_dashboard.meta.title}",
                 content=Content(layout=Layout(sections=[])),
