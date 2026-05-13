@@ -11,7 +11,6 @@ the expected Cloud dashboards metadata.
 
 import pytest
 from pytest import CaptureFixture
-
 from gooddata_legacy2cloud.dashboards.cloud_dashboard import CloudDashboard
 from gooddata_legacy2cloud.dashboards.cloud_dashboards_builder import (
     CloudDashboardsBuilder,
@@ -100,3 +99,24 @@ def test_dashboards_migration(
             f"stdout: {captured.out}\n"
             f"stderr: {captured.err}"
         )
+
+
+def test_dashboard_keep_original_ids(
+    dashboards_context_keep_ids,
+    mocker,
+) -> None:
+    """When keep_original_ids=True, cloud ID equals the Legacy identifier."""
+    mocker.patch.object(CloudDashboard, "_resolve_widget_type", return_value="insight")
+
+    builder = CloudDashboardsBuilder(dashboards_context_keep_ids)
+    legacy_dashboards = load_json(f"{TEST_CASES_DIR}/basic_dashboard_legacy.json")
+    assert isinstance(legacy_dashboards, list), "Legacy dashboards should be a list"
+    builder.process_legacy_dashboards(
+        legacy_dashboards, skip_deploy=True, overwrite_existing=False
+    )
+    cloud_dashboards = builder.get_cloud_dashboards()
+
+    assert len(cloud_dashboards) == len(legacy_dashboards)
+    for cloud_dash, legacy_dash in zip(cloud_dashboards, legacy_dashboards):
+        legacy_id = legacy_dash["analyticalDashboard"]["meta"]["identifier"]
+        assert cloud_dash["data"]["id"] == legacy_id

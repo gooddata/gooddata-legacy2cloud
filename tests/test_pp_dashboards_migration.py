@@ -10,6 +10,9 @@ import pytest
 from pytest import CaptureFixture
 
 from gooddata_legacy2cloud.helpers import PP_FILTER_CONTEXT_PREFIX
+from gooddata_legacy2cloud.pp_dashboards.cloud_pp_dashboards_builder import (
+    CloudPixelPerfectDashboardsBuilder,
+)
 from gooddata_legacy2cloud.pp_dashboards.utils import sanitize_string
 from tests.test_utils import load_json
 
@@ -286,3 +289,29 @@ def test_tabbed_dashboard_all_tabs_unsupported_is_skipped(
     assert mock_cloud_pp_api.create_filter_context.call_count == 0
 
     assert "Skipping dashboard" in caplog.text
+
+
+def test_pp_dashboard_keep_original_ids(
+    pp_context_keep_ids,
+    pp_grid_config,
+    mock_legacy_pp_dashboards,
+    mock_cloud_pp_api,
+) -> None:
+    """When keep_original_ids=True, cloud dashboard ID equals the Legacy PP identifier."""
+    builder = CloudPixelPerfectDashboardsBuilder(
+        ctx=pp_context_keep_ids,
+        cfg=pp_grid_config,
+        pixel_perfect_prefix="[PP]",
+        min_text_length=5,
+        supported_items=["headlineItem", "reportItem", "textItem"],
+        legacy_split_tabs=False,
+    )
+    builder.process_legacy_dashboards(
+        legacy_dashboards=[mock_legacy_pp_dashboards],
+        skip_deploy=True,
+        overwrite_existing=False,
+    )
+    cloud_dashboards = builder.get_cloud_dashboards()
+
+    assert len(cloud_dashboards) == 1
+    assert cloud_dashboards[0].id == "test_pp_dashboard_001"

@@ -4,6 +4,7 @@ from pydantic import ValidationError
 
 from gooddata_legacy2cloud.config.configuration_objects import (
     MetricConfig,
+    PixelPerfectDashboardConfig,
     ScheduledExportConfig,
     WorkspaceConfig,
     is_client_prefix_used,
@@ -116,3 +117,16 @@ def test_validate_config_side_effects_scheduled_export():
     # Validation happened in model_post_init
     assert config.common_config.output_files_prefix == "test_"
     assert config.common_config.check_parent_workspace is True
+
+
+def test_pp_config_keep_original_ids_and_split_tabs_conflict():
+    """keep_original_ids and pp_legacy_split_tabs cannot be used together."""
+    with pytest.raises(ValidationError, match="cannot be used together"):
+        PixelPerfectDashboardConfig(
+            workspace_config=WorkspaceConfig(),
+            common_config=CommonConfig(),
+            object_migration_config=ObjectMigrationConfig(),
+            object_filter_config=ObjectFilterConfig(),
+            keep_original_ids=True,
+            pp_legacy_split_tabs=True,
+        )

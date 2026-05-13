@@ -222,6 +222,11 @@ class ReportConfig(BaseConfig):
         description="Override the default '[PP] ' prefix for migrated reports. "
         + "Use empty string to disable the prefix.",
     )
+    keep_original_ids: bool = Field(
+        default=False,
+        description="Keep original Legacy identifiers as Cloud IDs instead of "
+        + "deriving new IDs from the object title and Legacy identifier.",
+    )
 
     def model_post_init(self, __context) -> None:
         validate_config(self)
@@ -285,9 +290,19 @@ class PixelPerfectDashboardConfig(BaseConfig):
         + "separate KPI dashboard. By default, PP dashboards are migrated "
         + "one-to-one as a single tabbed KPI dashboard.",
     )
+    keep_original_ids: bool = Field(
+        default=False,
+        description="Keep original Legacy identifiers as Cloud IDs instead of generating new ones.",
+    )
 
     def model_post_init(self, __context) -> None:
         validate_config(self)
+        if self.keep_original_ids and self.pp_legacy_split_tabs:
+            raise ValueError(
+                "`--keep-original-ids` cannot be used together with `--pp-legacy-split-tabs`. "
+                "Split-tabs mode creates one Cloud dashboard per Legacy tab, which would cause "
+                "ID collisions when keeping original IDs."
+            )
 
     @classmethod
     def from_kwargs(cls, **kwargs: Any) -> Self:
@@ -354,6 +369,10 @@ class DashboardConfig(BaseConfig):
         + "containing unmapped elements. Running workspace validation populates "
         + "the cache with these elements. The temporary metrics are automatically "
         + "deleted afterward.",
+    )
+    keep_original_ids: bool = Field(
+        default=False,
+        description="Keep original Legacy identifiers as Cloud IDs instead of generating new ones.",
     )
 
     # Custom dashboard arguments
@@ -423,6 +442,10 @@ class InsightConfig(BaseConfig):
         + "Automatically enables prefetching, then creates temporary Legacy metrics "
         + "containing unmapped elements. Running workspace validation populates "
         + "the cache with these elements. The temporary metrics are automatically deleted afterward.",
+    )
+    keep_original_ids: bool = Field(
+        default=False,
+        description="Keep original Legacy identifiers as Cloud IDs instead of generating new ones.",
     )
 
     def model_post_init(self, __context) -> None:

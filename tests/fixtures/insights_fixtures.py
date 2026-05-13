@@ -52,6 +52,37 @@ def insights_context(legacy_client: LegacyClient, cloud_client: CloudClient, moc
 
 
 @pytest.fixture
+def insights_context_keep_ids(
+    legacy_client: LegacyClient, cloud_client: CloudClient, mocker
+):
+    """Create InsightContext with keep_original_ids=True for testing."""
+    with open(f"{LEGACY_OBJECTS_DIR}/objects_by_uri.json", "r") as file:
+        objects_by_uri = json.load(file)
+
+    def get_objects_by_uri(uri):
+        return objects_by_uri[uri]
+
+    mocker.patch.object(legacy_client, "get_object", side_effect=get_objects_by_uri)
+    mocker.patch.object(cloud_client, "get_attribute_json", return_value={})
+
+    ldm_mappings = IdMappings(f"{MAPPING_FILES_DIR}/ldm_mappings.csv")
+    metric_mappings = IdMappings(f"{MAPPING_FILES_DIR}/metric_mappings.csv")
+    mapping_logger = mocker.MagicMock()
+
+    return InsightContext(
+        legacy_client=legacy_client,
+        cloud_client=cloud_client,
+        ldm_mappings=ldm_mappings,
+        metric_mappings=metric_mappings,
+        mapping_logger=mapping_logger,
+        report_mappings=None,
+        suppress_warnings=False,
+        client_prefix=None,
+        keep_original_ids=True,
+    )
+
+
+@pytest.fixture
 def insights_builder(insights_context):
     """Create CloudInsightsBuilder instance."""
     return CloudInsightsBuilder(insights_context)

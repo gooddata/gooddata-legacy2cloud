@@ -10,7 +10,6 @@ the expected Cloud insights metadata.
 """
 
 import pytest
-
 from gooddata_legacy2cloud.insights.cloud_insights_builder import CloudInsightsBuilder
 from tests.test_utils import dicts_are_equal, load_json
 
@@ -71,3 +70,17 @@ def test_insights_migration(
     for actual, expected in zip(actual_sorted, expected_sorted):
         dicts_are_equal(actual, expected)
         dicts_are_equal(expected, actual)
+
+
+def test_insight_keep_original_ids(insights_context_keep_ids) -> None:
+    """When keep_original_ids=True, cloud ID equals the Legacy identifier."""
+    builder = CloudInsightsBuilder(insights_context_keep_ids)
+    legacy_insights = load_json(f"{TEST_CASES_DIR}/basic_insight_legacy.json")
+    assert isinstance(legacy_insights, list), "Insights should be a list"
+    builder.process_legacy_insights(legacy_insights)
+    cloud_insights = builder.get_cloud_insights()
+
+    assert len(cloud_insights) == len(legacy_insights)
+    for cloud_insight, legacy_insight in zip(cloud_insights, legacy_insights):
+        legacy_id = legacy_insight["visualizationObject"]["meta"]["identifier"]
+        assert cloud_insight["data"]["id"] == legacy_id

@@ -172,6 +172,7 @@ def migrate_pixel_perfect_dashboards(config: PixelPerfectDashboardConfig) -> Non
         transformation_logger=transformation_logger,
         suppress_warnings=config.object_migration_config.suppress_migration_warnings,
         client_prefix=config.common_config.client_prefix,
+        keep_original_ids=config.keep_original_ids,
     )
 
     cfg = GridConfig(
