@@ -52,7 +52,6 @@ The migration can be performed as a complete workspace transfer or selectively f
   - [Understanding Mapping Files](#understanding-mapping-files)
   - [Custom Client Object Migration](#custom-client-object-migration)
   - [Advanced Mapping File Parameters](#advanced-mapping-file-parameters)
-- [Generate DDL from Cloud's LDM](#generate-ddl-from-clouds-ldm)
 - [Web Comparison Tool](#web-comparison-tool)
 - [Standalone Tools](#standalone-tools)
 
@@ -404,6 +403,10 @@ Notes:
 - Objects that already exist in Cloud (based on their ID) are skipped and their IDs are recorded in the skipped objects file (unless `--overwrite-existing` is used).
 - For best results with element lookup, use `--validation-element-lookup-with-metrics` (see [Element Lookup Parameters](#element-lookup-parameters))
 
+**Insights-specific options:**
+
+**--keep-original-ids** - Keep original Legacy identifiers as Cloud IDs instead of generating new ones. Otherwise the Cloud ID is derived from the insight title and Legacy identifier.
+
 ### Dashboards Migration
 
 ```bash
@@ -432,6 +435,10 @@ This script only migrates the Responsive Dashboards (a.k.a. KPI Dashboards). The
 - Objects that already exist in Cloud (based on their ID) are skipped and their IDs are recorded in the skipped objects file (unless `--overwrite-existing` is used).
 - For best results with element lookup, use `--validation-element-lookup-with-metrics` (see [Element Lookup Parameters](#element-lookup-parameters))
 
+**Dashboards-specific options:**
+
+**--keep-original-ids** - Keep original Legacy identifiers as Cloud IDs instead of generating new ones. Otherwise the Cloud ID is derived from the dashboard title and Legacy identifier.
+
 ### Pixel Perfect Dashboards Migration
 
 ```bash
@@ -442,6 +449,7 @@ Notes:
 
 - By default, each Legacy Pixel Perfect dashboard is migrated **one-to-one** into a single Cloud KPI dashboard that uses **native tabs** (one Legacy tab -> one Cloud tab).
 - Use `--pp-legacy-split-tabs` to enable the legacy behavior where each Legacy tab is migrated as a separate Cloud dashboard (intended for transition only).
+- Use `--keep-original-ids` to keep the Legacy PP dashboard identifier as the Cloud dashboard ID. Cannot be combined with `--pp-legacy-split-tabs`. Note that dashboards created with this flag will not be removed when `--cleanup-target-env` is used AND will get removed if you migrate regular dashboards with `--cleanup-target-env` after this.
 
 ### Reports Migration
 
@@ -472,6 +480,8 @@ Notes:
 **Reports-specific options:**
 
 **--report-prefix** - Prefix added to the visualziations migrated from PixelPerfect reports to distinguish them from those migrated from Insights. Default is '[PP] '. Use empty string to disable the prefix.
+
+**--keep-original-ids** - Keep original metric identifiers from Legacy. Otherwise, the Cloud ID is derived from metric title and Legacy identifier. Note that insights created with this flag will not be removed when `--cleanup-target-env` is used AND will get removed if you migrate regular insights with `--cleanup-target-env` after this.
 
 ### Scheduled Exports Migration
 

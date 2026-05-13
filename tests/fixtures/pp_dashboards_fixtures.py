@@ -10,6 +10,9 @@ import pytest
 from gooddata_legacy2cloud.backends.cloud.client import CloudClient
 from gooddata_legacy2cloud.backends.legacy.client import LegacyClient
 from gooddata_legacy2cloud.id_mappings import IdMappings
+from gooddata_legacy2cloud.pp_dashboards.cloud_pp_dashboards_builder import (
+    CloudPixelPerfectDashboardsBuilder,
+)
 from gooddata_legacy2cloud.pp_dashboards.data_classes import PPDashboardContext
 from gooddata_legacy2cloud.pp_dashboards.grid_maker import GridConfig
 
@@ -47,6 +50,28 @@ def pp_context(legacy_client: LegacyClient, cloud_client: CloudClient, mocker):
         mapping_logger=mocker.MagicMock(),
         suppress_warnings=False,
         client_prefix=None,
+    )
+
+
+@pytest.fixture
+def pp_context_keep_ids(legacy_client: LegacyClient, cloud_client: CloudClient, mocker):
+    """Mock pixel perfect context with keep_original_ids=True."""
+    return PPDashboardContext(
+        legacy_client=legacy_client,
+        cloud_client=cloud_client,
+        ldm_mappings=IdMappings(
+            "tests/data/pixel_perfect_dashboards/mapping_files/ldm_mappings.csv"
+        ),
+        metric_mappings=IdMappings(
+            "tests/data/pixel_perfect_dashboards/mapping_files/metric_mappings.csv"
+        ),
+        report_mappings=IdMappings(
+            "tests/data/pixel_perfect_dashboards/mapping_files/report_mappings.csv"
+        ),
+        mapping_logger=mocker.MagicMock(),
+        suppress_warnings=False,
+        client_prefix=None,
+        keep_original_ids=True,
     )
 
 
@@ -172,10 +197,6 @@ def mock_cloud_pp_api(mocker, cloud_client: CloudClient):
 @pytest.fixture
 def pp_dashboards_builder(pp_context, pp_grid_config):
     """Create CloudPixelPerfectDashboardsBuilder instance for tests."""
-    from gooddata_legacy2cloud.pp_dashboards.cloud_pp_dashboards_builder import (
-        CloudPixelPerfectDashboardsBuilder,
-    )
-
     return CloudPixelPerfectDashboardsBuilder(
         ctx=pp_context,
         cfg=pp_grid_config,
@@ -189,10 +210,6 @@ def pp_dashboards_builder(pp_context, pp_grid_config):
 @pytest.fixture
 def pp_dashboards_builder_legacy_split(pp_context, pp_grid_config):
     """Create builder instance configured for legacy split-tabs behavior."""
-    from gooddata_legacy2cloud.pp_dashboards.cloud_pp_dashboards_builder import (
-        CloudPixelPerfectDashboardsBuilder,
-    )
-
     return CloudPixelPerfectDashboardsBuilder(
         ctx=pp_context,
         cfg=pp_grid_config,

@@ -4,6 +4,7 @@ This module contains the CloudDashboard class,
 which is responsible for transforming the Legacy dashboard to Cloud format.
 """
 
+import json
 import logging
 from dataclasses import dataclass
 from typing import Any, Literal
@@ -58,9 +59,12 @@ class CloudDashboard:
         self.overwrite_existing = overwrite_existing
         # Set cloud_dashboard_id early, before layout processing
         # because drill conversion needs it for self-referencing drills
-        self.cloud_dashboard_id = get_cloud_id(
-            self.meta["title"], self.meta["identifier"]
-        )
+        if self.ctx.keep_original_ids:
+            self.cloud_dashboard_id = self.meta["identifier"]
+        else:
+            self.cloud_dashboard_id = get_cloud_id(
+                self.meta["title"], self.meta["identifier"]
+            )
         self.ctx.mapping_logger.write_identifier_relation(
             self.meta["identifier"], self.cloud_dashboard_id
         )
@@ -322,11 +326,14 @@ You can view the original insight [here]({legacy_obj_uri})."""
             "drills": [],
         }
         if "kpi" in obj:
-            # Pass the dashboard ID to make the insight ID unique
-            dashboard_id = self.meta.get("identifier", "")
-            new_insight_id = dashboard_specific_insight_id(
-                obj["kpi"]["meta"]["title"], dashboard_id
-            )
+            if self.ctx.keep_original_ids:
+                new_insight_id = obj["kpi"]["meta"]["identifier"]
+            else:
+                # Pass the dashboard ID to make the insight ID unique
+                dashboard_id = self.meta.get("identifier", "")
+                new_insight_id = dashboard_specific_insight_id(
+                    obj["kpi"]["meta"]["title"], dashboard_id
+                )
             widget_object["description"] = obj["kpi"]["meta"]["summary"]
             widget_object["ignoreDashboardFilters"] = (
                 self._get_ignore_dashboard_filters(obj, "kpi")
@@ -371,8 +378,6 @@ You can view the original insight [here]({legacy_obj_uri})."""
             if "properties" in obj["visualizationWidget"]["content"]:
                 # Parse properties JSON string from Legacy
                 try:
-                    import json
-
                     properties_str = obj["visualizationWidget"]["content"]["properties"]
                     properties = json.loads(properties_str)
                     widget_object["properties"] = properties

@@ -25,6 +25,7 @@ class ReportContext:
     mapping_logger: OutputWriter
     suppress_warnings: bool = field(default=False)
     client_prefix: str | None = field(default=None)
+    keep_original_ids: bool = field(default=False)
 
 
 # TODO: The ContextWithWarnings class should be untangled and removed.

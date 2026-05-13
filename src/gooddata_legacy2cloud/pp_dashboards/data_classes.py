@@ -24,3 +24,4 @@ class PPDashboardContext:
     suppress_warnings: bool = field(default=False)
     client_prefix: str | None = field(default=None)
     exclude_tabs: list[str] | None = field(default=None)
+    keep_original_ids: bool = field(default=False)

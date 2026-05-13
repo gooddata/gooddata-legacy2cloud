@@ -79,13 +79,18 @@ def transform_legacy_report(
     legacy_title = meta.get("title", "Migrated Visualization")
     legacy_identifier = meta.get("identifier", "unknown")
     legacy_summary = meta.get("summary", "")
-    top_level_id = get_cloud_id(legacy_title, legacy_identifier)
 
-    # If this is a report migration, prepend the report insight prefix.
-    if meta.get("category") in ["report", "reportDefinition"]:
-        top_level_id = REPORT_INSIGHT_PREFIX + "__" + top_level_id
-        if REPORT_TITLE_PREFIX:  # Only add prefix if it's not an empty string
+    if ctx.keep_original_ids:
+        top_level_id = legacy_identifier
+        if REPORT_TITLE_PREFIX:
             legacy_title = REPORT_TITLE_PREFIX + legacy_title
+    else:
+        top_level_id = get_cloud_id(legacy_title, legacy_identifier)
+        # If this is a report migration, prepend the report insight prefix.
+        if meta.get("category") in ["report", "reportDefinition"]:
+            top_level_id = REPORT_INSIGHT_PREFIX + "__" + top_level_id
+            if REPORT_TITLE_PREFIX:  # Only add prefix if it's not an empty string
+                legacy_title = REPORT_TITLE_PREFIX + legacy_title
 
     # Log the mapping from Legacy to Cloud identifier
     ctx.mapping_logger.write_identifier_relation(

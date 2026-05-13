@@ -72,6 +72,11 @@ class CloudPixelPerfectDashboardsBuilder:
             "textItem",
         ]
         self.legacy_split_tabs = legacy_split_tabs
+        if self.ctx.keep_original_ids and self.legacy_split_tabs:
+            raise RuntimeError(
+                "`--keep-original-ids` cannot be used together with `--pp-legacy-split-tabs`. "
+                "Validate your config inputs."
+            )
         self.cloud_dashboards: list[pdo.CloudDashboard] = []
         self.public_dashboard_ids: list[str] = []
         self.cloud_existing_dashboard_ids: list[str] = []
@@ -162,7 +167,8 @@ class CloudPixelPerfectDashboardsBuilder:
     ) -> None:
         """Process a Legacy PP dashboard into one Cloud dashboard with native tabs."""
         cloud_dashboard = pdo.CloudDashboard.create_tabbed_from_legacy_definition(
-            pixel_perfect_dashboard=legacy_dashboard
+            pixel_perfect_dashboard=legacy_dashboard,
+            keep_original_ids=self.ctx.keep_original_ids,
         )
 
         # Write one-to-one mapping between Legacy and Cloud dashboards

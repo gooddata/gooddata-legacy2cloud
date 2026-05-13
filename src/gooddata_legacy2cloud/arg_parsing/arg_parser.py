@@ -420,6 +420,21 @@ def add_validation_element_lookup_with_metrics_argument(
     )
 
 
+def add_keep_original_ids_argument(parser: argparse.ArgumentParser) -> None:
+    """
+    Adds keep-original-ids argument to the parser.
+    """
+    parser.add_argument(
+        "--keep-original-ids",
+        action="store_const",
+        const=True,
+        dest="keep_original_ids",
+        default=False,
+        help="Keep the original Legacy identifiers as Cloud IDs instead of "
+        + "deriving new IDs from the object title and Legacy identifier.",
+    )
+
+
 def add_cleanup_target_env_argument(
     parser: argparse.ArgumentParser, object_type: str = "objects"
 ) -> None:
@@ -485,6 +500,7 @@ def parse_report_cli_args() -> argparse.Namespace:
     add_validation_element_lookup_argument(parser)
     add_element_values_prefetch_argument(parser)
     add_cleanup_target_env_argument(parser, object_type="reports")
+    add_keep_original_ids_argument(parser)
 
     parser.add_argument(
         "--report-prefix",
@@ -513,6 +529,7 @@ def parse_pixel_perfect_dashboard_cli_args() -> argparse.Namespace:
     add_insight_mapping_arguments(parser)
     add_validation_element_lookup_argument(parser)
     add_pp_dashboard_arguments(parser)
+    add_keep_original_ids_argument(parser)
 
     args = parser.parse_args()
     return args
@@ -529,14 +546,7 @@ def parse_metric_cli_args() -> argparse.Namespace:
     add_element_values_prefetch_argument(parser)
     add_cleanup_target_env_argument(parser, object_type="metrics")
 
-    parser.add_argument(
-        "--keep-original-ids",
-        action="store_const",
-        const=True,
-        dest="keep_original_ids",
-        default=False,
-        help="It will keep the original ids of the metrics.",
-    )
+    add_keep_original_ids_argument(parser)
 
     parser.add_argument(
         "--ignore-folders",
@@ -593,6 +603,7 @@ def parse_insight_cli_args() -> argparse.Namespace:
     add_validation_element_lookup_argument(parser)
     add_element_values_prefetch_argument(parser)
     add_validation_element_lookup_with_metrics_argument(parser)
+    add_keep_original_ids_argument(parser)
     add_cleanup_target_env_argument(parser, object_type="insights")
 
     args = parser.parse_args()
@@ -613,6 +624,7 @@ def parse_dashboard_cli_args() -> argparse.Namespace:
     add_validation_element_lookup_argument(parser)
     add_element_values_prefetch_argument(parser)
     add_validation_element_lookup_with_metrics_argument(parser)
+    add_keep_original_ids_argument(parser)
     add_cleanup_target_env_argument(parser, object_type="dashboards")
 
     parser.add_argument(

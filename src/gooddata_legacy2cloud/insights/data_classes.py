@@ -18,3 +18,4 @@ class InsightContext:
     report_mappings: IdMappings | None = field(default=None)
     suppress_warnings: bool = field(default=False)
     client_prefix: str | None = field(default=None)
+    keep_original_ids: bool = field(default=False)
