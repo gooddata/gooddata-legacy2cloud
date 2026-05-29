@@ -11,10 +11,10 @@ This migration toolkit facilitates the transition of analytics content from Good
 Throughout the readme and the codebase, the products are referred to as such:
 
 - **Legacy** refers to GoodData Legacy, the legacy private cloud-based analytics solution
-- **Cloud** refers to GoodData Cloud, the modern cloud-based analytics legacy
+- **Cloud** refers to GoodData Cloud, the modern cloud-based analytics platform
 
 **What problem does this toolkit solve?**
-This toolkit automates the migration of your analytical content, preserving the relationships between different objects while handling the architectural differences between the two legacys. It can migrate:
+This toolkit automates the migration of your analytical content, preserving the relationships between different objects while handling the architectural differences between the two platforms. It can migrate:
 
 - Logical Data Models (LDM) with data source mappings
 - Metrics (calculations/measures)
