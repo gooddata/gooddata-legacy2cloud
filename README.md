@@ -65,6 +65,21 @@ The migration can be performed as a complete workspace transfer or selectively f
 
 ### Installation
 
+You can install the CLI using a package manager of your choice or clone the repository and install directly from source.
+
+### Install from PyPI
+
+Simply install the package using pip or other package manager. It is recommended to install the package into a virtual environment
+
+```bash
+# Create a virtual environment
+python -m venv .venv
+source .venv/bin/activate
+
+# Install the package
+pip install gooddata-legacy2cloud
+```
+
 #### Install from Source
 
 1. **Clone this repository**
