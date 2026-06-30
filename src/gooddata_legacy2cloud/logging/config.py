@@ -24,15 +24,13 @@ class ColoredLevelFormatter(logging.Formatter):
         if color:
             record.levelname = f"{color}{record.levelname}{COLOR_RESET}"
 
-        # Format the message first, then append context
-        formatted = super().format(record)
-
-        # Add object context if available (for parallel processing logs)
+        # Inject object context (for parallel processing logs) between the
+        # level and the message; trailing space lives here so the line has no
+        # double-space when no context is set.
         context = get_object_context()
-        if context:
-            formatted = f"{formatted} {context}"
+        record.context_str = f"{context} " if context else ""
 
-        return formatted
+        return super().format(record)
 
 
 def configure_logger(name: str = "migration") -> logging.Logger:
@@ -42,7 +40,7 @@ def configure_logger(name: str = "migration") -> logging.Logger:
 
     if not log.handlers:
         handler = logging.StreamHandler()
-        formatter = ColoredLevelFormatter("%(levelname)s %(message)s")
+        formatter = ColoredLevelFormatter("%(levelname)s %(context_str)s%(message)s")
         handler.setFormatter(formatter)
         log.addHandler(handler)
 
