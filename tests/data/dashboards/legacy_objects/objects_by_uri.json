@@ -1127,5 +1127,27 @@
         "ignoreDashboardFilters": []
       }
     }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9001": {
+    "kpi": {
+      "meta": {
+        "identifier": "aMissKpi9001",
+        "title": "KPI with missing metric",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9002",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9002": {
+    "metric": {
+      "meta": {
+        "identifier": "missingmetric9002"
+      }
+    }
   }
 }
