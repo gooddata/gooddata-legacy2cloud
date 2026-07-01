@@ -26,6 +26,7 @@ from gooddata_legacy2cloud.insights.period_comparison_insight import (
 from gooddata_legacy2cloud.models.legacy.visualization_class import (
     VisualizationClassWrapper,
 )
+from gooddata_legacy2cloud.web_compare_processing.url_utils import LEGACY_DASHBOARD_URL
 
 logger = logging.getLogger("migration")
 
@@ -140,6 +141,19 @@ class CloudDashboard:
         return f"""The insight you're looking for is currently unavailable because it was not properly migrated during the insights migration.
 
 You can view the original insight [here]({legacy_obj_uri})."""
+
+    def _get_rich_text_for_missing_kpi(self, obj: dict, reason: str) -> str:
+        kpi_title = obj["kpi"]["meta"]["title"]
+        dashboard_link = LEGACY_DASHBOARD_URL.format(
+            legacy_domain=self.ctx.legacy_client.domain,
+            legacy_workspace=self.ctx.legacy_client.pid,
+            legacy_id=self.meta["identifier"],
+        )
+        return f"""The KPI widget _"{kpi_title}"_ could not be migrated.
+
+Reason: {reason}
+
+You can view the original dashboard in GoodData Legacy [here]({dashboard_link})."""
 
     def _get_warning_widget(self, missing_filter_values, drill_warnings):
         warning_content_parts = []
@@ -345,13 +359,11 @@ You can view the original insight [here]({legacy_obj_uri})."""
             )
             if "properties" in obj["kpi"]["content"]:
                 widget_object["properties"] = obj["kpi"]["content"]["properties"]
-            comparison_insight_object = period_comparison_insight.get()
-            if not comparison_insight_object:
-                widget_object["type"] = "richText"
-                widget_object["content"] = self._get_rich_text_for_missing_insight(
-                    obj["visualizationWidget"]["content"]["visualization"]
-                )
-            else:
+            try:
+                comparison_insight_object = period_comparison_insight.get()
+                if not comparison_insight_object:
+                    # KPI produced no buckets; treat it as un-migratable.
+                    raise ValueError("KPI produced no insight buckets")
                 period_comparison_insight.create_or_update_insight_from_kpi(
                     comparison_insight_object, self.overwrite_existing
                 )
@@ -365,6 +377,16 @@ You can view the original insight [here]({legacy_obj_uri})."""
                     )
                 # Process drills for KPI widgets
                 widget_object["drills"] = self._get_widget_drills(obj, "kpi")
+            except Exception as e:
+                # If metadata conversion fails, create a rich text widget instead.
+                logger.error(
+                    "Converting KPI widget to insight failed: %s. Creating a placeholder rich text widget.",
+                    e,
+                )
+                widget_object["type"] = "richText"
+                widget_object["content"] = self._get_rich_text_for_missing_kpi(
+                    obj, str(e)
+                )
             widget_object["localIdentifier"] = obj["kpi"]["meta"]["identifier"]
         elif "visualizationWidget" in obj:
             widget_object["description"] = obj["visualizationWidget"]["meta"]["summary"]
@@ -424,9 +446,14 @@ You can view the original insight [here]({legacy_obj_uri})."""
             height = size[size_key]["height"]
         else:
             if widget_wrapper.type == "kpi":
-                comparison_type = widget_wrapper.widget_object.get("content", {}).get(
-                    "comparisonType"
-                )
+                content = widget_wrapper.widget_object.get("content", {})
+
+                # Rich text placeholder has str value under "content" -> do not call get() on that.
+                if isinstance(content, dict):
+                    comparison_type = content.get("comparisonType")
+                else:
+                    comparison_type = None
+
                 if comparison_type is None:
                     # KPIs without comparisons can be smaller.
                     # When set to 11, they have too much whitespace underneath.

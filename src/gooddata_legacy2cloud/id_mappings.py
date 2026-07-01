@@ -72,7 +72,7 @@ class IdMappings:
             return self.id_mapping[legacy_identifier]
 
         raise ValueError(
-            f"Search Cloud Id - Unknown Cloud identifier {legacy_identifier}"
+            f"Search Cloud Id - Unknown Legacy identifier {legacy_identifier}"
         )
 
     def find_similar(self, search):

@@ -129,3 +129,23 @@ def test_comparison_none_without_date_dataset_no_warning(
 
     warnings = [r for r in caplog.records if r.levelno == logging.WARNING]
     assert warnings == []
+
+
+def test_missing_metric_raises_value_error(mocker) -> None:
+    """When the KPI's metric was not migrated, the metric mapping lookup raises
+    ValueError. The dashboard migration relies on this to substitute a rich text
+    placeholder instead of skipping the whole dashboard (SVS-1333)."""
+    kpi = _make_kpi("none", with_date_dataset=False)
+    ctx = _make_ctx(mocker)
+    ctx.metric_mappings.search_mapping_identifier.side_effect = ValueError(
+        "Search Cloud Id - Unknown Cloud identifier metric.revenue"
+    )
+    insight = PeriodComparisonInsight(
+        ctx=ctx,
+        legacy_definition=kpi,
+        new_insight_id="new-insight-id",
+        cloud_filters=[],
+    )
+
+    with pytest.raises(ValueError):
+        insight.get()

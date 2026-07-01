@@ -1,0 +1,74 @@
+[
+    {
+        "data": {
+            "id": "dashboard_with_missing_kpi_metric_mssngKpiMet1",
+            "type": "analyticalDashboard",
+            "attributes": {
+                "title": "Dashboard with missing KPI metric",
+                "description": "",
+                "tags": [],
+                "content": {
+                    "attributeFilterConfigs": [],
+                    "filterContextRef": {
+                        "identifier": {
+                            "id": "filtercontext_acMTetT0PV6j",
+                            "type": "filterContext"
+                        }
+                    },
+                    "layout": {
+                        "type": "IDashboardLayout",
+                        "sections": [
+                            {
+                                "type": "IDashboardLayoutSection",
+                                "header": {},
+                                "items": [
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "custom description goes here",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_mssngKpiMet1_different_name",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "Different Name",
+                                            "localIdentifier": "aeLS3zEyG7L8"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 8,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "richText",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "content": "The KPI widget _\"KPI with missing metric\"_ could not be migrated.\n\nReason: Search Cloud Id - Unknown Legacy identifier missingmetric9002\n\nYou can view the original dashboard in GoodData Legacy [here](https://example.legacy.domain.com/dashboards/#/workspace//dashboard/mssngKpiMet1).",
+                                            "localIdentifier": "aMissKpi9001"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

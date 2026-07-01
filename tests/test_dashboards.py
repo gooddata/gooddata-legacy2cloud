@@ -29,6 +29,7 @@ TEST_CASES_DIR = "tests/data/dashboards/test_cases"
         "dashboard_with_attribute_filter_with_multiple_labels_1",
         "dashboard_with_drills",
         "dashboard_with_missing_element_lookup",
+        "dashboard_with_missing_kpi_metric",
         "self_drill",
         "dashboard_with_dependent_filters",
     ],
@@ -49,7 +50,7 @@ def test_dashboards_migration(
 
     # Mock _resolve_widget_type to avoid needing visualization class objects in test data.
     # This method determines widget sizing based on visualization type (headline vs other).
-    if case_file_name == "headlines_only":
+    if case_file_name in ("headlines_only", "dashboard_with_missing_kpi_metric"):
         mocker.patch.object(CloudDashboard, "_resolve_widget_type", return_value="kpi")
     else:
         mocker.patch.object(
