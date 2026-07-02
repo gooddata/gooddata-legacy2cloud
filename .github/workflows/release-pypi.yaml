@@ -2,19 +2,15 @@
 name: Publish to PyPI
 
 on:
-  workflow_call:
-    inputs:
-      tag:
-        type: string
-        required: true
   workflow_dispatch:
     inputs:
       tag:
-        description: 'Tag to publish (e.g. v0.1.0)'
+        description: 'Tag to publish (e.g. v0.1.0, v0.1.0.dev1)'
         type: string
         required: true
 
 permissions:
+  contents: read
   id-token: write
 
 jobs:
@@ -22,12 +18,15 @@ jobs:
     name: Publish to PyPI
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ inputs.tag }}
+          persist-credentials: false
 
       - name: Install uv
-        uses: astral-sh/setup-uv@v5
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: false
 
       - name: Build
         run: uv build --out-dir dist
