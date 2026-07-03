@@ -24,6 +24,7 @@ TEST_CASES_DIR = "tests/data/metrics/test_cases"
         "with_nonexistent_value_in_filter",
         "with_date_filters",
         "using_deprecated_metric",
+        "with_unresolved_identifier",
     ],
 )
 def test_metrics_migration(

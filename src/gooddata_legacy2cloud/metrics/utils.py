@@ -11,7 +11,7 @@ from gooddata_legacy2cloud.constants import UNKNOWN_DATE_MIGRATION_GRANULARITY
 from gooddata_legacy2cloud.metrics.contants import DAY_SHORTCUTS
 
 
-def _comment_out_lines(text: str) -> str:
+def comment_out_lines(text: str) -> str:
     """Helper function to comment out all lines in a text string."""
     return "\n".join(f"#{line}" for line in text.splitlines())
 
@@ -41,6 +41,22 @@ def adjust_comment_for_broken_metric(output):
     return output
 
 
+def build_placeholder_maql(
+    original_maql: str,
+    extra_message: str | None = None,
+    error_label: str | None = "Error",
+) -> str:
+    """
+    Comments out the original MAQL, optionally appends a labeled note, and adds a
+    SQRT(-1) placeholder expression so the metric can still be created in Cloud.
+    """
+    commented_maql = adjust_comment_for_broken_metric(comment_out_lines(original_maql))
+    if extra_message:
+        label = f"#{error_label}:\n" if error_label else ""
+        commented_maql += f"\n\n{label}{comment_out_lines(extra_message)}"
+    return f"#Failed MAQL:\n{commented_maql}\n\nSELECT SQRT(-1)"
+
+
 def disable_broken_metric(metric, error_response=None):
     """
     Fixes a broken metric by adding a tag and commenting out the original MAQL.
@@ -59,29 +75,27 @@ def disable_broken_metric(metric, error_response=None):
 
     attribute["title"] = f"[ERROR] {attribute['title']}"
     maql = metric["data"]["attributes"]["content"]["maql"]
-    commented_maql = _comment_out_lines(maql)
-    commented_maql = adjust_comment_for_broken_metric(commented_maql)
 
-    # Add API error response if provided
+    error_message = ""
+    extra_label = None
     if error_response is not None:
         # Extract the error text (either detail field or full response)
-        error_message = ""
         if hasattr(error_response, "text") and error_response.text:
             try:
                 error_data = json.loads(error_response.text)
-                error_message = error_data.get("detail", error_response.text)
+                error_message = (
+                    error_data.get("detail", error_response.text)
+                    if isinstance(error_data, dict)
+                    else error_response.text
+                )
             except json.JSONDecodeError:
                 error_message = error_response.text
 
-        # Add the commented error to the MAQL
         if error_message:
-            commented_error = _comment_out_lines(error_message)
-            commented_maql += (
-                f"\n\n#API Error {error_response.status_code}:\n{commented_error}"
-            )
+            extra_label = f"API Error {error_response.status_code}"
 
-    metric["data"]["attributes"]["content"]["maql"] = (
-        f"#Failed MAQL:\n{commented_maql}\n\nSELECT SQRT(-1)"
+    metric["data"]["attributes"]["content"]["maql"] = build_placeholder_maql(
+        maql, error_message, extra_label
     )
     return metric
 
