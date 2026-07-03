@@ -57,7 +57,11 @@ class CloudDashboardsBuilder:
             try:
                 legacy_id = dashboard[self.ctx.dashboard_type]["meta"]["identifier"]
                 dashboard_title = dashboard[self.ctx.dashboard_type]["meta"]["title"]
-                cloud_id = get_cloud_id(dashboard_title, legacy_id)
+                cloud_id = (
+                    legacy_id
+                    if self.ctx.keep_original_ids
+                    else get_cloud_id(dashboard_title, legacy_id)
+                )
                 current_batch_mappings[legacy_id] = cloud_id
             except (KeyError, TypeError) as e:
                 logger.warning(

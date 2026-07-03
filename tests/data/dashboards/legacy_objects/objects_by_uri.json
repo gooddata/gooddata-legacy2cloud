@@ -1,4 +1,31 @@
 {
+  "/gdc/md/svs1334test/obj/1001": {
+    "visualizationWidget": {
+      "meta": {
+        "identifier": "svs1334WidgetA",
+        "title": "drill to target dashboard",
+        "summary": ""
+      },
+      "content": {
+        "visualization": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/8800004",
+        "ignoreDashboardFilters": [],
+        "drills": [
+          {
+            "drillToDashboard": {
+              "target": "in-place",
+              "from": {
+                "drillFromMeasure": {
+                  "localIdentifier": "svs1334Measure"
+                }
+              },
+              "toDashboard": "svs1334TargetDash"
+            }
+          }
+        ],
+        "dateDataSet": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990001"
+      }
+    }
+  },
   "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4985": {
     "filterContext": {
       "content": {

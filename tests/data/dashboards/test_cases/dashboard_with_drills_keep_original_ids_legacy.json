@@ -1,0 +1,96 @@
+[
+    {
+        "analyticalDashboard": {
+            "meta": {
+                "isProduction": 1,
+                "summary": "",
+                "identifier": "svs1334SourceDash",
+                "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+                "updated": "2026-07-03 08:51:00",
+                "tags": "",
+                "uri": "/gdc/md/svs1334test/obj/1000",
+                "created": "2026-07-03 08:51:00",
+                "title": "SVS1334 Source Dashboard",
+                "deprecated": "0",
+                "category": "analyticalDashboard",
+                "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c"
+            },
+            "content": {
+                "filterContext": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4485",
+                "layout": {
+                    "fluidLayout": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "size": {
+                                            "xl": {
+                                                "width": 12,
+                                                "height": 22
+                                            }
+                                        },
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/svs1334test/obj/1001"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "widgets": ["/gdc/md/svs1334test/obj/1001"]
+            }
+        }
+    },
+    {
+        "analyticalDashboard": {
+            "meta": {
+                "isProduction": 1,
+                "summary": "",
+                "identifier": "svs1334TargetDash",
+                "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+                "updated": "2026-07-03 08:51:00",
+                "tags": "",
+                "uri": "/gdc/md/svs1334test/obj/2000",
+                "created": "2026-07-03 08:51:00",
+                "title": "SVS1334 Target Dashboard",
+                "deprecated": "0",
+                "category": "analyticalDashboard",
+                "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c"
+            },
+            "content": {
+                "filterContext": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/4485",
+                "layout": {
+                    "fluidLayout": {
+                        "rows": [
+                            {
+                                "columns": [
+                                    {
+                                        "size": {
+                                            "xl": {
+                                                "width": 6,
+                                                "height": 22
+                                            }
+                                        },
+                                        "content": {
+                                            "widget": {
+                                                "qualifier": {
+                                                    "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4984"
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                },
+                "widgets": ["/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4984"]
+            }
+        }
+    }
+]
