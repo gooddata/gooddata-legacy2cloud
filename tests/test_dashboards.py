@@ -26,6 +26,7 @@ TEST_CASES_DIR = "tests/data/dashboards/test_cases"
         "basic_dashboard",
         "headlines_only",
         "dashboard_with_kpis_and_filters",
+        "dashboard_with_kpi_description_modes",
         "dashboard_with_attribute_filter_with_multiple_labels_1",
         "dashboard_with_drills",
         "dashboard_with_missing_element_lookup",
