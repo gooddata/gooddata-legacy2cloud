@@ -1,0 +1,17 @@
+[
+    {
+        "data": {
+            "id": "metric_with_computed_attribute_aaCompAttrMetric1",
+            "type": "metric",
+            "attributes": {
+                "title": "[ERROR] Metric with computed attribute",
+                "tags": ["ERROR"],
+                "description": "",
+                "content": {
+                    "format": "#,##0.00",
+                    "maql": "#Failed MAQL:\n#SELECT COUNT([/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/9001])\n\n#Error:\n#Search Cloud Id - Unknown Legacy identifier attr.comp.computedAttr\n\nSELECT SQRT(-1)"
+                }
+            }
+        }
+    }
+]

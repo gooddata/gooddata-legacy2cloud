@@ -10,7 +10,10 @@ from typing import Any
 from gooddata_legacy2cloud.helpers import get_cloud_id, parse_legacy_tags
 from gooddata_legacy2cloud.metrics.data_classes import MetricContext
 from gooddata_legacy2cloud.metrics.cloud_maql import CloudMaql
-from gooddata_legacy2cloud.metrics.utils import get_folders_names
+from gooddata_legacy2cloud.metrics.utils import (
+    build_placeholder_maql,
+    get_folders_names,
+)
 
 logger = logging.getLogger("migration")
 
@@ -32,6 +35,7 @@ class CloudMetric:
         self.legacy_maql = self.metric_content["expression"]
         self.description = metadata["metric"]["meta"]["summary"]
         self.tags = self._get_tags()
+        self.has_error = False
         self.cloud_maql, self.errors = self._get_cloud_maql(
             self.legacy_maql, self.metric_content["tree"]
         )
@@ -86,7 +90,11 @@ class CloudMetric:
                 logger.warning("Metric '%s': %s", self.meta["title"], maql_errors)
 
         except Exception as e:
-            raise Exception(f"ERROR `{self.meta['title']}`: {e}") from e
+            # If transformation fails, create an error placeholder
+            self.has_error = True
+            new_maql = build_placeholder_maql(legacy_maql, str(e))
+            maql_errors = [str(e)]
+            logger.error("Metric '%s': %s", self.meta["title"], e)
 
         return new_maql, maql_errors
 
@@ -95,7 +103,10 @@ class CloudMetric:
         Returns the Cloud metric object.
         """
 
-        if self.get_errors() and not self.ctx.suppress_warnings:
+        if self.has_error:
+            self.tags.append("ERROR")
+            self.meta["cloud_title"] = f"[ERROR] {self.meta['title']}"
+        elif self.get_errors() and not self.ctx.suppress_warnings:
             self.meta["cloud_title"] = f"[WARN] {self.meta['title']}"
 
         return {

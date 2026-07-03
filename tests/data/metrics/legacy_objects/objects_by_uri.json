@@ -1,4 +1,24 @@
 {
+  "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/9001": {
+    "attribute": {
+      "content": {
+        "displayForms": [
+          {
+            "links": {
+              "elements": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/9002/elements"
+            },
+            "meta": {
+              "identifier": "attr.comp.computedAttr"
+            }
+          }
+        ]
+      },
+      "meta": {
+        "category": "attribute",
+        "identifier": "attr.comp.computedAttr"
+      }
+    }
+  },
   "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4769": {
     "fact": {
       "content": {
