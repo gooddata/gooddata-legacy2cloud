@@ -2,6 +2,7 @@
 import argparse
 import sys
 from collections.abc import Callable
+from importlib.metadata import PackageNotFoundError, version
 
 from gooddata_legacy2cloud.workflows.generate_web_compare import (
     generate_web_compare_cli,
@@ -24,6 +25,11 @@ from gooddata_legacy2cloud.workflows.migrate_scheduled_exports import (
     migrate_scheduled_exports_cli,
 )
 
+try:
+    __version__ = version("gooddata-legacy2cloud")
+except PackageNotFoundError:
+    __version__ = "unknown (not installed)"
+
 _COMMANDS: dict[str, Callable[[], None]] = {
     "ldm": migrate_ldm_cli,
     "metrics": migrate_metrics_cli,
@@ -43,6 +49,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         prog="gooddata-legacy2cloud",
         description="GoodData Legacy to Cloud metadata transfer tool.",
+    )
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {__version__}",
     )
     subparsers = parser.add_subparsers(
         dest="command",
