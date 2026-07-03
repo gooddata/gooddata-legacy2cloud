@@ -106,6 +106,12 @@ uv tool install gooddata-legacy2cloud
     pip install .
     ```
 
+You can check the installed version at any time:
+
+```bash
+gooddata-legacy2cloud --version
+```
+
 ### Environment Setup
 
 Create a `.env` file with your access credentials:
