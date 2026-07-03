@@ -19,6 +19,7 @@ from gooddata_legacy2cloud.helpers import (
     dashboard_specific_insight_id,
     get_cloud_id,
     parse_legacy_tags,
+    resolve_kpi_description,
 )
 from gooddata_legacy2cloud.insights.period_comparison_insight import (
     PeriodComparisonInsight,
@@ -348,18 +349,20 @@ You can view the original dashboard in GoodData Legacy [here]({dashboard_link}).
                 new_insight_id = dashboard_specific_insight_id(
                     obj["kpi"]["meta"]["title"], dashboard_id
                 )
-            widget_object["description"] = obj["kpi"]["meta"]["summary"]
-            widget_object["ignoreDashboardFilters"] = (
-                self._get_ignore_dashboard_filters(obj, "kpi")
-            )
-            if "configuration" in obj["kpi"]:
-                widget_object["configuration"] = self._get_configuration(obj, "kpi")
             period_comparison_insight = PeriodComparisonInsight(
                 self.ctx, obj, new_insight_id, self.cloud_filters
             )
             if "properties" in obj["kpi"]["content"]:
                 widget_object["properties"] = obj["kpi"]["content"]["properties"]
             try:
+                widget_object["description"] = resolve_kpi_description(
+                    self.ctx.legacy_client, obj
+                )
+                widget_object["ignoreDashboardFilters"] = (
+                    self._get_ignore_dashboard_filters(obj, "kpi")
+                )
+                if "configuration" in obj["kpi"]["content"]:
+                    widget_object["configuration"] = self._get_configuration(obj, "kpi")
                 comparison_insight_object = period_comparison_insight.get()
                 if not comparison_insight_object:
                     # KPI produced no buckets; treat it as un-migratable.
@@ -383,6 +386,8 @@ You can view the original dashboard in GoodData Legacy [here]({dashboard_link}).
                     "Converting KPI widget to insight failed: %s. Creating a placeholder rich text widget.",
                     e,
                 )
+                widget_object.setdefault("description", "")
+                widget_object.setdefault("ignoreDashboardFilters", [])
                 widget_object["type"] = "richText"
                 widget_object["content"] = self._get_rich_text_for_missing_kpi(
                     obj, str(e)

@@ -1176,5 +1176,107 @@
         "identifier": "missingmetric9002"
       }
     }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9800001": {
+    "metric": {
+      "meta": {
+        "title": "Metric With Description",
+        "identifier": "adescMetric01",
+        "category": "metric",
+        "summary": "Metric own description"
+      },
+      "content": {
+        "expression": ""
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9800002": {
+    "kpi": {
+      "meta": {
+        "identifier": "adescKpiCustom",
+        "title": "KPI Custom Description",
+        "summary": "Custom KPI description text"
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9800001",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "configuration": {
+          "description": {
+            "source": "kpi",
+            "visible": true
+          }
+        }
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9800003": {
+    "kpi": {
+      "meta": {
+        "identifier": "adescKpiExplicit",
+        "title": "KPI Explicit Inherited Description",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9800001",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "configuration": {
+          "description": {
+            "source": "metric",
+            "visible": true
+          }
+        }
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9800004": {
+    "kpi": {
+      "meta": {
+        "identifier": "adescKpiImplicit",
+        "title": "KPI Implicit Inherited Description",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9800001",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none"
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9800005": {
+    "kpi": {
+      "meta": {
+        "identifier": "adescKpiNone",
+        "title": "KPI No Description",
+        "summary": ""
+      },
+      "content": {
+        "metric": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9800001",
+        "ignoreDashboardFilters": [],
+        "comparisonType": "none",
+        "comparisonDirection": "none",
+        "configuration": {
+          "description": {
+            "source": "metric",
+            "visible": false
+          }
+        }
+      }
+    }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/9800011": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "adescFilterCtx1"
+      },
+      "content": {
+        "filters": []
+      }
+    }
   }
 }

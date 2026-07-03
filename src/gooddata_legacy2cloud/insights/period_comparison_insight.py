@@ -10,6 +10,7 @@ from typing import Any
 
 from gooddata_legacy2cloud.backends.cloud.object_creator import process_objects
 from gooddata_legacy2cloud.dashboards.data_classes import DashboardContext
+from gooddata_legacy2cloud.helpers import resolve_kpi_description
 from gooddata_legacy2cloud.insights.data_classes import InsightContext
 from gooddata_legacy2cloud.models.enums import Operation
 
@@ -324,7 +325,9 @@ class PeriodComparisonInsight:
                 "type": "visualizationObject",
                 "attributes": {
                     "title": self.obj["kpi"]["meta"]["title"],
-                    "description": self.obj["kpi"]["meta"]["summary"],
+                    "description": resolve_kpi_description(
+                        self.ctx.legacy_client, self.obj
+                    ),
                     "content": {
                         "buckets": buckets,
                         "filters": self._get_insight_filter(self.obj),

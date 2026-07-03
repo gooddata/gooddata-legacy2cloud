@@ -1,0 +1,144 @@
+[
+    {
+        "data": {
+            "id": "dashboard_with_kpi_description_modes_descModesDash1",
+            "type": "analyticalDashboard",
+            "attributes": {
+                "title": "Dashboard with KPI description modes",
+                "description": "",
+                "tags": [],
+                "content": {
+                    "attributeFilterConfigs": [],
+                    "filterContextRef": {
+                        "identifier": {
+                            "id": "filtercontext_adescFilterCtx1",
+                            "type": "filterContext"
+                        }
+                    },
+                    "layout": {
+                        "type": "IDashboardLayout",
+                        "sections": [
+                            {
+                                "type": "IDashboardLayoutSection",
+                                "header": {},
+                                "items": [
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "Custom KPI description text",
+                                            "ignoreDashboardFilters": [],
+                                            "configuration": {
+                                                "description": {
+                                                    "source": "kpi",
+                                                    "visible": true
+                                                }
+                                            },
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_descModesDash1_kpi_custom_description",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "KPI Custom Description",
+                                            "localIdentifier": "adescKpiCustom"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "Metric own description",
+                                            "ignoreDashboardFilters": [],
+                                            "configuration": {
+                                                "description": {
+                                                    "source": "metric",
+                                                    "visible": true
+                                                }
+                                            },
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_descModesDash1_kpi_explicit_inherited_description",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "KPI Explicit Inherited Description",
+                                            "localIdentifier": "adescKpiExplicit"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "Metric own description",
+                                            "ignoreDashboardFilters": [],
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_descModesDash1_kpi_implicit_inherited_description",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "KPI Implicit Inherited Description",
+                                            "localIdentifier": "adescKpiImplicit"
+                                        }
+                                    },
+                                    {
+                                        "type": "IDashboardLayoutItem",
+                                        "size": {
+                                            "xl": {
+                                                "gridHeight": 11,
+                                                "gridWidth": 2
+                                            }
+                                        },
+                                        "widget": {
+                                            "type": "insight",
+                                            "drills": [],
+                                            "description": "",
+                                            "ignoreDashboardFilters": [],
+                                            "configuration": {
+                                                "description": {
+                                                    "source": "metric",
+                                                    "visible": false
+                                                }
+                                            },
+                                            "insight": {
+                                                "identifier": {
+                                                    "id": "kpimigrationinsight_descModesDash1_kpi_no_description",
+                                                    "type": "visualizationObject"
+                                                }
+                                            },
+                                            "title": "KPI No Description",
+                                            "localIdentifier": "adescKpiNone"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "version": "2"
+                }
+            }
+        }
+    }
+]

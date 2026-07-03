@@ -14,6 +14,8 @@ from typing import Any
 
 import attrs
 
+from gooddata_legacy2cloud.backends.legacy.client import LegacyClient
+
 logger = logging.getLogger("migration")
 
 DASHBOARD_SPECIFIC_INSIGHT_PREFIX = "kpimigrationinsight"
@@ -148,6 +150,24 @@ def parse_legacy_tags(meta: dict) -> list[str]:
         for tag in part.split()
         if tag.strip()
     ]
+
+
+def resolve_kpi_description(legacy_client: LegacyClient, obj: dict[str, Any]) -> str:
+    """Resolve the effective description of a Legacy KPI widget."""
+    # Summary is only populated when description is set to `custom`. No visibility setting exists on custom summary.
+    summary = obj["kpi"]["meta"]["summary"]
+    if summary:
+        return summary
+    description_config = (
+        obj["kpi"]["content"].get("configuration", {}).get("description", {})
+    )
+    # Description can be set to None in UI - `configuration.description.visible` = false
+    if not description_config.get("visible", True):
+        return ""
+
+    # If description is not hidden and kpi.meta.summary is falsey, fall back to metric description
+    metric_obj = legacy_client.get_object(obj["kpi"]["content"]["metric"])
+    return metric_obj["metric"]["meta"].get("summary", "")
 
 
 def get_cloud_id(title: str, legacy_identifier: str) -> str:

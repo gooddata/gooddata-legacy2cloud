@@ -15,7 +15,12 @@ from gooddata_legacy2cloud.insights.period_comparison_insight import (
 )
 
 
-def _make_kpi(comparison_type: str, with_date_dataset: bool) -> dict:
+def _make_kpi(
+    comparison_type: str,
+    with_date_dataset: bool,
+    summary: str = "Revenue KPI description",
+    description_config: dict | None = None,
+) -> dict:
     kpi: dict = {
         "kpi": {
             "content": {
@@ -24,21 +29,30 @@ def _make_kpi(comparison_type: str, with_date_dataset: bool) -> dict:
             },
             "meta": {
                 "title": "Revenue KPI",
-                "summary": "Revenue KPI description",
+                "summary": summary,
             },
         }
     }
     if with_date_dataset:
         kpi["kpi"]["content"]["dateDataSet"] = "/gdc/md/proj/obj/date_ds"
+    if description_config is not None:
+        kpi["kpi"]["content"]["configuration"] = {"description": description_config}
     return kpi
 
 
-def _make_ctx(mocker):
+def _make_ctx(mocker, metric_summary: str = ""):
     ctx = mocker.MagicMock()
 
     def get_object(uri: str) -> dict:
         if uri == "/gdc/md/proj/obj/1":
-            return {"metric": {"meta": {"identifier": "metric.revenue"}}}
+            return {
+                "metric": {
+                    "meta": {
+                        "identifier": "metric.revenue",
+                        "summary": metric_summary,
+                    }
+                }
+            }
         if uri == "/gdc/md/proj/obj/date_ds":
             return {
                 "dataSet": {
@@ -54,9 +68,9 @@ def _make_ctx(mocker):
     return ctx
 
 
-def _build(kpi: dict, mocker) -> dict | None:
+def _build(kpi: dict, mocker, metric_summary: str = "") -> dict | None:
     inst = PeriodComparisonInsight(
-        ctx=_make_ctx(mocker),
+        ctx=_make_ctx(mocker, metric_summary=metric_summary),
         legacy_definition=kpi,
         new_insight_id="new-insight-id",
         cloud_filters=[],
@@ -149,3 +163,63 @@ def test_missing_metric_raises_value_error(mocker) -> None:
 
     with pytest.raises(ValueError):
         insight.get()
+
+
+def test_custom_description_uses_kpi_summary(mocker) -> None:
+    """description source=kpi, visible=true -> kpi.meta.summary is used as-is."""
+    kpi = _make_kpi(
+        "none",
+        with_date_dataset=False,
+        summary="Custom KPI description",
+        description_config={"source": "kpi", "visible": True},
+    )
+
+    result = _build(kpi, mocker, metric_summary="Metric description")
+
+    assert result is not None
+    assert result["data"]["attributes"]["description"] == "Custom KPI description"
+
+
+def test_explicit_inherited_description_uses_metric_summary(mocker) -> None:
+    """description source=metric, visible=true -> fetch the metric's own summary."""
+    kpi = _make_kpi(
+        "none",
+        with_date_dataset=False,
+        summary="",
+        description_config={"source": "metric", "visible": True},
+    )
+
+    result = _build(kpi, mocker, metric_summary="Metric description")
+
+    assert result is not None
+    assert result["data"]["attributes"]["description"] == "Metric description"
+
+
+def test_implicit_inherited_description_uses_metric_summary(mocker) -> None:
+    """Absent kpi.content.configuration.description defaults to inherited-from-metric."""
+    kpi = _make_kpi(
+        "none",
+        with_date_dataset=False,
+        summary="",
+        description_config=None,
+    )
+
+    result = _build(kpi, mocker, metric_summary="Metric description")
+
+    assert result is not None
+    assert result["data"]["attributes"]["description"] == "Metric description"
+
+
+def test_no_description_when_not_visible(mocker) -> None:
+    """description visible=false -> description is empty regardless of source."""
+    kpi = _make_kpi(
+        "none",
+        with_date_dataset=False,
+        summary="",
+        description_config={"source": "metric", "visible": False},
+    )
+
+    result = _build(kpi, mocker, metric_summary="Metric description")
+
+    assert result is not None
+    assert result["data"]["attributes"]["description"] == ""
