@@ -4,8 +4,10 @@
 
 First line of every new file:
 ```python
-# (C) 2025 GoodData Corporation
+# (C) {year} GoodData Corporation
 ```
+
+where `{year}` represents current year.
 
 ## Python Version & Style
 
