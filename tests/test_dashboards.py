@@ -101,6 +101,48 @@ def test_dashboards_migration(
         )
 
 
+def test_dashboard_drill_to_dashboard_keep_original_ids(
+    dashboards_context_keep_ids,
+    capsys: CaptureFixture[str],
+    mocker,
+) -> None:
+    """Cross-dashboard drill target ID must reuse the raw Legacy ID when
+    keep_original_ids=True, even for a sibling dashboard migrated in the
+    same batch (SVS-1334)."""
+    mocker.patch.object(CloudDashboard, "_resolve_widget_type", return_value="insight")
+
+    case_file_name = "dashboard_with_drills_keep_original_ids"
+    legacy_dashboards = load_json(f"{TEST_CASES_DIR}/{case_file_name}_legacy.json")
+    assert isinstance(legacy_dashboards, list), "Legacy dashboards should be a list"
+    expected_cloud_dashboards = load_json(
+        f"{TEST_CASES_DIR}/{case_file_name}_cloud.json"
+    )
+    assert isinstance(expected_cloud_dashboards, list), (
+        "Cloud dashboards should be a list"
+    )
+
+    builder = CloudDashboardsBuilder(dashboards_context_keep_ids)
+    builder.process_legacy_dashboards(
+        legacy_dashboards, skip_deploy=True, overwrite_existing=False
+    )
+
+    actual_cloud_dashboards = builder.get_cloud_dashboards()
+    actual_sorted = sorted(actual_cloud_dashboards, key=lambda x: x["data"]["id"])
+    expected_sorted = sorted(expected_cloud_dashboards, key=lambda x: x["data"]["id"])
+
+    for actual, expected in zip(actual_sorted, expected_sorted, strict=True):
+        dicts_are_equal(actual, expected)
+        dicts_are_equal(expected, actual)
+
+    captured = capsys.readouterr()
+    output = captured.out + captured.err
+    if "ERROR" in output:
+        pytest.fail(
+            f"Processing errors encountered in output:\n"
+            f"stdout: {captured.out}\nstderr: {captured.err}"
+        )
+
+
 def test_dashboard_keep_original_ids(
     dashboards_context_keep_ids,
     mocker,
