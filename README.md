@@ -49,7 +49,6 @@ You can use the [GoodData MCP Server](https://www.gooddata.ai/docs/cloud/ai/mcp-
   - [Reports Migration](#reports-migration)
   - [Scheduled Exports Migration](#scheduled-exports-migration)
   - [Dashboard Permissions Migration](#dashboard-permissions-migration)
-
 - [Advanced Topics](#advanced-topics)
   - [Filtering Objects for Migration](#filtering-objects-for-migration)
   - [Understanding Mapping Files](#understanding-mapping-files)
@@ -57,6 +56,7 @@ You can use the [GoodData MCP Server](https://www.gooddata.ai/docs/cloud/ai/mcp-
   - [Advanced Mapping File Parameters](#advanced-mapping-file-parameters)
 - [Web Comparison Tool](#web-comparison-tool)
 - [Standalone Tools](#standalone-tools)
+- [Contributing](#contributing)
 
 ## Quick Start Guide
 
@@ -846,3 +846,7 @@ Then open: http://localhost:8000/dashboards_web_compare.html
 
 There are standalone tools that can support the migration process, even though they do not migrate any objects directly.
 Have a look at the [tools/README](tools/README.md) to find out more
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup, coding standards, and testing guidelines.
