@@ -1,0 +1,24 @@
+[
+  {
+    "analyticalDashboard": {
+      "content": {
+        "widgets": [],
+        "filterContext": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4985"
+      },
+      "meta": {
+        "isProduction": 1,
+        "summary": "",
+        "identifier": "aarrBr48ObDC",
+        "contributor": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c",
+        "updated": "2025-11-26 14:40:14",
+        "tags": "",
+        "uri": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4988",
+        "created": "2025-09-09 08:51:00",
+        "title": "Migration sample",
+        "deprecated": "0",
+        "category": "analyticalDashboard",
+        "author": "/gdc/account/profile/5cc081c981561ae1d3f81481b50f002c"
+      }
+    }
+  }
+]

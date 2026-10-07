@@ -1,0 +1,27 @@
+[
+  {
+    "data": {
+      "id": "migration_sample_aarrBr48ObDC",
+      "type": "analyticalDashboard",
+      "attributes": {
+        "title": "Migration sample",
+        "description": "",
+        "tags": [],
+        "content": {
+          "attributeFilterConfigs": [],
+          "filterContextRef": {
+            "identifier": {
+              "id": "filtercontext_acBrpELxXJPQ",
+              "type": "filterContext"
+            }
+          },
+          "layout": {
+            "type": "IDashboardLayout",
+            "sections": []
+          },
+          "version": "2"
+        }
+      }
+    }
+  }
+]

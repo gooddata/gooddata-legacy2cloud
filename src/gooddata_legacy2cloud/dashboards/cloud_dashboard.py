@@ -83,7 +83,8 @@ class CloudDashboard:
         self.cloud_filters = filter_context_class.cloud_filters
         self.attribute_filter_configs = filter_context_class.attribute_filter_configs
 
-        self.layout = self._get_layout(self.dashboards_content.get("layout", []))
+        # Empty Legacy dashboards (no widgets) have no layout at all
+        self.layout = self._get_layout(self.dashboards_content.get("layout") or {})
         self.title = self.meta["title"]
 
         # Check for any warnings (filter values or drills) after layout processing
@@ -483,7 +484,7 @@ You can view the original dashboard in GoodData Legacy [here]({dashboard_link}).
         """
         Returns the items.
         """
-        rows = layout_items["fluidLayout"]["rows"]
+        rows = layout_items.get("fluidLayout", {}).get("rows", [])
         new_sections = []
         for row in rows:
             # Iterate over the columns to get the max row height

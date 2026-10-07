@@ -118,6 +118,10 @@ class FilterContext:
                         pass
                 new_filters.append(filter)
             elif "attributeFilter" in filter:
+                # Older Legacy KPI dashboards did not store localIdentifier
+                filter["attributeFilter"].setdefault(
+                    "localIdentifier", f"{idx}_attributeFilter"
+                )
                 obj = self.ctx.legacy_client.get_object(
                     filter["attributeFilter"]["displayForm"]
                 )

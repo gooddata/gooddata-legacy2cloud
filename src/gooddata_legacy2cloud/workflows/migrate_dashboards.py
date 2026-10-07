@@ -202,7 +202,7 @@ def migrate_dashboards(config: DashboardConfig):
         prefetcher.create_metrics_for_unmapped_elements()
         validation_required = True
 
-    if validation_required:
+    if validation_required and legacy_dashboards:
         legacy_client.initialize_attribute_elements_cache()
 
     if config.validation_element_lookup_with_metrics:
