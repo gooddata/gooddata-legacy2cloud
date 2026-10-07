@@ -1278,5 +1278,25 @@
         "filters": []
       }
     }
+  },
+  "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/40030": {
+    "filterContext": {
+      "meta": {
+        "title": "filterContext",
+        "identifier": "aa6LcrTCksyT",
+        "uri": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/40030"
+      },
+      "content": {
+        "filters": [
+          {
+            "attributeFilter": {
+              "displayForm": "/gdc/md/fkxyvp08rrrkfqss1ai656hvs0m77vl0/obj/990010",
+              "attributeElements": [],
+              "negativeSelection": false
+            }
+          }
+        ]
+      }
+    }
   }
 }

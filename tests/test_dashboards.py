@@ -33,6 +33,8 @@ TEST_CASES_DIR = "tests/data/dashboards/test_cases"
         "dashboard_with_missing_kpi_metric",
         "self_drill",
         "dashboard_with_dependent_filters",
+        "empty_dashboard",
+        "dashboard_with_attribute_filter_without_local_identifier",
     ],
 )
 def test_dashboards_migration(

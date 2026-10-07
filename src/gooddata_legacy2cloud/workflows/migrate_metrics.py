@@ -122,7 +122,7 @@ def migrate_metrics(config: MetricConfig):
         prefetcher.collect_element_uris_from_objects(legacy_metrics)
         prefetcher.prefetch_and_cache()
 
-    if config.validation_element_lookup:
+    if config.validation_element_lookup and legacy_metrics:
         legacy_client.initialize_attribute_elements_cache()
 
     if config.object_migration_config.dump_legacy:
