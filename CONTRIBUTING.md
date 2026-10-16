@@ -79,7 +79,4 @@ the Actions tab, picking a semantic version bump type (`major`, `minor`, or `pat
 3. Creates a GitHub Release
 4. Builds and publishes the package to PyPI.
 
-`release-pypi.yaml` can also be run on its own against an existing tag, in
-case a publish needs to be redone.
-
 PyPI publishing is handled using Trusted Publisher settings.
