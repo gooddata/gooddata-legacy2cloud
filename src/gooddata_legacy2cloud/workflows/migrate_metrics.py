@@ -40,6 +40,9 @@ from gooddata_legacy2cloud.metrics.computed_attribute import (
 )
 from gooddata_legacy2cloud.metrics.data_classes import MetricContext
 from gooddata_legacy2cloud.metrics.element_prefetcher import ElementPrefetcher
+from gooddata_legacy2cloud.metrics.metrics_sorter import (
+    split_metrics_by_computed_attribute,
+)
 from gooddata_legacy2cloud.models.enums import Operation
 from gooddata_legacy2cloud.output_writer import OutputWriter
 
@@ -180,12 +183,9 @@ def migrate_metrics(config: MetricConfig):
             ca_operation = Operation.CREATE_WITH_RETRY
 
         # metrics -> computed attributes (built on metrics) -> metrics using them
-        metrics_on_ca = [
-            m
-            for m in cloud_metrics
-            if "{computed_attribute/" in m["data"]["attributes"]["content"]["maql"]
-        ]
-        plain_metrics = [m for m in cloud_metrics if m not in metrics_on_ca]
+        plain_metrics, metrics_on_ca = split_metrics_by_computed_attribute(
+            cloud_metrics
+        )
 
         process_objects(cloud_client, plain_metrics, "metric", operation)
         if cloud_computed_attributes:

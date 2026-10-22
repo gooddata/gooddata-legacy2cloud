@@ -2,8 +2,47 @@
 import logging
 import re
 from collections import defaultdict, deque
+from typing import Any
 
 logger = logging.getLogger("migration")
+
+METRIC_REF_PATTERN = re.compile(r"\{metric/([^\}]+)\}")
+COMPUTED_ATTRIBUTE_MARKER = "{computed_attribute/"
+
+
+def split_metrics_by_computed_attribute(
+    metrics: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Splits metrics by dependency on computed attributes.
+
+    Metrics depending on a computed attribute directly or through other
+    metrics (at any depth) are returned separately.
+
+    Args:
+        metrics: Cloud metric objects.
+
+    Returns:
+        Tuple (plain_metrics, metrics_on_ca); original order is preserved.
+    """
+    maqls = {
+        m["data"]["id"]: m["data"]["attributes"]["content"]["maql"] for m in metrics
+    }
+    dependent = {
+        mid for mid, maql in maqls.items() if COMPUTED_ATTRIBUTE_MARKER in maql
+    }
+    changed = bool(dependent)
+    while changed:
+        changed = False
+        for mid, maql in maqls.items():
+            if mid not in dependent and dependent.intersection(
+                METRIC_REF_PATTERN.findall(maql)
+            ):
+                dependent.add(mid)
+                changed = True
+
+    plain = [m for m in metrics if m["data"]["id"] not in dependent]
+    on_ca = [m for m in metrics if m["data"]["id"] in dependent]
+    return plain, on_ca
 
 
 class MetricsSorter:
