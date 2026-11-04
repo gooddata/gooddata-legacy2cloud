@@ -592,10 +592,12 @@ class CloudPixelPerfectDashboardsBuilder:
 
         # The primary date filter is applied through the widget's dateDataSet.
         # Cloud ignores it when dateDataSet is missing, so it must not be
-        # listed in ignoreDashboardFilters (SVS-1260, SVS-1400).
-        primary_date_filter_id = next(
+        # listed in ignoreDashboardFilters (SVS-1260, SVS-1400). Skip the
+        # filter item itself, not its Cloud ID: an attribute filter on the
+        # same date attribute has the same ID and must still be ignored.
+        primary_date_filter = next(
             (
-                f.contentId._cloud_filter_id
+                f
                 for f in tab.get_items_by_type(FilterItem)
                 if getattr(f.contentId, "type", None) == "time"
                 and getattr(f.contentId, "_cloud_filter_id", None)
@@ -724,7 +726,8 @@ class CloudPixelPerfectDashboardsBuilder:
                                 [
                                     f.contentId._cloud_filter_id
                                     for f in tab.get_items_by_type(FilterItem)
-                                    if hasattr(f.contentId, "_cloud_filter_id")
+                                    if f is not primary_date_filter
+                                    and hasattr(f.contentId, "_cloud_filter_id")
                                     and f.contentId._cloud_filter_id
                                 ]
                             )
@@ -736,7 +739,6 @@ class CloudPixelPerfectDashboardsBuilder:
                                     and f.contentId._cloud_filter_id
                                 ]
                             )
-                            - {primary_date_filter_id}
                             if hasattr(item, "filters") and item.filters
                         ],
                         dateDataSet=dateDataSet,
