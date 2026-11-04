@@ -1,0 +1,90 @@
+{
+  "projectDashboard": {
+    "meta": {
+      "author": "test_user",
+      "category": "test",
+      "identifier": "test_pp_with_date_filter",
+      "title": "PP With Date Filter",
+      "uri": "/gdc/md/test_workspace/obj/9300",
+      "summary": "",
+      "unlisted": 0
+    },
+    "content": {
+      "filters": [
+        {
+          "filterItemContent": {
+            "id": "fic_date",
+            "type": "time",
+            "obj": "/gdc/md/test_workspace/obj/5001",
+            "default": {
+              "type": "floating",
+              "from": -11,
+              "to": 0
+            },
+            "label": "Month/Year (Order)"
+          }
+        },
+        {
+          "filterItemContent": {
+            "id": "fic_attr",
+            "type": "list",
+            "obj": "/gdc/md/test_workspace/obj/4001",
+            "default": [],
+            "multiple": 1,
+            "label": "Test Attribute Filter"
+          }
+        }
+      ],
+      "tabs": [
+        {
+          "identifier": "tab_date_filter",
+          "title": "Date Filter Tab",
+          "items": [
+            {
+              "filterItem": {
+                "positionX": 0,
+                "positionY": 0,
+                "sizeX": 300,
+                "sizeY": 40,
+                "id": "fi_date",
+                "contentId": "fic_date"
+              }
+            },
+            {
+              "filterItem": {
+                "positionX": 320,
+                "positionY": 0,
+                "sizeX": 300,
+                "sizeY": 40,
+                "id": "fi_attr",
+                "contentId": "fic_attr"
+              }
+            },
+            {
+              "reportItem": {
+                "positionX": 0,
+                "positionY": 60,
+                "sizeX": 400,
+                "sizeY": 300,
+                "obj": "/gdc/md/test_workspace/obj/1001",
+                "filters": ["fi_date", "fi_attr"],
+                "title": "Connected to date filter"
+              }
+            },
+            {
+              "reportItem": {
+                "positionX": 0,
+                "positionY": 380,
+                "sizeX": 400,
+                "sizeY": 300,
+                "obj": "/gdc/md/test_workspace/obj/1001",
+                "filters": ["fi_attr"],
+                "title": "Not connected to date filter"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

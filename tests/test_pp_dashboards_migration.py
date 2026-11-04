@@ -6,10 +6,15 @@ These tests verify the end-to-end transformation of Legacy pixel perfect dashboa
 to Cloud responsive dashboards.
 """
 
+from typing import Any
+
 import pytest
 from pytest import CaptureFixture
 
 from gooddata_legacy2cloud.helpers import PP_FILTER_CONTEXT_PREFIX
+from gooddata_legacy2cloud.pp_dashboards.cloud_objects.dashboard_objects import (
+    CloudDashboard,
+)
 from gooddata_legacy2cloud.pp_dashboards.cloud_pp_dashboards_builder import (
     CloudPixelPerfectDashboardsBuilder,
 )
@@ -315,3 +320,88 @@ def test_pp_dashboard_keep_original_ids(
 
     assert len(cloud_dashboards) == 1
     assert cloud_dashboards[0].id == "test_pp_dashboard_001"
+
+
+def _dumped_insight_widgets(dashboard: CloudDashboard) -> dict[str, dict[str, Any]]:
+    """Return the insight widgets of the first tab, keyed by widget title.
+
+    Uses `model_dump(exclude_none=True)`, the same serialization as the
+    deployment step, so the result is the payload sent to Cloud.
+    """
+    dumped = dashboard.model_dump(exclude_none=True)
+    sections = dumped["attributes"]["content"]["tabs"][0]["layout"]["sections"]
+    return {
+        item["widget"]["title"]: item["widget"]
+        for section in sections
+        for item in section["items"]
+        if item["widget"]["type"] == "insight"
+    }
+
+
+def test_widget_on_tab_without_date_filter_has_no_date_dataset(
+    pp_dashboards_builder,
+    mock_legacy_pp_dashboards,
+    mock_cloud_pp_api,
+) -> None:
+    """A widget on a tab without a date filter gets no `dateDataSet` (SVS-1400)."""
+    legacy_dashboard = load_json(f"{LEGACY_OBJECTS_DIR}/pp_dashboard_with_filters.json")
+
+    pp_dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards=[legacy_dashboard],
+        skip_deploy=True,
+        overwrite_existing=False,
+    )
+
+    dashboard = pp_dashboards_builder.get_cloud_dashboards()[0]
+    widget = _dumped_insight_widgets(dashboard)["Test Report 1"]
+    assert "dateDataSet" not in widget
+
+
+def test_widget_not_connected_to_date_filter_ignores_it(
+    pp_dashboards_builder,
+    mock_legacy_pp_dashboards,
+    mock_cloud_pp_api,
+) -> None:
+    """A widget not connected to the date filter ignores it (SVS-1260, SVS-1400).
+
+    Cloud ignores the main date filter when the widget has no `dateDataSet`,
+    so the date filter must not be listed in `ignoreDashboardFilters`.
+    """
+    legacy_dashboard = load_json(
+        f"{LEGACY_OBJECTS_DIR}/pp_dashboard_with_date_filter.json"
+    )
+
+    pp_dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards=[legacy_dashboard],
+        skip_deploy=True,
+        overwrite_existing=False,
+    )
+
+    dashboard = pp_dashboards_builder.get_cloud_dashboards()[0]
+    widget = _dumped_insight_widgets(dashboard)["Not connected to date filter"]
+    assert "dateDataSet" not in widget
+    assert widget["ignoreDashboardFilters"] == []
+
+
+def test_widget_connected_to_date_filter_keeps_date_dataset(
+    pp_dashboards_builder,
+    mock_legacy_pp_dashboards,
+    mock_cloud_pp_api,
+) -> None:
+    """A widget connected to the date filter keeps its date dataset."""
+    legacy_dashboard = load_json(
+        f"{LEGACY_OBJECTS_DIR}/pp_dashboard_with_date_filter.json"
+    )
+
+    pp_dashboards_builder.process_legacy_dashboards(
+        legacy_dashboards=[legacy_dashboard],
+        skip_deploy=True,
+        overwrite_existing=False,
+    )
+
+    dashboard = pp_dashboards_builder.get_cloud_dashboards()[0]
+    widget = _dumped_insight_widgets(dashboard)["Connected to date filter"]
+    assert widget["dateDataSet"] == {
+        "identifier": {"id": "dt_order", "type": "dataset"}
+    }
+    assert widget["ignoreDashboardFilters"] == []
