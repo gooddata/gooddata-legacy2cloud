@@ -65,5 +65,43 @@
         "summary": ""
       }
     }
+  },
+  "/gdc/md/test_workspace/obj/5001": {
+    "attributeDisplayForm": {
+      "content": {
+        "formOf": "/gdc/md/test_workspace/obj/5002"
+      },
+      "links": {
+        "elements": {
+          "attributeElements": {
+            "elements": []
+          }
+        }
+      },
+      "meta": {
+        "author": "test_user",
+        "category": "attributeDisplayForm",
+        "identifier": "order.act81lMifn6q",
+        "title": "Month/Year (Order)",
+        "uri": "/gdc/md/test_workspace/obj/5001",
+        "summary": ""
+      }
+    }
+  },
+  "/gdc/md/test_workspace/obj/5002": {
+    "attribute": {
+      "content": {
+        "displayForms": [],
+        "type": "GDC.time.month"
+      },
+      "meta": {
+        "author": "test_user",
+        "category": "attribute",
+        "identifier": "order.month",
+        "title": "Month/Year (Order)",
+        "uri": "/gdc/md/test_workspace/obj/5002",
+        "summary": ""
+      }
+    }
   }
 }

@@ -2,3 +2,5 @@ attr.test_attribute,attr.test_attribute_cloud
 dataset.test_dataset.test_attribute,attr.test_attribute_cloud
 fact.test_fact,fact.test_fact_cloud
 dataset.test_dataset,dt_test_dataset
+order,dt_order
+order.month,dt_order.month

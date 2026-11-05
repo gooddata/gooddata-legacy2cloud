@@ -590,6 +590,21 @@ class CloudPixelPerfectDashboardsBuilder:
         for _ in range(len({i["section"] for i in section_items})):
             layout.sections.append(pdo.LayoutSection())
 
+        # The primary date filter is applied through the widget's dateDataSet.
+        # Cloud ignores it when dateDataSet is missing, so it must not be
+        # listed in ignoreDashboardFilters (SVS-1260, SVS-1400). Skip the
+        # filter item itself, not its Cloud ID: an attribute filter on the
+        # same date attribute has the same ID and must still be ignored.
+        primary_date_filter = next(
+            (
+                f
+                for f in tab.get_items_by_type(FilterItem)
+                if getattr(f.contentId, "type", None) == "time"
+                and getattr(f.contentId, "_cloud_filter_id", None)
+            ),
+            None,
+        )
+
         # Add items to sections
         for item_order, item in enumerate(
             sorted(tab.items, key=lambda p: (p.positionX, p.positionY))
@@ -679,10 +694,10 @@ class CloudPixelPerfectDashboardsBuilder:
                             has_time_filter = True
                             break
 
-                dateDataSet: pdo.DateDataSet | dict[str, Any]
-                if not has_time_filter:
-                    dateDataSet = {}
-                else:
+                # None is left out of the upload (exclude_none), so the widget
+                # ignores the primary date filter (SVS-1400).
+                dateDataSet: pdo.DateDataSet | None = None
+                if has_time_filter:
                     dateDataSet = pdo.DateDataSet(
                         identifier=pdo.Identifier(id=default_data_set, type="dataset")
                     )
@@ -711,7 +726,8 @@ class CloudPixelPerfectDashboardsBuilder:
                                 [
                                     f.contentId._cloud_filter_id
                                     for f in tab.get_items_by_type(FilterItem)
-                                    if hasattr(f.contentId, "_cloud_filter_id")
+                                    if f is not primary_date_filter
+                                    and hasattr(f.contentId, "_cloud_filter_id")
                                     and f.contentId._cloud_filter_id
                                 ]
                             )
