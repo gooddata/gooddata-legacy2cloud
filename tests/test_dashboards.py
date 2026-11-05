@@ -9,6 +9,9 @@ The test verifies that the transformation of Legacy dashboards metadata matches
 the expected Cloud dashboards metadata.
 """
 
+from typing import cast
+from unittest.mock import MagicMock
+
 import pytest
 from pytest import CaptureFixture
 from gooddata_legacy2cloud.dashboards.cloud_dashboard import CloudDashboard
@@ -166,3 +169,30 @@ def test_dashboard_keep_original_ids(
     for cloud_dash, legacy_dash in zip(cloud_dashboards, legacy_dashboards):
         legacy_id = legacy_dash["analyticalDashboard"]["meta"]["identifier"]
         assert cloud_dash["data"]["id"] == legacy_id
+
+
+def test_dashboard_logs_heading_matches_each_dashboard(
+    dashboards_context_keep_ids,
+    mocker,
+) -> None:
+    """Each block in dashboard_logs.log must be headed by its own dashboard title,
+    not by the title of the last dashboard in the batch (web-compare reads it)."""
+    mocker.patch.object(CloudDashboard, "_resolve_widget_type", return_value="insight")
+
+    legacy_dashboards = load_json(
+        f"{TEST_CASES_DIR}/dashboard_with_drills_keep_original_ids_legacy.json"
+    )
+    assert isinstance(legacy_dashboards, list), "Legacy dashboards should be a list"
+
+    builder = CloudDashboardsBuilder(dashboards_context_keep_ids)
+    builder.process_legacy_dashboards(
+        legacy_dashboards, skip_deploy=True, overwrite_existing=False
+    )
+
+    # OutputWriter is mocked in conftest; inspect what was written to the log
+    dashboards_logger = cast(MagicMock, builder.dashboards_logger)
+    write_calls = dashboards_logger.write_transformation.call_args_list
+    assert len(write_calls) == len(legacy_dashboards)
+    for call in write_calls:
+        heading, legacy_dashboard, _cloud_dashboard = call.args
+        assert heading == legacy_dashboard["analyticalDashboard"]["meta"]["title"]
