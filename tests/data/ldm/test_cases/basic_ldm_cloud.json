@@ -5,7 +5,7 @@
                 "attributes": [
                     {
                         "id": "products.productid",
-                        "description": "Product Id",
+                        "description": "",
                         "labels": [
                             {
                                 "description": "",
@@ -28,7 +28,7 @@
                     },
                     {
                         "id": "products.name",
-                        "description": "Name",
+                        "description": "Name of the product",
                         "labels": [],
                         "sourceColumn": "name",
                         "sourceColumnDataType": "STRING",
@@ -39,7 +39,7 @@
                     },
                     {
                         "id": "products.category",
-                        "description": "Category",
+                        "description": "",
                         "labels": [],
                         "sourceColumn": "category",
                         "sourceColumnDataType": "STRING",
@@ -52,7 +52,7 @@
                 "description": "",
                 "facts": [
                     {
-                        "description": "Price",
+                        "description": "",
                         "id": "products.f_price",
                         "sourceColumn": "price",
                         "sourceColumnDataType": "NUMERIC",
@@ -62,7 +62,7 @@
                         "title": "Price"
                     },
                     {
-                        "description": "Stock Quantity",
+                        "description": "",
                         "id": "products.f_stockquantity",
                         "sourceColumn": "stock_quantity",
                         "sourceColumnDataType": "NUMERIC",
@@ -98,7 +98,7 @@
                 "attributes": [
                     {
                         "id": "orderitems.orderitemid",
-                        "description": "Order Item Id",
+                        "description": "",
                         "labels": [],
                         "sourceColumn": "order_item_id",
                         "sourceColumnDataType": "STRING",
@@ -111,7 +111,7 @@
                 "description": "",
                 "facts": [
                     {
-                        "description": "Item Price",
+                        "description": "Unit price of the ordered item",
                         "id": "orderitems.f_itemprice",
                         "sourceColumn": "item_price",
                         "sourceColumnDataType": "NUMERIC",
@@ -121,7 +121,7 @@
                         "title": "Item Price"
                     },
                     {
-                        "description": "Quantity",
+                        "description": "",
                         "id": "orderitems.f_quantity",
                         "sourceColumn": "quantity",
                         "sourceColumnDataType": "NUMERIC",
@@ -184,7 +184,7 @@
                 "attributes": [
                     {
                         "id": "orders.orderid",
-                        "description": "Order Id",
+                        "description": "",
                         "labels": [],
                         "sourceColumn": "order_id",
                         "sourceColumnDataType": "STRING",
@@ -197,7 +197,7 @@
                 "description": "",
                 "facts": [
                     {
-                        "description": "Total Amount",
+                        "description": "",
                         "id": "orders.f_totalamount",
                         "sourceColumn": "total_amount",
                         "sourceColumnDataType": "NUMERIC",
@@ -260,7 +260,7 @@
                 "attributes": [
                     {
                         "id": "customers.customerid",
-                        "description": "Customer Id",
+                        "description": "",
                         "labels": [],
                         "sourceColumn": "customer_id",
                         "sourceColumnDataType": "STRING",
@@ -271,7 +271,7 @@
                     },
                     {
                         "id": "customers.name",
-                        "description": "Name",
+                        "description": "",
                         "labels": [],
                         "sourceColumn": "name",
                         "sourceColumnDataType": "STRING",
@@ -282,7 +282,7 @@
                     },
                     {
                         "id": "customers.email",
-                        "description": "Email",
+                        "description": "",
                         "labels": [],
                         "sourceColumn": "email",
                         "sourceColumnDataType": "STRING",
@@ -293,7 +293,7 @@
                     },
                     {
                         "id": "customers.city",
-                        "description": "City",
+                        "description": "",
                         "labels": [],
                         "sourceColumn": "city",
                         "sourceColumnDataType": "STRING",

@@ -46,7 +46,7 @@
         "category": "attribute",
         "created": "2025-04-09 17:05:22",
         "title": "Name",
-        "summary": "",
+        "summary": "Name of the product",
         "link": "/gdc/md/dinu996plcf6ajcp6wygnqn952uyom9u/obj/4752",
         "isProduction": 1,
         "identifier": "attr.products.name",
