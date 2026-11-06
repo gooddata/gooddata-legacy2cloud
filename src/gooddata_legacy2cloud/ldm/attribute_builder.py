@@ -127,7 +127,9 @@ class AttributeBuilder:
 
         new_attribute = {
             "id": attr_id,
-            "description": legacy_attribute["title"],
+            "description": self.TagProvider.get_description(
+                legacy_attribute["identifier"]
+            ),
             "labels": labels,
             "sourceColumn": attr_column,
             "sourceColumnDataType": "STRING",

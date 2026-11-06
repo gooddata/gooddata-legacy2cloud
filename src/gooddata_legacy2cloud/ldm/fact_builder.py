@@ -56,7 +56,7 @@ class FactBuilder:
             self.logger.write_identifier_relation(legacy_fact_id, cloud_fact_id)
             self.facts.append(
                 {
-                    "description": fact["fact"]["title"],
+                    "description": self.TagProvider.get_description(legacy_fact_id),
                     "id": cloud_fact_id,
                     "sourceColumn": fact_column,
                     "sourceColumnDataType": "NUMERIC",
