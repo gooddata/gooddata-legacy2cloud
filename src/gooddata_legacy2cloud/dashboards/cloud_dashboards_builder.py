@@ -84,10 +84,10 @@ class CloudDashboardsBuilder:
             dashboard_title = dashboard[self.ctx.dashboard_type]["meta"]["title"]
             dashboard_id = dashboard[self.ctx.dashboard_type]["meta"]["identifier"]
             with ObjectContext(dashboard_id, dashboard_title):
-                return process_dashboard(index, dashboard)
+                return process_dashboard(index, dashboard, dashboard_title)
 
         # process Legacy dashboards
-        def process_dashboard(index, dashboard):
+        def process_dashboard(index: int, dashboard, dashboard_title: str):
             # TODO: Move the execution logic to a separate private method
             dashboard_obj = ""
             logger.info("Processing %s", index + 1)
