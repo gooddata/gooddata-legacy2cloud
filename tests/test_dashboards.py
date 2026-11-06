@@ -14,10 +14,12 @@ from unittest.mock import MagicMock
 
 import pytest
 from pytest import CaptureFixture
+from pytest_mock import MockerFixture
 from gooddata_legacy2cloud.dashboards.cloud_dashboard import CloudDashboard
 from gooddata_legacy2cloud.dashboards.cloud_dashboards_builder import (
     CloudDashboardsBuilder,
 )
+from gooddata_legacy2cloud.dashboards.data_classes import DashboardContext
 from tests.test_utils import dicts_are_equal, load_json
 
 TEST_CASES_DIR = "tests/data/dashboards/test_cases"
@@ -172,8 +174,8 @@ def test_dashboard_keep_original_ids(
 
 
 def test_dashboard_logs_heading_matches_each_dashboard(
-    dashboards_context_keep_ids,
-    mocker,
+    dashboards_context_keep_ids: DashboardContext,
+    mocker: MockerFixture,
 ) -> None:
     """Each block in dashboard_logs.log must be headed by its own dashboard title,
     not by the title of the last dashboard in the batch (web-compare reads it)."""
