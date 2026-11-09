@@ -270,9 +270,41 @@ class CloudClient:
             return []
 
     def create_computed_attribute(self, computed_attribute):
-        """Post a computed attribute to the server."""
+        """Post a computed attribute to the server and make it visible.
+
+        A new computed attribute is private to its creator; without VIEW
+        for all workspace users every report using it fails with 403.
+        """
         url = f"api/v1/entities/workspaces/{self.ws}/computedAttributes"
-        return self._post(url, computed_attribute)
+        response = self._post(url, computed_attribute)
+        if response.ok:
+            self.grant_computed_attribute_view_to_all(computed_attribute["data"]["id"])
+        return response
+
+    def grant_computed_attribute_view_to_all(
+        self, computed_attribute_id: str
+    ) -> requests.Response:
+        """Grants VIEW on a computed attribute to all workspace users."""
+        url = (
+            f"api/v1/actions/workspaces/{self.ws}/computedAttributes/"
+            f"{computed_attribute_id}/managePermissions"
+        )
+        permission = [
+            {"assigneeRule": {"type": "allWorkspaceUsers"}, "permissions": ["VIEW"]}
+        ]
+        headers = {
+            "Authorization": f"Bearer {self.token}",
+            "Content-Type": "application/json",
+        }
+        response = self._post(url, permission, headers)
+        if response.status_code != 204:
+            logger.error(
+                "Error granting VIEW on computed attribute %s: %s - %s",
+                computed_attribute_id,
+                response.status_code,
+                response.text,
+            )
+        return response
 
     def update_computed_attribute(self, computed_attribute_id, computed_attribute):
         """Update a computed attribute on the server."""
