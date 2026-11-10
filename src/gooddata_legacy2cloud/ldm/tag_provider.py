@@ -6,31 +6,33 @@ DEPRECATED_TAGS = ["_lcm_managed_object"]
 
 class TagProvider:
     """
-    The TagProvider class is responsible for providing Legacy tags for a given identifier.
+    The TagProvider class is responsible for providing Legacy tags and
+    descriptions for a given identifier.
     """
 
     def __init__(self, legacy_client: LegacyClient):
         self.legacy_client = legacy_client
+        entries = (
+            self.legacy_client.get_attributes()["query"]["entries"]
+            + self.legacy_client.get_facts()["query"]["entries"]
+        )
         # contains the mapping of identifiers to respective tags
-        self.tags_mapping = self.get_tags_mapping()
+        self.tags_mapping = self.get_tags_mapping(entries)
+        # contains the mapping of identifiers to Legacy descriptions (summary)
+        self.descriptions_mapping: dict[str, str] = {
+            entry["identifier"]: entry.get("summary", "") for entry in entries
+        }
 
-    def get_tags_mapping(self):
+    def get_tags_mapping(self, entries):
         """
         Returns a dictionary containing the mapping of identifiers to tags.
         """
         tags_mapping = {}
-        attributes = self.legacy_client.get_attributes()
-        facts = self.legacy_client.get_facts()
 
-        for attribute in attributes["query"]["entries"]:
-            tags = attribute["tags"].split()
+        for entry in entries:
+            tags = entry["tags"].split()
             filtered_tags = [tag for tag in tags if tag not in DEPRECATED_TAGS]
-            tags_mapping[attribute["identifier"]] = filtered_tags
-
-        for fact in facts["query"]["entries"]:
-            tags = fact["tags"].split()
-            filtered_tags = [tag for tag in tags if tag not in DEPRECATED_TAGS]
-            tags_mapping[fact["identifier"]] = filtered_tags
+            tags_mapping[entry["identifier"]] = filtered_tags
 
         return tags_mapping
 
@@ -44,3 +46,9 @@ class TagProvider:
             return tags
 
         return []
+
+    def get_description(self, identifier: str) -> str:
+        """
+        Returns the Legacy description for the given identifier.
+        """
+        return self.descriptions_mapping.get(identifier, "")
