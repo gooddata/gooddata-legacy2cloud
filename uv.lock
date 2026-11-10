@@ -183,7 +183,7 @@ wheels = [
 
 [[package]]
 name = "gooddata-legacy2cloud"
-version = "0.1.7"
+version = "0.1.8"
 source = { editable = "." }
 dependencies = [
     { name = "attrs" },
