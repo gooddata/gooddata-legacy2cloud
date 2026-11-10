@@ -50,6 +50,7 @@ LEGACY_METRICS_FILE = "legacy_metrics.json"
 CLOUD_METRICS_FILE = "cloud_metrics.json"
 LEGACY_COMPUTED_ATTRIBUTES_FILE = "legacy_computed_attributes.json"
 CLOUD_COMPUTED_ATTRIBUTES_FILE = "cloud_computed_attributes.json"
+CLOUD_FAILED_CA_PERMISSIONS_FILE = "cloud_failed_computed_attribute_permissions.json"
 
 logger = logging.getLogger("migration")
 configure_logger()
@@ -189,11 +190,14 @@ def migrate_metrics(config: MetricConfig):
 
         process_objects(cloud_client, plain_metrics, "metric", operation)
         if cloud_computed_attributes:
-            process_objects(
+            failed_cas, _ = process_objects(
                 cloud_client,
                 cloud_computed_attributes,
                 "computed_attribute",
                 ca_operation,
+            )
+            grant_view_on_computed_attributes(
+                cloud_client, cloud_computed_attributes, failed_cas
             )
         if metrics_on_ca:
             process_objects(cloud_client, metrics_on_ca, "metric", operation)
@@ -202,6 +206,33 @@ def migrate_metrics(config: MetricConfig):
     legacy_client.logout()
     logger.info("----DONE in %.2fs----", execution_time)
     logger.info("----Executed %d Cloud requests----", cloud_client.request_count.get())
+
+
+def grant_view_on_computed_attributes(
+    cloud_client: CloudClient, computed_attributes: list, failed: list
+) -> None:
+    """Grants VIEW to all workspace users on every deployed computed attribute.
+
+    Runs for new, updated and skipped computed attributes alike, so a grant
+    that failed in an earlier run is retried. IDs whose grant failed are
+    written to CLOUD_FAILED_CA_PERMISSIONS_FILE.
+    """
+    failed_ids = {ca["data"]["id"] for ca in failed}
+    grant_ids = [
+        ca["data"]["id"]
+        for ca in computed_attributes
+        if ca["data"]["id"] not in failed_ids
+    ]
+    failed_grants = cloud_client.grant_view_to_all_on_computed_attributes(grant_ids)
+    if failed_grants:
+        write_content_to_file(
+            CLOUD_FAILED_CA_PERMISSIONS_FILE, json.dumps(failed_grants, indent=4)
+        )
+        logger.error(
+            "----VIEW grant failed for %d computed attributes, see '%s'----",
+            len(failed_grants),
+            prefix_filename(CLOUD_FAILED_CA_PERMISSIONS_FILE),
+        )
 
 
 def migrate_computed_attributes(config: MetricConfig, ctx: MetricContext) -> list:

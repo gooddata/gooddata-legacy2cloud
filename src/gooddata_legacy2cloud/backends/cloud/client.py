@@ -270,24 +270,19 @@ class CloudClient:
             return []
 
     def create_computed_attribute(self, computed_attribute):
-        """Post a computed attribute to the server and make it visible.
-
-        A new computed attribute is private to its creator; without VIEW
-        for all workspace users every report using it fails with 403.
-        """
+        """Post a computed attribute to the server."""
         url = f"api/v1/entities/workspaces/{self.ws}/computedAttributes"
-        response = self._post(url, computed_attribute)
-        if response.ok:
-            self.grant_computed_attribute_view_to_all(computed_attribute["data"]["id"])
-        return response
+        return self._post(url, computed_attribute)
 
-    def grant_computed_attribute_view_to_all(
-        self, computed_attribute_id: str
-    ) -> requests.Response:
-        """Grants VIEW on a computed attribute to all workspace users."""
+    def _grant_view_to_all_workspace_users(self, entity_type: str, obj_id: str) -> bool:
+        """Grants VIEW on a workspace entity to all workspace users.
+
+        Returns:
+            True if the grant succeeded, False otherwise (errors are logged).
+        """
         url = (
-            f"api/v1/actions/workspaces/{self.ws}/computedAttributes/"
-            f"{computed_attribute_id}/managePermissions"
+            f"api/v1/actions/workspaces/{self.ws}/{entity_type}/"
+            f"{obj_id}/managePermissions"
         )
         permission = [
             {"assigneeRule": {"type": "allWorkspaceUsers"}, "permissions": ["VIEW"]}
@@ -296,15 +291,37 @@ class CloudClient:
             "Authorization": f"Bearer {self.token}",
             "Content-Type": "application/json",
         }
-        response = self._post(url, permission, headers)
-        if response.status_code != 204:
+        try:
+            response = self._post(url, permission, headers)
+        except Exception as e:
+            logger.error("Error granting VIEW on %s %s: %s", entity_type, obj_id, e)
+            return False
+        if not response.ok:
             logger.error(
-                "Error granting VIEW on computed attribute %s: %s - %s",
-                computed_attribute_id,
+                "Error granting VIEW on %s %s: %s - %s",
+                entity_type,
+                obj_id,
                 response.status_code,
                 response.text,
             )
-        return response
+            return False
+        return True
+
+    def grant_view_to_all_on_computed_attributes(self, ids: list[str]) -> list[str]:
+        """Grants VIEW to all workspace users on computed attributes.
+
+        A new computed attribute is private to its creator; without VIEW
+        for all workspace users every report using it fails with 403.
+
+        Returns:
+            IDs of computed attributes where the grant failed.
+        """
+        logger.info("----Granting VIEW on computed attributes (%d)----", len(ids))
+        return [
+            ca_id
+            for ca_id in ids
+            if not self._grant_view_to_all_workspace_users("computedAttributes", ca_id)
+        ]
 
     def update_computed_attribute(self, computed_attribute_id, computed_attribute):
         """Update a computed attribute on the server."""
@@ -511,28 +528,15 @@ class CloudClient:
             self.remove_dashboard(dashboard["id"])
 
     def create_dashboard_permissions_for_public_dashboards(self, dashboard_ids):
-        """Sends a POST request to the server with a given JSON object."""
+        """Grants VIEW to all workspace users on public dashboards."""
         logger.info(
             "----Creating new dashboard permissions for public dashboards (%d)----",
             len(dashboard_ids),
         )
         for dashboard_id in dashboard_ids:
-            url = f"api/v1/actions/workspaces/{self.ws}/analyticalDashboards/{dashboard_id}/managePermissions"
-            permission = [
-                {"assigneeRule": {"type": "allWorkspaceUsers"}, "permissions": ["VIEW"]}
-            ]
-            headers = {
-                "Authorization": f"Bearer {self.token}",
-                "Content-Type": "application/json",
-            }
-            response = self._post(url, permission, headers)
-            if response.status_code != 204:
-                logger.error(
-                    "Error creating dashboard permissions for public dashboards: "
-                    "%s - %s",
-                    response.status_code,
-                    response.text,
-                )
+            self._grant_view_to_all_workspace_users(
+                "analyticalDashboards", dashboard_id
+            )
 
     def create_filter_context(self, filter_context):
         """Sends a POST request to the server with a given JSON object."""
