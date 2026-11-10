@@ -379,6 +379,7 @@ Script generates:
 - Skipped objects IDs to `cloud_skipped_metrics.json`
 - Computed attribute mappings to `computed_attribute_mappings.csv`
 - Failed / skipped computed attributes to `cloud_failed_computed_attributes.json` / `cloud_skipped_computed_attributes.json`
+- Computed attributes whose VIEW grant failed to `cloud_failed_computed_attribute_permissions.json`
 - Computed attribute dumps to `legacy_computed_attributes.json` / `cloud_computed_attributes.json` (with `--dump-legacy` / `--dump-cloud`)
 
 Script reads:
@@ -390,6 +391,7 @@ Computed attributes:
 - Legacy computed attributes (`attr.comp.X` + `label.comp.X`) are migrated together with metrics as Cloud computed attributes with ID `label.comp.X`. The Legacy `CASE WHEN` definition is translated to `SELECT CASE WHEN SUM({metric/...}) <= n THEN "bucket" ... END BY {label/...} ALL OTHER`.
 - Metrics, insights and dashboards reference them as `{computed_attribute/label.comp.X}` / `"type": "computedAttribute"`.
 - Deployment order is: metrics → computed attributes → metrics using computed attributes.
+- After deployment, VIEW is granted to all workspace users on every migrated computed attribute (new, updated and skipped). A new computed attribute is otherwise private to its creator and reports using it fail with 403. Rerunning the script fixes computed attributes from earlier migrations, with or without `--overwrite-existing`. IDs whose grant failed are written to `cloud_failed_computed_attribute_permissions.json`.
 - Requires the `enableComputedAttributes` feature flag in Cloud, on the parent workspace and on every child workspace that uses them (it is not inherited). Cloud computed attributes are in Beta: exports, date dimension and period-over-period are not supported with them.
 - Only one-metric, numeric-threshold definitions are supported; other definitions are logged as errors and skipped.
 
