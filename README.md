@@ -559,6 +559,21 @@ Notes:
 - Only scheduled emails from Legacy KPI dashboards are migrated. The script does not migrate automations generated on Pixel Perfect reports.
 - If a migrated Legacy export uses only dashboard filters, but those filters have values selected, these filter values will be baked into the Cloud automation. This could be adjusted for visual exports (PDF), but Cloud tabular exports (CSV, XLSX) can only be created with persistent filter selections.
 
+GD Cloud limits to check before the migration:
+1. AutomationCount
+- Meaning: The maximum number of automation objects in one workspace. Scheduled exports and alerts both count toward it.
+- Default: 200 per workspace (20 on trial)
+- Calculation: For each workspace, count the Legacy scheduled mails you will migrate plus the KPI alerts you will migrate. Leave out mails that won't be migrated (those with no recipient left and those with no attachment).
+- What happens when the limit is exceeded: New automations can be created, so the migration of the remaining schedules fails.
+2. DailyScheduledActionCount 
+- Short description: How many export deliveries a workspace can send in 24 hours
+- Meaning: The maximum number of export actions per workspace in a rolling 24-hour window. The window looks back 24 hours from each run. It isn't a calendar day and has no time zone.
+- Default: 100 per workspace (10 on trial).
+- What one action is: One export file delivered to one recipient. Each attachment counts separately. One schedule with both an XLSX and a PDF uses 2 actions per recipient. Each internal recipient (a GD Cloud user) counts separately since he / she can have a different set of UDFs applied. All external email recipients together count as one recipient.
+- Calculation: For each schedule, actions per run = number of attachments × (number of internal recipients + 1 if the schedule has any external recipient). Convert each Legacy recurrence to a cron in the schedule's time zone, and list every run over the next 12 months. Slide a 24-hour window over those runs for each workspace and take the peak. The average isn't enough. The peak usually falls on a day when daily, weekly and monthly schedules coincide, such as a Monday that is also the 1st of a month. Compare the peak with the limit and add a buffer when you request an increase via GD support ticket.
+- What happens when the limit is exceeded: Exports fail with ENTITLEMENT_LIMIT_EXHAUSTED and aren't retried; the automation runs again only at its next scheduled time. No API or UI shows current usage (resolveEntitlements returns only the limit), so you have to estimate it in advance.
+   
+
 **Reports-specific options:**
 
 **--exports-to-migrate** - List of specific scheduled exports to migrate. The value should be a path to a csv containing a single column (without header) with Legacy IDs of scheduled exports which should be migrated.
